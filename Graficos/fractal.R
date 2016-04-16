@@ -1,4 +1,4 @@
-# Funcion que dibuja un fractal llamado fern: helecho
+#Funcion que dibuja un fractal llamado fern: helecho
 
 
 fern <-function(n = 20000) {
