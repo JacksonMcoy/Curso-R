@@ -1,0 +1,160 @@
+# Byte-compilados / optimizados / DLL 
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensiones
+*.so
+
+# Distribucion / paquetes
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reportes
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# Translacion
+*.mo
+*.pot
+
+# Django:
+*.log
+local_settings.py
+
+# Flask 
+instance/
+
+# Cosas Scrapy :
+.scrapy
+
+# Documentacion Sphinx 
+docs/_build/
+
+# PyBuilder
+target/
+
+# IPython Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# dotenv
+.env
+
+# virtualenv
+venv/
+ENV/
+
+# Spyder proyectos
+.spyderproject
+
+
+# Archivos historia
+.Rhistory
+.Rapp.history
+
+# Archivos de sesion de datos
+.RData
+
+# ArchivosRStudio 
+.Rproj.user/
+
+
+# Archivos objetos
+
+
+*.o
+
+*.ko
+
+*.obj
+
+*.elf
+
+
+
+# Cabeceras Precompiladas
+
+
+*.gch
+
+*.pch
+
+
+
+# Librerias
+
+*.lib
+
+*.a
+
+*.la
+
+*.lo
+
+
+
+# Archivos compartidos (Windows DLLs)
+
+
+*.dll
+
+*.so
+*
+*.so.*
+
+*.dylib
+
+
+
+# Ejecutables
+
+*.exe
+
+*.out
+
+*.app
+
+*.i*86
+
+*.x86_64
+
+*.hex
+
+
+
+# Debug 
+
+
+*.dSYM/
