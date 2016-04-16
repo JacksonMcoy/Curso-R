@@ -103,6 +103,8 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 
 7 .R for Programmers: Mastering the Tools,  Dan Zhang, CRC Press, 2016.
 
+8 .[Opcional] Introducción a la Computación, J. Glenn Brookshear, Pearson, 2012.
+
 ### Notas online
 
 1 .El pequeño Libro de Inferencia Estadística. https://leanpub.com/LittleInferenceBook/read.
