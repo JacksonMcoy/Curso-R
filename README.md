@@ -172,5 +172,6 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 - [Series de tiempo en R](https://cran.r-project.org/web/views/TimeSeries.html).
 - [RMarkdown con RStudio](http://rmarkdown.rstudio.com/).
 - [Tutorial completo acerca de ciencia de datos en R ](http://www.analyticsvidhya.com/blog/2016/02/complete-tutorial-learn-data-science-scratch/).
+- [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
 
 
