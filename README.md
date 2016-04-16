@@ -11,7 +11,7 @@ Laboratorio 2 CTIC-UNI
 3. Estructuras de Programación en R.
 4. Programación Orientada a Objetos.
 5. Gráficos.
-6. Manejando datos con R.
+6. Manipulación de  datos con R.
 7. Base de datos relacionales y no relacionales  con R.
 8. R y otros Lenguajes.
 9. [Opcional] Programación en Paralelo con R.
