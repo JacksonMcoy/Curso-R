@@ -1,4 +1,5 @@
 # Tutorial de ggplot2
+
 library(ggplot2)
 msleep
 head(msleep)
