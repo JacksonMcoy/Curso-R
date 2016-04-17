@@ -1,0 +1,224 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+
+\title{Laboratorio de R}
+
+
+\author{Curso: Introducci\'on a la Estad\'istica y Probabilidades CM-274}
+\date{}
+\maketitle
+
+\vspace{0.3cm}
+
+
+\textbf{Lecturas Importantes }
+\begin{enumerate}
+\item  \url{http://composingprograms.com/} es un libro online sobre paradigmas y conceptos de introducci\'on a la Ciencia de la COmputaci\'on, basados en el Libro de de Abelson y Sussman \texttt{Structure and Interpretation of Computer Programs (SICP)}.
+\item  Curso de Inteligencia Artificial de la Universidad de  Berkeley \url{http://inst.eecs.berkeley.edu/~cs188/sp09/lectures.html} soportado por John DeNero.
+\end{enumerate}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.2cm}
+
+{\Large Preguntas }
+
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+\item ¿Cu\'al es la diferencia entre los objetos \texttt{data.frame} y \texttt{data,table}?.
+\item ¿ Cu\'al es la diferencia entre las funciones \texttt{read.table()} y \texttt{read.ftable()}?.
+\item Los siguientes son una muestra de observaciones sobre la radiaci\'on solar entrante en un invernadero:
+
+11.1 \ 10.6\  6.3\  8.8\  10.7\  11.2\  8.9\  12.2
+
+\begin{enumerate}
+\item Asigna los datos a un objeto \texttt{solar.radiacion}.
+\item Encontrar la media, mediana y la varianza de las observaciones obtenidas sobre la radiaci\'on solar.
+\item Agregar 10 a cada observaci\'on de \texttt{solar.radiacion} y asigna el resultado a \texttt{sr10}. Encontrar la media, la mediana y la varianza de \texttt{sr10}. Cu\'al de las estad\'istica cambia y por cuanto?.
+\item Multiplica cada observaci\'on por -2 y asigna el valor a \texttt{srm2}. Encontrar la media, la mediana y la varianza de \texttt{srm2}. Como   las estad\'isticas cambian?.
+\end{enumerate}
+\item Considera el conjunto de datos \texttt{islands} y prueba el siguiente c\'odigo 
+
+<<fooz1, prompt=TRUE, comment=NA, eval=FALSE>>=
+islands
+hist(log(islands,10), breaks="Scott", axes=FALSE, xlab="area",
+main="Histograma de Areas de Islas")
+axis(1, at=1:5, labels=10^(1:5))
+axis(2)
+box()
+@
+
+\begin{enumerate}
+\item Explica que est\'a ocurriendo en cada paso del c\'odigo de anterior.
+\item Modifica el c\'odigo, incorporando la regla de Sturges en lugar de la regla de Scott. En este caso, se debe usar la funci\'on \texttt{round} para asegurar que los excesivos n\'umeros de digitos no son usados en las etiquetas de los ejes.
+\end{enumerate}
+
+\item Los datos de \texttt{iris} corresponden a las medidas en cent\'imetros de las variables \texttt{length, width sepal} y \texttt{length , width petal} es decir ancho y altura de los p\'etalos y s\'epalos  respectivamente, de $50$ flores  cada una de tres especies de iris. Hay cuatro variables numéricas correspondientes al sépalo y  pétalo y un factor \texttt{Species}. Muestra  una tabla de medias para \texttt{Species} (donde las medias se deben calcularse por separado para cada una de las tres \texttt{Species}).
+
+\item Supongamos que rodamos un par de dados $1000$ veces.
+
+\begin{enumerate}
+\item Se puede simular $1000$ lanzamientos de un dado utilizando la  funci\'on de R \texttt{sample(6, 1000, replace = TRUE)}. Utilizando esta funci\'on dos veces, almacena $1 000$ lanzamientos simulados del primer dado  en la variable \texttt{dado1} y $1000$ lanzamientos simulados del segundo dado en la variable \texttt{dado2}.
+\item Para cada par de lanzamientos, calcular la suma de los lanzamientos, y almacena la suma en la variable \texttt{suma-dado}.
+\item Utilice la funci\'on  \texttt{table} para tabular los valores de la suma de lanzamientos. Calcular las proporciones para cada valor de la suma y compara esas proporciones con las probabilidades exactas de la suma de dos lanzamientos de dados.
+
+\end{enumerate}
+\item The National Institute of Standards and Technology tiene una p\'agina web que lista los primeros $500$ d\'igitos del numero irracional $\pi$. Podemos leer esos d\'igitos en R, por medio del script
+
+<<fooM1, prompt=TRUE, comment=NA, eval=FALSE>>=
+pidigits =
+read.table("http://www.itl.nist.gov/div898/strd/univ/data/PiDigits.dat",
+skip=60)
+@
+
+Usa la funci\'on \texttt{table} para construir una tabla de frecuencias de los d\'igitos del $1$ al $9$
+
+\item Visualiza los datos \texttt{mtcars}  incluidos con R y lee la documentaci\'on usando  \texttt{?mtcars.} Muestra  diagramas de caja paralelas de las variables cuantitativas. Encuentra una manera  revelar alguna relaci\'on   entre las variables?.
+
+\item Encuentra el conjunto de datos \texttt{accident} del paquete \texttt{hmmm}. ¿Cu\'antas filas tiene el conjunto de datos?.
+
+\item Comparar los tiempos de ejecución de los tres órdenes, usando \texttt{system.time}
+
+<<foob1, prompt=TRUE, comment=NA, eval=FALSE>>=
+y<-c();for (t in 1:100) y[t]=exp(t)
+y<-exp(1:100)
+y<-sapply(1:100,exp)
+@
+\item Un Sudoku es una cuadr\'icula  $9\times9$ que se completa de n\'umeros del $1$ al $9$ de  manera que cualquier n\'umero entre $1$ y $9$ sólo aparece una vez en una fila, una columna o un bloque de $3\times 3$ de la cuadr\'icula. Este ejercicio resuelve una cuadr\'icula de  Sudoku simple donde las entradas vac\'ias se  llenan una  a la vez mediante la exclusión de todas las posibilidades una vez.  
+
+El Sudoku que resolvemos está dada por
+
+<<foob2, prompt=TRUE, comment=NA, eval=FALSE>>=
+s=matrix(0,ncol=9,nrow=9)
+s[1,c(6,8)]=c(6,4)
+s[2,c(1:3,8)]=c(2,7,9,5)
+s[3,c(2,4,9)]=c(5,8,2)
+s[4,3:4]=c(2,6)
+s[6,c(3,5,7:9)]=c(1,9,6,7,3)
+s[7,c(1,3:4,7)]=c(8,5,2,4)
+s[8,c(1,8:9)]=c(3,8,5)
+s[9,c(1,7,9)]=c(6,9,1)
+@
+
+\begin{enumerate}
+\item Imprime la cuadr\'icula en la pantalla.
+\item Definimos el  array $\texttt{pool= array (TRUE, dim = c(9,9,9))}$ de posibles valores para cada entrada (i, j) de la cuadr\'icula, $\texttt{pool[i, j, k]}$ es FALSE si el valor de $k$ puede ser excluido. Escribir el  c\'odigo R que actualiza \texttt{pool} para las entradas ya llenas.
+\item Si $i$ es un entero entre $1$ y $81$, explica el significado de $s[i]$.
+\item Demuestra que, para una entrada dada $(a,b)$, los \'indices de los n\'umeros enteros en el mismo cuadro de $3\times3$ como $(a, b)$ se definen por
+
+<<foob3, prompt=TRUE, comment=NA, eval=FALSE>>=
+boxa=3*trunc((a-1)/3)+1
+boxa=boxa:(boxa+2)
+boxb=3*trunc((b-1)/3)+1
+boxb=boxb:(boxb+2)
+@
+\item Deducir que los valores de una entrada $(a,b)$ que todavia no están determinados se puede excluir por
+
+<<foob4, prompt=TRUE, comment=NA, eval=FALSE>>=
+for (u in (1:9)[pool[a,b,]])
+  pool[a,b,u]=(sum(u==s[a,])+sum(u==s[,b])+
+      sum(u==s[boxa,boxb]))==0
+@
+y que ciertas entradas corresponden a
+
+<<foob5, prompt=TRUE, comment=NA, eval=FALSE>>=
+if (sum(pool[a,b,])==1) s[i]=(1:9)[pool[a,b,]]
+@
+\item Resolver la cuadr\'icula con  una exploración aleatoria de entradas $(a, b)$ que sigue, siempre y cuando la $\texttt{sum(s == 0)> 0}$.
+
+\end{enumerate}
+\item Usa la funci\'on \texttt{curve} para mostrar el gr\'afico de la funci\'on $f(x) = e^{-x^2}/(1 + x^2)$ sobre el intervalo $0\leq x\leq 10$. Entonces usa la funci\'on \texttt{integrate} para calcular el valor de la integral
+
+\[
+\int_{0}^{\infty}\dfrac{e^{-x^2}}{1 + x^2}dx
+\]
+El l\'imite superior en el infinito es especificado por \texttt{upper=Inf} en la funci\'on \texttt{integrate}.
+\item ¿Qu\'e retorna $\texttt{DF <- D(expression(cos(x)/sin(x)), "x")}$. Si ejecutamos el comando 
+$\texttt{x <- pi/4}$, que retorna $\texttt{eval(DF)}$?.
+\item ¿Qu\'e produce el siguiente c\'odigo?.
+
+<<foob6, prompt=TRUE, comment=NA, eval=FALSE>>=
+f1 <- function(x) f(x-1)
+f2 <- function(x) f(x/2)/2
+f3 <- function(x) 2*x*f(x^2)
+f4 <- function(x) f(1/x)/x^2
+f5 <- function(x) f(exp(x))*exp(x)
+f6 <- function(x) f(log(x))/x
+x=seq(0,10,by=.025)
+plot(x,f(x), ylim=c(0, 1.3), xlim=c(0, 10), main="Densidades Teoricas",
+     lwd=2, type="l", xlab="x", ylab="")
+lines(x,f1(x), lty=2, lwd=2)
+lines(x,f2(x), lty=3, lwd=2)
+lines(x,f3(x), lty=4, lwd=2)
+lines(x,f4(x), lty=1, col="grey", lwd=2)
+lines(x,f5(x), lty=2, col="grey", lwd=2)
+lines(x,f6(x), lty=3, col="grey", lwd=2)
+legend("topright", lty=1:4, col=c(rep("black", 4), rep("grey", 3)),
+       leg=c("X","X+1","2X", "sqrt(X)", "1/X", "log(X)", "exp(X)"))
+@
+
+y
+
+<<foob7, prompt=TRUE, comment=NA, eval=FALSE>>=
+set.seed(123)
+x <- rgamma(100, 2)
+x1 <- x+1
+x2 <- 2*x
+x3 <- sqrt(x)
+x4 <- 1/x
+x5 <- log(x)
+x6 <- exp(x)
+plot(density(x), ylim=c(0, 1), xlim=c(0, 10), main="Densidades Empiricas",
+lwd=2, xlab="x", ylab="f_X(x)")
+lines(density(x1), lty=2, lwd=2)
+lines(density(x2), lty=3, lwd=2)
+lines(density(x3), lty=4, lwd=2)
+lines(density(x4), lty=1, col="grey", lwd=2)
+lines(density(x5), lty=2, col="grey", lwd=2)
+lines(density(x6), lty=3, col="grey", lwd=2)
+@
+
+\item Explica, el siguiente script en $R$.
+
+<<foo3, comment = NA, prompt =TRUE, eval= FALSE>>=
+m = 5000; a = 0; b = 1 # constantes
+w = (b - a)/m    # ancho de cada rectangulo
+g = seq(a + w/2, b - w/2, length=m) # m puntos en la particion
+const = 1/sqrt(2 * pi)     # const. para la funcion densidad
+h = const * exp(-g^2 / 2) 
+sum(w * h)                  # area total (approx. prob.)
+@
+
+
+ \end{enumerate}
+\end{document}
