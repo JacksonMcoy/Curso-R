@@ -13,6 +13,7 @@ multicaminos = c()
 for (k in 1:100) {
 	multicaminos[k] = camino_aleatorio(100)
 }
+
 mean(multicaminos)
 sd(multicaminos)
 par(mar=c(4,4,1.5,1.5),mex=.8,mgp=c(2,.5,0),tcl=0.3) 
