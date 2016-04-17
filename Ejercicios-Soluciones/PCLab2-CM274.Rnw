@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+#library(ggplot2)
+library(grid)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+
+\title{Pr\'actica de Laboratorio de R}
+
+
+\author{Curso: Introducci\'on a la Estad\'istica y Probabilidades CM-274}
+\date{}
+\maketitle
+
+\vspace{0.3cm}
+
+
+\textbf{Lecturas Importantes }
+\begin{enumerate}
+\item Norman Matloff presenta una guia acerca de lo que es la depuraci\'on. Revisar el siguiente enlace
+
+\url{http://heather.cs.ucdavis.edu/~matloff/UnixAndC/CLanguage/Debug.html}.
+\item DSL(Domain Specific Languages) en R. \url{http://adv-r.had.co.nz/dsl.html}.
+\end{enumerate}
+
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.2cm}
+
+{\Large Preguntas }
+
+
+\vspace{0.3cm}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Sea $X$ el n\'umero de \texttt{"unos"} obtenidos en 12 lanzamientos  de un dado. Entonces $X$ tiene una  distribuci\'on Binomial $(n=12, p=1/3)$ . Calcule una tabla de probabilidades binomiales para $x=0, 1, \dots ,12$ por dos m\'etodos:
+
+\begin{enumerate}
+\item Usando la f\'ormula para la densidad:
+\[
+P(X = K)=\binom{n}{k}p^{k}(1 -p)^{n -k}
+\]
+y aritm\'etica en R. Usa \texttt{0:12} para la secuencia de $x$ valores y la funci\'on \texttt{choose} para calcular los coeficientes binomiales $\binom{n}{k}$.
+\item Usando la funci\'on \texttt{dbinom} de R y comparar tus resultados con ambos m\'etodos.
+\end{enumerate}
+\item Sea $X$ el n\'umero de \texttt{"unos"} obtenidos en 12 lanzamientos  de un dado. Entonces $X$ tiene una  distribuci\'on Binomial $(n=12, p=1/3)$. Calcule el CDF para $x=0, 1, \dots ,12$ por dos m\'etodos:
+
+\begin{enumerate}
+\item Usando la funci\'on \texttt{cumsum} y el resultado del ejercicio anterior.
+\item Con el uso de la funci\'on \texttt{pbinom}. ?` Qu\'e es $P(X >7)$?.
+\end{enumerate}
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Escribe una funci\'on llamada \texttt{norma} que calcula la norma Euclidea de un vector n\'umerico. La norma Euclidea de un vector $x = (x_1,\dots, x_n)$ es
+
+\[
+\Vert x \Vert = \sqrt{\sum_{i = 1}^{n}x_{i}^2}.
+\]
+Usa operaciones vectorizadas para calcular la suma. Prueba esta funci\'on sobre los vectores $(0,0,0,1)$ y $(2,5,2,4)$ para verificar que el resultado de la funci\'on es correcto.
+\item Construye una matriz con $10$ filas y $2$ columnas conteniendo data, de la siguiente manera
+
+<<fo1, prompt =TRUE, comment =NA, eval=FALSE>>=
+x = matrix(rnorm(20), 10, 2)
+@
+Esta es una muestra aleatoria de 10 observaciones de una distribuci\'on normal bivariada est\'andar. Utiliza la funci\'on \texttt{apply}  y la funci\'on \texttt{norma} del ejercicio anterior para cada una de esas 10 observaciones.
+\end{enumerate}
+\item El modelo de \texttt{Regresi\'on Lineal Simple} se ajusta a una respuesta $y_i$ mediante una funci\'on lineal de una variable predictor $x_i$.
+
+\[
+\widehat{y_i} =a + bx_i \ \ \mbox{para} \ (i =1, \dots, n).
+\]
+
+Por lo general, los \texttt{m\'inimos cuadrados } son utilizados para estimar los par\'ametros desconocidos $a$ y $b$, pero a veces se utiliza la \texttt{menor desviaci\'on  absoluta}. Esto requiere la elecci\'on de $a$ y $b$ a fin de minimizar
+
+\[
+Q(a,b) = \sum_{i=1}^{n}|y_i - \widehat{y_i}|.
+\]
+
+\begin{enumerate}
+\item Implementa una funci\'on que calcule $Q(a,b)$. Debes definir una funci\'on de un solo argumento el c\'ual es un vector cuyos primer elemento es $a$ y el segundo elemento $b$.
+\item Explica como usa R la funci\'on \texttt{optim} para obtener el mejor ajuste de valores de $a$ y $b$.
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Escribe dos funciones en  R: una que toma una funci\'on como argumento de entrada y otra que devuelve una funci\'o como salida.
+\item  Escribe una funci\'on en R, que toma un entero $n$ como argumento y entonces usa un bucle \texttt{for} para generar $n$ n\'umeros aleatorios usando \texttt{runif}. Evalua la performancia de tu funci\'on usando la funci\'on \texttt{system.time}. Por ejemplo calcula la diferencia  en el tiempo que toma tu funci\'on en retornar $10$ millones de n\'umeros y una llamada directa a \texttt{runif}.
+\item Usa la funci\'on \texttt{choose} que calcula los coeficientes binomiales para determinar las probabilidades para todas las posibles salidas del siguiente c\'odigo.
+
+<<foA, prompt =TRUE, comment =NA, eval=FALSE>>=
+adivina5 <- function(n, fSalida, Fecha_sorteo = "1952-1-17"){
+  if(dia_semana(as.Date(Fecha_sorteo)) == "Lunes")
+    Fecha_sorteo <- as.Date(Fecha_sorteo) +
+        c(0, cumsum(rep(c(3, 4), ceiling((n - 1)/2),
+        length.out = n - 1)))
+  else
+    Fecha_sorteo <- as.Date(Fecha_sorteo) +
+        c(0, cumsum(rep(c(4, 3), ceiling((n - 1)/2),
+        length.out = n - 1)))
+
+  Maquina <- sample(c("A", "B"), n, replace = TRUE)
+  Conjunto <- sample(1:10, n, replace = TRUE)
+  Dia <- substr(dia_semana(Fecha_sorteo), start = 1, stop = 1)
+  info <- cbind(as.character(Fecha_sorteo), Maquina, Conjunto, Dia)
+  A <- replicate(n*10, sample.int(40, 5))
+  for(i in 1:n) {
+    cat(info[i, ], "\n", file = fSalida, append = TRUE)
+    write(A[, (10*i - 9):(10*i)], file = fSalida, ncolumns = 5, append = TRUE)
+  }
+}
+@
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Fijar cada uno de los siguientes error y corregirlos
+<<fo8, prompt =TRUE, comment =NA, eval=FALSE>>=
+mtcars[-1:4, ]
+mtcars[mtcars$cyl<= 5]
+mtcars[mtcars$cyl== 4 | 6, ]
+@
+\item ¿ Por qu\'e \texttt{x <- 1:5; x[NA]} produce 5 valores NA?.
+\item ¿ Por qu\'e \texttt{mtcars[1:20]} retorna un error. ¿C\'omo difiere del similar \texttt{mtcars[1:20,]?}.
+\item ¿Qu\'e hace \texttt{df [is.na (df)] <- 0}?. ¿Como funciona?.
+\end{enumerate}
+\end{enumerate}
+\end{document}
