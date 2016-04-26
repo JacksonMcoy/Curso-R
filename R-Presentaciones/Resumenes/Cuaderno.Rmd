@@ -1,0 +1,649 @@
+# Resumen de  R
+
+Lista de temas
+
+- Iniciando R: Datos elementales.
+- Consiguiendo datos en y fuera de R.
+- Usando formato de texto y binario para almacenar datos.
+- Interfaces
+- Subconjuntos de objetos de R
+- Operaciones vectorizadas
+- Estructuras de control
+
+
+
+## R elemental
+
+
+```{r computing, comment=NA}
+x <- 1
+print(x)
+x
+msg <- "r"
+t <- pi/4
+st <- sin(t)
+t
+st
+asin(st)
+
+sec. = 1; min. = 60*sec.; hr. = 60*min.; dia. = 24*hr.
+sem. = 7*dia.; yr. = 365.25*dia.; siglo. = 100*yr.
+3*siglo./sec.
+
+grado. = pi/180
+sin(30*grado.)
+```
+
+### Algunas funciones  elementales
+```{r computinga, comment=NA}
+
+round(1234.679)
+round(1234.679, -2)
+round(1234.679, 2)
+
+signif(1234.679)
+signif(1234.679, 2)
+
+ceiling(3.9)
+ceiling(4.2)
+
+floor(3.2)
+floor(5.6)
+
+trunc(3.7)
+trunc(7.1)
+
+options(digits=7)
+
+x <- runif(3)
+x
+x + 123456
+x
+formatC(x, digits = 2, big.mark = ",", format = "f")
+formatC(x, digits = 7, big.mark = ",", format = "E")
+
+
+.7-.6-.1
+.7/.1-7
+.7/.1
+zapsmall(.7/.1) - 7
+
+1/0
+log(0)
+Inf*Inf
+Inf/Inf
+0/0
+
+```
+### Variables de entorno
+
+```{r computingb, comment=NA}
+
+
+# Encuentra todas las variables en el entorno R. 
+ls()
+
+# Remueve todas las variables y mucho otros objetos
+
+rm(list = ls())
+
+```
+### Operadores relacionales
+```{r computingc, comment=NA}
+
+
+.5 == 1/2
+.3/.1 == 3
+all.equal(.3/.1,3)
+```
+
+###  Operadores de indexado con vectores
+
+``` {r computingd, comment=NA}
+x <-  c(3.2, 1.7, -11.3, -0.67, 4, 0.8)
+x[3]
+x[1:4]; x[c(2,3,5)]
+x[3] <- 10.0
+x
+x[7] <- 4.3
+x
+x[9] = 9
+x
+x[-8]
+
+```
+
+### Operaciones elementales  con vectores
+``` {r computinge, comment=NA}
+x -1
+3 * x
+x^2
+sin(x/2)
+length(x)
+mean(x)
+sd(x)
+var(x)
+min(x)
+range(x)
+sum(x)
+prod(x)
+cumsum(x)
+cumprod(x)
+
+summary(x)
+```
+
+### Recycling
+
+```{r computingf, comment=NA}
+x1 = c(1,2,3,4,5)
+y1 = c(1,2)
+ x1*y1
+
+```
+
+### Generando secuencias
+ 
+```{r computingg, comment=NA}
+ 
+1: 10
+5.7:-3.7
+ 
+n = 10
+1:n-1
+
+1:(n -1)
+
+seq(3,8,.5)
+seq(by=0.45,from=2.7,to=6.7)
+seq(-pi,pi,length.out=12) # 12 valores
+
+
+y <- 2; rep(y,5)
+w <-  c(4,5); rep(w,5)
+rep(w, each=5)
+```
+
+### Secuencias de numeros aleatorios
+
+```{r computingh, comment=NA}
+runif(6,-2,2)
+runif(6)
+
+
+rnorm(6,9,1.5)
+rnorm(5)
+
+x = 1:6
+err <- rnorm(6,0,0.1)
+x + err
+
+x*(1 + err)
+
+set.seed(123)
+round(rnorm(5),3)
+```
+
+### Operadores lógicos
+
+```{r computingi, comment=NA}
+v <- runif(8,-3,3)
+v > 0
+which(v>0)
+v[v > 0]
+
+v1 <- seq(.1,.6,.1)/.1; v1
+w1 <- 1:6; w1
+
+v1 == w1
+all.equal(v1, w1)
+```
+
+### Velocidad en la formación de vectores
+```{r computingj, comment=NA}
+
+
+n=10000
+v = 1
+system.time(for (i in 2:n) v[i] = i)
+
+
+v1 = numeric(n)
+system.time(for (i in 2:n) v1[i] = i)
+
+system.time({v2 = 1:n})
+
+head(v2)
+
+tail(v2)
+
+```
+
+### Producto escalar y producto triple
+
+```{r computingjj, comment=NA}
+
+#install.packages("pracma")
+require(pracma)
+
+
+escalar <-  function(u,v) as.numeric(u%*%v)
+vecnorm <- function(v)sqrt(dot(v,v))
+
+u <- c(1,2,3)
+v <- c(4,5,6)
+escalar(u,v)
+vecnorm(u)
+
+norm(as.matrix(u), "F")
+
+triple<- function(u,v) {c(u[2]*v[3]-u[3]*v[2],
+                          + u[3]*v[1]-u[1]*v[3], u[1]*v[2]-u[2]*v[1])}
+triple(u,v)
+
+```
+
+##  Matrices
+
+```{r computingk, comment=NA}
+
+m <- matrix(c(3,-4.2,-7.1,0.95),nrow=2,ncol=2)
+m
+m <- matrix(c(3,-4.2,-7.1,0.95),nrow=2,byrow = T)
+m
+#m[2,3]
+#m[2,]
+#m[,3]
+
+x = 1:3; y = 1:3
+rbind(x,y)
+cbind(x,y)
+
+
+diag(c(12,24, 36))
+diag(rep(1,3))
+matrix(rep(0,9), nrow = 3)
+
+A1 <- matrix(1:4, 2, 2)
+A1
+A2 <- matrix(c(1,0, 0, 1),nrow=2 )
+A2
+
+kronecker(A1, A2)
+kronecker(A2, A1)
+```
+
+### Submatrices
+
+```{r computingl, comment=NA}
+m3 <- matrix(1:9, 3, 3, byrow = T)
+m3
+m3[1:2,c(1, 3)]
+
+m1 <- matrix(c(3.78,-4.2,-7.1,0.95, 4.3, -1.2),nrow=2,ncol=3)
+rownames(m1) = c("A","B")
+colnames(m1) = c("v1","v2","v3")
+m1
+m1[,"v1"]
+
+summary(m1[, "v1"])
+
+m1 <- matrix(1:6, nrow=2, ncol=3, byrow=T, dimnames = list(c("A","B"),c("v1","v2","v3")))
+m1
+
+```
+
+### Operaciones con matrices
+
+```{r computingm, comment=NA}
+m1 -2
+m1/5
+options(digits = 3)
+sqrt(m1)
+m1^{-1}
+
+m1 + m1
+m1/m1
+
+
+M1 <- matrix(runif(9),3,3); M1
+M2 <- matrix(runif(9),3,3); M2
+
+M3 <- M1 %*% M2; M3
+
+t(M1)
+det(M1)
+
+A <- matrix(1:4, 2,2)
+B <- matrix(5:8, 2, 2)
+
+crossprod(A,B)
+
+t(A) %*% B
+tcrossprod(A,B)
+A %*% t(B)
+
+require(Matrix)
+
+D <- matrix(1:9,3,3)
+D
+expm(D)
+```
+
+
+## Algo de LAPACK
+
+```{r computingn, comment=NA}
+M1_inv <- solve(M1)
+solve(solve(M1))
+
+
+identical(M1, solve(solve(M1)))
+all.equal(M1, solve(solve(M1)))
+
+
+# Ejemplo
+
+A <- matrix(c(1,1/2,1/3, 1/2,1/3,1/4, 1/3,1/4,1/5),nrow=3, byrow=T)
+A_inv <- solve(A)
+b <- c(1,0,0)
+x <- A_inv %*% b
+x
+
+A %*% x
+solve(A,b)
+
+
+# Autovalores y Autovectores
+
+eigen(M1)
+eigen(M1)$values
+
+# Ejemplo: Los autovalores de una matriz hermitiana son reales
+# y sus autovectores son ortonormales 
+
+MH <- matrix(c(1,2,3, 2,5,-1, 3,-1,7),3,3,byrow=T)
+MHval <- eigen(MH)$values
+MHval
+MHvec <- eigen(MH)$vectors
+MHvec
+MHvec[, 1]
+
+MHvec[,1]%*%MHvec[,1]
+MHvec[,2]%*%MHvec[,3]
+MHvec[,3]%*%MHvec[,3]
+
+```
+
+
+# Usando la funcion outer
+
+```{r computingo, comment=NA}
+
+x = 1:3; y = 1:3
+outer(x,y)
+outer(x,y, FUN = "+")
+
+w <- c(1, 2.3, 2,3,4,8,12, 43)
+q <-c(2, 4)
+outer(w, q, "log")
+outer(w,q, "+")
+outer(w,q,"*")
+t<- c("a", "b")
+outer(w, q, "paste")
+
+x <- 1:9; y <-2:8
+names(x)<-x; names(y)<-y 
+outer(y, x, "^")
+
+```
+## Vectores y data frames
+
+```{r computing1, comment=NA}
+v1<- c(59, 55, 53.5, 55, 52.5, 57.5, 53, 55)
+v1[1]
+v1[-1]
+v1[2]
+
+S.v1 <- sum(v1)
+S.v1
+
+
+v2 <- c(22.3, 19.7, 20.8, 20.3, 20.8, 21.5, 20.6, 21.5)
+v3 <- c(31.2, 30.4, 30.6, 30.3, 30.3, 30.8, 32.5, NA)
+v4 <- c(9.5, 13.8, 14.8, 15.2, 15.5, 15.6, 15.6, 15.7)
+
+sum(v3, na.rm = TRUE)
+
+v5<- c(v1, v2, v3, v4)
+Id <- c(1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,
+     2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4)
+
+
+rep(c(1, 2, 3, 4), each = 8)
+rep(1 : 4, each = 8)
+a <- seq(from = 1, to = 4, by = 1)
+a
+
+a <- seq(from = 1, to = 4, by = 1)
+rep(a, each = 8)
+
+
+
+v_nombres <- c("v1", "v2", "v3", "v4")
+Id1 <- rep(v_nombres, each = 8)
+
+
+Z <- cbind(v1, v2, v3, v4)
+n <- dim(Z)
+n
+n <- dim(Z)[1]
+n
+
+W <- vector(length = 8)
+W[1] <- 59
+W[2] <- 55
+W[3] <- 53.5
+W[4] <- 55
+W[5] <- 52.5
+W[6] <- 57.5
+W[7] <- 53
+W[8] <- 55
+
+
+Dmat <- matrix(nrow = 8, ncol = 4)
+Dmat
+
+Dmat[, 1] <- c(59, 55, 53.5, 55, 52.5, 57.5, 53, 55)
+Dmat[, 2] <- c(22.3, 19.7, 20.8, 20.3, 20.8, 21.5,
+                 20.6, 21.5)
+Dmat[, 3] <- c(31.2, 30.4, 30.6, 30.3, 30.3, 30.8,
+                 32.5, NA)
+Dmat[, 4] <- c(9.5, 13.8, 14.8, 15.2, 15.5, 15.6,
+                 15.6, 15.7)
+
+Dmat
+
+colnames(Dmat) <- c("v1", "v2", "v3", "v3")
+Dmat
+
+Dmat2 <- as.matrix(cbind(v1,v2,v3, v4))
+
+Dfrm <- data.frame(df1 = v1, df2 = v2,
+                df3 = v3, df4 = v4)
+Dfrm
+
+```
+## Estructuras de control
+
+### if-else
+
+
+```{r computing3, comment=NA}
+## Generando un numero aleatorio uniforme
+
+x <- runif(1, 0, 10)
+if(x >3){
+  y <- "Hola R"
+}else {
+  y <-"Hola Python"
+}
+```
+
+## for
+
+```{r computing4, comment=NA}
+for(i in 1:8){
+  print(i)
+}
+```
+
+##  Consiguiendo datos en y fuera de R
+
+```{r computing 10, comment=NA, eval=FALSE}
+# Adquiriendo data en R
+
+# Usando la funcion read.csv() para importar
+# un archivo .csv
+
+Ejemplo.csv <- read.csv("Ejemplo1.csv")
+Ejemplo.csv
+
+# Si un archivo .csv contiene valores numericos y 
+# caracteres, las variables de caracteres son convertidos
+# a un tipo factor (usamos stringAsFactors = FALSE)
+
+iris_a <- read.csv("iris.csv", stringsAsFactors = FALSE)
+str(iris_a)
+
+# Usando un separador con el atributo
+
+iris_a <- read.csv("iris.csv", stringsAsFactors = FALSE, sep=";")
+str(iris_a)
+
+# Podemos usar read.csv con sep ="\t" o podemos usar read.table()
+
+ejem.tab <- read.csv("Vegetation2.txt", sep = "\t")
+ejem.tab
+ejem.tab1 <- read.table("Vegetation2.txt", header = TRUE)
+ejem.tab1
+
+```
+```{r computing 18, comment=NA,eval=FALSE}
+S1 <- read.table("squidGSI.txt",header = TRUE)
+names(S1) # Nombres de S1
+str(S1)
+
+# Otras operaciones
+
+mean(S1$GSI , data = S1)
+boxplot(S1$GSI ~ factor(Location), data = S1)
+boxplot(S1$GSI, data = S1)
+
+S1$GSI
+mean(S1$GSI)
+
+## Mas ejemplos
+
+S1$Sex
+Sel <- S1$Sex == 1
+S1F <- S1[Sel, ]
+
+S1M <- S1[S1$Sex == 2, ]
+
+S1F.OR.1 <- S1[S1$Sex == 1 & S1$Location == 1,]
+
+S1F <- S1[S1$Sex == 1, ]
+S1F1 <- S1F[S1$Location == 1, ]
+                   
+Ord1 <- order(S1$Month)
+S1[Ord1, ]
+S1
+```
+
+## Manipulación de Factores
+
+```{r computing 11, comment=NA}
+
+char.obj <- "abecedario"
+
+# Creando una variable factor usando la funcion substring().
+# La funcion nchar() da el numero de caracteres de un objeto de tipo caracter
+
+factor.obj1 <- factor(substring(char.obj, 1:nchar(char.obj),1:nchar(char.obj)), levels=letters)
+
+# Mostrando levels de la variable factor
+levels(factor.obj1)
+
+# Usamos la funcion table() para mostrar las letras que no pertenecen a las
+# subcadenas
+
+table(factor.obj1)
+factor.obj1
+
+
+factor.obj2 <- factor(factor.obj1)
+levels(factor.obj2)
+table(factor.obj2)
+factor.obj2
+
+
+# Factores desde variable numericas
+
+# Usamos la funcion cut() para producir factor desde variables numericas
+
+set.seed(1234)
+numvar <- rnorm(100)
+
+num.to.factor <- cut(numvar, breaks=5)
+class(num.to.factor)
+table(num.to.factor)
+
+# Creando un factor con las etiquetas dadas
+num.to.factor1 <- cut(numvar,breaks=5,labels=c("lg","lmg", "mg", "um", "hg"))
+data.frame(table(num.to.factor1))
+
+# Creando una variable factor usando la declaracion condicional
+
+num.to.factor2 <- factor(ifelse(numvar <= -1.37, 1,
+                        ifelse(numvar<=-0.389,2,ifelse(numvar<=0.592,3,ifelse
+                              (numvar<=1.57,4,5)))),labels=c("(-2.35,-1.37]", 
+                                                             "(-1.37,-0.389]", "(-0.389,0.592]",
+                                                             "(0.592,1.57]",
+                                                             "(1.57,2.55]"))
+
+# Mostrando la data usando la funcion table()
+table(num.to.factor2)
+num.to.factor2
+```
+
+
+## Subindices y subconjuntos
+
+```{r computing 13, comment=NA}
+# Creando un vector de 10 elementos
+vec10 <-c(2,4,7,1,8,9,2,12,6,3)
+vec10[3]
+vec10 > 4 
+vec10[vec10 > 4] # Mostrando valores mayores que 4
+vec10[-2]        # Eliminando el segundo elemento 4
+
+# Data frame con dos variables
+
+df2<- data.frame(d1=c(2,7,8,9, 1),d2 = c(-4,6,3,5,9))
+df2
+df2[1, ] # Accediendo a la primera fila
+df2[, 1] # Accediendo a la primera columna
+df2[1,1] # Accediendo a la primera fila y la tercera columna
+
+# Listas
+
+list.obj <- list(dat =df2, vec.obj=c(2,5,6), "Milagros")
+list.obj
+list.obj[[3]] # Accediendo al tercer elemento de la lista
+list.obj[[2]][2] # Accediendo a un elemento individual
+
+# Accediendo a un conjunto de datos desde un objeto lista
+list.obj$dat
+```
+    
