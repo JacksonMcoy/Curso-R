@@ -1,0 +1,17 @@
+Las máquinas de soporte vectorial o máquinas de vectores de soporte son un conjunto de 
+algoritmos de aprendizaje supervisado desarrollados por Vladimir Vapnik y su equipo en 
+los laboratorios AT&T.
+
+Estos métodos están propiamente relacionados con problemas de clasificación y regresión.
+ Dado un conjunto de ejemplos de entrenamiento (de muestras) podemos etiquetar las clases
+ y entrenar una SVM para construir un modelo que prediga la clase de una nueva muestra.
+ 
+Intuitivamente, una SVM es un modelo que representa a los puntos de muestra en el espacio, 
+separando las clases por un espacio lo más amplio posible. Cuando las nuevas muestras
+se ponen en correspondencia con dicho modelo, en función de su proximidad pueden ser
+clasificadas a una u otra clase.
+
+Más formalmente, una SVM construye un hiperplano o conjunto de hiperplanos en un espacio
+de dimensionalidad muy alta (o incluso infinita) que puede ser utilizado en problemas de
+clasificación o regresión. Una buena separación entre las clases permitirá un clasificación 
+correcta.
