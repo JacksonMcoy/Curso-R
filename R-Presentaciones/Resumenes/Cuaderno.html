@@ -125,209 +125,194 @@ $(document).ready(function () {
 </ul>
 <div id="r-elemental" class="section level2">
 <h2>R elemental</h2>
+<p>R tiene 5 clases de objetos básicos o ‘atómicos’:</p>
+<ul>
+<li>caracter</li>
+<li>numerico (numeros reales)</li>
+<li>enteros</li>
+<li>complejos</li>
+<li>lógicos (True/False)</li>
+</ul>
 <pre class="r"><code>x &lt;- 1
-print(x)</code></pre>
-<pre><code>[1] 1</code></pre>
-<pre class="r"><code>x</code></pre>
-<pre><code>[1] 1</code></pre>
-<pre class="r"><code>msg &lt;- &quot;r&quot;
+print(x)
+x
+msg &lt;- &quot;r&quot;
 t &lt;- pi/4
 st &lt;- sin(t)
-t</code></pre>
-<pre><code>[1] 0.7853982</code></pre>
-<pre class="r"><code>st</code></pre>
-<pre><code>[1] 0.7071068</code></pre>
-<pre class="r"><code>asin(st)</code></pre>
-<pre><code>[1] 0.7853982</code></pre>
-<pre class="r"><code>sec. = 1; min. = 60*sec.; hr. = 60*min.; dia. = 24*hr.
+t
+st
+asin(st)
+
+sec. = 1; min. = 60*sec.; hr. = 60*min.; dia. = 24*hr.
 sem. = 7*dia.; yr. = 365.25*dia.; siglo. = 100*yr.
-3*siglo./sec.</code></pre>
-<pre><code>[1] 9467280000</code></pre>
-<pre class="r"><code>grado. = pi/180
+3*siglo./sec.
+
+grado. = pi/180
 sin(30*grado.)</code></pre>
-<pre><code>[1] 0.5</code></pre>
+<p>Los números en R son generalmente tratados como objetos númericos (números reales de doble precisión). Esto significa que si tu ves numeros como <code>1</code> o <code>2</code> en R, se debe pensar como enteros, pero detras ellos son escritos como <code>1.00</code> o <code>2.00</code>. Si se quiere especificar un entero se debe escribir con el sufijo <code>L</code>.</p>
+<p>Existe en R un número especial <code>Inf</code> que representa al infinito.</p>
 <div id="algunas-funciones-elementales" class="section level3">
 <h3>Algunas funciones elementales</h3>
-<pre class="r"><code>round(1234.679)</code></pre>
-<pre><code>[1] 1235</code></pre>
-<pre class="r"><code>round(1234.679, -2)</code></pre>
-<pre><code>[1] 1200</code></pre>
-<pre class="r"><code>round(1234.679, 2)</code></pre>
-<pre><code>[1] 1234.68</code></pre>
-<pre class="r"><code>signif(1234.679)</code></pre>
-<pre><code>[1] 1234.68</code></pre>
-<pre class="r"><code>signif(1234.679, 2)</code></pre>
-<pre><code>[1] 1200</code></pre>
-<pre class="r"><code>ceiling(3.9)</code></pre>
-<pre><code>[1] 4</code></pre>
-<pre class="r"><code>ceiling(4.2)</code></pre>
-<pre><code>[1] 5</code></pre>
-<pre class="r"><code>floor(3.2)</code></pre>
-<pre><code>[1] 3</code></pre>
-<pre class="r"><code>floor(5.6)</code></pre>
-<pre><code>[1] 5</code></pre>
-<pre class="r"><code>trunc(3.7)</code></pre>
-<pre><code>[1] 3</code></pre>
-<pre class="r"><code>trunc(7.1)</code></pre>
-<pre><code>[1] 7</code></pre>
-<pre class="r"><code>options(digits=7)
+<pre class="r"><code>round(1234.679)
+round(1234.679, -2)
+round(1234.679, 2)
+
+signif(1234.679)
+signif(1234.679, 2)
+
+ceiling(3.9)
+ceiling(4.2)
+
+floor(3.2)
+floor(5.6)
+
+trunc(3.7)
+trunc(7.1)
+
+options(digits=7)
 
 x &lt;- runif(3)
-x</code></pre>
-<pre><code>[1] 0.3629790 0.5403540 0.7095911</code></pre>
-<pre class="r"><code>x + 123456</code></pre>
-<pre><code>[1] 123456.4 123456.5 123456.7</code></pre>
-<pre class="r"><code>x</code></pre>
-<pre><code>[1] 0.3629790 0.5403540 0.7095911</code></pre>
-<pre class="r"><code>formatC(x, digits = 2, big.mark = &quot;,&quot;, format = &quot;f&quot;)</code></pre>
-<pre><code>[1] &quot;0.36&quot; &quot;0.54&quot; &quot;0.71&quot;</code></pre>
-<pre class="r"><code>formatC(x, digits = 7, big.mark = &quot;,&quot;, format = &quot;E&quot;)</code></pre>
-<pre><code>[1] &quot;3.6297897E-01&quot; &quot;5.4035405E-01&quot; &quot;7.0959109E-01&quot;</code></pre>
-<pre class="r"><code>.7-.6-.1</code></pre>
-<pre><code>[1] -2.775558e-17</code></pre>
-<pre class="r"><code>.7/.1-7</code></pre>
-<pre><code>[1] -8.881784e-16</code></pre>
-<pre class="r"><code>.7/.1</code></pre>
-<pre><code>[1] 7</code></pre>
-<pre class="r"><code>zapsmall(.7/.1) - 7</code></pre>
-<pre><code>[1] 0</code></pre>
-<pre class="r"><code>1/0</code></pre>
-<pre><code>[1] Inf</code></pre>
-<pre class="r"><code>log(0)</code></pre>
-<pre><code>[1] -Inf</code></pre>
-<pre class="r"><code>Inf*Inf</code></pre>
-<pre><code>[1] Inf</code></pre>
-<pre class="r"><code>Inf/Inf</code></pre>
-<pre><code>[1] NaN</code></pre>
-<pre class="r"><code>0/0</code></pre>
-<pre><code>[1] NaN</code></pre>
-</div>
-<div id="variables-de-entorno" class="section level3">
-<h3>Variables de entorno</h3>
-<pre class="r"><code># Encuentra todas las variables en el entorno R. 
-ls()</code></pre>
-<pre><code> [1] &quot;dia.&quot;   &quot;grado.&quot; &quot;hr.&quot;    &quot;min.&quot;   &quot;msg&quot;    &quot;sec.&quot;   &quot;sem.&quot;  
- [8] &quot;siglo.&quot; &quot;st&quot;     &quot;t&quot;      &quot;x&quot;      &quot;yr.&quot;   </code></pre>
-<pre class="r"><code># Remueve todas las variables y mucho otros objetos
+x
+x + 123456
+x
+formatC(x, digits = 2, big.mark = &quot;,&quot;, format = &quot;f&quot;)
+formatC(x, digits = 7, big.mark = &quot;,&quot;, format = &quot;E&quot;)
 
-rm(list = ls())</code></pre>
+
+.7-.6-.1
+.7/.1-7
+.7/.1
+zapsmall(.7/.1) - 7
+
+1/0
+log(0)
+Inf*Inf
+Inf/Inf
+0/0</code></pre>
 </div>
 <div id="operadores-relacionales" class="section level3">
 <h3>Operadores relacionales</h3>
-<pre class="r"><code>.5 == 1/2</code></pre>
-<pre><code>[1] TRUE</code></pre>
-<pre class="r"><code>.3/.1 == 3</code></pre>
-<pre><code>[1] FALSE</code></pre>
-<pre class="r"><code>all.equal(.3/.1,3)</code></pre>
-<pre><code>[1] TRUE</code></pre>
+<pre class="r"><code>.5 == 1/2
+.3/.1 == 3
+all.equal(.3/.1,3)</code></pre>
 </div>
 <div id="operadores-de-indexado-con-vectores" class="section level3">
 <h3>Operadores de indexado con vectores</h3>
 <pre class="r"><code>x &lt;-  c(3.2, 1.7, -11.3, -0.67, 4, 0.8)
-x[3]</code></pre>
-<pre><code>[1] -11.3</code></pre>
-<pre class="r"><code>x[1:4]; x[c(2,3,5)]</code></pre>
-<pre><code>[1]   3.20   1.70 -11.30  -0.67</code></pre>
-<pre><code>[1]   1.7 -11.3   4.0</code></pre>
-<pre class="r"><code>x[3] &lt;- 10.0
-x</code></pre>
-<pre><code>[1]  3.20  1.70 10.00 -0.67  4.00  0.80</code></pre>
-<pre class="r"><code>x[7] &lt;- 4.3
-x</code></pre>
-<pre><code>[1]  3.20  1.70 10.00 -0.67  4.00  0.80  4.30</code></pre>
-<pre class="r"><code>x[9] = 9
-x</code></pre>
-<pre><code>[1]  3.20  1.70 10.00 -0.67  4.00  0.80  4.30    NA  9.00</code></pre>
-<pre class="r"><code>x[-8]</code></pre>
-<pre><code>[1]  3.20  1.70 10.00 -0.67  4.00  0.80  4.30  9.00</code></pre>
+x[3]
+x[1:4]; x[c(2,3,5)]
+x[3] &lt;- 10.0
+x
+x[7] &lt;- 4.3
+x
+x[9] = 9
+x
+x[-8]</code></pre>
 </div>
 <div id="operaciones-elementales-con-vectores" class="section level3">
 <h3>Operaciones elementales con vectores</h3>
-<pre class="r"><code>x -1</code></pre>
-<pre><code>[1]  2.20  0.70  9.00 -1.67  3.00 -0.20  3.30    NA  8.00</code></pre>
-<pre class="r"><code>3 * x</code></pre>
-<pre><code>[1]  9.60  5.10 30.00 -2.01 12.00  2.40 12.90    NA 27.00</code></pre>
-<pre class="r"><code>x^2</code></pre>
-<pre><code>[1]  10.2400   2.8900 100.0000   0.4489  16.0000   0.6400  18.4900       NA
-[9]  81.0000</code></pre>
-<pre class="r"><code>sin(x/2)</code></pre>
-<pre><code>[1]  0.9995736  0.7512804 -0.9589243 -0.3287692  0.9092974  0.3894183
-[7]  0.8368988         NA -0.9775301</code></pre>
-<pre class="r"><code>length(x)</code></pre>
-<pre><code>[1] 9</code></pre>
-<pre class="r"><code>mean(x)</code></pre>
-<pre><code>[1] NA</code></pre>
-<pre class="r"><code>sd(x)</code></pre>
-<pre><code>[1] NA</code></pre>
-<pre class="r"><code>var(x)</code></pre>
-<pre><code>[1] NA</code></pre>
-<pre class="r"><code>min(x)</code></pre>
-<pre><code>[1] NA</code></pre>
-<pre class="r"><code>range(x)</code></pre>
-<pre><code>[1] NA NA</code></pre>
-<pre class="r"><code>sum(x)</code></pre>
-<pre><code>[1] NA</code></pre>
-<pre class="r"><code>prod(x)</code></pre>
-<pre><code>[1] NA</code></pre>
-<pre class="r"><code>cumsum(x)</code></pre>
-<pre><code>[1]  3.20  4.90 14.90 14.23 18.23 19.03 23.33    NA    NA</code></pre>
-<pre class="r"><code>cumprod(x)</code></pre>
-<pre><code>[1]    3.2000    5.4400   54.4000  -36.4480 -145.7920 -116.6336 -501.5245
-[8]        NA        NA</code></pre>
-<pre class="r"><code>summary(x)</code></pre>
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
- -0.670   1.475   3.600   4.041   5.475  10.000       1 </code></pre>
+<pre class="r"><code>x -1
+3 * x
+x^2
+sin(x/2)
+length(x)
+mean(x)
+sd(x)
+var(x)
+min(x)
+range(x)
+sum(x)
+prod(x)
+cumsum(x)
+cumprod(x)
+
+summary(x)</code></pre>
 </div>
-<div id="recycling" class="section level3">
-<h3>Recycling</h3>
+<div id="recycling-y-operaciones-vectorizadas" class="section level3">
+<h3>Recycling y operaciones vectorizadas</h3>
 <pre class="r"><code>x1 = c(1,2,3,4,5)
 y1 = c(1,2)
  x1*y1</code></pre>
 <pre><code>Warning in x1 * y1: longitud de objeto mayor no es múltiplo de la longitud
 de uno menor</code></pre>
 <pre><code>[1] 1 4 3 8 5</code></pre>
+<pre class="r"><code>x1&gt;=2</code></pre>
+<pre><code>[1] FALSE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code>y1==8</code></pre>
+<pre><code>[1] FALSE FALSE</code></pre>
+<pre class="r"><code>q&lt;- 1:4
+p &lt;- 6:9
+r&lt;-p + q
+r</code></pre>
+<pre><code>[1]  7  9 11 13</code></pre>
+<p>Sin vectorización, se tiene algo como esto</p>
+<pre class="r"><code>r &lt;- numeric(length(q))
+for(i in seq_along(q)){
+  r &lt;-q[i] + p[i]
+}
+r</code></pre>
+<p>Los objetos en R, tiene atributos, que son la metadata para el objeto. La metadata puede ser útil para describir al objeto. Algunos ejemplos de atributos para objetos de R son:</p>
+<ul>
+<li>names, dimnames</li>
+<li>dimensions (matrices, arrays)</li>
+<li>class (entero, numerico)</li>
+<li>length</li>
+<li>atributos definidos por el usuario-metadata.</li>
+</ul>
+<p>Los atributos de un objeto pueden ser accedidos usando la función <code>attributes()</code>. No todos los objetos en R contienen atributos.</p>
+</div>
+<div id="missing-value" class="section level3">
+<h3>Missing Value</h3>
+<p>Estos valores son denotados por NA o NaN.</p>
+<ul>
+<li><code>is.na()</code> es usado para probar si objetos son NA.</li>
+<li><code>is.nan()</code> es usado para probar si son NaN.</li>
+<li>Los valores NA tiene una clase, así ellos puede ser integerNA, characterNA, etc.</li>
+<li>Un valor NaN es un valor NA, lo inverso no es cierto.</li>
+</ul>
+<pre class="r"><code>z &lt;- c(1, 2,NA, 10, 3)
+is.na(z)</code></pre>
+<pre><code>[1] FALSE FALSE  TRUE FALSE FALSE</code></pre>
+<pre class="r"><code>w &lt;- c(2, 5, NaN, NA, 4)
+is.na(w)</code></pre>
+<pre><code>[1] FALSE FALSE  TRUE  TRUE FALSE</code></pre>
 </div>
 <div id="generando-secuencias" class="section level3">
 <h3>Generando secuencias</h3>
-<pre class="r"><code>1: 10</code></pre>
-<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<pre class="r"><code>5.7:-3.7</code></pre>
-<pre><code> [1]  5.7  4.7  3.7  2.7  1.7  0.7 -0.3 -1.3 -2.3 -3.3</code></pre>
-<pre class="r"><code>n = 10
-1:n-1</code></pre>
-<pre><code> [1] 0 1 2 3 4 5 6 7 8 9</code></pre>
-<pre class="r"><code>1:(n -1)</code></pre>
-<pre><code>[1] 1 2 3 4 5 6 7 8 9</code></pre>
-<pre class="r"><code>seq(3,8,.5)</code></pre>
-<pre><code> [1] 3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5 8.0</code></pre>
-<pre class="r"><code>seq(by=0.45,from=2.7,to=6.7)</code></pre>
-<pre><code>[1] 2.70 3.15 3.60 4.05 4.50 4.95 5.40 5.85 6.30</code></pre>
-<pre class="r"><code>seq(-pi,pi,length.out=12) # 12 valores</code></pre>
-<pre><code> [1] -3.1415927 -2.5703940 -1.9991953 -1.4279967 -0.8567980 -0.2855993
- [7]  0.2855993  0.8567980  1.4279967  1.9991953  2.5703940  3.1415927</code></pre>
-<pre class="r"><code>y &lt;- 2; rep(y,5)</code></pre>
-<pre><code>[1] 2 2 2 2 2</code></pre>
-<pre class="r"><code>w &lt;-  c(4,5); rep(w,5)</code></pre>
-<pre><code> [1] 4 5 4 5 4 5 4 5 4 5</code></pre>
-<pre class="r"><code>rep(w, each=5)</code></pre>
-<pre><code> [1] 4 4 4 4 4 5 5 5 5 5</code></pre>
+<pre class="r"><code>1: 10
+5.7:-3.7
+ 
+n = 10
+1:n-1
+
+1:(n -1)
+
+seq(3,8,.5)
+seq(by=0.45,from=2.7,to=6.7)
+seq(-pi,pi,length.out=12) # 12 valores
+
+
+y &lt;- 2; rep(y,5)
+w &lt;-  c(4,5); rep(w,5)
+rep(w, each=5)</code></pre>
 </div>
 <div id="secuencias-de-numeros-aleatorios" class="section level3">
 <h3>Secuencias de numeros aleatorios</h3>
 <pre class="r"><code>runif(6,-2,2)</code></pre>
-<pre><code>[1] -1.9559289 -1.6577940  0.9177933 -0.9658947  0.7050823 -1.3679887</code></pre>
+<pre><code>[1] -1.132175035  0.902098314 -1.166556584  0.006644012  0.300193620
+[6] -0.680123556</code></pre>
 <pre class="r"><code>runif(6)</code></pre>
-<pre><code>[1] 0.71319782 0.48443856 0.02977917 0.17705332 0.28095021 0.23534155</code></pre>
+<pre><code>[1] 0.43878989 0.04462407 0.13662804 0.71343251 0.32206335 0.76598473</code></pre>
 <pre class="r"><code>rnorm(6,9,1.5)</code></pre>
-<pre><code>[1] 8.766409 7.302593 9.358031 8.603352 9.590503 8.015222</code></pre>
+<pre><code>[1]  9.018903  9.242081 11.150657  8.764590  8.213189  8.183728</code></pre>
 <pre class="r"><code>rnorm(5)</code></pre>
-<pre><code>[1]  1.1447880 -0.3137779  0.3427069  0.6055657  0.2190876</code></pre>
+<pre><code>[1]  2.2754193 -1.8154973  1.8617071  1.0935110 -0.6804411</code></pre>
 <pre class="r"><code>x = 1:6
 err &lt;- rnorm(6,0,0.1)
 x + err</code></pre>
-<pre><code>[1] 1.100265 1.972463 3.034823 3.976849 5.178159 6.180521</code></pre>
+<pre><code>[1] 1.142323 2.066543 3.017836 3.901618 5.183541 6.089017</code></pre>
 <pre class="r"><code>x*(1 + err)</code></pre>
-<pre><code>[1] 1.100265 1.944925 3.104469 3.907397 5.890797 7.083128</code></pre>
+<pre><code>[1] 1.142323 2.133087 3.053508 3.606473 5.917703 6.534104</code></pre>
 <pre class="r"><code>set.seed(123)
 round(rnorm(5),3)</code></pre>
 <pre><code>[1] -0.560 -0.230  1.559  0.071  0.129</code></pre>
@@ -335,20 +320,15 @@ round(rnorm(5),3)</code></pre>
 <div id="operadores-logicos" class="section level3">
 <h3>Operadores lógicos</h3>
 <pre class="r"><code>v &lt;- runif(8,-3,3)
-v &gt; 0</code></pre>
-<pre><code>[1]  TRUE FALSE  TRUE  TRUE FALSE  TRUE FALSE FALSE</code></pre>
-<pre class="r"><code>which(v&gt;0)</code></pre>
-<pre><code>[1] 1 3 4 6</code></pre>
-<pre class="r"><code>v[v &gt; 0]</code></pre>
-<pre><code>[1] 2.7410001 1.0654238 0.4358004 2.3989498</code></pre>
-<pre class="r"><code>v1 &lt;- seq(.1,.6,.1)/.1; v1</code></pre>
-<pre><code>[1] 1 2 3 4 5 6</code></pre>
-<pre class="r"><code>w1 &lt;- 1:6; w1</code></pre>
-<pre><code>[1] 1 2 3 4 5 6</code></pre>
-<pre class="r"><code>v1 == w1</code></pre>
-<pre><code>[1]  TRUE  TRUE FALSE  TRUE  TRUE FALSE</code></pre>
-<pre class="r"><code>all.equal(v1, w1)</code></pre>
-<pre><code>[1] TRUE</code></pre>
+v &gt; 0
+which(v&gt;0)
+v[v &gt; 0]
+
+v1 &lt;- seq(.1,.6,.1)/.1; v1
+w1 &lt;- 1:6; w1
+
+v1 == w1
+all.equal(v1, w1)</code></pre>
 </div>
 <div id="velocidad-en-la-formacion-de-vectores" class="section level3">
 <h3>Velocidad en la formación de vectores</h3>
@@ -356,11 +336,11 @@ v &gt; 0</code></pre>
 v = 1
 system.time(for (i in 2:n) v[i] = i)</code></pre>
 <pre><code>   user  system elapsed 
-  0.238   0.008   0.246 </code></pre>
+  0.287   0.000   0.287 </code></pre>
 <pre class="r"><code>v1 = numeric(n)
 system.time(for (i in 2:n) v1[i] = i)</code></pre>
 <pre><code>   user  system elapsed 
-  0.015   0.000   0.015 </code></pre>
+  0.014   0.000   0.015 </code></pre>
 <pre class="r"><code>system.time({v2 = 1:n})</code></pre>
 <pre><code>   user  system elapsed 
       0       0       0 </code></pre>
@@ -390,9 +370,44 @@ escalar(u,v)</code></pre>
 triple(u,v)</code></pre>
 <pre><code>[1] -3  6 -3</code></pre>
 </div>
+<div id="coercion" class="section level3">
+<h3>Coerción</h3>
+<pre class="r"><code># Coerción Implícita
+
+y &lt;- c(1.7, 'a')
+y1 &lt;- c(TRUE, 2)
+y2 &lt;- c('d', TRUE)
+
+# Coerción Explícita: se usa la funcion as.
+
+x &lt;- 0:8
+class(x)</code></pre>
+<pre><code>[1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>y &lt;- as.numeric(x)
+z &lt;- as.logical(x)
+q &lt;- as.character(x)
+
+# Alguna veces cuando R, no puede hacer coerción a un objeto el resultado que produce `NA`.
+
+d &lt;- c(&quot;a&quot; , &quot;b&quot;, &quot;c&quot;)
+as.numeric(d)</code></pre>
+<pre><code>Warning: NAs introducidos por coerción</code></pre>
+<pre><code>[1] NA NA NA</code></pre>
+<pre class="r"><code>as.logical(d)</code></pre>
+<pre><code>[1] NA NA NA</code></pre>
+</div>
+</div>
+<div id="listas" class="section level2">
+<h2>Listas</h2>
+<p>Las listas son un tipo especial de vector que puede contener elementos de diferentes clases. Las listas, en combinación con las funciones <strong>apply</strong> producen resultados optimos y útiles en el manejo de datos.</p>
+<p>Las listas pueden ser creadas usando la función <code>list()</code>, que toma un número arbitrario de argumentos.</p>
+<pre class="r"><code>x &lt;- list(1, 'f', TRUE)
+x1 &lt;- vector(&quot;list&quot;, length = 6)</code></pre>
 </div>
 <div id="matrices" class="section level2">
 <h2>Matrices</h2>
+<p>Las matrices son vectores con un atributo de dimension. Este atributo es así mismo un vector entero de longitud 2 (número de filas y columnas ).</p>
+<p>Las matrices puede ser creadas con las funciones <code>cbind()</code> y <code>rbind()</code>.</p>
 <pre class="r"><code>m &lt;- matrix(c(3,-4.2,-7.1,0.95),nrow=2,ncol=2)
 m</code></pre>
 <pre><code>     [,1]  [,2]
@@ -513,27 +528,27 @@ B  8 10 12</code></pre>
 A  1  1  1
 B  1  1  1</code></pre>
 <pre class="r"><code>M1 &lt;- matrix(runif(9),3,3); M1</code></pre>
-<pre><code>      [,1]  [,2]  [,3]
-[1,] 0.328 0.693 0.656
-[2,] 0.955 0.641 0.709
-[3,] 0.890 0.994 0.544</code></pre>
-<pre class="r"><code>M2 &lt;- matrix(runif(9),3,3); M2</code></pre>
 <pre><code>      [,1]  [,2]   [,3]
-[1,] 0.594 0.963 0.7955
-[2,] 0.289 0.902 0.0246
-[3,] 0.147 0.691 0.4778</code></pre>
+[1,] 0.957 0.573 0.2461
+[2,] 0.453 0.103 0.0421
+[3,] 0.678 0.900 0.3279</code></pre>
+<pre class="r"><code>M2 &lt;- matrix(runif(9),3,3); M2</code></pre>
+<pre><code>      [,1]  [,2]  [,3]
+[1,] 0.955 0.641 0.709
+[2,] 0.890 0.994 0.544
+[3,] 0.693 0.656 0.594</code></pre>
 <pre class="r"><code>M3 &lt;- M1 %*% M2; M3</code></pre>
 <pre><code>      [,1] [,2]  [,3]
-[1,] 0.492 1.39 0.591
-[2,] 0.857 1.99 1.114
-[3,] 0.896 2.13 0.992</code></pre>
+[1,] 1.593 1.34 1.136
+[2,] 0.553 0.42 0.402
+[3,] 1.674 1.54 1.164</code></pre>
 <pre class="r"><code>t(M1)</code></pre>
-<pre><code>      [,1]  [,2]  [,3]
-[1,] 0.328 0.955 0.890
-[2,] 0.693 0.641 0.994
-[3,] 0.656 0.709 0.544</code></pre>
+<pre><code>      [,1]   [,2]  [,3]
+[1,] 0.957 0.4533 0.678
+[2,] 0.573 0.1029 0.900
+[3,] 0.246 0.0421 0.328</code></pre>
 <pre class="r"><code>det(M1)</code></pre>
-<pre><code>[1] 0.209</code></pre>
+<pre><code>[1] 0.0105</code></pre>
 <pre class="r"><code>A &lt;- matrix(1:4, 2,2)
 B &lt;- matrix(5:8, 2, 2)
 
@@ -578,10 +593,10 @@ D</code></pre>
 <h2>Algo de LAPACK</h2>
 <pre class="r"><code>M1_inv &lt;- solve(M1)
 solve(solve(M1))</code></pre>
-<pre><code>      [,1]  [,2]  [,3]
-[1,] 0.328 0.693 0.656
-[2,] 0.955 0.641 0.709
-[3,] 0.890 0.994 0.544</code></pre>
+<pre><code>      [,1]  [,2]   [,3]
+[1,] 0.957 0.573 0.2461
+[2,] 0.453 0.103 0.0421
+[3,] 0.678 0.900 0.3279</code></pre>
 <pre class="r"><code>identical(M1, solve(solve(M1)))</code></pre>
 <pre><code>[1] FALSE</code></pre>
 <pre class="r"><code>all.equal(M1, solve(solve(M1)))</code></pre>
@@ -608,15 +623,15 @@ x</code></pre>
 
 eigen(M1)</code></pre>
 <pre><code>$values
-[1]  2.128+0.000i -0.308+0.058i -0.308-0.058i
+[1]  1.4059+0.0000i -0.0091+0.0859i -0.0091-0.0859i
 
 $vectors
-          [,1]          [,2]          [,3]
-[1,] -0.468+0i -0.472+0.266i -0.472-0.266i
-[2,] -0.606+0i  0.716+0.000i  0.716+0.000i
-[3,] -0.643+0i -0.322-0.300i -0.322+0.300i</code></pre>
+         [,1]          [,2]          [,3]
+[1,] 0.701+0i -0.039-0.101i -0.039+0.101i
+[2,] 0.265+0i -0.318+0.165i -0.318-0.165i
+[3,] 0.662+0i  0.927+0.000i  0.927+0.000i</code></pre>
 <pre class="r"><code>eigen(M1)$values</code></pre>
-<pre><code>[1]  2.128+0.000i -0.308+0.058i -0.308-0.058i</code></pre>
+<pre><code>[1]  1.4059+0.0000i -0.0091+0.0859i -0.0091-0.0859i</code></pre>
 <pre class="r"><code># Ejemplo: Los autovalores de una matriz hermitiana son reales
 # y sus autovectores son ortonormales 
 
@@ -712,6 +727,9 @@ outer(y, x, &quot;^&quot;)</code></pre>
 8 8 64 512 4096 32768 262144 2097152 16777216 1.34e+08</code></pre>
 <div id="vectores-y-data-frames" class="section level2">
 <h2>Vectores y data frames</h2>
+<p>Los data frames son usados para almacenar datos tabulares en R. El paquete <code>dplyr</code> tiene un conjunto de funciones optimizadas para trabajar con data frames. Los data frames son representadas como un tipo especial de lista donde cada elemento de la lista tiene la misma longitud. Cada elemento de la lista puede ser visto como una columna y la longitud de cada elemento de la lista como el número de filas.</p>
+<p>A diferencia de las matrices, los data frames pueden almacenar diferentes clases de elementos en cada columna. En adición al nombre de las columnas (predictors) los data frames tienen un atributo especial llamado <code>row.names</code> que indica la información de las filas en el data frame.</p>
+<p>Los data frames pueden ser creados explicitamente con la función <code>data.frame()</code> o puede usar coerción con otros tipos de objetos como las listas. Los data frames pueden ser convertidos a matrices con la función <code>data.matrix()</code>.</p>
 <pre class="r"><code>v1&lt;- c(59, 55, 53.5, 55, 52.5, 57.5, 53, 55)
 v1[1]</code></pre>
 <pre><code>[1] 59</code></pre>
@@ -820,36 +838,26 @@ Dfrm</code></pre>
 7 53.0 20.6 32.5 15.6
 8 55.0 21.5   NA 15.7</code></pre>
 </div>
-<div id="estructuras-de-control" class="section level2">
-<h2>Estructuras de control</h2>
-<div id="if-else" class="section level3">
-<h3>if-else</h3>
-<pre class="r"><code>## Generando un numero aleatorio uniforme
-
-x &lt;- runif(1, 0, 10)
-if(x &gt;3){
-  y &lt;- &quot;Hola R&quot;
-}else {
-  y &lt;-&quot;Hola Python&quot;
-}</code></pre>
-</div>
-</div>
-<div id="for" class="section level2">
-<h2>for</h2>
-<pre class="r"><code>for(i in 1:8){
-  print(i)
-}</code></pre>
-<pre><code>[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
-[1] 6
-[1] 7
-[1] 8</code></pre>
-</div>
 <div id="consiguiendo-datos-en-y-fuera-de-r" class="section level2">
 <h2>Consiguiendo datos en y fuera de R</h2>
+<p>Existen una cantidad importante de funciones para leer datos en R:</p>
+<ul>
+<li><code>read.table, read.csv</code>, para leer datos tabulares.</li>
+<li><code>readlines</code>, para leer lineas de archivo de texto.</li>
+<li><code>source</code>, para leer código fuente en R.</li>
+<li><code>dget</code> para leer código fuente en R.</li>
+<li><code>load</code> para leer workspaces de R.</li>
+<li><code>unserialize</code>, para leer objetos en R, de formato binario.</li>
+</ul>
+<p>También existen funciones para escribir datos:</p>
+<ul>
+<li><code>write.table</code>, para escribir datos tabulares en archivos de texto y conexiones.</li>
+<li><code>save</code>, para guardar un número arbitrario de objetos en formato binario.</li>
+<li><code>writeLines</code>, es para escribir lineas de datos (caracteres) en archivo o conexión.</li>
+<li><code>dump</code>, lanza representaciones textuales de múltiples objetos de R.</li>
+<li><code>serialize</code>, es para convertir un objeto R, en formato binario y mostrarlo en un archivo o conexión-</li>
+<li><code>dput</code>, es para la salida de representación textual de objetos en R.</li>
+</ul>
 <pre class="r"><code># Adquiriendo data en R
 
 # Usando la funcion read.csv() para importar
@@ -904,10 +912,53 @@ S1F1 &lt;- S1F[S1$Location == 1, ]
                    
 Ord1 &lt;- order(S1$Month)
 S1[Ord1, ]
-S1</code></pre>
+S1
+
+S1$fLocation &lt;- factor(S1$Location)
+S1$fSex &lt;- factor(S1$Sex,labels=c(&quot;M&quot;,&quot;F&quot;))
+S1$fSex
+
+names(S1)
+
+S1$fLocation &lt;- factor(S1$Location,
+                    levels = c(2, 3, 1, 4))
+S1$fLocation
+
+
+Sq1 &lt;- read.table(file = &quot;squid1.txt&quot;, header = TRUE)
+Sq2 &lt;- read.table(file = &quot;squid2.txt&quot;, header = TRUE)
+Sq3 &lt;- merge(Sq1, Sq2, by = &quot;Sample&quot;)
+
+
+Sq3 &lt;- merge(Sq1, Sq2, by = &quot;Sample&quot;, all= TRUE)
+Sq3[1:14,]
+
+S1$fSex &lt;- factor(S1$Sex, labels = c(&quot;M&quot;, &quot;F&quot;))
+S1$fLocation &lt;- factor(S1$Location)
+str(S1)
+
+S1[S1$Location == 1 &amp; S1$Year == 1, ]
+
+
+S4 &lt;- S1[S1$Sex == 1, ]
+write.table(S4,
+     file = &quot;MaleSquid.txt&quot;,
+     sep=&quot; &quot;, quote = FALSE, append = FALSE, na = &quot;NA&quot;)
+     
+write.table(S4,
+     file = &quot;MaleSquid.txt&quot;,
+     sep=&quot;,&quot;, quote = TRUE, append = FALSE, na = &quot;NA&quot;)
+
+write.table(S4,
+     file = &quot;MaleSquid.txt&quot;,
+     sep=&quot; &quot;, quote = TRUE, append = TRUE, na = &quot;NA&quot;)</code></pre>
 </div>
 <div id="manipulacion-de-factores" class="section level2">
 <h2>Manipulación de Factores</h2>
+<p>Los factores son usados para representar <em>datos categoricos</em> y pueden ser ordenados o no ordenados. Un factor pueder ser considerado como un vector entero donde cada entero tiene una etiqueta (<em>label</em>).</p>
+<p>Los factores son importantes en modelamiento estadístico y son usados por las funciones de modelamiento <code>lm()</code> o <code>glm()</code>.</p>
+<p>Usar factores con etiquetas es mejor que usar enteros ya que los factores son autodescriptivos. Por ejemplo tener dos variables con los valores <code>R</code> y <code>Python</code> es mejor que tener variables con los valores 1 y 2.</p>
+<p>Los objetos factores pueden ser creados con la función <code>factor()</code>.</p>
 <pre class="r"><code>char.obj &lt;- &quot;abecedario&quot;
 
 # Creando una variable factor usando la funcion substring().
@@ -1004,6 +1055,114 @@ table(num.to.factor2)</code></pre>
  [97] (-1.37,-0.389] (0.592,1.57]   (0.592,1.57]   (1.57,2.55]   
 5 Levels: (-2.35,-1.37] (-1.37,-0.389] (-0.389,0.592] ... (1.57,2.55]</code></pre>
 </div>
+<div id="formato-textual-para-almacenar-datos" class="section level2">
+<h2>Formato textual para almacenar datos</h2>
+<p>Aquí hacemos uso de las funciones <code>dump()</code> y <code>dput()</code> para crear representaciones descriptivas de objetos, que entre sus características preserva la metadata.</p>
+<pre class="r"><code>### Creamos un data frame
+df1 &lt;- data.frame(a=2, b =&quot;c&quot;)
+dput(df1)  # Forma de code R, preservando metadata</code></pre>
+<pre><code>structure(list(a = 2, b = structure(1L, .Label = &quot;c&quot;, class = &quot;factor&quot;)), .Names = c(&quot;a&quot;, 
+&quot;b&quot;), row.names = c(NA, -1L), class = &quot;data.frame&quot;)</code></pre>
+<pre class="r"><code># Guardemos la salida en un archivo
+
+dput(df1, file = &quot;df1.R&quot;)
+
+# Leemos la salida de dput 
+
+n.df1 &lt;- dget(&quot;df1.R&quot;)
+
+
+# Multiples objetos
+
+x &lt;- &quot;python&quot;
+y &lt;- data.frame(a =2L, b =&quot;d&quot;)
+
+# Pasamos a un archivo los objetos con dump()
+dump(c(&quot;x&quot;,&quot;y&quot;), file=&quot;df2.R&quot;)
+rm(x,y)
+
+# El inverso de dump() es source
+
+source(&quot;df2.R&quot;)
+str(y)</code></pre>
+<pre><code>'data.frame':   1 obs. of  2 variables:
+ $ a: int 2
+ $ b: Factor w/ 1 level &quot;d&quot;: 1</code></pre>
+</div>
+<div id="formato-binario-para-almacenar-datos" class="section level2">
+<h2>Formato binario para almacenar datos</h2>
+<p>Aquí hacemos uso de las funciones <code>save()</code> y <code>save.image()</code> y <code>serialize</code> para convertir objetos de R en formato binario. Objetos individuales pueden ser guardados con la función <code>save()</code>.</p>
+<pre class="r"><code>a &lt;- data.frame(x = rnorm(50), y = runif(50))
+b &lt;- c(3, 5.6, 1/4)
+
+# Guardamos los a y b en un archivo
+save(a, b, file=&quot;df3.rda&quot;)
+
+# Cargamos a y b en el workspac
+load(&quot;df3.rda&quot;)
+
+# Guardamos todo en un archivo (si hay muchos objetos)
+save.image(file=&quot;df3.RData&quot;)
+load(&quot;df3.RData&quot;)
+
+# serialize(). no perdemos precision o metadata
+
+x &lt;- list(1,2,3)
+serialize(x,NULL)</code></pre>
+<pre><code> [1] 58 0a 00 00 00 02 00 03 02 05 00 02 03 00 00 00 00 13 00 00 00 03 00
+[24] 00 00 0e 00 00 00 01 3f f0 00 00 00 00 00 00 00 00 00 0e 00 00 00 01
+[47] 40 00 00 00 00 00 00 00 00 00 00 0e 00 00 00 01 40 08 00 00 00 00 00
+[70] 00</code></pre>
+</div>
+<div id="interfaces" class="section level2">
+<h2>Interfaces</h2>
+<p>La data es leida usando interfaces de conexión.</p>
+<ul>
+<li><code>file</code>, se utiliza para conexiones con archivos.</li>
+<li><code>url</code>, para realizar conexiones a paginas web.</li>
+<li><code>gzfile</code>.</li>
+<li><code>bzfile</code>.</li>
+</ul>
+<pre class="r"><code>str(file)</code></pre>
+<pre><code>function (description = &quot;&quot;, open = &quot;&quot;, blocking = TRUE, encoding = getOption(&quot;encoding&quot;), 
+    raw = FALSE)  </code></pre>
+<pre class="r"><code># Creamos una conexion a Svm.txt
+svm &lt;- file(&quot;Svm.txt&quot;)
+
+# Abrimos una conexion a Svm.txt en modo lectura
+open(svm, &quot;r&quot;)
+
+# Leemos desde la conexion
+
+svm1 &lt;- read.csv(svm)
+
+# cerramos la conexion
+close(svm)
+
+# Utilizamos readLines()
+
+bosquecito &lt;- file(&quot;bosques.txt&quot;)
+x &lt;- readLines(bosquecito)
+x</code></pre>
+<pre><code>[1] &quot;Random forest (o random forests) también conocidos en castellano como '\&quot;Selvas Aleatorias\&quot;' es una combinación de árboles predictores tal que cada árbol depende de los valores de un vector aleatorio probado independientemente y con la misma distribución para cada uno de estos. Es una modificación sustancial de bagging que construye una larga colección de árboles no correlacionados y luego los promedia.&quot;</code></pre>
+<pre class="r"><code># Abrimos una coleccion URL para leer una pagina
+
+pag &lt;- url(&quot;https://www.openintro.org/stat/&quot;, &quot;r&quot;)
+
+# Leemos la pagina web
+pag1&lt;- readLines(pag)</code></pre>
+<pre><code>Warning in readLines(pag): incomplete final line found on 'https://
+www.openintro.org/stat/'</code></pre>
+<pre class="r"><code># Imprimos las primera lineas
+
+head(pag1)</code></pre>
+<pre><code>[1] &quot;&lt;!DOCTYPE html&gt;&lt;html lang=\&quot;en\&quot;&gt;&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+[2] &quot;\t&lt;head&gt;&lt;meta charset=\&quot;utf-8\&quot;&gt;&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+[3] &quot;\t&lt;meta http-equiv=\&quot;X-UA-Compatible\&quot; content=\&quot;IE=edge,chrome=1\&quot;&gt;&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+[4] &quot;\t&lt;script type=\&quot;text/javascript\&quot; src=\&quot;//use.typekit.net/stg1oei.js\&quot;&gt;&lt;/script&gt;&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+[5] &quot;\t&lt;script type=\&quot;text/javascript\&quot;&gt;try{Typekit.load();}catch(e){}&lt;/script&gt;&quot;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+[6] &quot;\t&lt;title&gt;OpenIntro&lt;/title&gt;&lt;link href=\&quot;/pp/css013.css\&quot; type=\&quot;text/css\&quot; rel=\&quot;stylesheet\&quot; /&gt;&lt;link href=\&quot;/pp/cssGeneral007.css\&quot; type=\&quot;text/css\&quot; rel=\&quot;stylesheet\&quot; /&gt;&lt;link href=\&quot;/pp/cssSubjects005.css\&quot; type=\&quot;text/css\&quot; rel=\&quot;stylesheet\&quot; /&gt;&lt;link href=\&quot;/pp/cssSubjects/cssStat009.css\&quot; type=\&quot;text/css\&quot; rel=\&quot;stylesheet\&quot; /&gt;&lt;link href=\&quot;/pp/cssSubjects/cssStatWhy05_001.css\&quot; type=\&quot;text/css\&quot; rel=\&quot;stylesheet\&quot; /&gt;&lt;link rel=\&quot;shortcut icon\&quot; href=\&quot;../img/brand/favicon.ico\&quot; /&gt;&lt;script src=\&quot;/pp/plugins/angular.min_1.5.3.js\&quot;&gt;&lt;/script&gt;&lt;script&gt;&quot;</code></pre>
+</div>
 <div id="subindices-y-subconjuntos" class="section level2">
 <h2>Subindices y subconjuntos</h2>
 <pre class="r"><code># Creando un vector de 10 elementos
@@ -1062,6 +1221,123 @@ list.obj$dat</code></pre>
 3  8  3
 4  9  5
 5  1  9</code></pre>
+</div>
+<div id="estructuras-de-control" class="section level2">
+<h2>Estructuras de control</h2>
+<div id="if-else" class="section level3">
+<h3>if-else</h3>
+<pre class="r"><code>## Generando un numero aleatorio uniforme
+
+x &lt;- runif(1, 0, 10)
+if(x &gt;3){
+  y &lt;- &quot;Hola R&quot;
+}else {
+  y &lt;-&quot;Hola Python&quot;
+}</code></pre>
+</div>
+</div>
+<div id="for" class="section level2">
+<h2>for</h2>
+<pre class="r"><code>for(i in 1:8){
+  print(i)
+}</code></pre>
+<pre><code>[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8</code></pre>
+<pre class="r"><code>x &lt;- c(&quot;Python&quot;, &quot;R&quot;, &quot;JS&quot;, &quot;C++&quot;, &quot;Java&quot;)
+for(i in 1:5)
+  print(x[i])</code></pre>
+<pre><code>[1] &quot;Python&quot;
+[1] &quot;R&quot;
+[1] &quot;JS&quot;
+[1] &quot;C++&quot;
+[1] &quot;Java&quot;</code></pre>
+<pre class="r"><code>for (i in seq_along(x)){
+  print(x[i])
+}</code></pre>
+<pre><code>[1] &quot;Python&quot;
+[1] &quot;R&quot;
+[1] &quot;JS&quot;
+[1] &quot;C++&quot;
+[1] &quot;Java&quot;</code></pre>
+<pre class="r"><code>for (leng in x){
+  print(leng)
+}</code></pre>
+<pre><code>[1] &quot;Python&quot;
+[1] &quot;R&quot;
+[1] &quot;JS&quot;
+[1] &quot;C++&quot;
+[1] &quot;Java&quot;</code></pre>
+<pre class="r"><code># for anidados
+
+x &lt;- matrix(1:6, 3, 2)
+
+for (i in seq_len(nrow(x))){
+  for (j in seq_len(ncol(x))){
+    print(x[i,j])
+  }
+}</code></pre>
+<pre><code>[1] 1
+[1] 4
+[1] 2
+[1] 5
+[1] 3
+[1] 6</code></pre>
+</div>
+<div id="while" class="section level2">
+<h2>While</h2>
+<pre class="r"><code>cont &lt;- 0
+while(cont &lt;- 10){
+  print(cont)
+  cont &lt;- cont*2
+}
+
+# Otro ejemplo
+
+z&lt;- 5
+set.seed(1)
+
+while(z&gt;=3 &amp;&amp; z&lt;=10){
+  b &lt;- rbinom(1,1,0.5)
+  
+  if(b ==1){
+    z &lt;- z + 1
+  }else{
+    z &lt;- z-1
+  }
+}
+print(z)</code></pre>
+<div id="variables-de-entorno" class="section level3">
+<h3>Variables de entorno</h3>
+<pre class="r"><code># Encuentra todas las variables en el entorno R. 
+ls()</code></pre>
+<pre><code> [1] &quot;a&quot;              &quot;A&quot;              &quot;A1&quot;             &quot;A2&quot;            
+ [5] &quot;A_inv&quot;          &quot;b&quot;              &quot;B&quot;              &quot;bosquecito&quot;    
+ [9] &quot;char.obj&quot;       &quot;d&quot;              &quot;D&quot;              &quot;df1&quot;           
+[13] &quot;df2&quot;            &quot;Dfrm&quot;           &quot;Dmat&quot;           &quot;Dmat2&quot;         
+[17] &quot;err&quot;            &quot;escalar&quot;        &quot;factor.obj1&quot;    &quot;factor.obj2&quot;   
+[21] &quot;i&quot;              &quot;Id&quot;             &quot;Id1&quot;            &quot;j&quot;             
+[25] &quot;leng&quot;           &quot;list.obj&quot;       &quot;m&quot;              &quot;m1&quot;            
+[29] &quot;M1&quot;             &quot;M1_inv&quot;         &quot;M2&quot;             &quot;m3&quot;            
+[33] &quot;M3&quot;             &quot;MH&quot;             &quot;MHval&quot;          &quot;MHvec&quot;         
+[37] &quot;n&quot;              &quot;n.df1&quot;          &quot;num.to.factor&quot;  &quot;num.to.factor1&quot;
+[41] &quot;num.to.factor2&quot; &quot;numvar&quot;         &quot;p&quot;              &quot;pag&quot;           
+[45] &quot;pag1&quot;           &quot;q&quot;              &quot;r&quot;              &quot;S.v1&quot;          
+[49] &quot;svm&quot;            &quot;svm1&quot;           &quot;t&quot;              &quot;triple&quot;        
+[53] &quot;u&quot;              &quot;v&quot;              &quot;v1&quot;             &quot;v2&quot;            
+[57] &quot;v3&quot;             &quot;v4&quot;             &quot;v5&quot;             &quot;vec10&quot;         
+[61] &quot;vecnorm&quot;        &quot;v_nombres&quot;      &quot;w&quot;              &quot;W&quot;             
+[65] &quot;x&quot;              &quot;x1&quot;             &quot;y&quot;              &quot;y1&quot;            
+[69] &quot;y2&quot;             &quot;z&quot;              &quot;Z&quot;             </code></pre>
+<pre class="r"><code># Remueve todas las variables y mucho otros objetos
+
+rm(list = ls())</code></pre>
+</div>
 </div>
 </div>
 
