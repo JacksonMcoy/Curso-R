@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+
+\title{Pr\'actica 1 de laboratorio  de  R}
+
+
+\author{Curso: Introducci\'on a la Estad\'istica y Probabilidades CM-274}
+\date{}
+\maketitle
+
+\vspace{0.3cm}
+
+
+\textbf{Lectura Importante }
+\begin{enumerate}
+\item Libro de Ani Adhikari y John DeNero, llamado \textit{Computational and Inferential Thinking} acerca de temas importantes de ciencia de datos.
+\url{http://www.inferentialthinking.com/}.
+\end{enumerate}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.2cm}
+
+{\Large Preguntas }
+
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+\item Escribe expresiones en $\textbf{R}$ que generen vectores conteniendo las siguientes secuencias de vectores.
+\begin{itemize}
+\item Las primeras $50$ potencias de  $3$, empezando por $3^1$.
+\item $1, 2^2,3, 4^2, 5, 6^2, \dots 99, 100^2$.
+\item $1,-1, 2, -1, 3, -1, \dots, 20, -1$.
+\end{itemize}
+
+\item Reproduce el siguiente c\'odigo fuente en R, para mostrar  la siguiente  tabla de probabilidad de la \texttt{distribuci\'on est\'andar normal}. Explica el uso de la funci\'on \texttt{outer()}.
+<<f2, prompt =TRUE, comment =NA, eval=FALSE>>=
+id <- 0:4
+dn <- seq(0, .8, by =.2)
+p = outer(id, dn, function(x,y) pnorm(x + y))
+dimnames(p) = list(z = id, "Primer lugar decimal de z " = dn)
+p = round(p, 5)
+@
+
+\item 
+\begin{enumerate}
+\item Considere la siguiente curiosidad
+
+\begin{align*}
+8 \times 8 + 13 &= 77 \\
+8 \times 88 + 13 &= 717 \\
+8 \times 888 + 13 &= 7117 \\
+8 \times 8888 + 13 &= 71117 \\
+8 \times 8888 + 13 &= 711117 \\
+\mbox{etc.}
+\end{align*}
+Escribe c\'odigo R, que verifica las $10$ primeras ecuaciones, imprimiendo los resultados, usando la f\'ormula dada usando el bucle \texttt{for}.
+\end{enumerate}
+
+\item Considera el siguiente problema: Dada una matriz num\'erica $X$, determinar el \'indice de la primera fila cuyos elementos son todos n\'umeros positivos (y que no contiene NA valores).
+Resuelve este problema usando un bucle \texttt{for}.
+
+Sugerencia: usa las funci\'on \texttt{all} y \texttt{is.na()}
+
+\item El conjunto de datos \textit{iris} contiene las medidas de la longitud y el ancho (en cm) de p\'etalos y s\'epalos de tres especies: \texttt{1: Setosa, 2: versicolor y 3: Virginica}. 
+
+\begin{enumerate}
+\item Considera el objeto \textit{iris}. ?` Como est\'a estructurado?. ?` Cuantas observaciones(lineas) contiene?. ?` Cuantas variables (columnas) contiene?.
+\item Para tener una visi\'on general del conjunto de valores, utiliza la funci\'on  \texttt{summary()} del conjunto de dato. ?`Qu\'e informaci\'on sobre el conjunto de datos proporciona?.
+\item Para la variable \texttt{Sepal.Length} verifica los resultados dados, usando las funciones \texttt{min(), max(), mean(), median(), quantile()}. Si es necesario usa la ayuda \texttt{?quantile}.
+\end{enumerate}
+
+\item Supongamos que $x$ es un vector num\'erico. \textbf{Explica en detalle}, como las siguientes expresiones son evaluadas y que valores toman
+
+<<foo1, comment = NA, prompt =TRUE, eval= FALSE>>=
+sum(!is.na(x))
+c(x,x[-(1:length(x))])
+x[length(x) + 1]/length(x)
+sum(x > mean(x))
+@
+
+\item Corre el siguiente c\'odigo
+
+<<foo2, comment = NA, prompt =TRUE, eval= FALSE>>=
+genero <- factor(c(rep("f", 91), rep("m", 92)))
+table(genero)
+genero <- factor(genero, levels=c("m", "f"))
+table(genero)
+genero <- factor(genero, levels=c("M", "f")) 
+table(genero)
+ rm(genero)   
+@
+Explica la salida y explica los n\'umeros que aparecen.
+
+\item La  funci\'on \texttt{dim()} devuelve las dimensiones (un vector que tiene el n\'umero de filas entonces el n\'umero de columnas) de  matrices y data frames. Utilice esta funci\'on para encontrar el n\'umero de filas de los data frames de \texttt{tinting, possum} y \texttt{possumsites} del paquete \texttt{DAAG}. 
+
+\item Datos del siguiente formato son almacenados en un archivo llamado \texttt{cdata.txt}(2 puntos)
+
+\begin{verbatim}
+2011-03-25 44 wet
+2011-07-03 14 wet
+2011-03-27 20 dry
+2011-12-31 59 wet
+2011-10-31 87 wet
+2011-04-02 49 dry
+2011-12-12 76 dry
+2011-07-05 40 dry
+2011-03-29 8 wet
+2011-08-29 9 dry
+2011-12-04 21 wet
+2011-05-20 10 dry
+2011-08-02 71 wet
+2011-08-18 34 wet
+2011-01-22 58 dry
+2011-11-27 48 wet
+2011-07-08 32 dry
+2011-12-10 11 dry
+2011-08-27 90 dry
+\end{verbatim}
+
+\begin{enumerate}
+\item Escribe c\'odigo R para producir un data frame llamado \texttt{cdata} conteniendo las variables \texttt{data, conteo} y \texttt{clima}. Las variables deben tener sus respectivos tipos: \texttt{'character', 'numeric', 'factor'}.
+\item Escribe c\'odigo R que reordene las filas del data frame tal que la variable \texttt{conteo } est\'e en orden ascendente.
+\end{enumerate}
+\end{document}
