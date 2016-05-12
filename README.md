@@ -58,6 +58,10 @@ El proyecto [Anaconda](https://www.continuum.io/downloads) ha creado [R Essentia
 c-lara@Lara:~$ conda install -c r r-essentials
 ``` 
 
+### Jupyter nbviewer
+
+[Jupyter nbviewer](https://nbviewer.jupyter.org/)  es un servicio web gratuito que te permite compartir las versiones de archivos realizados por Jupyter, permitiendo el renderizado de diversos fórmatos incluyendo, código latex.
+
 ### R y Rstudio
 
 [R](https://www.cran.r-project.org/) y [RStudio](https://www.rstudio.com/) . RStudio es un IDE para R. Es software libre con licencia GPLv3 y se puede ejecutar sobre distintas plataformas  o incluso desde la web usando [RStudio Server](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started).
