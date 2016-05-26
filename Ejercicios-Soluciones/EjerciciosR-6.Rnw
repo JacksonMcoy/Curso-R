@@ -85,20 +85,17 @@ p = round(p, 5)
 \end{align*}
 Escribe c\'odigo R, que verifica las $10$ primeras ecuaciones, imprimiendo los resultados, usando la f\'ormula dada usando el bucle \texttt{for}.
 \end{enumerate}
-
 \item Considera el siguiente problema: Dada una matriz num\'erica $X$, determinar el \'indice de la primera fila cuyos elementos son todos n\'umeros positivos (y que no contiene NA valores).
 Resuelve este problema usando un bucle \texttt{for}.
 
 Sugerencia: usa las funci\'on \texttt{all} y \texttt{is.na()}
 
 \item El conjunto de datos \textit{iris} contiene las medidas de la longitud y el ancho (en cm) de p\'etalos y s\'epalos de tres especies: \texttt{1: Setosa, 2: versicolor y 3: Virginica}. 
-
 \begin{enumerate}
 \item Considera el objeto \textit{iris}. ?` Como est\'a estructurado?. ?` Cuantas observaciones(lineas) contiene?. ?` Cuantas variables (columnas) contiene?.
 \item Para tener una visi\'on general del conjunto de valores, utiliza la funci\'on  \texttt{summary()} del conjunto de dato. ?`Qu\'e informaci\'on sobre el conjunto de datos proporciona?.
 \item Para la variable \texttt{Sepal.Length} verifica los resultados dados, usando las funciones \texttt{min(), max(), mean(), median(), quantile()}. Si es necesario usa la ayuda \texttt{?quantile}.
 \end{enumerate}
-
 \item Supongamos que $x$ es un vector num\'erico. \textbf{Explica en detalle}, como las siguientes expresiones son evaluadas y que valores toman
 
 <<foo1, comment = NA, prompt =TRUE, eval= FALSE>>=
@@ -107,8 +104,7 @@ c(x,x[-(1:length(x))])
 x[length(x) + 1]/length(x)
 sum(x > mean(x))
 @
-
-\item Corre el siguiente c\'odigo
+\item Ejecuta  el siguiente c\'odigo
 
 <<foo2, comment = NA, prompt =TRUE, eval= FALSE>>=
 genero <- factor(c(rep("f", 91), rep("m", 92)))
@@ -119,9 +115,11 @@ genero <- factor(genero, levels=c("M", "f"))
 table(genero)
  rm(genero)   
 @
+
 Explica la salida y explica los n\'umeros que aparecen.
 
 \item La  funci\'on \texttt{dim()} devuelve las dimensiones (un vector que tiene el n\'umero de filas entonces el n\'umero de columnas) de  matrices y data frames. Utilice esta funci\'on para encontrar el n\'umero de filas de los data frames de \texttt{tinting, possum} y \texttt{possumsites} del paquete \texttt{DAAG}. 
+
 
 \item Datos del siguiente formato son almacenados en un archivo llamado \texttt{cdata.txt}(2 puntos)
 
@@ -146,9 +144,9 @@ Explica la salida y explica los n\'umeros que aparecen.
 2011-12-10 11 dry
 2011-08-27 90 dry
 \end{verbatim}
-
 \begin{enumerate}
 \item Escribe c\'odigo R para producir un data frame llamado \texttt{cdata} conteniendo las variables \texttt{data, conteo} y \texttt{clima}. Las variables deben tener sus respectivos tipos: \texttt{'character', 'numeric', 'factor'}.
 \item Escribe c\'odigo R que reordene las filas del data frame tal que la variable \texttt{conteo } est\'e en orden ascendente.
+\end{enumerate}
 \end{enumerate}
 \end{document}
