@@ -110,6 +110,8 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 
 9 .`ggplot2:` Elegant Graphics for Data Analysis, Hadley Wickham, Springer, 2009.
 
+10 . An Introduction to Statistical Learning: with applications in R, Gareth James, Trevor Hastie, Robert Tibshirani, Daniel Witten, Springer, 2015
+
 ### Notas online
 
 1 .El pequeño Libro de Inferencia Estadística. https://leanpub.com/LittleInferenceBook/read.
@@ -122,7 +124,7 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 
 5 .El mundo de R, en este blog: http://www.r-bloggers.com/.
 
-6 .Libro de Programación de R de Hadley Wickham: http://adv-r.had.co.nz/
+6 .Advanced R: http://adv-r.had.co.nz/
 
 7 .Step by Step Guide to Learn Data Science on R: http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/.
 
