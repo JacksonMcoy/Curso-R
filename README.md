@@ -91,7 +91,7 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 
 ###Libros de texto
 
-1 .ggplot2 Essentials, Donato Teutonico, Packt open source, 2015.
+1 .`gplot2 Essentials`, Donato Teutonico, Packt open source, 2015.
 
 2 .R for Data science, Dan Toomey, Packt open source, 2014.
 
@@ -107,6 +107,8 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 7 .R for Programmers: Mastering the Tools,  Dan Zhang, CRC Press, 2016.
 
 8 .[Opcional] Introducción a la Computación, J. Glenn Brookshear, Pearson, 2012.
+
+9. `ggplot2:` Elegant Graphics for Data Analysis, Hadley Wickham, Springer, 2009.
 
 ### Notas online
 
