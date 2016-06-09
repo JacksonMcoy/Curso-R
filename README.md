@@ -108,7 +108,7 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 
 8 .[Opcional] Introducción a la Computación, J. Glenn Brookshear, Pearson, 2012.
 
-9. `ggplot2:` Elegant Graphics for Data Analysis, Hadley Wickham, Springer, 2009.
+9 .`ggplot2:` Elegant Graphics for Data Analysis, Hadley Wickham, Springer, 2009.
 
 ### Notas online
 
