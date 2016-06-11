@@ -139,7 +139,9 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 
 8 .Intermediate R: https://www.datacamp.com/courses/intermediate-r.
 
-9 . R for Data Science: http://r4ds.had.co.nz/
+9 .R for Data Science: http://r4ds.had.co.nz/.
+
+10 .RPubs: https://rpubs.com/, documentos de R, en Rmarkdown.
 
 
 ## Lista de artículos importantes
