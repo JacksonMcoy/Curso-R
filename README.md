@@ -143,7 +143,7 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 
 10 .RPubs: https://rpubs.com/, documentos de R, en Rmarkdown.
 
-11 .Efficient R programming: https://csgillespie.github.io/efficientR
+11 .Efficient R programming: https://csgillespie.github.io/efficientR.
 
 
 ## Lista de artículos importantes
