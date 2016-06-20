@@ -1,0 +1,261 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{bigints}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+
+\title{Pr\'actica 3 de laboratorio  de  R}
+
+
+\author{Curso: Introducci\'on a la Estad\'istica y Probabilidades CM-274}
+\date{}
+\maketitle
+
+\vspace{0.3cm}
+
+
+\textbf{Lecturas Importantes }
+\begin{enumerate}
+\item Una gu\'ia de ciencia de datos con  R.
+
+\url{http://www.analyticsvidhya.com/blog/2016/02/complete-tutorial-learn-data-science-scratch/}.
+\end{enumerate}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.2cm}
+
+{\Large Preguntas }
+
+
+\vspace{0.3cm}
+\begin{enumerate}
+\item Sea una definici\'on de la raiz cuadrada, definida por el m\'etodo de Newton
+
+
+<<fo2, prompt =TRUE, comment =NA, eval=FALSE>>=
+r =
+  function(x, eps = 1e-10) {
+    g = 1
+    while(abs(1 - g^2/x) > eps)
+      g = .5 * (g + x/g)
+    g
+  }
+@
+pero esta funci\'on trabaja para escalares, pero no cuando se pasa un vector
+
+\begin{verbatim}
+>r(c(1,2))
+[1] 1
+Warning message:
+In while (abs(1 - g^2/x) > eps) g = 0.5 * (g + x/g) :
+  the condition has length > 1 and only the first element will be used
+\end{verbatim}
+
+Una manera de resolver este problema es dividir el c\'alculo en dos partes; una para calcular la ra\'iz cuadrada para valores escalares y la otra usa un bucle sobre un vector
+
+<<fo3, prompt =TRUE, comment =NA, eval=FALSE>>=
+s.r =
+  function(x, eps = 1e-10) {
+    g = 1
+    while(abs(1 - g^2/x) > eps)
+    g = .5 * (g + x/g)
+  g
+}
+@
+
+<<fo4, prompt =TRUE, comment =NA, eval=FALSE>>=
+ r =
+  function(x, eps = 1e-10) {
+    ans = numeric(length(x))
+    for(i in seq(along = x))
+      ans[i] = s.r(x[i])
+  ans
+}
+@
+
+Calculando ahora los valores 
+
+<<fo5, prompt =TRUE, comment =NA, eval=FALSE>>=
+ r(c(1,2))
+@
+
+La estrategia de usar bucles funciona, pero tienden  a ser ineficientes debido a los c\'alculos que se  llevan a cabo elemento a elemento. Una estrategia alternativa es llevar a cabo el  c\'alculo de vectores en lugar de escalares. En este caso particular, podemos cambiar el c\'alculo para que funcione con  vectores como sigue
+
+\begin{itemize}
+\item Cambia la inicializaci\'on de $g$ de forma que sea un vector y no un escalar
+\begin{verbatim}
+g = rep(1, length = length(x))
+\end{verbatim}
+\item Cambiar la prueba para que los cambios de \textbf{g} continuen  hasta que todos los elementos de la respuesta se hayan calculado con una  suficiente precisi\'on.
+
+\begin{verbatim}
+while(any(abs(1 - g^2/x)) > eps))
+\end{verbatim}
+\end{itemize}
+
+Esto contin\'ua mejorando las aproximaciones de la ra\'iz cuadrada hasta que todos ellos han alcanzado el nivel de exactitud. Lleva esto a la  pr\'actica implementando los cambios en \texttt{r}  y
+probando  la funci\'on resultante.
+
+
+La estrategia de la secci\'on anterior conlleva el c\'alculo de la ra\'iz cuadrada  incluso despu\'es de que las ra\'ices cuadradas  se han determinado para  elementos de $x$. Estos c\'alculos adicionales pueden evitarse manteniendo un registro de los elementos de $x$ cuyas  ra\'ices no se calculan con la  precisi\'on suficiente y s\'olo realizando  los c\'alculos para esos elementos.
+
+\begin{verbatim}
+n.d = abs(1 - g^2/x)) > eps
+\end{verbatim}
+
+Esto puede ser hecho como parte de la prueba 
+
+\begin{verbatim}
+while(any((n.d = abs(1 - g^2/x))) > eps))
+\end{verbatim}
+
+Dentro  del bucle, los cambios pueden llevarse a cabo s\'olo en el subconjunto de \textbf{g} que necesita ser actualizado, es decir,$\texttt{g[n.d]}$. Las actualizaciones se llevan a cabo utilizando s\'olo los elementos correspondientes de \textbf{g} y $x$ , es decir, $\texttt{g[n.d]}$ y $\texttt{x [n.d]}$.
+
+\item El siguiente programa que produce?
+
+<<fo6, prompt =TRUE, comment =NA, eval=FALSE>>=
+f1 <- function(x ,k){
+  n <- length(x)
+  r <- NULL
+  for(i in 1:(n -k)){
+    if(all(x[i:i + k -1]==1))r <- c(r, i)
+  }
+  return(r)
+}
+@
+
+\begin{enumerate}
+\item Si realizamos un test
+
+<<fo7, prompt =TRUE, comment =NA, eval=FALSE>>=
+f1(c(1,0,0,1,1, 0, 1,1,1), 2)
+@
+
+y produce los valores $3 4 6 7$. Es correcto el resultado?.
+\item Utiliza la funci\'on \texttt{debug()} para utilizar \texttt{browse} y mostrar 
+\begin{itemize}
+\item Si el  vector fue recibido correctamente
+\item cuando colocamos $n$ dos veces en \texttt{browse}. Qu\'e sucede cuando colocamos $n$ tres veces en \texttt{browse}. Explica.
+\item Si $k =2$, que significa y que produce lo siguiente
+\begin{verbatim}
+Browse[2] > x[i:i + k- 1]
+\end{verbatim}
+
+\begin{verbatim}
+Browse[2] > i:i + k- 1
+\end{verbatim}
+
+\begin{verbatim}
+Browse[2] > i
+\end{verbatim}
+\begin{verbatim}
+Browse[2] > k
+\end{verbatim}
+\end{itemize}
+donde se encuentra el error, del c\'odigo inicial, si es que existe?.
+\end{enumerate}
+\item Escribimos dos funciones \texttt{primero} y \texttt{ultimo}, que extrae un n\'umero espec\'ifico de elementos desde el inicio y el final de un vector (en el orden que aparecen en el vector). Las funciones deben ser llamadas como siguen
+
+\begin{verbatim}
+primero(x , k)
+ultimo(x, k)
+\end{verbatim}
+
+donde $x$ es el  vector de  valores que son extraidos  y $k$ especifica el n\'umero de elementos a extraer. Si el argumento $k$ es omitido en una de las llamadas, debe tomar por valor por defecto $1$.
+
+\begin{enumerate}
+\item Asumiendo que $k \leq \texttt{length(x)}$, escribimos versiones (lo m\'as simples) de las funciones dadas anteriormente.
+\item Modifica las funciones (a) de manera que  si $k > \texttt{length(x)}$ entonces estas funciones deberian retornar los valores en $x$.
+\item Modifica las funciones (a) de manera que si $k > \texttt{length(x)}$ las funciones retornan los $k$ valores, si no hay valores existentes estos deben ser \texttt{NA}.
+\end{enumerate}
+\item Para $n >2$, la densidad \texttt{chi-cuadrado} tiene un m\'aximo valor. Escribe c\'odigo R, que usa la funci\'on \texttt{optimise} para localizar el m\'aximo de la densidad para un valor $n >2$.
+\item El siguiente c\'odigo define una funci\'on para la clase \texttt{palette}
+<<fo8, prompt =TRUE, comment =NA, eval=TRUE>>=
+palette <- function(r, g, b, max=1) {
+  p <- list(colours=cbind(r, g, b), max=max)
+  class(p) <- "palette"
+  p
+}
+@
+
+Ejemplos de la funci\'on son mostrados a continuaci\'on 
+
+<<fo9, prompt =TRUE, comment =NA, eval=TRUE>>=
+palette(1, 0, 0)
+@
+<<fo10, prompt =TRUE, comment =NA, eval=TRUE>>=
+ palette(0:3, 0, 0, max=3)
+@
+
+\begin{enumerate}
+\item Escribe una funci\'on que imprima los colores usando la funci\'on \texttt{rgb()}. Por ejemplo
+\begin{verbatim}
+palette(1, 0, 0)
+[1] "#FF0000"
+\end{verbatim}
+\begin{verbatim}
+palette(0:3, 0, 0, max=3)
+[1] "#000000" "#550000" "#AA0000" "#FF0000"
+\end{verbatim}
+\item Escribe una funci\'on que retorne un objeto conteniendos los colores seleccionados. Por ejemplo
+\begin{verbatim}
+palette(0:3, 0, 0, max=3)[1]
+[1] "#000000"
+\end{verbatim}
+\begin{verbatim}
+ palette(0:3, 0, 0, max=3)[2:3]
+[1] "#550000" "#AA0000"
+\end{verbatim}
+El resultado de esta funci\'on  es un objeto de \texttt{palette} que est\'a siendo impreso por la funci\'on anterior.
+\end{enumerate}
+
+\item
+
+\begin{enumerate}
+\item  ?` Qu\'e produce los siguientes c\'odigos y las propiedades que muestran
+
+<<fo12, prompt =TRUE, comment =NA, eval=FALSE>>=
+f1 <- function(x = {y <- 1; 2}, y = 0) {
+  x + y
+}
+f1()
+@
+\item ?` Por qu\'e las siguientes dos invocaciones de \texttt{lapply } son equivalentes?
+
+<<fo13, prompt =TRUE, comment =NA, eval=FALSE>>=
+trims <- c(0, 0.1, 0.2, 0.5)
+x <- rcauchy(100)
+
+lapply(trims, function(trim) mean(x, trim = trim))
+lapply(trims, mean, x = x)
+@
+\item  Considera el siguiente problema : Dado una matriz n\'umerica $X$, determina el \'indice de la primera fila de n\'umeros positivos que no contiene $NA$. Resuelve el problema usando \texttt{for} y la funci\'on \texttt{apply()}.
+\item ?`C\'omo se determina el entorno desde el que se llama una funci\'on?.
+\end{enumerate}
+\end{enumerate}
+\end{document}
