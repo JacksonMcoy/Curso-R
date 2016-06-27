@@ -13,8 +13,9 @@ Laboratorio 2 CTIC-UNI
 5. Gráficos.
 6. Manipulación de  datos con R.
 7. Base de datos relacionales y no relacionales  con R.
-8. R y otros Lenguajes.
-9. [Opcional] Programación en Paralelo con R.
+8. Simulación.
+9. R y otros Lenguajes.
+10. [Opcional] Programación en Paralelo con R.
 
 ##Software
 
