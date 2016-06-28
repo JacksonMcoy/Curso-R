@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Curso-r by C-Lara</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/C-Lara/Curso-R">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/C-Lara/Curso-R/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/C-Lara/Curso-R/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Curso-r</h1>
+          <p>Notas del Curso de R, para el curso Introducción a la Estadística y Probabilidad CM-274</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/C-Lara">C-Lara</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a id="curso-r" class="anchor" href="#curso-r" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Curso-R</h1>
+
+<p>Horarios de Laboratorios: 10:00 -12:00 AM Viernes</p>
+
+<p>Laboratorio 2 CTIC-UNI</p>
+
+<h2>
+<a id="esquema-del-curso" class="anchor" href="#esquema-del-curso" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Esquema del Curso</h2>
+
+<ol>
+<li>Vectores, Matrices y Arrays.</li>
+<li>Listas, Data Frames, Factores y Tablas.</li>
+<li>Estructuras de Programación en R.</li>
+<li>Programación Orientada a Objetos.</li>
+<li>Gráficos.</li>
+<li>Manipulación de  datos con R.</li>
+<li>Base de datos relacionales y no relacionales  con R.</li>
+<li>Simulación.</li>
+<li>R y otros Lenguajes.</li>
+<li>[Opcional] Programación en Paralelo con R.</li>
+</ol>
+
+<h2>
+<a id="software" class="anchor" href="#software" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Software</h2>
+
+<h3>
+<a id="git-y-github" class="anchor" href="#git-y-github" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git y Github</h3>
+
+<p><a href="https://git-scm.com/">Git</a> es un sistema de control de versiones de gran potencia y versatilidad en el manejo de un gran número de archivos de  código fuente a a través del desarrollo no lineal, es decir vía la gestión rápida de ramas y mezclado de diferentes versiones.</p>
+
+<p>Para poder revisar y aprender los comandos necesarios de Git, puedes darle una ojeada al excelente <a href="https://try.github.io/levels/1/challenges/1">tutorial de CodeSchool</a> o a la <a href="http://rogerdudler.github.io/git-guide/index.es.html">guía</a> de Roger Dudle para aprender  Git.</p>
+
+<p><a href="https://github.com/">Github</a> es una plataforma de desarrollo colaborativo de software utilizado para alojar proyectos (muchos proyectos importantes como paquetes de R, Django, el Kernel de Linux, se encuentran alojados ahí) utilizando Git y el framework Ruby on Rails.</p>
+
+<p>Podemos instalar Git en Ubuntu utilizando el administrador de paquetes <code>Apt</code>:</p>
+
+<div class="highlight highlight-source-shell"><pre>c-lara@Lara:<span class="pl-k">~</span><span class="pl-smi">$sudo</span> apt-get update
+c-lara@Lara:<span class="pl-k">~</span><span class="pl-smi">$sudo</span> apt-get install git</pre></div>
+
+<h3>
+<a id="anaconda" class="anchor" href="#anaconda" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Anaconda</h3>
+
+<p><a href="https://www.continuum.io/downloads">Anaconda</a> es una distribución completa  libre de <a href="https://www.python.org/">Python</a> incluye <a href="http://docs.continuum.io/anaconda/pkg-docs">paquetes de Python </a>.</p>
+
+<p>Anaconda incluye los instaladores de Python 2.7 y 3.5.  La instalación en <strong>Linux</strong>, se encuentra en la página de Anaconda y es más o menos así</p>
+
+<p>1 . Descargar el instalador de Anaconda para Linux.</p>
+
+<p>2 . Después de descargar el instalar, en el terminal, ejecuta para 3.5</p>
+
+<div class="highlight highlight-source-shell"><pre>c-lara@Lara:<span class="pl-k">~</span>$ bash Anaconda3-2.4.1-Linux-x86_64.sh
+</pre></div>
+
+<p>Es recomendable leer, alguna de las característica de Anaconda en el siguiente material <a href="http://conda.pydata.org/docs/test-drive.html">conda 30-minutes test drive</a>.</p>
+
+<p>El proyecto <a href="https://www.continuum.io/downloads">Anaconda</a> ha creado <a href="http://anaconda.org/r/r-essentials">R Essentials</a>, que incluye el IRKernel y alrededor de 80 paquetes para análisis de datos, incluyendo <code>dplyr</code>, <code>shiny</code>, <code>ggplot2</code>,<code>caret</code>, etc. Para instalar <strong>R Essentials</strong> en un entorno de trabajo, hacemos</p>
+
+<div class="highlight highlight-source-shell"><pre>c-lara@Lara:<span class="pl-k">~</span>$ conda install -c r r-essentials</pre></div>
+
+<h3>
+<a id="jupyter-nbviewer" class="anchor" href="#jupyter-nbviewer" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Jupyter nbviewer</h3>
+
+<p><a href="https://nbviewer.jupyter.org/">Jupyter nbviewer</a>  es un servicio web gratuito que te permite compartir las versiones de archivos realizados por Jupyter, permitiendo el renderizado de diversos fórmatos incluyendo, código latex.</p>
+
+<h3>
+<a id="r-y-rstudio" class="anchor" href="#r-y-rstudio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>R y Rstudio</h3>
+
+<p><a href="https://www.cran.r-project.org/">R</a> y <a href="https://www.rstudio.com/">RStudio</a> . RStudio es un IDE para R. Es software libre con licencia GPLv3 y se puede ejecutar sobre distintas plataformas  o incluso desde la web usando <a href="https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started">RStudio Server</a>.</p>
+
+<div class="highlight highlight-source-shell"><pre>c-lara@Lara:<span class="pl-k">~</span>$ wget https://download1.rstudio.org/rstudio-0.99.893-amd64.deb
+c-lara@Lara:<span class="pl-k">~</span><span class="pl-smi">$sudo</span> dpkg -i <span class="pl-k">*</span>.deb
+c-lara@Lara:<span class="pl-k">~</span><span class="pl-smi">$rm</span> <span class="pl-k">*</span>.deb</pre></div>
+
+<h3>
+<a id="mongodb-opcional" class="anchor" href="#mongodb-opcional" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MongoDB [Opcional]</h3>
+
+<p><a href="https://www.mongodb.org/">MongoDB</a> es una sistema de base de datos NoSQL de código abierto utilizado  en aplicaciones web modernas, escrito en C++ le confiere cierta cercanía a los recursos del hardware, de modo que es bastante rápido a la hora de ejecutar sus tareas. MongoDB es una base de datos orientada a documentos, es decir guarda los datos en documentos que son almacenados en un representación binaria de JSON, llamado BSON.</p>
+
+<p>Genbeta:dev tiene una lista de <a href="http://www.genbetadev.com/bases-de-datos/una-introduccion-a-mongodb">artículos</a> para empezar en el mundo de las bases de datos NoSQL y MongoDB. Es interesantes ver los videos colgados en Youtube sobre MongoDB.</p>
+
+<ul>
+<li>
+<a href="https://www.youtube.com/watch?v=CvIr-2lMLsk">¿Qué es MongoDB?</a>.</li>
+<li>
+<a href="https://www.youtube.com/watch?v=kDSjVTpu8kI">Comparación de SQL y MongoBD</a>.</li>
+<li>
+<a href="https://www.youtube.com/watch?v=ClAQEARNUoQ">Contruyendo tu primera aplicación con MongoDB</a>.</li>
+</ul>
+
+<p>Para poder instalar en Ubuntu, es preferible revisar la <a href="http://docs.mongodb.org/master/tutorial/install-mongodb-on-ubuntu/">documentación</a> desde la página de MongoDB.</p>
+
+<h3>
+<a id="spark" class="anchor" href="#spark" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Spark</h3>
+
+<p><a href="http://spark.apache.org/">Spark</a> es un framework de análisis distribuido en memoría y nos permite ir más allá de las operaciones en batch de Hadoop MapReduce: procesamiento de streaming, machine learning (MLlib), cálculo de grafos (GraphX), integración con lenguje R (Spark R) y análisis interactivos. </p>
+
+<p>Al igual que su predecesor, MapReduce  que  logra prácticamente una relación lineal de escalabilidad, Spark mantiene la escalabilidad lineal y la tolerancia a fallos de MapReduce, pero amplía sus bondades gracias a varias funcionalidades:</p>
+
+<ul>
+<li>DAG (Directed Acyclic Graph).</li>
+<li>RDD (Resilient Distributed Dataset).</li>
+</ul>
+
+<h3>
+<a id="evaluación" class="anchor" href="#evaluaci%C3%B3n" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Evaluación</h3>
+
+<p>Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.</p>
+
+<h3>
+<a id="libros-de-texto" class="anchor" href="#libros-de-texto" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Libros de texto</h3>
+
+<p>1 .<code>gplot2 Essentials</code>, Donato Teutonico, Packt open source, 2015.</p>
+
+<p>2 .R for Data science, Dan Toomey, Packt open source, 2014.</p>
+
+<p>3 .The Art of Programming: A Tour Of Statistical Software Design Norman Matloff, no starch press,
+2011.</p>
+
+<p>4 .R by Example Jim Albert, Maria Rizzo, Springer, 2012.</p>
+
+<p>5 .Using R for Numerical Analysis in Science and Engineering, Victor A. Bloomfield, CRC Press, 2014.</p>
+
+<p>6 .Statistical Computing in C++ and R, Randall L. Eubank and Ana Kupresanin, CRC Press, 2011.</p>
+
+<p>7 .R for Programmers: Mastering the Tools,  Dan Zhang, CRC Press, 2016.</p>
+
+<p>8 .[Opcional] Introducción a la Computación, J. Glenn Brookshear, Pearson, 2012.</p>
+
+<p>9 .<code>ggplot2:</code> Elegant Graphics for Data Analysis, Hadley Wickham, Springer, 2009.</p>
+
+<p>10 . An Introduction to Statistical Learning: with applications in R, Gareth James, Trevor Hastie, Robert Tibshirani, Daniel Witten, Springer, 2015</p>
+
+<h3>
+<a id="notas-online" class="anchor" href="#notas-online" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Notas online</h3>
+
+<p>1 .El pequeño Libro de Inferencia Estadística. <a href="https://leanpub.com/LittleInferenceBook/read">https://leanpub.com/LittleInferenceBook/read</a>.</p>
+
+<p>2 .Fuentes para aprender R UCLA <a href="http://www.ats.ucla.edu/stat/r/">http://www.ats.ucla.edu/stat/r/</a>.</p>
+
+<p>3 .Curso de Programación en R e Inferencia Estadística, <a href="https://www.coursera.org/jhu">https://www.coursera.org/jhu</a>.</p>
+
+<p>4 .Documentación de R, ordenada por Temas, <a href="http://www.rdocumentation.org/">http://www.rdocumentation.org/</a>.</p>
+
+<p>5 .El mundo de R, en este blog: <a href="http://www.r-bloggers.com/">http://www.r-bloggers.com/</a>.</p>
+
+<p>6 .Advanced R: <a href="http://adv-r.had.co.nz/">http://adv-r.had.co.nz/</a></p>
+
+<p>7 .Step by Step Guide to Learn Data Science on R: <a href="http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/">http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/</a>.</p>
+
+<p>8 .Intermediate R: <a href="https://www.datacamp.com/courses/intermediate-r">https://www.datacamp.com/courses/intermediate-r</a>.</p>
+
+<p>9 .R for Data Science: <a href="http://r4ds.had.co.nz/">http://r4ds.had.co.nz/</a>.</p>
+
+<p>10 .RPubs: <a href="https://rpubs.com/">https://rpubs.com/</a>, documentos de R, en Rmarkdown.</p>
+
+<p>11 .Efficient R programming: <a href="https://csgillespie.github.io/efficientR">https://csgillespie.github.io/efficientR</a>.</p>
+
+<h2>
+<a id="lista-de-artículos-importantes" class="anchor" href="#lista-de-art%C3%ADculos-importantes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lista de artículos importantes</h2>
+
+<ul>
+<li>
+<a href="http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html">Introducción a ggplot()</a>.</li>
+<li>
+<a href="http://www.analyticsvidhya.com/blog/2016/05/h2o-data-table-build-models-large-data-sets/">h2o para modelos con grandes conjuntos datos</a>.</li>
+<li>
+<a href="http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/">Una comparación interesante: Estadística y Machine Learning</a>.</li>
+<li>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04">Cómo configurar R en Ubuntu 14.04</a>.</li>
+<li>
+<a href="http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html">Paquete pryr()</a>.</li>
+<li>
+<a href="http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml">Guia de estilo de R de Google</a>.</li>
+<li>
+<a href="http://www.noamross.net/blog/2013/4/18/r-debug-tools.html">Herramientas de depuración en R</a>.</li>
+<li>
+<a href="https://www.stat.berkeley.edu/%7Espector/">Notas de Sql, Python, S, etc</a>.</li>
+<li>
+<a href="http://www.regexpal.com">Magnifico editor de Expresiones Regulares</a>.</li>
+<li>
+<a href="http://dataconomy.com/sql-vs-nosql-need-know/">Sql VS Nosql, lo que necesitas saber</a>.</li>
+<li>
+<a href="http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html">Vectorización en R</a>.</li>
+<li>
+<a href="http://www.michaellevy.name/blog/dplyr-data-manipulation-in-r-made-easy">dplyr</a>.</li>
+<li>
+<a href="http://kbroman.org/knitr_knutshell/">El paquete Knitr</a>.</li>
+<li>
+<a href="http://www.noamross.net/blog/2013/4/25/faster-talk.html">Velocidad en R</a>.</li>
+<li>
+<a href="http://regexone.com/">Manual de Expresiones regulares</a>.</li>
+<li>
+<a href="http://dataconomy.com/10-best-big-data-videos-on-youtube/">10 videos sobre BigData</a>.</li>
+<li>
+<a href="http://stackoverflow.com/questions/tagged/r">Usando Stackoverflow y R</a>.</li>
+<li>
+<a href="https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio">Depuración con RStudio</a>.Un video sobre la  <a href="https://vimeo.com/99375765">Depuración en R con Rstudio</a>. </li>
+<li><a href="http://www.win-vector.com/blog/2014/04/you-dont-need-to-understand-pointers-to-program-using-r/">No necesitas enterder punteros para programar en R</a></li>
+<li>
+<a href="http://www.r-fiddle.org/#/">R-fiddle: un entorno para escribir, correr código R, en el navegador</a>.</li>
+<li>
+<a href="http://sqlbolt.com/">Manual interactivo de SQL</a>.</li>
+<li><a href="https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial">Usando dplyr en la manipulación de datos</a></li>
+<li>
+<a href="http://www.experfy.com/blog/can-python-replace-r-developing-predictive-models/">Puede reemplazar Python a R, en el desarrollo de modelos predictivos</a>.</li>
+<li><a href="http://perldoc.perl.org/perlre.html#Regular-Expressions">Expresiones regulares con Perl</a></li>
+<li>
+<a href="http://dataconomy.com/why-you-should-learn-r-first-for-data-science/">Por que deberias aprender R, para ciencia de datos</a>.</li>
+<li>
+<a href="http://datasciencetoolbox.org/">Haciendo ciencia de datos en 5 minutos</a>.</li>
+<li>
+<a href="http://www.cs.swarthmore.edu/%7Enewhall/unixhelp/git.php">Usando el GIT</a>.</li>
+<li>
+<a href="https://pragprog.com/book/rwdata/seven-databases-in-seven-weeks">Libro que enseña 7 bases de datos open source</a>.</li>
+<li>
+<a href="http://blog.datacamp.com/machine-learning-in-r/">Machine Learning en R</a>.</li>
+<li>
+<a href="http://www.kdnuggets.com/">Data Mining, Analytics, BigData y Ciencia de Datos</a>.</li>
+<li>
+<a href="https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html">Manual de MapReduce</a>.</li>
+<li>
+<a href="http://www.postgresql.org/docs/8.4/static/tutorial-select.html">Notas de SQL, desde Postgresql</a>.</li>
+<li>
+<a href="http://www.lindonslog.com/programming/r/rcpp/">R y C++</a>.</li>
+<li>
+<a href="https://www.biostat.wisc.edu/%7Ekbroman/perlintro/">Introducción al Lenguaje Perl</a>.</li>
+<li>
+<a href="https://darrenjw.wordpress.com/2010/12/14/getting-started-with-parallel-mcmc/">Introducción a Paralelo MCMC para inferencia, usando C,MPI, GSL y SPRNG</a>.</li>
+<li>
+<a href="http://www.genbetadev.com/bases-de-datos/mongodb-que-es-como-funciona-y-cuando-podemos-usarlo-o-no">Unas notas de MongoDb</a>.</li>
+<li>
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">Expresiones regulares: Como son utilizadas en R</a>.</li>
+<li>
+<a href="http://kbroman.org/minimal_make/">Un tutorial acerca de make</a>.</li>
+<li><a href="https://www.rstudio.com/resources/webinars/creating-javascript-data-visualizations-in-r/">El paquete htmlwidgets</a></li>
+<li>
+<a href="http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/">Escribiendo paquetes de R, desde 0</a>.</li>
+<li>
+<a href="https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/">Data wrangling with R and RStudio</a>.</li>
+<li>
+<a href="https://gist.github.com/Btibert3/7751989">R y MongoDb</a>.</li>
+<li>
+<a href="http://cdn.oreillystatic.com/en/assets/1/event/102/Big%20Data%20Analyses%20with%20R%20Presentation.pdf">R, BigData, NoSql</a>.</li>
+<li>
+<a href="http://www.analyticsvidhya.com/blog/2016/01/guide-data-exploration/">Una guia completa  para la exploración de datos </a>.</li>
+<li>
+<a href="http://a-little-book-of-r-for-time-series.readthedocs.org/en/latest/">Libro acerca de Series de Tiempo</a>.</li>
+<li>
+<a href="https://cran.r-project.org/web/views/TimeSeries.html">Series de tiempo en R</a>.</li>
+<li>
+<a href="http://rmarkdown.rstudio.com/">RMarkdown con RStudio</a>.</li>
+<li>
+<a href="http://www.analyticsvidhya.com/blog/2016/02/complete-tutorial-learn-data-science-scratch/">Tutorial completo acerca de ciencia de datos en R </a>.</li>
+<li>
+<a href="http://r4stats.com/articles/why-r-is-hard-to-learn/">¿Por qué R es dificil de aprender?</a>.</li>
+<li>
+<a href="http://www.analyticsvidhya.com/blog/2016/05/data-table-data-frame-work-large-data-sets/">data table and data frame for large data ets</a>.</li>
+</ul>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
