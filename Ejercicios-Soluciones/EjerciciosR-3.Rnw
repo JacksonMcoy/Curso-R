@@ -83,7 +83,7 @@ box()
 \item Modifica el c\'odigo, incorporando la regla de Sturges en lugar de la regla de Scott. En este caso, se debe usar la funci\'on \texttt{round} para asegurar que los excesivos n\'umeros de digitos no son usados en las etiquetas de los ejes.
 \end{enumerate}
 
-\item Los datos de \texttt{iris} corresponden a las medidas en cent\'imetros de las variables \texttt{length, width sepal} y \texttt{length , width petal} es decir ancho y altura de los p\'etalos y s\'epalos  respectivamente, de $50$ flores  cada una de tres especies de iris. Hay cuatro variables numéricas correspondientes al sépalo y  pétalo y un factor \texttt{Species}. Muestra  una tabla de medias para \texttt{Species} (donde las medias se deben calcularse por separado para cada una de las tres \texttt{Species}).
+\item Los datos de \texttt{iris} corresponden a las medidas en cent\'imetros de las variables \texttt{length, width sepal} y \texttt{length , width petal} es decir ancho y altura de los p\'etalos y s\'epalos  respectivamente, de $50$ flores  cada una de tres especies de iris. Hay cuatro variables num\'ericas correspondientes al s\'epalo y  p\'etalo y un factor \texttt{Species}. Muestra  una tabla de medias para \texttt{Species} (donde las medias se deben calcularse por separado para cada una de las tres \texttt{Species}).
 
 \item Supongamos que rodamos un par de dados $1000$ veces.
 
