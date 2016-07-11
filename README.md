@@ -74,6 +74,11 @@ c-lara@Lara:~$sudo dpkg -i *.deb
 c-lara@Lara:~$rm *.deb
 ``` 
 
+### SQL y PostgreSQL
+
+El SQL es el lenguaje estándar ANSI/ISO de definición, manipulación y control de bases de datos relacionales. [PostgreSQL](https://www.postgresql.org/ ) es un sistema de administración de bases de datos relacionales (RDBMS). Significa que es un sistema para administrar datos guardados en relaciones. Una relación es esencialmente un término matemático para referirse a una tabla aunque  existen otras maneras de organizar las bases de datos. 
+
+
 
 ### MongoDB [Opcional]
 
