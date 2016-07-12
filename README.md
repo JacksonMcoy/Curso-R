@@ -80,6 +80,8 @@ El SQL es el lenguaje estándar ANSI/ISO de definición, manipulación y control
 
 [PostgreSQL](https://www.postgresql.org/ ) es un sistema de administración de bases de datos relacionales (RDBMS). Significa que es un sistema para administrar datos guardados en relaciones. Una relación es esencialmente un término matemático para referirse a una tabla aunque  existen otras maneras de organizar las bases de datos. 
 
+La instalación de PostgreSQL en Linux, se da en la siguiente [página](https://launchschool.com/blog/how-to-install-postgres-for-linux).
+
 
 
 ### MongoDB [Opcional]
