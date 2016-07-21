@@ -159,7 +159,7 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 ## Lista de artículos importantes
 
 - [Introducción a ggplot()](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
-- [Procesamiento de imágenes, machine earning en R](http://blog.kaggle.com/2015/12/04/image-processing-machine-learning-in-r-denoising-dirty-documents-tutorial-series/).
+- [Procesamiento de imágenes, machine learning en R](http://blog.kaggle.com/2015/12/04/image-processing-machine-learning-in-r-denoising-dirty-documents-tutorial-series/).
 - [h2o para modelos con grandes conjuntos datos](http://www.analyticsvidhya.com/blog/2016/05/h2o-data-table-build-models-large-data-sets/).
 - [Una comparación interesante: Estadística y Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/).
 - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
