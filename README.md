@@ -80,7 +80,7 @@ El SQL es el lenguaje estándar ANSI/ISO de definición, manipulación y control
 
 [PostgreSQL](https://www.postgresql.org/ ) es un sistema de administración de bases de datos relacionales (RDBMS). Significa que es un sistema para administrar datos guardados en relaciones. Una relación es esencialmente un término matemático para referirse a una tabla aunque  existen otras maneras de organizar las bases de datos. 
 
-Una buena referencia de SQL es el libro de Thomas Nield [http://shop.oreilly.com/product/0636920044994.do](Getting Started with SQL A Hands-On Approach for Beginners). 
+Una buena referencia de SQL es el libro de Thomas Nield [Getting Started with SQL A Hands-On Approach for Beginners](http://shop.oreilly.com/product/0636920044994.do ). 
 
 La instalación de PostgreSQL en Linux, se da en la siguiente [página](https://launchschool.com/blog/how-to-install-postgres-for-linux).
 
