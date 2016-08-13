@@ -103,8 +103,7 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 * DAG (Directed Acyclic Graph).
 * RDD (Resilient Distributed Dataset).
 
-###Evaluación
-Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
+
 
 ###Libros de texto
 
@@ -212,6 +211,6 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 - [RMarkdown con RStudio](http://rmarkdown.rstudio.com/).
 - [Tutorial completo acerca de ciencia de datos en R ](http://www.analyticsvidhya.com/blog/2016/02/complete-tutorial-learn-data-science-scratch/).
 - [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
-- [data table and data frame for large data ets](http://www.analyticsvidhya.com/blog/2016/05/data-table-data-frame-work-large-data-sets/).
+- [data table and data frame for large data etc](http://www.analyticsvidhya.com/blog/2016/05/data-table-data-frame-work-large-data-sets/).
 
 
