@@ -1,8 +1,4 @@
-# Curso-R
-
-Horarios de Laboratorios: 10:00 -12:00 AM Viernes
-
-Laboratorio 2 CTIC-UNI
+# Curso general de R
 
 ##Esquema del Curso
 
@@ -156,6 +152,12 @@ Se tomaran, 4 pruebas de Laboratorio, de acuerdo al avance del curso.
 10 .RPubs: https://rpubs.com/, documentos de R, en Rmarkdown.
 
 11 .Efficient R programming: https://csgillespie.github.io/efficientR.
+
+12 . Algunos canales de YouTube para aprender Estadistica:
+  * [Brandon Foltz](https://www.youtube.com/user/BCFoltz).
+  * [jbstatistics](https://www.youtube.com/user/jbstatistics).
+  * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
+  * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
 
 
 ## Lista de artículos importantes
