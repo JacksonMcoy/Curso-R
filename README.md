@@ -214,3 +214,29 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 - [data table and data frame for large data etc](http://www.analyticsvidhya.com/blog/2016/05/data-table-data-frame-work-large-data-sets/).
 
 
+## Otros temas de aplicación 
+
+* Recuperación de datos utilizando redes neuronales en R.
+* Cadenas de Markov y simulación con R
+* Probabilidad y grafos con R
+* Introducción a la Inferencia Bayesiana.
+* Machine Learning en R:
+	- Aprendizaje supervisados.
+	- Aprendizaje no supervisados.
+
+* shiny: Framework web para R. 
+* Introducción básica al paralelismo en R.
+* Algoritmos de programación lineal usando R.
+	* Simplex
+	* Algoritmo de Karmarkar
+	* Método del elipsoide.
+
+
+* Las librerias plyr y dplyr. La estrategia `split-apply-combine`.
+* Solver lineales iterativos en R.
+	* Descenso del gradiente.
+	* Gradiente conjugado.
+	* Precondicionado.
+
+
+
