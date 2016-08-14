@@ -126,7 +126,9 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 
 9 .`ggplot2:` Elegant Graphics for Data Analysis, Hadley Wickham, Springer, 2009.
 
-10 . An Introduction to Statistical Learning: with applications in R, Gareth James, Trevor Hastie, Robert Tibshirani, Daniel Witten, Springer, 2015
+10 . An Introduction to Statistical Learning: with applications in R, Gareth James, Trevor Hastie, Robert Tibshirani, Daniel Witten, Springer, 2015.
+
+11 . **Using R for Introductory Statistics**,John Verzani, June 26, 2014 by Chapman and Hall/CRC.
 
 ### Notas online
 
