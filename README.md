@@ -17,7 +17,7 @@
 ## Libros de Texto
 
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
--  **Using R for Introductory Statistics**,John Verzani, June 26, 2014 by Chapman and Hall/CRC.
+-  **Using R for Introductory Statistics**, John Verzani, June 26, 2014 by Chapman and Hall/CRC.
 -  An Introduction to Statistical Learning: with applications in R, Gareth James, Trevor Hastie, Robert Tibshirani, Daniel Witten, Springer, 2015.
 
 ##Software
