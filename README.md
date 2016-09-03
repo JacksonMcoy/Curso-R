@@ -87,6 +87,7 @@ Una buena referencia de SQL es el libro de Thomas Nield [Getting Started with SQ
 
 La instalación de PostgreSQL en Linux, se da en la siguiente [página](https://launchschool.com/blog/how-to-install-postgres-for-linux).
 
+Lectura Recomendable: [Introduction to SQL](https://launchschool.com/books/sql).
 
 
 ### MongoDB [Opcional]
