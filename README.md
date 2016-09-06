@@ -1,5 +1,8 @@
 # Curso general de R
 
+- Requisitos: Manejo de la linea de comandos. 
+
+  **Lectura Recomendada [Introduction to the Command Line](https://launchschool.com/books/command_line).**
 ##Esquema del Curso
 
 1. Vectores, Matrices y Arrays.
@@ -87,6 +90,7 @@ Una buena referencia de SQL es el libro de Thomas Nield [Getting Started with SQ
 
 La instalación de PostgreSQL en Linux, se da en la siguiente [página](https://launchschool.com/blog/how-to-install-postgres-for-linux).
 
+**Lectura Recomendable: [Introduction to SQL](https://launchschool.com/books/sql)**.
 
 
 ### MongoDB [Opcional]

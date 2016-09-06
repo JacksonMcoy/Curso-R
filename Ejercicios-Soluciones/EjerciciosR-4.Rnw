@@ -157,12 +157,12 @@ f <-function(x,y){
     x*sin(y)
 }
 @
-no soporta el \textbf{recycling}. Explica como puedes modificar la funci\'on para que si pueda soportarlo.
+no soporta el \textbf{reciclado}. Explica como puedes modificar la funci\'on para que si pueda soportarlo.
 
 
 \item 
 \begin{enumerate}
-\item Encuentra esxpresiones en R para encontrar el epsilon de la m\'aquina. \url{https://en.wikipedia.org/wiki/Machine_epsilon}.
+\item Encuentra expresiones en R para encontrar el epsilon de la m\'aquina. \url{https://en.wikipedia.org/wiki/Machine_epsilon}.
 \item Reproduce el siguiente c\'odigo fuente en R, para mostrar  la siguiente  tabla de probabilidad de la \texttt{distribuci\'on est\'andar normal}. Explica el uso de la funci\'on \texttt{outer()}.
 <<f2, prompt =TRUE, comment =NA, eval=FALSE>>=
 id <- 0:4

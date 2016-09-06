@@ -41,7 +41,7 @@ options(formatR.arrow=TRUE,width=90)
 \url{https://mitpress.mit.edu/sicp/full-text/book/book.html}.
 \item Para aprender a ser un mejor programador, el libro de Andrew Hunt y  David Thomas \textit{The Pragmatic Programmer} es demasiado \'util.
 
-\item Para entender las ventajas y desvenntajas de R, con respecto a otros lenguajes, es necesario leer, \textit{Concepts, Techniques and Models  of Computer Programming} de Peter van Roy y Sef Haridi.
+\item Para entender las ventajas y desventajas de R, con respecto a otros lenguajes, es necesario leer, \textit{Concepts, Techniques and Models  of Computer Programming} de Peter van Roy y Sef Haridi.
 \end{enumerate}
 %{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
 \setlength{\unitlength}{1in}
@@ -127,10 +127,10 @@ sum(x > mean(x))
 donde $e^x$ es la funci\'on exponencial. Usando s\'olo operaciones aritm\'eticas y la funci\'on \texttt{exp}, escribe una funci\'on \texttt{vectorizada} en R, que calcule el $\sinh$.
 
 \end{itemize}
-\item  Esta pregunta es acerca  de \texttt{vectorizaci\'on (vectorization)} y \texttt{recycling}
+\item  Esta pregunta es acerca  de \texttt{vectorizaci\'on (vectorization)} y \texttt{reciclado (recycling)}
 \begin{itemize}
-\item Define que significa para una funci\'on $R$ ser vectorizado o cumple la \texttt{vectorization}. \mbox{Justifica} con ejemplos en  R.
-\item Define que significa para una funci\'on obedece la regla de recycling. Justifica con ejemplos en R.
+\item Define que significa que una funci\'on $R$ pueda ser  vectorizada o que cumple con la \texttt{vectorizaci\'on}. \mbox{Justifica} con ejemplos en  R.
+\item Define que significa que  una funci\'on obedece la regla de reciclado. Justifica con ejemplos en R.
 
 \end{itemize}
 \item Considera la funci\'on  matem\'atica $h$ definida por

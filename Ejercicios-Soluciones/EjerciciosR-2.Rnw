@@ -71,7 +71,7 @@ f <-function(x,y){
     x*sin(y)
 }
 @
-no soporta el \textbf{recycling}. Explica como puedes modificar la funci\'on para que si pueda soportarlo.
+no soporta el \textbf{reciclado}. Explica como puedes modificar la funci\'on para que si pueda soportarlo.
 \end{itemize}
 
 \item Escribe operaciones en R, para generar cada uno de los siguientes vectores
