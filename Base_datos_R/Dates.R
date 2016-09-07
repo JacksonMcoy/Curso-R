@@ -24,5 +24,27 @@ bdays = c(tukey=as.Date('1915-06-16'),fisher=as.Date('1890-02-17'),
 
 weekdays(bdays)
 
+# El paquete chron 
+
+library(chron)
+
+tm1.c <- as.chron("1983-05-25 23:55:26")
+tm1.c
+
+tm2.c <- as.chron("10/03/13 08:32:07", "%m/%d/%y %H:%M:%S")
+tm2.c
+
+# Extraigamos solo las fecha y cakculemos la diferencia de tiempos
+
+dates(tm1.c)
+tm2.c - tm1.c
 
 
+dt1 = c("2002-06-09 12:45:40","2003-01-29 09:30:40",
+           "2002-09-04 16:45:40","2002-11-13 20:00:40",
+           "2002-07-07 17:30:40")
+dt2 = t(as.data.frame(strsplit(dt1,' ')))
+row.names(dt2) = NULL
+t1 = chron(dates=dt2[,1],times=dt2[,2],
+                 format=c('y-m-d','h:m:s'))
+t1
