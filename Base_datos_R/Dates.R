@@ -48,3 +48,28 @@ row.names(dt2) = NULL
 t1 = chron(dates=dt2[,1],times=dt2[,2],
                  format=c('y-m-d','h:m:s'))
 t1
+
+# La clase POSIX
+
+dt3 <- c("2015-10-21 19:21:15","2015-12-24 16:39:58",
+        "2015-10-28 07:20:05 PDT")
+as.POSIXct(dt3)
+
+# Si la entrada es almacenada como el numero de segundos
+# se puede crear valores POSIX
+
+dt4 <-c(1127056501,1104295502,1129233601,1113547501,
+        1119826801,1132519502,1125298801,1113289201)
+mdatos <- dt4
+class(mdatos) <-c('POSIXt','POSIXct')
+mdatos
+
+# Usando la funcion structure()
+
+mdatos1 <- structure(dt4, class = c('POSIXt', 'POSIXct'))
+mdatos1
+
+# Uso de las funciones strptime y strftime
+
+mdatos2 = strptime('03/Oct/1988:07:51:00',format='%d/%b/%Y:%H:%M:%S')
+mdatos2
