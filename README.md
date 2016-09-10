@@ -177,6 +177,7 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 ## Lista de artículos importantes
 
 - [Introducción a ggplot()](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
+- [¿Qué es Hadoop?](https://www.analyticsvidhya.com/blog/2014/05/hadoop-simplified/).
 - [Procesamiento de imágenes, machine learning en R](http://blog.kaggle.com/2015/12/04/image-processing-machine-learning-in-r-denoising-dirty-documents-tutorial-series/).
 - [h2o para modelos con grandes conjuntos datos](http://www.analyticsvidhya.com/blog/2016/05/h2o-data-table-build-models-large-data-sets/).
 - [Una comparación interesante: Estadística y Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/).
