@@ -22,6 +22,7 @@
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
 -  **Using R for Introductory Statistics**, John Verzani, June 26, 2014 by Chapman and Hall/CRC.
 -  An Introduction to Statistical Learning: with applications in R, Gareth James, Trevor Hastie, Robert Tibshirani, Daniel Witten, Springer, 2015.
+-  Beginning Data Science with R, Manas A. Pathak, Springer, 2016.
 
 ##Software
 
@@ -116,7 +117,7 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 
 
 
-### Otros Libros de R
+### Otros Libros de R y más
 
 1 .`gplot2 Essentials`, Donato Teutonico, Packt open source, 2015.
 
