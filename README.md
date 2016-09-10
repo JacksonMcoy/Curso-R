@@ -119,7 +119,7 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 
 ### Otros Libros de R y más
 
-1 .`gplot2 Essentials`, Donato Teutonico, Packt open source, 2015.
+1 .`ggplot2 Essentials`, Donato Teutonico, Packt open source, 2015.
 
 2 .R for Data science, Dan Toomey, Packt open source, 2014.
 
@@ -137,6 +137,10 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 8 .[Opcional] Introducción a la Computación, J. Glenn Brookshear, Pearson, 2012.
 
 9 .`ggplot2:` Elegant Graphics for Data Analysis, Hadley Wickham, Springer, 2009.
+
+10 . Getting Started with SQL, A hands-on approach for beginners, Thomas Nield, 2016.
+
+11 . Learning Spark: Lightning-Fast Big Data Analysis, Holden Karau, Andy Konwinski, Patrick Wendell, Matei Zaharia,  O'Reilly Media; 1 edition (28 January 2015)
 
 
 ### Notas online
