@@ -2,7 +2,11 @@
 
 - Requisitos: Manejo de la linea de comandos. 
 
-  **Lectura Recomendada [Introduction to the Command Line](https://launchschool.com/books/command_line).**
+  **Lectura y videos recomendados**
+  	* [Introduction to the Command Line](https://launchschool.com/books/command_line).
+  	* [Agile Planning](https://launchschool.com/books/agile_planning).
+  	* [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
+ 
 ##Esquema del Curso
 
 1. Vectores, Matrices y Arrays.
