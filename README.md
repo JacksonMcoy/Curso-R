@@ -70,9 +70,14 @@ El proyecto [Anaconda](https://www.continuum.io/downloads) ha creado [R Essentia
 c-lara@Lara:~$ conda install -c r r-essentials
 ``` 
 
-### Jupyter nbviewer
+### Proyecto Jupyter y el Jupyter Nbviewer
+
+El [Proyecto Jupyter](http://jupyter.org/)  es una aplicación web que te permite crear y compartir documentos que contienen código de diversos lenguajes de programación, ecuaciones,  visualizaciones y texto en diversos formatos. El uso de Jupyter incluye la ciencia de datos, simulación numérica, la modelización en estadística, Machine Learning, etc.
 
 [Jupyter nbviewer](https://nbviewer.jupyter.org/)  es un servicio web gratuito que te permite compartir las versiones de archivos realizados por Jupyter, permitiendo el renderizado de diversos fórmatos incluyendo, código latex.
+
+- [Jupyter Documentation](https://jupyter.readthedocs.io/en/latest/).
+
 
 ### R y Rstudio
 
@@ -119,6 +124,9 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 
 * DAG (Directed Acyclic Graph).
 * RDD (Resilient Distributed Dataset).
+
+Algunas lecturas y referencias
+
 
 - [Apache Spark Videos](https://www.youtube.com/user/TheApacheSpark/videos).
 - [¿What is Apache Spark?](https://www.mapr.com/ebooks/spark/).
