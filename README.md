@@ -46,6 +46,12 @@ c-lara@Lara:~$sudo apt-get update
 c-lara@Lara:~$sudo apt-get install git
 ```
 
+
+Referencias y Lecturas
+
+- [Usando el GIT](http://www.cs.swarthmore.edu/~newhall/unixhelp/git.php).
+- [Practical Git Introduction](http://marc.helbling.fr/2014/09/practical-git-introduction).
+- [Visual Git Guide](http://marklodato.github.io/visual-git-guide/index-es.html).
 ### Anaconda  
 
 [Anaconda](https://www.continuum.io/downloads) es una distribución completa  libre de [Python](https://www.python.org/) incluye [paquetes de Python ](http://docs.continuum.io/anaconda/pkg-docs).
@@ -223,7 +229,6 @@ Algunas lecturas y referencias
 - [Expresiones regulares con Perl](http://perldoc.perl.org/perlre.html#Regular-Expressions)
 - [Por que deberias aprender R, para ciencia de datos](http://dataconomy.com/why-you-should-learn-r-first-for-data-science/).
 - [Haciendo ciencia de datos en 5 minutos](http://datasciencetoolbox.org/).
-- [Usando el GIT](http://www.cs.swarthmore.edu/~newhall/unixhelp/git.php).
 - [Libro que enseña 7 bases de datos open source](https://pragprog.com/book/rwdata/seven-databases-in-seven-weeks).
 - [Machine Learning en R](http://blog.datacamp.com/machine-learning-in-r/).
 - [Data Mining, Analytics, BigData y Ciencia de Datos](http://www.kdnuggets.com/).
