@@ -52,6 +52,7 @@ Referencias y Lecturas
 - [Usando el GIT](http://www.cs.swarthmore.edu/~newhall/unixhelp/git.php).
 - [Practical Git Introduction](http://marc.helbling.fr/2014/09/practical-git-introduction).
 - [Visual Git Guide](http://marklodato.github.io/visual-git-guide/index-es.html).
+
 ### Anaconda  
 
 [Anaconda](https://www.continuum.io/downloads) es una distribución completa  libre de [Python](https://www.python.org/) incluye [paquetes de Python ](http://docs.continuum.io/anaconda/pkg-docs).
