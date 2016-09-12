@@ -40,3 +40,19 @@ pie(by(as.numeric(payroll), league, sum))
 
 labels <- c('AL Central', 'AL East', 'AL West', 'NL Central', 'NL East', 'NL West')
 pie(as.numeric(by(payroll, list(division, league), sum)), labels)
+
+# Usando la libreria ggplot2
+
+library(ggplot2)
+qplot(payroll, wins, col = league, shape =division)
+
+# Grafico de barras usando ggplot2
+
+qplot(league,weight=payroll,ylab='payroll',fill=division, position = 'dodge')
+
+# usando el parametro facet, para dividir el grafico de barra
+
+qplot(division, weight = payroll, ylab = 'payroll', facets = .~league)
+
+
+
