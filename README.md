@@ -180,6 +180,7 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 
 ## Lista de artículos importantes
 
+- [What Types of Questions Can Data Science Answer](http://www.kdnuggets.com/2015/09/questions-data-science-can-answer.html).
 - [Introducción a ggplot()](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
 - [¿Qué es Hadoop?](https://www.analyticsvidhya.com/blog/2014/05/hadoop-simplified/).
 - [Procesamiento de imágenes, machine learning en R](http://blog.kaggle.com/2015/12/04/image-processing-machine-learning-in-r-denoising-dirty-documents-tutorial-series/).
