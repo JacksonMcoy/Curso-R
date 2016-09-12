@@ -95,7 +95,8 @@ Una buena referencia de SQL es el libro de Thomas Nield [Getting Started with SQ
 
 La instalación de PostgreSQL en Linux, se da en la siguiente [página](https://launchschool.com/blog/how-to-install-postgres-for-linux).
 
-**Lectura Recomendable: [Introduction to SQL](https://launchschool.com/books/sql)**.
+- **Lectura Recomendable: [Introduction to SQL](https://launchschool.com/books/sql)**.
+- [Started with Postgresql and R](https://datashenanigan.wordpress.com/2015/05/18/getting-started-with-postgresql-in-r/).
 
 
 ### MongoDB [Opcional]
@@ -119,6 +120,9 @@ Al igual que su predecesor, MapReduce  que  logra prácticamente una relación l
 * DAG (Directed Acyclic Graph).
 * RDD (Resilient Distributed Dataset).
 
+- [Apache Spark Videos](https://www.youtube.com/user/TheApacheSpark/videos).
+- [¿What is Apache Spark?](https://www.mapr.com/ebooks/spark/).
+- [Spark Examples ](https://spark.apache.org/examples.html).
 
 
 ### Otros Libros de R y más
