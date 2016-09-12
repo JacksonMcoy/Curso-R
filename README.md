@@ -89,7 +89,7 @@ c-lara@Lara:~$ wget https://download1.rstudio.org/rstudio-0.99.893-amd64.deb
 c-lara@Lara:~$sudo dpkg -i *.deb
 c-lara@Lara:~$rm *.deb
 ``` 
-
+- [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 ### SQL y PostgreSQL
 
 El SQL es el lenguaje estándar ANSI/ISO de definición, manipulación y control de bases de datos relacionales.
