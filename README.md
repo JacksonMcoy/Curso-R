@@ -193,7 +193,7 @@ Algunas lecturas y referencias
 11 .Efficient R programming: https://csgillespie.github.io/efficientR.
 
 12 . Algunos canales de YouTube para aprender Estadistica:
-  * [Brandon Foltz](https://www.youtube.com/user/BCFoltz).
+  * [Brandon Foltz](https://www.youtube.com/user/BCFoltz). 
   * [jbstatistics](https://www.youtube.com/user/jbstatistics).
   * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
   * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
@@ -203,6 +203,8 @@ Algunas lecturas y referencias
 
 - [What Types of Questions Can Data Science Answer](http://www.kdnuggets.com/2015/09/questions-data-science-can-answer.html).
 - [Introducción a ggplot()](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
+- [Data Maning vs Statistics ](http://www.kdnuggets.com/2016/09/data-science-basics-data-mining-statistics.html).
+- [Data Science for Internet of things](http://www.kdnuggets.com/2016/09/data-science-iot-10-differences.html).
 - [¿Qué es Hadoop?](https://www.analyticsvidhya.com/blog/2014/05/hadoop-simplified/).
 - [Procesamiento de imágenes, machine learning en R](http://blog.kaggle.com/2015/12/04/image-processing-machine-learning-in-r-denoising-dirty-documents-tutorial-series/).
 - [h2o para modelos con grandes conjuntos datos](http://www.analyticsvidhya.com/blog/2016/05/h2o-data-table-build-models-large-data-sets/).
