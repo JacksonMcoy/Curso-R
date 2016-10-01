@@ -111,6 +111,7 @@ La instalación de PostgreSQL en Linux, se da en la siguiente [página](https://
 
 - **Lectura Recomendable: [Introduction to SQL](https://launchschool.com/books/sql)**.
 - [Started with Postgresql and R](https://datashenanigan.wordpress.com/2015/05/18/getting-started-with-postgresql-in-r/).
+- [Mastering SQL for data science ](http://www.kdnuggets.com/2016/06/seven-steps-mastering-sql-data-science.html).
 
 
 ### MongoDB [Opcional]
@@ -239,6 +240,7 @@ Algunas lecturas y referencias
 - [Notas de SQL, desde Postgresql](http://www.postgresql.org/docs/8.4/static/tutorial-select.html).
 - [R y C++](http://www.lindonslog.com/programming/r/rcpp/).
 - [Introducción al Lenguaje Perl](https://www.biostat.wisc.edu/~kbroman/perlintro/).
+- [Terminos para bases de datos ](http://www.kdnuggets.com/2016/07/database-key-terms-explained.html).
 - [Introducción a Paralelo MCMC para inferencia, usando C,MPI, GSL y SPRNG](https://darrenjw.wordpress.com/2010/12/14/getting-started-with-parallel-mcmc/).
 - [Unas notas de MongoDb](http://www.genbetadev.com/bases-de-datos/mongodb-que-es-como-funciona-y-cuando-podemos-usarlo-o-no).
 - [Expresiones regulares: Como son utilizadas en R](https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html).
