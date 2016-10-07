@@ -30,62 +30,6 @@
 
 ##Software
 
-
-### Git y Github
-
-[Git](https://git-scm.com/) es un sistema de control de versiones de gran potencia y versatilidad en el manejo de un gran número de archivos de  código fuente a a través del desarrollo no lineal, es decir vía la gestión rápida de ramas y mezclado de diferentes versiones.
-
-Para poder revisar y aprender los comandos necesarios de Git, puedes darle una ojeada al excelente [tutorial de CodeSchool](https://try.github.io/levels/1/challenges/1) o a la [guía](http://rogerdudler.github.io/git-guide/index.es.html) de Roger Dudle para aprender  Git.
-
-[Github](https://github.com/) es una plataforma de desarrollo colaborativo de software utilizado para alojar proyectos (muchos proyectos importantes como paquetes de R, Django, el Kernel de Linux, se encuentran alojados ahí) utilizando Git y el framework Ruby on Rails.
-
-Podemos instalar Git en Ubuntu utilizando el administrador de paquetes `Apt`:
-
-```bash
-c-lara@Lara:~$sudo apt-get update
-c-lara@Lara:~$sudo apt-get install git
-```
-
-
-Referencias y Lecturas
-
-- [Usando el GIT](http://www.cs.swarthmore.edu/~newhall/unixhelp/git.php).
-- [Practical Git Introduction](http://marc.helbling.fr/2014/09/practical-git-introduction).
-- [Visual Git Guide](http://marklodato.github.io/visual-git-guide/index-es.html).
-
-### Anaconda  
-
-[Anaconda](https://www.continuum.io/downloads) es una distribución completa  libre de [Python](https://www.python.org/) incluye [paquetes de Python ](http://docs.continuum.io/anaconda/pkg-docs).
-
-Anaconda incluye los instaladores de Python 2.7 y 3.5.  La instalación en **Linux**, se encuentra en la página de Anaconda y es más o menos así
-
-1 . Descargar el instalador de Anaconda para Linux.
-
-2 . Después de descargar el instalar, en el terminal, ejecuta para 3.5
-
-```bash
-c-lara@Lara:~$ bash Anaconda3-2.4.1-Linux-x86_64.sh
-
-```
-
-Es recomendable leer, alguna de las característica de Anaconda en el siguiente material [conda 30-minutes test drive](http://conda.pydata.org/docs/test-drive.html).
-
-
-El proyecto [Anaconda](https://www.continuum.io/downloads) ha creado [R Essentials](http://anaconda.org/r/r-essentials), que incluye el IRKernel y alrededor de 80 paquetes para análisis de datos, incluyendo `dplyr`, `shiny`, `ggplot2`,`caret`, etc. Para instalar **R Essentials** en un entorno de trabajo, hacemos
-
-```bash
-c-lara@Lara:~$ conda install -c r r-essentials
-``` 
-
-### Proyecto Jupyter y el Jupyter Nbviewer
-
-El [Proyecto Jupyter](http://jupyter.org/)  es una aplicación web que te permite crear y compartir documentos que contienen código de diversos lenguajes de programación, ecuaciones,  visualizaciones y texto en diversos formatos. El uso de Jupyter incluye la ciencia de datos, simulación numérica, la modelización en estadística, Machine Learning, etc.
-
-[Jupyter nbviewer](https://nbviewer.jupyter.org/)  es un servicio web gratuito que te permite compartir las versiones de archivos realizados por Jupyter, permitiendo el renderizado de diversos fórmatos incluyendo, código latex.
-
-- [Jupyter Documentation](https://jupyter.readthedocs.io/en/latest/).
-
-
 ### R y Rstudio
 
 [R](https://www.cran.r-project.org/) y [RStudio](https://www.rstudio.com/) . RStudio es un IDE para R. Es software libre con licencia GPLv3 y se puede ejecutar sobre distintas plataformas  o incluso desde la web usando [RStudio Server](https://support.rstudio.com/hc/en-us/articles/200552306-Getting-Started).
@@ -99,13 +43,13 @@ c-lara@Lara:~$rm *.deb
 - [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 - Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
 
-
 ### Radiant
 
 [radiant](http://vnijs.github.io/radiant/) es una interfaz de **Analytics** en R, usando el paquete **shiny**.
 
 
 Más información en [Introducing radiant](https://youtu.be/7L3hDpLw53I), un video de Vincent R. Nijs.
+
 ### SQL y PostgreSQL
 
 El SQL es el lenguaje estándar ANSI/ISO de definición, manipulación y control de bases de datos relacionales.
@@ -148,6 +92,60 @@ Algunas lecturas y referencias
 - [Apache Spark Videos](https://www.youtube.com/user/TheApacheSpark/videos).
 - [¿What is Apache Spark?](https://www.mapr.com/ebooks/spark/).
 - [Spark Examples ](https://spark.apache.org/examples.html).
+
+### Anaconda
+
+[Anaconda](https://www.continuum.io/downloads) es una distribución completa  libre de [Python](https://www.python.org/) incluye [paquetes de Python ](http://docs.continuum.io/anaconda/pkg-docs).
+
+Anaconda incluye los instaladores de Python 2.7 y 3.5.  La instalación en **Linux**, se encuentra en la página de Anaconda y es más o menos así
+
+1 . Descargar el instalador de Anaconda para Linux.
+
+2 . Después de descargar el instalar, en el terminal, ejecuta para 3.5
+
+```bash
+c-lara@Lara:~$ bash Anaconda3-2.4.1-Linux-x86_64.sh
+
+```
+
+Es recomendable leer, alguna de las característica de Anaconda en el siguiente material [conda 30-minutes test drive](http://conda.pydata.org/docs/test-drive.html).
+
+
+El proyecto [Anaconda](https://www.continuum.io/downloads) ha creado [R Essentials](http://anaconda.org/r/r-essentials), que incluye el IRKernel y alrededor de 80 paquetes para análisis de datos, incluyendo `dplyr`, `shiny`, `ggplot2`,`caret`, etc. Para instalar **R Essentials** en un entorno de trabajo, hacemos
+
+```bash
+c-lara@Lara:~$ conda install -c r r-essentials
+``` 
+### Proyecto Jupyter y el Jupyter Nbviewer
+
+El [Proyecto Jupyter](http://jupyter.org/)  es una aplicación web que te permite crear y compartir documentos que contienen código de diversos lenguajes de programación, ecuaciones,  visualizaciones y texto en diversos formatos. El uso de Jupyter incluye la ciencia de datos, simulación numérica, la modelización en estadística, Machine Learning, etc.
+
+[Jupyter nbviewer](https://nbviewer.jupyter.org/)  es un servicio web gratuito que te permite compartir las versiones de archivos realizados por Jupyter, permitiendo el renderizado de diversos fórmatos incluyendo, código latex.
+
+- [Jupyter Documentation](https://jupyter.readthedocs.io/en/latest/).
+
+
+### Git y Github
+
+[Git](https://git-scm.com/) es un sistema de control de versiones de gran potencia y versatilidad en el manejo de un gran número de archivos de  código fuente a a través del desarrollo no lineal, es decir vía la gestión rápida de ramas y mezclado de diferentes versiones.
+
+Para poder revisar y aprender los comandos necesarios de Git, puedes darle una ojeada al excelente [tutorial de CodeSchool](https://try.github.io/levels/1/challenges/1) o a la [guía](http://rogerdudler.github.io/git-guide/index.es.html) de Roger Dudle para aprender  Git.
+
+[Github](https://github.com/) es una plataforma de desarrollo colaborativo de software utilizado para alojar proyectos (muchos proyectos importantes como paquetes de R, Django, el Kernel de Linux, se encuentran alojados ahí) utilizando Git y el framework Ruby on Rails.
+
+Podemos instalar Git en Ubuntu utilizando el administrador de paquetes `Apt`:
+
+```bash
+c-lara@Lara:~$sudo apt-get update
+c-lara@Lara:~$sudo apt-get install git
+```
+
+
+Referencias y Lecturas
+
+- [Usando el GIT](http://www.cs.swarthmore.edu/~newhall/unixhelp/git.php).
+- [Practical Git Introduction](http://marc.helbling.fr/2014/09/practical-git-introduction).
+- [Visual Git Guide](http://marklodato.github.io/visual-git-guide/index-es.html).
 
 
 ### Otros Libros de R y más
