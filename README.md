@@ -46,7 +46,13 @@ c-lara@Lara:~$rm *.deb
 
 ### R Markdown 
 
+[R Markdown](http://rmarkdown.rstudio.com/index.html) es un framework para ciencia de datos de manera que puede crear reportes dinámicos con R, además de ejecutar y guardar código.
 
+R Markdown soporta formatos de salida estáticos y dinámicos que incluye  hTML, pdf,  beamer-latex, html5T, shiny,etc.
+
+Más información:
+
+* [Lecciones de R Markdown ](http://rmarkdown.rstudio.com/lesson-1.html).
 
 ### R Notebooks
 Un R Notebooks es un documento R Markdown, que permite mostrar independientemente e interactivamente , código R y sintaxis de  otros lenguajes. Es una manera fácil de generar reportes, análisis estadísticos, visualización de datos.
