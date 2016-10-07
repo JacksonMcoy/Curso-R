@@ -51,7 +51,7 @@ c-lara@Lara:~$rm *.deb
 ### R Notebooks
 Un R Notebooks es un documento R Markdown, que permite mostrar independientemente e interactivamente , código R y sintaxis de  otros lenguajes. Es una manera fácil de generar reportes, análisis estadísticos, visualización de datos.
 
-Más información en  la página [](http://rmarkdown.rstudio.com/r_notebooks.html).
+Más información en  la página [http://rmarkdown.rstudio.com/r_notebooks.html](http://rmarkdown.rstudio.com/r_notebooks.html).
 
 ### Radiant
 
