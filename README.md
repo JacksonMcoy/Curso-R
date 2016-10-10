@@ -219,6 +219,7 @@ Referencias y Lecturas
   * [jbstatistics](https://www.youtube.com/user/jbstatistics).
   * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
   * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
+  * [Texas University Videos : Statistical Inference](https://stat.utexas.edu/videos/r/statistical-inference/)
 
 
 ## Lista de artículos importantes
