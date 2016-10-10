@@ -43,6 +43,34 @@ c-lara@Lara:~$rm *.deb
 - [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 - Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
 
+### ggplot2
+
+[ggplot2](http://ggplot2.org/) es un paquete pata gráficos de R, basado en **grammar**. Este **grammar basado **
+basado en *Grammar on Graphics*, está formado  de un conjunto de componentes independientes que pueden ser usadas de muchas maneras diferentes. La forma de instalar este paquete es de la forma habitual
+
+```r
+install.package('ggplot2')
+```
+
+La sintaxis es un poco distinta, como indica el siguiente ejemplo
+
+
+```{r, eval =TRUE}
+geom_lm <- function(formula = y ~ x, colour = alpha("steelblue", 0.5), 
+                    size = 2, ...)  {
+  geom_smooth(formula = formula, se = FALSE, method = "lm", colour = colour,
+    size = size, ...)
+}
+ggplot(mpg, aes(displ, 1 / hwy)) + 
+  geom_point() + 
+  geom_lm()
+ggplot(mpg, aes(displ, 1 / hwy)) + 
+  geom_point() + 
+  geom_lm(y ~ poly(x, 2), size = 1, colour = "red")
+```
+
+Mayor información en la [documentación de ggplot2](http://docs.ggplot2.org/current/)
+
 
 ### R Markdown 
 
@@ -78,7 +106,7 @@ install.packages("radiant", repos = "http://vnijs.github.io/radiant_miniCRAN/")
 
 Más información en [Introducing radiant](https://youtu.be/7L3hDpLw53I), un video de Vincent R. Nijs.
 
-### Knit 
+### Knitr 
 
 [knitr](http://yihui.name/knitr/)  fue diseñado para ser una máquina de generación dinámica de reportes o documentos que son  una mezcla de texto y código que se procesa y devuelve respuestas válidas para la ciencia de datos. 
 
@@ -335,6 +363,3 @@ Referencias y Lecturas
 	* Descenso del gradiente.
 	* Gradiente conjugado.
 	* Precondicionado.
-
-
-
