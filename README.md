@@ -71,12 +71,31 @@ Más información en  la página [http://rmarkdown.rstudio.com/r_notebooks.html]
 
 [radiant](http://vnijs.github.io/radiant/) es una interfaz de **Analytics** en R, usando el paquete **shiny**. En Windows se puede instalar de la siguiente manera, para un versión de R 3.1.2 o superior.
 
-```bash
+```r
 install.packages("radiant", repos = "http://vnijs.github.io/radiant_miniCRAN/")
 ```
 
 
 Más información en [Introducing radiant](https://youtu.be/7L3hDpLw53I), un video de Vincent R. Nijs.
+
+### Knit 
+
+[knitr](http://yihui.name/knitr/)  fue diseñado para ser una máquina de generación dinámica de reportes o documentos que son  una mezcla de texto y código que se procesa y devuelve respuestas válidas para la ciencia de datos. 
+
+El diseño de knitr permite no permite sólo código R, sino de otros lenguajes como Python, Java Script o Awk, además de producir resultados en formatos como LaTeX, HTML5, Markdown, AsciiDoc, etc, como se muestran en los [ejemplos de knitr](https://github.com/yihui/knitr-examples).
+
+El paquete [**Knitr**](http://yihui.name/knitr/) se instala en R
+
+
+```r
+install.packages("knitr")
+library("knitr")
+```
+
+
+Knitr es libre, además de poseer muchos [ejemplos](https://github.com/yihui/knitr-examples) y [demostraciones](http://yihui.name/knitr/demos/).
+
+
 
 ### SQL y PostgreSQL
 
