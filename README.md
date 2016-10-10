@@ -50,6 +50,12 @@ c-lara@Lara:~$rm *.deb
 
 R Markdown soporta formatos de salida estáticos y dinámicos que incluye  hTML, pdf,  beamer-latex, html5T, shiny,etc.
 
+
+```{r , results='asis', echo=FALSE}
+cat("x | y", "--- | ---", sep="\n")
+cat(apply(df, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
+```
+
 Más información:
 
 * [Lecciones de R Markdown ](http://rmarkdown.rstudio.com/lesson-1.html).
