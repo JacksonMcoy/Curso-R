@@ -55,9 +55,6 @@ cat(apply(df, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
 
 R Markdown soporta formatos de salida estáticos y dinámicos que incluye  hTML, pdf,  beamer-latex, html5T, shiny,etc.
 
-
-
-
 Más información:
 
 * [Lecciones de R Markdown ](http://rmarkdown.rstudio.com/lesson-1.html).
@@ -67,9 +64,16 @@ Un R Notebooks es un documento R Markdown, que permite mostrar independientement
 
 Más información en  la página [http://rmarkdown.rstudio.com/r_notebooks.html](http://rmarkdown.rstudio.com/r_notebooks.html).
 
+
+
+
 ### Radiant
 
-[radiant](http://vnijs.github.io/radiant/) es una interfaz de **Analytics** en R, usando el paquete **shiny**.
+[radiant](http://vnijs.github.io/radiant/) es una interfaz de **Analytics** en R, usando el paquete **shiny**. En Windows se puede instalar de la siguiente manera, para un versión de R 3.1.2 o superior.
+
+```bash
+install.packages("radiant", repos = "http://vnijs.github.io/radiant_miniCRAN/")
+```
 
 
 Más información en [Introducing radiant](https://youtu.be/7L3hDpLw53I), un video de Vincent R. Nijs.
