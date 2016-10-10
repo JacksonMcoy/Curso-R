@@ -55,7 +55,7 @@ install.package('ggplot2')
 La sintaxis es un poco distinta, como indica el siguiente ejemplo
 
 
-```{r, eval =TRUE}
+```r
 geom_lm <- function(formula = y ~ x, colour = alpha("steelblue", 0.5), 
                     size = 2, ...)  {
   geom_smooth(formula = formula, se = FALSE, method = "lm", colour = colour,
