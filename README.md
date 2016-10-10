@@ -46,15 +46,17 @@ c-lara@Lara:~$rm *.deb
 
 ### R Markdown 
 
-[R Markdown](http://rmarkdown.rstudio.com/index.html) es un framework para ciencia de datos de manera que puede crear reportes dinámicos con R, además de ejecutar y guardar código.
-
-R Markdown soporta formatos de salida estáticos y dinámicos que incluye  hTML, pdf,  beamer-latex, html5T, shiny,etc.
-
+[R Markdown](http://rmarkdown.rstudio.com/index.html) es un framework para ciencia de datos de manera que puede crear reportes dinámicos con R, además de ejecutar y guardar código. Por ejemplo sea un tabla en markdown con R.
 
 ```{r , results='asis', echo=FALSE}
 cat("x | y", "--- | ---", sep="\n")
 cat(apply(df, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
 ```
+
+R Markdown soporta formatos de salida estáticos y dinámicos que incluye  hTML, pdf,  beamer-latex, html5T, shiny,etc.
+
+
+
 
 Más información:
 
