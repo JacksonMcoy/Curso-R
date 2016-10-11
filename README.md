@@ -93,7 +93,13 @@ Un R Notebooks es un documento R Markdown, que permite mostrar independientement
 Más información en  la página [http://rmarkdown.rstudio.com/r_notebooks.html](http://rmarkdown.rstudio.com/r_notebooks.html).
 
 
+### Shiny 
 
+[Shiny](http://shiny.rstudio.com/)  es una herramienta para crear fácilmente aplicaciones web interactivas **(apps)** que permiten a los usuarios interactuar con sus datos sin tener que manipular el código, usando un paradigma conocido como [programación reactiva](https://en.wikipedia.org/wiki/Reactive_programming)  que enfatiza  valores que cambian en el tiempo
+ y expresiones que registran esos cambios.
+
+
+Más información en el [tutorial de Shiny](http://shiny.rstudio.com/tutorial/)
 
 ### Radiant
 
