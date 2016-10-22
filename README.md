@@ -87,6 +87,14 @@ Más información:
 
 * [Lecciones de R Markdown ](http://rmarkdown.rstudio.com/lesson-1.html).
 
+En las notas se usan los *los folletos(handout) de [Edward Tufte](http://rmarkdown.rstudio.com/tufte_handout_format.html)*. El estilo de Tufte es conocido por su amplio uso de notas al margen, la estrecha integración de gráficos con el texto, y una establecida tipografía. Se puede instalar como un paquete de R  de la siguiente forma:
+
+```
+install.packages("tufte", type = "source")
+
+
+```
+
 ### R Notebooks
 Un R Notebooks es un documento R Markdown, que permite mostrar independientemente e interactivamente , código R y sintaxis de  otros lenguajes. Es una manera fácil de generar reportes, análisis estadísticos, visualización de datos.
 
