@@ -1,0 +1,153 @@
+---
+title: 'R y Bases de datos '
+output:
+  html_notebook: default
+  html_document: default
+  
+---
+#### Referencias: 
+
+*  Data Manipulation with R, Phil Spector, Springer 2008.
+
+* [A primer on SQL de Rahul Batra](https://leanpub.com/aprimeronsql/read).
+
+* [Databases](https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html).
+
+
+
+###  Notas de SQL 
+
+Un servidor puede almacenar más de una base de datos, cada una de ellas con muchas tablas y desde que cada 
+tabla contiene muchas columnas(variables) es importante tener en cuenta  la disponibilidad total  de las  bases de datos disponibles. La siguiente tabla muestra esas tareas comunes y las declaraciones de **SQL** para ejecutarlas
+
+
+```{sql}
+SHOW DATABASES
+
+SHOW TABLES IN basedatos
+
+SHOW COLUMNS IN tabla
+
+DESCRIBE tabla
+
+USE basedatos 
+```
+
+Cuando usamos *clientes en modo comando * las declaraciones de SQL, debén de terminar en un punto y coma, pero esta coma no es requerida si es que usamos la interfaz de [RMySQL](https://cran.r-project.org/web/packages/RMySQL/index.html). 
+
+En R, existen otros tipos de interfaces para otras sistemas de bases de datos como [RPostgreSQL](https://cran.r-project.org/web/packages/RPostgreSQL/).
+
+El primer paso para SQL, es que no es un lenguaje de programación, a diferencia de R; las operaciones en SQL son llevadas a cabo usando peticiones individuales sin bucles o declaraciones de control. El comando más importante de SQL es `SELECT`, cuya uso a partir de que las peticiones usan una única petición, puede tener un aspecto parecido a 
+
+```{sql}
+SELECT columnas
+  FROM tabla
+  WHERE condicion
+  GROUP BY columnas
+  HAVING condicion
+  ORDER BY columnas [ASC|DESC]
+  LIMIT numero 
+```
+
+Muchas de las declaraciones de peticiones que se declaran en `SELECT` son opcionales. Por ejemplo algunas peticiones pueden recuperar todos los datos  en una tabla en particular, donde el símbolo `*` significa *todas las columnas de la tabla* usando el siguiente comando
+
+```{sql}
+SELECT * FROM tabla_particular;
+```
+Una lista de variables, separadas por comas, puede ser  proporcionada por la siguiente expresión
+
+
+```{sql}
+SELECT var1, var2, var3/var2 from tabla_particular;
+```
+ Un comando útil y opcional es `AS`, el cual puede ser usado para cambiar el nombre de una columna en el resultado de un conjunto
+ 
+ ```{sql}
+ SELECT var1, var2, var3/var2 AS radio from tabla_particular;
+ ```
+ 
+ La cláusula `WHERE` junto con  `AND` y `OR` pueden ser usada para limitar las filas que son devueltas en una petición
+
+```{sql}
+SELECT * FROM tabla_particular WHERE  var1 > 10 AND var2 < var 1;
+```
+ Una importante limitación de `WHERE` es que no puede acceder a las variables que fueron creadas en la declaración `SELECT`, en ese caso se debe usar la  cláusula `HAVING`. Asi para encontrar los casos donde el radio es mayor que 10, se hace los siguiente
+
+
+```{sql}
+SELECT var1, var2, var2/var1 AS radio
+  FROM tabla_particular HAVING radio > 10;
+```
+
+Dos operadores en SQL, son útiles para variables de tipo caracter. El operador `LIKE` permite el uso de `%` para representar cero o más de un caracter y `_` para representar un sólo caracter. El operador `RLIKE` permite el uso de expresiones regulares para caracteres de comparación.
+
+### Agrupación
+
+ La cláusula `GROUP BY`junto con algunas funciones  de agrupación proporcionados por SQL, pueden ser útiles si se desea producir tablas de cuentas o resumen de datos de una base de datos, sin tener que conseguir toda la base de datos en si. Algunas funciones de agrupación para SQL son
+ 
+ ```
+ COUNT()
+ AVG()
+ MIN()
+ MAX()
+ VAR_SAMP()
+ STDDEV_SAMP()
+ LAST()
+ FIRST()
+ SUM()
+ ```
+
+Por ejemplo, si queremos crear una tabla de la medias  para una variable `x` desde una tabla de base de datos llamada `tabla1`, dividida por una variable catégorica llamada `tipo`, podemos construir una tabla con los valores `tipo1` y `media` como sigue 
+
+```{sql}
+SELECT tipo1, AVG(x) AS media FROM tabla1 GROUP BY tipo1;
+```
+ 
+Se debe recordar incluir la variable de agrupación en la lista de variables seleccionadas, ya que SQL no  hará esto  automáticamente. Desde que  `media` es una variable calculada en este ejemplo, se tendría que utilizar una cláusula `HAVING` para limitar los datos  que fueron devueltos en base al valor de  `media`.
+
+
+Como el número de datos de alguna columna en una tabla en particular es el mismo, es una práctica común usar un asterisco (*) como un argumento para la función `COUNT`. Para crear una tabla de recuentos por `tipo1` en el previo ejemplo, podríamos haber usado 
+
+```{sql}
+SELECT tipo1, COUNT(*) FROM tabla1 GROUP BY tipo1;
+```
+
+Para agrupar más de una variable, usamos una lista separada por comas como un argumento de la cláusula `GROUP BY`. Múltiples funciones de agrupamiento estadístico pueden ser devueltas fácilmente con una única petición. Por ejemplo
+
+```{sql}
+SELECT tipo1 ,COUNT(*),AVG(x) AS media,STDDEV_SAMP(x) AS std
+  FROM tabla1 GROUP BY tipo1;
+```
+
+### Uniendo  dos  bases de datos
+
+Uno de los puntos fuertes de los servidores de bases de datos es que pueden unir de manera efectiva varias tablas de bases de datos, basados en los valores comunes de las columnas de las tablas. Por supuesto, la misma capacidad está disponible dentro de R a través de la función `merge`, pero se puede ser  más eficiente  utilizar el servidor de base de datos para la unión.
+
+La forma más común de unir dos tablas es a través de una unión interna; sólo aquellos datos que tienen valores comunes de la variable utilizada para la unión  serán retenidos en la tabla de salida. (Este es también el comportamiento por defecto de la función de `merge`).
+
+
+Por ejemplo supongamos que tenemos una tabla llamada  `python`, con las columnas `multiparadigma`, `usuarios`, `desarrolladores`, y  una segunda tabla llamada `R` con columnas `multiparadigma` y `estadistica`. Si queremos una tabla con las columnas `usuarios` , `desarrolladores` de `python ` y la columna `estadistica` de `R`, SQL puede hacer esto con las siguientes intrucciones
+
+```{sql}
+
+SELECT usuarios, desarrolladores, estadistica FROM python
+  INNER JOIN R USING(multiparadigma);
+```
+
+La variable en la expresión `USING` (en ejemplo, `multiparadigma`) es conocida como *llave foránea*. Si dos tablas son unidas con una única llave foránea, entonces `INNER JOIN`, se convierte en `NATURAL JOIN` y la expresión `USING` puede ser omitida.  
+
+
+Si queremos tener una tabla con los *id* de `python` y `R`. Como las variables son llamadas en ambos casos `id`, debemos distinguir entre ellas, precediendo el nombre de la columna con el nombre de la tabla y un punto.
+
+```{sql}
+SELECT python.id, R.id, usuarios, desarrolladores, estadistica
+  FROM python INNER JOIN R USING(multiparadigma ) ;
+```
+
+El operador `AS` se puede utilizar para referenciar varias tablas, además de rebombrar columnas
+
+```{sql}
+SELECT p.id as pid,r.id as rid,usuarios,desarrolladores,estadistica
+  FROM python AS p
+  INNER JOIN R AS r USING(multiparadigma );
+```
