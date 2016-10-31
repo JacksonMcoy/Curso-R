@@ -23,7 +23,7 @@ R proporciona un número de herramientas de depuración:
 
 Una herramienta que alguna veces es útil es la función `traceback()`. Si un programa falla, y no está claro donde o porqué, invocar  `traceback()`, puede proporcionar información útil.
 
-```{r}
+```{r, highlight=TRUE}
 f<-function(x) {
    r<-x-g(x)
    r
@@ -44,7 +44,7 @@ h<-function(z) {
 f(-1)
 ```
 
-```{r}
+```{r, highlight=TRUE}
 traceback()
 ```
 La función `traceback()` imprime todas las funciones que fueron llamadas antes de que el error ocurra. Las funciones son impresas en un orden inverso. `traceback()` no nos dice donde en la función se produjo el error. Con el fin de saber qué línea provoca el error, es posible utilizar la función `debug()`.
@@ -56,7 +56,7 @@ La función `traceback()` imprime todas las funciones que fueron llamadas antes 
 
 * Después de obtener la información necesaria del entorno, podemos dejar  que la función  ejecute la siguiente sentencia. De esta manera, se puede comprobar la  función línea por línea. 
 
-```{r}
+```{r, highlight=TRUE}
 # suma de cuadrados
 SC<-function(mu,x) {
   d<-x-mu
@@ -69,7 +69,7 @@ SC<-function(mu,x) {
 Ejecutamos la función 
 
 
-```{r}
+```{r, highlight=TRUE}
 set.seed(100)
 x<-rnorm(100)
 SC(1,x)
@@ -86,7 +86,7 @@ SC(1,x)
 - Al escribir un nombre de objeto o escribir `print(<nombre de objeto>)` se tiene el valor actual del objeto. Si el objeto tiene nombre de `n, c` o `Q`, se puede  utilizar `print()` para ver sus valores.
 
 
-```{r}
+```{r,cache=TRUE}
 debug(SC)
 SC(1,x)
 ```
@@ -133,3 +133,30 @@ debug(SC)
 SC(1,x)
 ```
 
+Puede etiquetar una función para la depuración durante la depuración de otra función. Por ejemplo
+
+```{r, highlight=TRUE}
+f<-function(x) {
+  r<-x-g(x)
+r
+}
+
+g<-function(y) {
+  r<-y*h(y)
+  r
+}
+
+h<-function(z) {
+  r<-log(z)
+  if(r<10)
+    r^2
+  else
+    r^3
+}
+```
+ luego
+
+```{r, highlight=TRUE}
+debug(f)
+f(-1)
+```
