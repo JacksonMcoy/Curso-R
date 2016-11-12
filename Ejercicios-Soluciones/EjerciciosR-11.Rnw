@@ -1,0 +1,443 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{bigints}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+
+\title{Ejercicios   de R}
+
+
+\author{Curso: Introducci\'on a la Estad\'istica y Probabilidades CM-274}
+\date{}
+\maketitle
+
+\vspace{0.3cm}
+
+
+\textbf{Lecturas Importantes }
+\begin{enumerate}
+\item  Notas de Sebastian Raschka 
+
+\url{http://www.kdnuggets.com/2016/05/implement-machine-learning-algorithms-scratch.html}  para implementar algoritmos en Machine Learning desde cero. 
+\item  Art\'iculo de Ari Lamstein  \url{http://www.kdnuggets.com/2016/11/data-science-101-good-at-r.html} de como empezar a programar en R para ciencia de datos.
+\end{enumerate}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.2cm}
+
+{\Large Preguntas }
+
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+
+
+\item Responde las siguientes preguntas
+
+\begin{enumerate}
+\item Usa funciones de  $R$ para reproducir la siguiente tabla de probabilidad de la distribuci\'on normal est\'andar.
+
+\begin{verbatim}
+> #<  codigo >
+
+> p
+   Lugar del primer decimal z
+z    0       0.2    0.4     0.6     0.8
+0 0.50000 0.57926 0.65542 0.72575 0.78814
+1 0.84134 0.88493 0.91924 0.94520 0.96407
+2 0.97725 0.98610 0.99180 0.99534 0.99744
+3 0.99865 0.99931 0.99966 0.99984 0.99993
+4 0.99997 0.99999 0.99999 1.00000 1.00000
+\end{verbatim}
+\item Usa la aproximaci\'on de Riemann
+
+\[
+I_{LR}(a,b) = h\displaystyle\sum_{i =1}^{n}\phi(x_i)
+\]
+
+para computar la integral
+
+\[
+\bigintsss_{0}^{2}\phi(x)dx
+\]
+
+donde $\phi(\cdot)$ es la funci\'on densidad de la distribuci\'on normal est\'andar y asumamos conocida (usa la funci\'on \texttt{dnorm}). El c\'odigo no debe contener bucles.
+\end{enumerate}
+\item Explica el siguiente c\'odigo as\'i como se utiliza en la  \texttt{Ley de los grandes n\'umeros} usando la librer\'ia \texttt{ggplot2}. Debes explicar en que consiste la Ley de los Grandes n\'umeros y el caso que se utiliza en el c\'odigo.
+
+<<fo1, prompt =TRUE, comment =NA, eval=FALSE>>=
+n <- 10000
+media <- cumsum(rnorm(n))/(1:n)
+g <- ggplot(data.frame(x = 1:n, y = media), aes(x = x, y = y))
+g <- g + geom_hline(yintercept = 0) + geom_line(size = 2)
+g <- g + labs(x = "Numero de obs", y = "media cumulativa")
+g
+@
+
+\item Un camino aleatorio sim\'etrico empieza en el origen y es definido como sigue. Supongase que $X_1, X_2, \dots $ son variables aleatorias id\'enticamente distribuidas independientes con la siguiente distribuci\'on 
+
+\[
+\begin{cases}
++ 1 & \text{con probabilidad } \ \ 1/2 \\
+- 1 & \text{con probabilidad }  \ \ 1/2
+\end{cases}
+\]
+
+Definimos la secuencia $\{S_n\}_{n \geq 0}$ como
+
+\begin{align*}
+S_0 &= 0 \\
+S_n &= S_{n -1} + X_n, \ \ \text{para } \ \ n = 1, 2, \dots
+\end{align*}
+
+Entonces $\{S_n\}_{n \geq 0}$ es un camino aleatorio sim\'etrico empezando en el origen. La posici\'on del camino aleatorio en el tiempo $n$ es la suma de los previos pasos $S_n = X_1 + \cdots X_n$.
+
+\begin{enumerate}
+\item Escribe una funci\'on \texttt{rcamino(n)} que toma un argumento $n$ y retorna un vector el cu\'al es una realizaci\'on de $(S_0, S_1, \dots, S_n)$ las primeras $n$ posiciones de un camino aleatorio sim\'etrico que empieza en el origen. El c\'odigo siguiente 
+
+<<fo2, prompt =TRUE, comment =NA, eval=FALSE>>=
+sample( c(-1,1), n, replace=TRUE, prob=c(0.5,0.5) )
+@
+
+simula $n$ pasos.
+
+\item Escribe una funci\'on \texttt{rcaminoPos(n)} que simula el hecho que un camino dura   para una longitud  de tiempo $n$ y que  devuelve la longitud de tiempo del camino que pasa por encima del eje X. Debes observar que un camino  con longitud $6$ y v\'ertices en  $0, 1, 0, -1, 0, 1, 0$ est\'a 4 unidades de tiempo por encima del eje X y 2 unidades de tiempo por debajo del eje X).
+
+\end{enumerate}
+\item Dado un vector $(x_1, x_2, \dots x_n$),  la autocorrelaci\'on muestral es definida como
+
+\[
+r_k = \frac{\displaystyle\sum_{i = k +1}^{n}(x_i - \overline{x})(x_{i -k} - \overline{x})}{\displaystyle\sum_{i=1}^{n}(x_i - \overline{x})^2}
+\]
+\begin{enumerate}
+\item Escribe una funci\'on \texttt{tmpFn(xVec)} que toma un s\'olo argumento \texttt{xVec} que es un vector y retorna una lista de dos valores $r1$ y $r_2$. En particular encuentra los valores de $r_1$ y $r_2$ para el vector 
+
+$(2,  5, 8, \dots, 53,56)$.
+\item Generaliza la funci\'on de manera que toma dos argumentos: el vector \texttt{xVec} y el entero $k$ que est\'a entre $1$ y $n -1$ donde $n$ es la longitud de \texttt{xVec}. La funci\'on debe retornar un vector de los valores $(r_0 = 1, r_1, \dots, r_n)$.
+\end{enumerate}
+
+\item Escribe una funci\'on llamada \texttt{listaFN} que toma un \'unico argumento $n$ e implementa el siguiente algoritmo
+
+\begin{enumerate}
+\item Simula $n$ n\'umeros independientes, denotado por $\textbf{x} = (x_1, x_2, \dots, x_n)$ desde la distribuci\'on normal est\'andar.
+\item Calcula la media $\overline{\textbf{x}} = \sum_{j =1}^{n}x_j /n$.
+\item Si $\overline{\textbf{x}} \geq 0 $, entonces simula $n$ n\'umeros independientes, denotados por $\textbf{y} = (y_1, y_2, \dots, y_n)$ desde la densidad exponencial con media $\overline{\textbf{x}}$.
+\item Si $\overline{\textbf{x}} < 0 $, entonces simula $n$ n\'umeros independientes, denotados por $\textbf{z} = (z_1, z_2, \dots, z_n)$ desde la densidad exponencial con media $-\overline{\textbf{x}}$. Se coloca  $\textbf{y} = (y_1, y_2, \dots, y_n) = \textbf{-z}$.
+\item Calcula $k$ que es el n\'umero $j$ con $\vert y_j \vert > \vert x_j\vert$.
+\item Retorna la lista de $\textbf{x, y}$ y $k$ con nombres \texttt{xVec, yVec} y \texttt{count} respectivamente.
+\end{enumerate}
+
+\item Supongamos 
+
+A = \begin{pmatrix}
+1 & 1 & 3 \\
+5 & 2 & 6 \\
+-2 & - 1 & -3
+
+\end{pmatrix}
+
+
+\begin{enumerate}
+\item Verifica que $A^3 = 0$, donde $0$ es una matriz $3 \times 3$ con entradas igual a $0$.
+\item Reemplaza la tercera columna de $A$ por la suma de la segunda y tercera columna.
+\end{enumerate}
+
+\item Crea una matriz $6 \times 10$ de enteros aleatorios, desde $1, 2, \dots, 10$ ejecutando los dos l\'inea de c\'odigo
+
+<<fo20, prompt =TRUE, comment =NA, eval=FALSE>>=
+set.seed(75)
+aMat <- matrix(sample(10, size = 60, replace = T), nr = 6)
+@
+
+
+\begin{enumerate}
+\item Encuentra el n\'umero de entradas en cada fila que son mayores que $4$.
+\item ?` Cuantas filas contienen dos ocurrencias del n\'umero $7$?.
+\item Encuentra esos pares de columnas, cuyo total es mayor que $75$. La respuesta debe ser una matriz de dos columnas; as\'i por ejemplo, la fila $(1, 2)$ en la matriz de salida que la suma de columnas $1$ y $2$ en la matriz es mayor que $75$.
+\end{enumerate}
+
+
+\item Escribe una funci\'on que toma dos argumentos $n$ y $k$ que son n\'umeros enteros positivos  y que retorna una matriz $n \times n$
+
+
+
+\[
+\begin{pmatrix}
+k & 1 & 0 & 0 & \dots & 0 & 0 \\
+1 & k & 1 & 0 & \dots & 0 & 0 \\
+0 & 1 & k & 1 & \dots & 0 & 0 \\
+0 & 0 & 1 & k & \dots & 0 & 0  \\
+\dots & \dots & \dots & \dots & \dots & \dots & \dots \\
+0 & 0 & 0 & 0 & \dots & k & 1 \\
+0 & 0 & 0 & 0 & \dots & 1 & k
+\end{pmatrix}
+\]
+
+\item
+
+\begin{enumerate}
+\item  ?` Qu\'e produce los siguientes c\'odigos y las propiedades que muestran
+
+<<fo12, prompt =TRUE, comment =NA, eval=FALSE>>=
+f1 <- function(x = {y <- 1; 2}, y = 0) {
+  x + y
+}
+f1()
+@
+\item ?` Por qu\'e las siguientes dos invocaciones de \texttt{lapply } son equivalentes?
+
+<<fo13, prompt =TRUE, comment =NA, eval=FALSE>>=
+trims <- c(0, 0.1, 0.2, 0.5)
+x <- rcauchy(100)
+
+lapply(trims, function(trim) mean(x, trim = trim))
+lapply(trims, mean, x = x)
+@
+\item  Considera el siguiente problema : Dado una matriz n\'umerica $X$, determina el \'indice de la primera fila de n\'umeros positivos que no contiene $NA$. Resuelve el problema usando \texttt{for} y la funci\'on \texttt{apply()}.
+\item ?`C\'omo se determina el entorno desde el que se llama una funci\'on?.
+\end{enumerate}
+\item Ejecute las siguientes l\'ineas para crear dos vectores de n\'umeros aleatorios enteros los cu\'ales son escogidos con  reemplazamiento, desde los enteros $0,1, \dots, 999$. Ambos tienen longitud $250$.
+
+<<fo3, prompt=TRUE, comment=NA, eval=FALSE>>=
+set.seed(50)
+xVec <- sample(0:999, 250, replace=T)
+yVec <- sample(0:999, 250, replace=T)
+@
+
+Supongamos que $\textbf{x} = (x_1, x_2, \dots, x_n)$ denota el vector \texttt{xVec} y $\textbf{y} = (y_1, y_2, \dots, y_n)$ denota el vector $\texttt{yVec}$. 
+
+\begin{enumerate}
+\item Crea el vector $(y_2 - y_1, \dots, y_n - y_{n -1})$.
+\item Crea el vector $\Bigl(\frac{\sin(y_1)}{\cos(x_2)}, \frac{\sin(y_2)}{\cos(x_3)}, \dots, \frac{\sin(y_{n -1})}{\cos(x_n)} \Bigr)$.
+\item Crea el vector $(x_1 + 2x_2 -x_3, x_2 + 2x_3 -x_4, \dots, x_{n -2} + 2x_{n -1} - x_n)$.
+\item Calcula $\displaystyle\sum_{i =1}^{n -1}\frac{e^{-x_i + 1}}{x_i + 10}$.
+
+Usando los vectores \texttt{xVec} y  $\texttt{yVec}$ y las funciones \texttt{sort, order, mean, sqrt, sum} y \texttt{abs}.
+
+\item Selecciona los valores en $\texttt{yVec}$ que son mayores que $600$.
+\item ?` Cu\'ales son las posiciones de los \'indices de los valores mayores que $600$.
+\item ?` Cu\'ales son los  valores  de \texttt{xVec} que corresponde a los valores en $\texttt{yVec}$  mayores que $600$.
+\item Crea el vector $(\vert x_1 - \overline{\textbf{x}}\vert^{1/2}, (\vert x_2 - \overline{\textbf{x}}\vert^{1/2}, \dots, (\vert x_n - \overline{\textbf{x}}\vert^{1/2}$, donde $\overline{\textbf{x}}$ denota la media del vector $\textbf{x} = (x_1, x_2, \dots, x_n)$.
+\item Ordena los n\'umeros en el vector \texttt{xVec} en el order de valores crecientes de \texttt{yVec}.
+\item Selecciona los elementos en \texttt{yVec} con \'indices $1, 4, 7, 10, 13, \dots$
+\end{enumerate}
+
+%\end{enumerate}
+
+\item 
+
+\begin{enumerate}
+\item Supongamos que $x_0 = 1$ y $x_1 = 2$ y
+
+\[
+x_j = x_{j -1} + \frac{2}{x_{j -1}},\ \  \ \text{para}\ \ j = 1, 2, \dots
+\]
+
+Escribe una funci\'on que tome como argumento un \'unico $n$ y retorne los $n -1$ valores de la secuencia $(x_j)_{j \geq 0}$, es decir los valores $x_0, x1, x_2, \dots, x_{n -2}$.
+\item Escribe una funci\'on  que toma como \'unico argumento \texttt{vector1} que es un vector. La funci\'on debe retornar 
+
+\[
+\sum_{j = 1}^{n}e^j
+\]
+
+donde $n$ es la longitud  de \texttt{vector1}.
+\end{enumerate}
+
+\item
+
+\begin{enumerate}
+\item Considere los siguientes dos m\'etodos para simular distribuciones discretas con valores $0, 1, 2, 3, 4, 5$, con valores de probabilidad $0.2, 0.3, 0.1, 0.15, 0.05, 0.2$.
+
+El primer m\'etodo  es el de \textbf{inversi\'on}
+
+
+<<fo5, prompt=TRUE, comment=NA, eval=FALSE>>=
+probs <- c(0.2, 0.3, 0.1, 0.15, 0.05, 0.2)
+randiscrete1 <- function(n, probs) {
+  cumprobs <- cumsum(probs)
+  numero1 <- function() {
+    x <- runif(1)
+    N <- sum(x > cumprobs)
+    N
+ }
+  replicate(n, numero1())
+}
+@
+
+
+y el segundo m\'etodo es el de rechazo(rejection)
+
+
+<<fo6, prompt=TRUE, comment=NA, eval=FALSE>>=
+randiscrete2 <- function(n, probs) {
+  numero1 <- function() {
+    repeat{
+      U <- runif(2, min=c(-0.5, 0), max=c(length(probs) - 0.5, max(probs)))
+      if (U[2] < probs[round(U[1]) + 1]) break
+      }
+    return(round(U[1]))
+  }
+replicate(n, numero1())
+}
+@
+
+Ejecuta ambas funciones, usando $n = 100, 1000$ y $10 000$. Usa \texttt{system.time()} para determinar que m\'etodo es m\'as r\'apido.
+
+\item Repite el ejercicio anterior sobre una distribuci\'on sobre los enteros $\{0, 1, 2, \dots, 99 \}$, definida por
+
+<<fo7, prompt=TRUE, comment=NA, eval=FALSE>>=
+set.seed(91626)
+probs <- runif(100)
+probs <- probs / sum(probs)
+@
+ \end{enumerate}
+ 
+ \item Explica la salida de los siguientes c\'odigos
+ 
+ \begin{enumerate}
+ \item 
+ <<fo17, prompt=TRUE, comment=NA, eval=FALSE>>=
+X = runif(200)
+Y = runif(200)
+W = rnorm(300, sd = 0.2)
+Z = rnorm(300, sd = 0.2)
+Q = runif(300) * 2 - 1
+P = runif(300) * 2 - 1
+qplot(X, Y, xlab = "$X_1$", ylab = "$X_2$")
+qplot(W, Z, xlab = "$X_1$", ylab = "$X_2$")
+@
+ 
+ 
+ \item
+ 
+ <<fo15, prompt=TRUE, comment=NA, eval=FALSE>>=
+qplot(X, X + runif(200)/10, xlab = "$X_1$", ylab = "$X_2$")
+qplot(X, -X + runif(200)/10, xlab = "$X_1$", ylab = "$X_2$")
+@
+
+\item
+
+<<fo16, prompt=TRUE, comment=NA, eval=FALSE>>=
+qplot(cos(seq(0, 2 * pi, length = 30)), sin(seq(0,
+    2 * pi, length = 30)), xlab = "$X_1$", ylab = "$X_2$")
+qplot(Q[(Q^2 + P^2) < 1], P[(Q^2 + P^2) < 1], xlab = "$X_1$",
+    ylab = "$X_2$")
+@
+ \end{enumerate}
+ 
+ 
+ \item
+ \begin{enumerate}
+ 
+\item Escribe una funci\'on que evalua polinomios de la forma 
+
+\[
+P(x) = c_nx^{n -1} +c_{n -1}x^{n - 2} + \cdots + c_2x + c_1
+\]
+
+La funci\'on debe tomar $x$ y un vector con los coeficientes del polinomio como argumento y debe de retornar el valor del polinomio evaluado. La funci\'on debe llamarse \texttt{directpoly()}
+
+\item Se puede evaluar un polinomio en $x$ podemos utilizar la \texttt{regla de Horner}:
+
+\begin{itemize}
+\item Colocamos $a_n \leftarrow c_n$.
+\item Para $i = n -1, \dots, 1$ colocamos $a_i = a_{i +1}x + c_i$.
+\item Retorna $a_1$ (Este es el valor de $P(x)$).
+\end{itemize}
+
+Escribe una funci\'on en R, con argumentos  $x$ y un vector con los coeficientes del polinomio y retorna el valor del polinomio evaluado en $x$. La funci\'on debe devolver valores apropiados cuando $x$ es un vector. La funci\'on se debe llamar \texttt{horner()}.
+
+\item Prueba los siguientes c\'odigos 
+
+<<fo8, prompt=TRUE, comment=NA, eval=FALSE>>=
+system.time(directpoly(x=seq(-10, 10, length=5000000),c(1, -2, 2, 3, 4, 6, 7)))
+system.time(horner(x=seq(-10, 10, length=5000000),  c(1, -2, 2, 3, 4, 6, 7)))
+@
+\item ?` Qu\'e ocurre en la comparaci\'on cuando el n\'umero de coeficientes del polinomio es muy peque\~no?. Prueba con el polinomio
+
+\[
+P(x) = 2x^2 + 17x - 3
+\]
+ \end{enumerate}
+ 
+\item Soluciona la ecuaci\'on de diferencias: $x_n = rx_{n -1}(1 - x_{n -1})$ con el valor inicial $x_1$:
+
+\begin{enumerate}
+\item Escribe una funci\'on \texttt{dif\_ecuacion(inicio, erre, n\_cont)} que retorna el vector $(x_1, \dots, x_n)$, donde $x_k = rx_{k -1}(1 - x_{k -1})$ donde  \texttt{n\_cont} denota $n$, \texttt{inicio} denota $x_1$ y \texttt{erre} denota $r$. Prueba la funci\'on que has escrito:
+
+\begin{itemize}
+\item Para $r = 2$ y $0 < x < 1$, se debe conseguir que $x_n \rightarrow 0.5$ cuando $n \rightarrow \infty$.
+\item Prueba 
+
+<<fo9, prompt=TRUE, comment=NA, eval=FALSE>>=
+tmp <-dif_ecuacion(inicio = 0.95, erre = 2.99, n_cont = 500)
+@
+
+Ahora vuelve a la consola y escribe
+
+<<fo10, prompt=TRUE, comment=NA, eval=FALSE>>=
+plot(tmp, type="l")
+@
+
+Tambi\'en prueba
+
+<<fo11, prompt=TRUE, comment=NA, eval=FALSE>>=
+plot(tmp[300 : 500], type="l")
+@
+\end{itemize}
+\item Escribe una funci\'on que determina el n\'umero de iteraciones necesarias para conseguir
+
+$\vert x_n - x_{n -1} \vert < 0.02$. Esta funci\'on tiene dos argumentos: \texttt{inicio} y \texttt{erre} (Para \texttt{inicio = 0.95} y \texttt{erre = 2.99}, la respuesta debe dar $84$).
+\end{enumerate}
+
+\item Estudia el siguiente c\'odigo
+
+<<fo18, prompt=TRUE, comment=NA, eval=FALSE>>=
+library(scatterplot3d)
+R = expand.grid(0:12, 0:12)
+R[, 3] = 12 - R[, 1] - R[, 2]
+names(R) = c("x1", "x2", "x3")
+for (i in 1:nrow(R)) {
+    v = R[i, 1:3]
+    if (sum(v) == 12 & all(v >= 0)) {
+        R$p[i] = dmultinom(v, prob = c(0.5, 0.3, 0.2))
+    } else R$p[i] = 0
+}
+par(cex.main = 1.5, cex.axis = 1.2, cex.lab = 2, cex.symbols = 2,
+    col.axis = "blue", col.grid = "lightblue")
+scatterplot3d(x = R$x1, y = R$x2, z = R$p, type = "h",
+    lwd = 10, pch = " ", xlab = "$x_1$", ylab = "$x_2$",
+    zlab = "$p_{X_1,X_2,X_3}(x_1,x_2,1-x_1-x_2)$",
+    color = grey(1/2))
+title("...")
+@
+ \end{enumerate}
+\end{document}
