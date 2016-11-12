@@ -67,7 +67,6 @@ options(formatR.arrow=TRUE,width=90)
 
 \item Sea el conjunto de datos dado por 
 
-
 <<boring, prompt =TRUE, comment =NA>>=
 x = c(1, 8, 2, 6, 3, 8, 5, 5, 5, 5)
 @
