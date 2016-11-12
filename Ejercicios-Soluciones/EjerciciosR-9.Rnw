@@ -25,7 +25,7 @@ options(formatR.arrow=TRUE,width=90)
 @
 
 
-\title{Pr\'actica 4 de Laboratorio  de  R}
+\title{Ejercicios de  R}
 
 
 \author{Curso: Introducci\'on a la Estad\'istica y Probabilidades CM-274}
