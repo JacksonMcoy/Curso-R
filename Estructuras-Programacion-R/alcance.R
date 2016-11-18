@@ -71,3 +71,57 @@ f7 <-
 
 valor10<- f7(7)
 valor10(6)
+
+
+# Ejemplo de probabilidad usando clausura y la distribucion de Poisson
+
+clausura_Poisson<-
+  function(x)
+    function(lambda) prod(dpois(x, lambda))
+
+data_poisson <- rpois(20, 10)
+L <- clausura_Poisson(data_poisson)
+x <- seq(5, 15, length = 1001)
+y <- sapply(x, L)
+plot(x, y, type = "l")
+
+optimize(L, c(8, 12), maximum = TRUE)
+
+# Creando clausura con la funcion with() 
+
+L <- with(list(x = data_poisson),
+         function(lambda)
+           prod(dpois(x, lambda)))
+
+# Creando clausura con la funcion local()
+
+L <- local({
+  x <- data_poisson
+  function(lambda)
+    prod(dpois(x, lambda))
+})
+
+optimize(L, c(8, 12), maximum = TRUE)
+
+# Ocultado funciones de ayuda con clusura
+
+binp <- local({
+  fact <-
+    function(n) gamma(n + 1)
+  bincoef <-
+    function(n, k)
+      fact(n)/(fact(k) * fact(n - k))
+  function(k, n, p)
+    bincoef(n, k) * p^k * (1 - p)^(n - k)
+})
+
+binp(0:5, 10, .5)
+objects()
+
+# Funcion anonima y clausura
+
+(local({
+  fact = function(n)
+    if (n <= 1) 1 else n * fact(n - 1)
+}))(9)
+
