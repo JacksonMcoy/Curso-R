@@ -1,4 +1,4 @@
-# Programacion orientada a objetos en R
+# Programacion orientada a objetos en R, los sistemas S3 Y S4
 
 # Los objetos basicos corresponden a las clases
 # logical, numeric, character y complex
