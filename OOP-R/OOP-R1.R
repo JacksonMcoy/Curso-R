@@ -225,3 +225,11 @@ puntos
 puntos > 30
 
 
+`[.vcoordenadas` <- function(x, i)
+  vcoordenadas(xcoords(x)[i], ycoords(x)[i],
+          valores(x)[i])
+
+puntos
+puntos[1:3]
+puntos[puntos > 50]
+
