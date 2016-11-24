@@ -6,6 +6,7 @@
   	* [Introduction to the Command Line](https://launchschool.com/books/command_line).
   	* [Agile Planning](https://launchschool.com/books/agile_planning).
   	* [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
+   * What you need to know about R, Kick-start your journey with R, Raghav Bali Dipanjan Sarkar Packt Publishing 2016
  
 ##Esquema del Curso
 
