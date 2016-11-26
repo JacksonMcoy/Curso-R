@@ -1,4 +1,4 @@
-# Programacion orientada a objetos en R
+# Programacion orientada a objetos en R, los sistemas S3 Y S4
 
 # Los objetos basicos corresponden a las clases
 # logical, numeric, character y complex
@@ -224,12 +224,135 @@ puntos
 5 * puntos
 puntos > 30
 
+# El sistema S4: slots y setClass
 
-`[.vcoordenadas` <- function(x, i)
-  vcoordenadas(xcoords(x)[i], ycoords(x)[i],
-          valores(x)[i])
+setClass("coordenadas",
+         slots = list(x = "numeric",
+                      y = "numeric"))
+puntos = new("coordenadas",   # No recomendable el uso de este forma de new()
+             x = rnorm(5), y = rnorm(5))
+
+# Funcion constructor para el sistema S4
+
+coordenadas <- 
+  function(x, y){
+    if (length(x) != length(y))
+      stop("Longitudes de x e y son requeridas")
+    if (!is.numeric(x) || is.numeric(y))
+      stop("Los valores numericos de x e y son requeridos")
+    new("coordenadas", x =as.vector(x),
+                       y = as.vector(y))
+    
+  }
+
+puntos <- coordenadas(round(rnorm(5), 2),
+                      round(rnorm(5), 2))
+
+puntos 
+
+# Accediendo a los valores de los objetos usando el operador de acceso de slots @
+
+puntos@x
+puntos@y
+
+
+# La manera que la estructura de la clase puede ser cambiada es 
+
+xcoords <- function(obj) puntos$x
+ycoords <- function(obj) puntos$y
+
+# La funcion generica show()
+
+setMethod(show, signature(object = "coordenadas"),
+          function(object)
+            print(data.frame(x = xcoords(object),
+                             y = ycoord(object))))
+
 
 puntos
-puntos[1:3]
-puntos[puntos > 50]
 
+# Escribiendo nuevas funciones genericas
+
+setGeneric("muestra",
+           function(obj)
+             standardGeneric("muestra"))
+
+setMethod("muestra", signature(obj = "coordenadas"),
+          function(obj)
+          print(paste("(",
+                        format(xcoords(obj)),
+                        ", ",
+                        format(ycoords(obj)),
+                        ")", sep = ""),
+                  quote = FALSE))
+
+muestra(puntos)
+
+setGeneric("bbox",
+           function(obj)
+             standardGeneric("bbox"))
+
+
+# Implementamos metodos para la funcion generica
+
+setMethod("bbox", signature(obj = "coordenadas"),
+          function(obj)
+            matrix(c(range(xcoords(obj)),
+                     range(ycoords(obj))),
+                   nc = 2,
+                   dimnames = list(
+                     c("min", "max"),
+                     c("x:", "y:"))))
+
+puntos
+bbox(puntos)
+
+# Herencia en S4
+
+setClass("vcoordenadas",
+         slots = list(valores = "numeric"),
+         contains = "coordenadas")
+
+# Constructor en herencia del sistema S4
+
+vcoordenadas <-
+  function(x, y, valores)
+  {
+    if (!is.numeric(x) ||
+        !is.numeric(y) ||
+        !is.numeric(valores) ||
+        length(x) != length(valores) ||
+        length(y) != length(valores))
+            stop("argumentos invalidos")
+    new("vcoordenadas", x = x, y = y,
+        valores = valores)
+  }
+
+
+valores <- function(obj) obj$valores
+
+vpuntos <- vcoordenadas(xcoords(puntos), ycoords(puntos),
+                        round(100 * runif(5)))
+
+vpuntos
+
+
+# Constructor de herencia multiple 
+
+vcoordenadas <- 
+  function(x, y, valores)
+  {
+    if (length(x) != length(valores) ||
+      length(y) != length(valores))
+        stop("Los argumentos son invalidos")
+    new ("vcoordenas", valores, x = x, y =y)
+}
+
+vpuntos <- vcoordenadas(round(runif(4, 0, 10), 2),
+                          round(runif(4, 0, 10), 2),
+                        round(runif(4, 0, 10)))
+
+valores(vpuntos)
+
+# Operaciones matematicas, ya que los objetos vcoordenadas son objetos numericos
+sqrt(puntos)
