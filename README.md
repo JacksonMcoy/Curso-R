@@ -226,6 +226,7 @@ La instalación de PostgreSQL en Linux, se da en la siguiente [página](https://
 - [Una comparación interesante: Estadística y Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/).
 - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
 - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
+- [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/)
 - [Guia de estilo de R de Google](http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml).
 - [Herramientas de depuración en R](http://www.noamross.net/blog/2013/4/18/r-debug-tools.html).
 - [Notas de Sql, Python, S, etc](https://www.stat.berkeley.edu/~spector/).
