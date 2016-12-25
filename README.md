@@ -272,4 +272,5 @@ La instalación de PostgreSQL en Linux, se da en la siguiente [página](https://
 - [Tutorial completo acerca de ciencia de datos en R ](http://www.analyticsvidhya.com/blog/2016/02/complete-tutorial-learn-data-science-scratch/).
 - [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
 - [data table and data frame for large data etc](http://www.analyticsvidhya.com/blog/2016/05/data-table-data-frame-work-large-data-sets/).
-
+- [Speed Up Your Code: Parallel Processing with multidplyr](http://www.mattdancho.com/code-tools/2016/12/18/multidplyr.html).
+- [Data Science Basics: Power Laws and Distributions](http://www.kdnuggets.com/2016/12/data-science-basics-power-laws-distributions.html).
