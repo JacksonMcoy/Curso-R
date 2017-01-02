@@ -19,7 +19,9 @@
 7. Base de datos relacionales y no relacionales  con R.
 8. Simulación.
 9. R y otros Lenguajes.
-10. [Opcional] Programación en Paralelo con R.
+10. Programación funcional
+11. [Guia de Estilo ](https://google.github.io/styleguide/Rguide.xml)
+12. [Opcional] Programación en Paralelo con R.
 
 
 ## Libros de Texto
