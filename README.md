@@ -112,16 +112,6 @@ Más información en  la página [http://rmarkdown.rstudio.com/r_notebooks.html]
 
 Más información en el [tutorial de Shiny](http://shiny.rstudio.com/tutorial/)
 
-### Radiant
-
-[radiant](http://vnijs.github.io/radiant/) es una interfaz de **Analytics** en R, usando el paquete **shiny**. En Windows se puede instalar de la siguiente manera, para un versión de R 3.1.2 o superior.
-
-```r
-install.packages("radiant", repos = "http://vnijs.github.io/radiant_miniCRAN/")
-```
-
-
-Más información en [Introducing radiant](https://youtu.be/7L3hDpLw53I), un video de Vincent R. Nijs.
 
 ### Knitr 
 
