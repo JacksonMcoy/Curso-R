@@ -1,0 +1,961 @@
+---
+title: "Vectores y matrices en R"
+output: 
+  html_notebook: 
+    highlight: tango
+    theme: united
+---
+
+
+## Vectores y matrices
+
+Las estructuras de datos de R, pueden ser organizadas por su *dimensión (1d, 2d o nd)* y si  son **homógeneas ** (todo el contenido debe ser del mismo tipo) o **heterógeneas** (el contenido puede ser de diferente tipo). A partir de esta organización surgen cinco tipos de datos que son usados en el *análisis de datos*.
+
+
+
+|          | Homogéneos |  Heterogéneos |
+| :------- | :------:   |  -----:       |
+| 1d       |  Vector    |  Lista        |
+| 2d       |  Matriz    | Data Frame    |
+|nd        |  Array     | 
+
+
+Se debe tener  en cuenta que en R  ningún objeto o estructura tiene dimensión cero . Números o cadenas individuales son  en realidad son vectores de longitud uno.
+
+Dado un objeto, la mejor manera de entender su  estructura   es la  utilizar las funciones **str ()**. 
+
+**str ()** es la abreviatura de *estructura* y proporciona  una compacta descripción, legible de cualquier estructura de datos en  R. Mayor información es utilizando `help(str)`.
+
+```{r}
+## En R trabajamos con objetos y str() revela su esencia
+
+fac <- factor(sample(letters[1:5], 30, replace = TRUE))
+bool <- sample(c(TRUE, FALSE, NA), 30, replace = TRUE)
+num <- runif(30)
+dfr <- data.frame(num, fac, bool)
+str(dfr)
+```
+
+## Vectores en R
+
+La estructura más común en R es el  **vector**. Los vectores vienen de dos formas: *vectores atómicos y listas*, cada uno de ellos  tienen tres propiedades comunes:
+
+ * Tipo, `typeof()`, (que es).
+ * Longitud, `length()`, (cuántos elemento contiene).
+ * Atributos, `attributes()` (metadata adicional).
+
+El tipo de dato que debe contener un *vector atómico* debe ser del mismo tipo, los vectores  pueden ser lógicos, numéricos o de caracter. Si mezclamos  datos, R **coerce** los datos a un único tipo. Las *listas* que pueden tener diferentes tipos.
+
+Si usamos la función `is.vector()` retorna el valor booleano  `TRUE` sólo si el objeto es un vector, sin atributos aparte de su nombre. Se debes usar `is.atomic(x) || is.list(x)` para probar si un objeto es un vector.
+
+Los *vectores atómicos* tiene ciertas características interesantes:
+    
+* Recycling es el alargamiento automatico de vectores de distinta longitud.
+* Filtering  es la extracción de subconjuntos de vectores.
+* Vectorización se da cuando las funciones son aplicadas componente a componente.
+
+
+Asignamos un vector usando la función `c()`.
+
+```{r}
+x <-c(1:10)
+
+doub_var <-c(1, 2.3, 5.6)    #Vectores double
+doub_var
+int_var<-c(1L, 4L, 8L)        #Vectores enteros
+int_var
+log_var <- c(TRUE, FALSE, T,F) # Vectores logicos
+log_var
+char_var<- c("Python", "R")
+char_var
+```
+
+```{r}
+
+c(1,c(2,c(3,4))) #  es lo mismo que 
+c(1,2,3,4)
+```
+
+
+
+Dado un vector se puedes determinar su tipo usando `typeof` o verificar si es un tipo específico, con las funciones
+
+* `is.character()`
+* `is double()`
+* ``is.integer()`
+* `is.logical()`
+
+o más generalmente con la función  `is.atomic()`.
+
+```{r}
+int_var <- c(1L, 6L, 10L)
+typeof(int_var)
+is.integer(int_var)
+is.atomic(int_var)
+```
+
+```{r}
+doub_var<-c(1, 3,5, 4,6)
+typeof(doub_var)
+is.double(doub_var)
+is.atomic(doub_var)
+```
+
+Algunas operaciones con vectores
+
+```{r}
+# Agregando y eliminando elementos de los vectores
+
+x1 <-c(12, 13, 26, 8)
+x1
+x2<-c(x1[1:3], 20, x1[4]) # insertamos el 20 antes del 8
+x2
+```
+```{r}
+# Obteniendo la longitud de un vector
+
+w <- c(3,5,6)
+length(w)
+```
+
+```{r}
+# + uso de la funcion length()
+
+q<- c()
+q
+length(q)
+1:length(q)  # !0 si el vector esta vacio
+```
+
+### Declaraciones de variables
+
+En los lenguajes compilados, normalmente se requiere que se declaren las variables y los tipos de estas variables, esta información es captado por el intérprete/compilador antes de utilizar las variables. Este es el caso de una declaración en C++
+
+
+```{rcpp}
+int z;
+int r[3];
+```
+
+
+Al igual que en  lenguajes interpretados, tales como Python o Perl,  R  no   necesitas declarar el tipo de  las variables
+
+```{python}
+z <-3
+```
+
+Sin embargo, si tu referencias un elementos de un vector,  debes tener cierto cuidado en R. 
+Por ejemplo si tenemos, dos componentes de un vector con valores 5 y 13, lo siguiente no trabaja
+
+```{python}
+t[1] <- 5
+t[2] <- 13
+```
+
+En lugar de eso, se puedes crear `t` primero, de esta forma 
+
+```python
+t <- vector(length=2)
+t[1] <- 5
+t[2] <- 13
+```
+
+O de forma más compacta  `y <- c(5, 13)`.
+
+```{r}
+# Esto también es válido: x es un puntero que apunta a
+
+x<-c(1,5)
+x
+x<-"Elizabeth"
+```
+
+### Recycling
+
+Sea el siguiente ejemplo
+
+```{r}
+1:5 + 1
+1 + 1:5
+```
+Qué está pasando con el vector de menor longitud, en el code anterior?.
+
+R, está haciendo **recycling** de manera que la operación continue y se realice . En este ejemplo 
+agregamos unos de la longitud del vector ` 1 1 1  1 1 + 1 2 3 4 5`.
+
+```{r}
+x <- c(2,3,4)
+z1 <- 2 + 5*x
+z2 <- (2 + 5)*x
+z1
+z2
+```
+
+Si la longitud de los vectores no son múltiplos  R produce un warning, pero aun así produce un resultado. Cuando aplicamos una operación a dos vectores  se requiere que tengan la misma longitud. R automáticamente **recycle** o repite, el de menor longitud, hasta que pueda realizarse la operación.
+
+```{r}
+c(2,4,6) + c(6,9, 0,20, 22)
+```
+
+El vector más pequeño, fue **reciclado**, asi la operación fue tomada como sigue:
+
+```
+c(2,4,6,2,4) + c(6,9,0, 20,22)
+```
+
+
+
+```{r}
+zm <- matrix(1:6, ncol=2, nrow=3)
+zm
+
+```
+```{r}
+zm + c(1,2)
+```
+
+En este caso, la forma de almacenar **zm** es la misma como si fuese un vector `c(1,2,3,4,5,6) `. Para realizar la operación de agregar  un vector de dos elementos a un vector de seis elementos, R, necesita repetir dos veces los elementos del vector más pequeño. En otras palabras se hace  lo siguiente
+
+```
+zm + c(1,2,1,2,1,2)
+```
+
+No sólo eso, sino, que `c(1,2,1,2,1,2) ` cambia desde un vector a una matriz, teniendo la misma forma de **zm** antes de que la suma a tenga lugar.
+
+### Operaciones con vectores
+
+Al ser R un lenguaje de tipo funcional, cada operador incluyendo `+, <-`  es una función y satisface muchas operaciones aritméticas
+
+```{r}
+2 + 3
+"+"(3,4)
+```
+
+```{r}
+x <-c(1,2,5)
+x + c(5,0,1)
+```
+
+```{r}
+# Multiplicacion elemento a elemento
+
+x * c(5, 0,-1)  
+y <- c(3,5,6)
+y / c(3,5,6)
+y %% c(4,3,2)
+```
+
+
+
+Todos los elementos de un vector  deben ser del mismo tipo, por lo que cuando se intenta combinar diferentes tipos: R realiza coerción al tipo más flexible. Tipos de menos a más flexibles son: lógico, número, flotante y de carácter. Por ejemplo, combinar un caracter y un número produce un caracter
+
+```{r}
+str(c("Eli", 3))
+```
+
+
+Cuando un vector lógico es coercionado a un entero o double. TRUE llega a ser 1 y FALSE llega a ser 0.  Esto es útil cuando utilizamos `sum()` y `mean()`.
+
+```{r}
+u <- c(FALSE, TRUE, FALSE)
+as.numeric(u)
+sum(u)
+mean(u)
+```
+
+La coerción a menudo sucede automáticamente. La mayoría de las funciones matemáticas `(+, log, abs, etc )` serán coaccionadas  a  operaciones enteros o operaciones  flotantes y las operaciones lógicas `(&, |, any, etc)` se coaccionan a un tipo lógico. 
+
+En  general se recibirá un mensaje de advertencia si en la coerción se pierde  información. Si la confusión es probable, se coacciona explícitamente con `as.character(), as.double(), as.integer()`  y  `as.logical()`.
+
+```{r}
+z<-c(TRUE, FALSE, TRUE)
+c(1,2, z)
+
+z1 <-c("2","3", "2")
+c(1.2, z1, z)
+1 + z
+c(1.2, z1)
+c(1.2, as.numeric(y))
+```
+
+Hay algunos operadores en R  son útiles para la creación de vectores. El operador `:` produce un vector en un rango de números como si fuese el siguiente  bucle
+
+```
+for(i in 1:length(x)){
+```
+
+Una observación importante, del libro de Norman Matloff, es acerca del manejo de procedencia del operador. Mostremos algunos ejemplos del uso del operador y la observación anterior
+
+```{r}
+2: 13
+12: 4
+```
+
+```{r}
+i <- 5
+1: i-1 # Esto significa (1:i) - 1, no 1:(i -1)
+1:(i -1)
+```
+
+
+Una generalización de `:`  es  la función `seq()` que genera una secuencia en progresión aritmética.
+Por ejemplo, mientras `4:8 ` mostraba un vector `(4, 5, 6, 7,8)`, con los elementos espaciados una unidad,  `seq()` puede espaciar con valores distintos de la unidad . Veamos algunos ejemplos
+
+```{r}
+seq(from=3, to=15, by=3)
+```
+
+```{r}
+# El espaciado puede no ser un entero
+seq(from = 0.1, to=1, length =10)
+```
+
+Supongamos que tenemos esta función y `x` es vacio, entonces el buble  no deberia, producir iteraciones, pero tiene dos, desde que `1:legth(x)` evalua a `(1,0)`.
+
+```
+f1 <- function(x) {
+for (i in 1:length(x)) {
+if (x[i] == 1) break # salir del bucle
+}
+return(i)
+}
+
+```
+Podemos fijar esto en el script anterior 
+
+` for (i in seq(x))`
+
+
+```{r}
+x <- c(5,12,13)
+x
+seq(x)
+x<-NULL
+x
+seq(x)
+```
+
+`seq(x)` nos da el mismo resultado que `1:length(x)`, si `x` es no  vacío, pero evalúa correctamente a `NULL` si `x` es vacío, resultando en cero iteraciones, como se muestra en el ejemplo anterior. Más información con `?seq`.
+
+
+
+La función `rep()`  nos permite de manera conveniente colocar un vector constante varias veces. 
+Una forma de usar esta función es `rep(x, n)`  que crea un vector de  `n` copias de `x`. Más información con `?rep`.
+
+```{r}
+q <- rep(5, 3)
+q
+rep(c(1,2,3), 4)
+rep(1:3, 3)
+```
+
+En la  documentación  de la función hay un argumento llamado `each` que intercala las copias de `x` y que es útil en la creación de matrices.
+
+```{r}
+rep(c(3,4,5), each = 2)
+```
+
+```{r}
+x <- 1:20
+matrix(rep(x,2), ncol = 4)
+```
+
+Las funciones `all()` y `any()` permiten verificar declaraciones lógicas, aplicadas a un vector. Por ejemplo si `ab <-1:6'` entonces ejecutar `any(ab > 5)` evalua primero ` ab >5`  dando el valor de
+
+```
+(FALSE,FALSE, FALSE, FALSE,FALSE,TRUE)
+```
+
+La función `any()`  reporta si alguno de esos valores tiene algún valor `TRUE`. La función `all()` trabaja de forma similar y reporta si todos los valores son verdaderos.
+
+```{r}
+ab <- 1:6
+any(ab >5)
+any(ab < -1 )
+all(ab > 1)
+all (ab > 0)
+```
+```{r}
+er<-rnorm(1000)
+range(er)
+any( er < 4)
+any(is.na(er))
+all(x > -3)
+all(x > -3.5)
+
+```
+
+```{r}
+t <- sample(c(TRUE, FALSE), 3, TRUE)
+t
+any(t)
+all(t)
+```
+
+```{r}
+w <- rep(FALSE, 3)
+w
+any(w)
+all(w)
+
+```
+```{r}
+q <- c()
+q
+any(q)
+all(q)
+```
+
+Mucha mayor información de las funciones `any()` y `all()` usando la documentación `?any` y `?all`.
+
+### Vectorización 
+
+Una de las maneras más eficaces de  alcanzar una mejor velocidad en el código R es el uso de operaciones que están **vectorizadas **. Esto se traduce en que si una función se aplica a un vector en R, en realidad  se aplica individualmente a cada elemento de ese vector. Una interesante lectura de esto es [vectorization in R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
+
+
+```{r}
+# Usamos el operador " > "
+
+u <- c(2,4,5)
+v <- c(1,5,8)
+u > v  
+```
+
+```{r}
+#f1() usa + el cual es vectorizado, asi f1() es vectorizado.
+
+rt<- c(1, 2, 3)
+f1 <- function(x) return(x + 2)
+f1(rt)
+```
+
+```{r}
+# Las funciones raiz cuadrada, logs, trig son tambien vectorizadas.
+sqrt(1:7)
+```
+```{r}
+#Ejemplo con la funcion round
+
+g <-c(1.4, 5.6, 0.7, 5.6)
+zq <-round(y)
+zq
+```
+
+Desde que R no conoce de escalares, podemos considerar funciones que tienen argumentos escalares
+
+```{r}
+f2 <- function(x,c) return((x +c)^2)
+f2(1:3,0)
+f2(1:3,1)
+f2(1:3, 1:3) 
+```
+
+Si se  quieres restringir c a escalares, se debe insertar algún tipo de verificación:
+
+```
+f2<- function(x,c){
+    if(length(c) != 1) stop("el vector c no es permitido!")
+    return((x + c)^2)
+    }
+```
+
+```{r}
+# Ejemplo de una función de valor vectorial
+
+f4 <- function(w) return (c(w, w^2))
+f4(5)
+d<- 1:8
+f4(d)
+```
+
+```{r}
+# Podemos usar la funcion matrix() para ordenar una matriz 4x4
+d<- 1:8
+matrix(f4(d),ncol =4 )
+```
+
+```{r}
+# Usando la funcion sapply()
+
+help(sapply)
+f4 <- function(w) return (c(w, w^2))
+sapply(1:8, f4)
+```
+
+`NA`: Es una constante lógica de longitud 1, el cual contiene un indicador de valores *pérdidos*  que puede ser usado con coerción a otro tipo de vector, que  evaluado en una expresión produce `NA`. Hay constantes `NA_integer_, NA_real_, NA_complex_ y NA_character_ ` de otras estructuras que soportan *valores perdidos*. Todas estas constantes son palabras reservadas de R.
+
+`NULL`: representa el objeto nulo en R: es una palabra reservada. `NULL`` es a menudo devuelto por expresiones y funciones cuyos valores son indefinidos.
+
+```{r}
+NA
+NULL
+class(NA)
+class(NULL)
+NA > 1
+NULL > 1 # logical(0)
+
+```
+Hay diferencias sutiles entre  `NA` y `NULL` en las estructuras de datos de R.
+
+```{r}
+v <-  c( 1, NA, NULL)
+v
+list(1, NA, NULL)
+```
+
+```{r}
+
+k <-c(88, NA, 12, 35, 12)
+k
+mean(k)
+mean(x, na.rm = T)  #na.rm (NA remove)
+l<-c(34, NULL, 34, 45, 12)
+mean(l)
+```
+
+```{r}
+# Ejemplo de NULL(Matloff)
+
+z <-NULL
+for(i in 1:10 ) if(i %% 2 ==0)z<- c(z,i)
+    z
+```
+```{r}
+z <-NA
+for(i in 1:10 ) if(i %% 2 ==0)z<- c(z,i)
+    z
+```
+Los valores NULL son contados como no existentes, como se puede ver en el siguiente código
+
+```{r}
+r <- NULL
+length(r)
+qa <- NA
+length(qa)
+```
+
+Una  característica que refleja la naturaleza de lenguaje funcional de R es el del  **filtrado**, que nos permite extraer elementos de un vector que satisfacen ciertas condiciones. 
+
+El filtrado es una de las operaciones más comunes en R, y de uso importante en  análisis de datos que a menudo se centra en  datos que satisfagan ciertas  condiciones 
+
+```{r}
+zs <- c(5,2,-3,8)
+wq <- zs[zs*zs > 8]
+wq
+
+```
+```{r}
+">"(12,11) # Comparando dos elementos
+```
+
+La diferencia del uso de la función  `subset()` y el uso de filtrado es la manera como **NA** es manejado. Más información con `help(subset)`
+
+```{r}
+xx <- c(4, 1:3, NA, 13)
+xx
+xx[xx > 5]
+subset(xx, xx >5)
+```
+
+Como hemos visto, la filtración consiste en la extracción de  elementos de un vector  que satisfacen una determinada condición. En algunos casos, sin embargo, es posible que sólo se quiera encontrar las posiciones dentro del vector en la que se produce la condición. Podemos hacer esto usando `which()` como sigue:
+
+```
+help(which)
+```
+```{r}
+z <- c(51,-12,-32,81, 11, 14)
+which(z*z < 800)
+```
+
+Un uso de la función **which()**  es la ubicación dentro de un vector, en el cuál ocurre la primera ocurrencia,  de alguna condición. Por ejemplo el siguiente código puede escribirse como
+
+```
+f1 <- function(x) {
+    for (i in 1:length(x)) {
+        if (x[i] == 1) break # salir del bucle
+         }
+    return(i)
+}
+```
+
+Aquí una alternativa de hacer esto con la función `which()`.
+
+
+```{r}
+f1 <- function(x) return(which(x == 1)[1])
+```
+
+
+Además del constructor `if-then-else`  común en otros lenguajes de Programación, R incluye una versión vectorizada, la función `ifelse()``  cuya forma declarativa  es la siguiente
+
+```
+ifelse(b,u,v)
+```
+
+```
+help(ifelse)
+```
+
+```{r}
+
+x <- 1:15
+y <- ifelse(x%%2 == 0,1,2)
+y
+```
+
+Aquí estamos produciendo un vector en el cual produce 1, si es un número par o 2 si x es un número impar.
+
+```{r}
+w<- c(5,2,9,12)
+ifelse(w > 6,2*w,3*w)
+```
+
+Qué sucede en estas líneas siguientes
+
+```{r}
+a <- 1:3
+b <- c(1, 3, 4)
+a ==b      # No trabaja ==
+```
+¿ Qué ha ocurrido?
+
+Rpta : El punto es que estamos tratando con vectorización y `==` es una función vectorizada.
+
+```{r}
+"=="(3,2)
+i <- 2
+"=="(2,5)
+```
+
+```{r}
+# Usemos all() junto con "=="
+
+d<- 1:4
+e <- c(1,3,5,6)
+d == e
+all(d ==e)
+```
+
+```{r}
+# Usemos la función identical()
+help("identical")
+identical(d,e)
+```
+
+```{r}
+xa <- 1:2
+ya <- c(1,2)
+xa
+ya
+identical(xa,ya)
+typeof(xa)
+typeof(ya)
+
+```
+
+Los elementos de un vector opcionalmente pueden tener  **nombres**. Podemos asignar o consultar los nombres de los elementos de un vector  a través de la función `names()`.
+
+```{r}
+zz<- c(1,2,3,4)
+names(zz)
+names(zz)<- c("R", "Python", "C", "JS")
+names(zz)
+zz
+```
+
+
+```{r}
+# Podemos remover los nombres desde un vector usando NULL
+
+names(zz)<-NULL
+zz
+```
+
+```{r}
+# Podemos referenciar elementos del vector por nombres
+
+zz<- c(1,2,3,4)
+names(zz) <- c("R", "C", "Python", "JS")
+zz["C"]
+```
+
+Algunas características de la función `c()`
+
+```{r}
+c(1,2,"Mili")
+c(1,2,list(a="Python",b="R"))
+```
+
+Otro punto a tener en cuenta es que `c()``  tiene un efecto de *aplanamiento* de vectores, como en este ejemplo:
+
+```{r}
+c(5,6,c(4.5,6)) # Debe salir 5.0 6.0 4.5 6.0
+```
+### Indexando vectores 
+
+A menudo, es posible que desee acceder a sólo parte de un vector o tal vez un elemento individual. Hacer esto se denomina *indexación* y se logra con corchetes `[ ]`. (También se  llama *subsetting* *subscripting* o *slicing*) R tiene un sistema muy flexible que nos da varias opciones de indexado:
+
+- Pasar un vector de números positivos devuelve la parte del vector que contiene los elementos en esos lugares. La primera posición es 1 (no 0, como en otros lenguajes).
+- Pasar un vector de números negativos devuelve la parte del vector que contiene los elementos en todas partes excepto en esos lugares.
+- Pasar un vector lógico devuelve la parte del vector que contiene los elementos donde el índice es `TRUE`.
+- Para los vectores nombrados, pasar un vector de caracteres de nombres devuelve el vector que contiene los elementos con esos nombres.
+
+Consideramos este vector
+
+```{r}
+x <- (1:5)^ 2
+
+# Los metodos anteriores
+x[c(1, 3, 5)]
+x[c(-2, -4)]
+x[c(TRUE, FALSE, TRUE, FALSE, TRUE)]
+
+```
+
+Después de nombrar cada elemento, este método también devuelve los mismos valores:
+
+```{r}
+names(x) <- c("one", "four", "nine", "sixteen", "twenty five")
+x[c("one", "nine", "twenty five")]
+```
+
+Mezclar valores negativos y positivos no se está permitido y por tanto lanza un error
+
+```{r}
+x[c(1, -1)]
+```
+
+
+Si utilizamos números positivos o valores lógicos como índice, los índices faltantes corresponden a NA en el resultado:
+
+```{r}
+x[c(1, NA, 5)]
+```
+
+```{r}
+x[c(TRUE, FALSE, NA, FALSE, TRUE)]
+```
+
+Los valores NA no tienen sentido para los índices negativos y provocan un error. Los índices fuera de rango, más allá de la longitud del vector, no provocan un error, sino que devuelven el valor NA. En la práctica, por lo general es mejor asegurarse de que sus índices están en el rango que utilizar valores fuera de rango.
+
+
+## Matrices
+
+
+Agregando un atributo `dim()`  a un vector atómico permite un comportamiento como el de un  *array multidimensional*.  Un caso especial de un array es de **matrix** que tiene dos dimensiones. 
+Las matrices son comunmente usadas como parte de la maquinaria matemática de estadística. Los arrays son menos  frecuentes pero es bueno estar concientes de ellos.
+
+Las matrices y arrays son creadas con las funciones `matrix()` y `array()` o usando la forma de asignación de `dim()`.
+
+```{r}
+# Dos argumentos escalares para especificar filas y columnas
+m <- matrix(1:6, ncol=3, nrow=2)
+m
+
+# Un argumento en forma de vector que describe todas las dimensiones
+n <-array(1:12, c(2,3, 2))
+
+# Podemos modificar un objeto en su lugar en base a dim()
+p<- 1:12
+dim(p) <- c(3,4)
+p
+dim(p) <-c(4,3)
+p
+```
+
+Para crear un array como en el ejemplo anterior podemos usar la función `àrray()`, pasando un vector de valores y un vector de dimensiones. Podemos proporcionar nombres para cada dimensión
+
+```{r}
+(tres_d_array <- array(
+  1:24,
+  dim = c(4, 3, 2),
+  dimnames = list(
+    c("one", "two", "three", "four"),
+    c("ein", "zwei", "drei"),
+    c("un", "deux")
+    )
+))
+class(tres_d_array)
+```
+
+La sintaxis para crear matrices es similar, pero en lugar de pasar un argumento `dim`, se especifica el número de filas o el número de columnas
+
+
+```{r}
+(a_matriz <- matrix(
+  1:12,
+  nrow = 4, #ncol = 3 trabaja igual
+  dimnames = list(
+    c("one", "two", "three", "four"),
+    c("ein", "zwei", "drei")
+    )
+))
+class(a_matriz)
+```
+
+La siguiente matriz de dos dimensiones es idéntica a la matriz que hemos creado anteriormente
+
+```{r}
+(dos_d_array <- array(
+  1:12,
+  dim = c(4, 3),
+  dimnames = list(
+    c("one", "two", "three", "four"),
+    c("ein", "zwei", "drei")
+    )
+))
+identical(dos_d_array, a_matriz)
+class(dos_d_array)
+```
+
+Cuando se crea una matriz, los valores se llenan de columna a columna. E  posible rellenar la matriz fila a fila  especificando el argumento `byrow = TRUE`
+
+```{r}
+matrix(
+  1:12,
+  nrow = 4,
+  byrow = TRUE,
+  dimnames = list(
+    c("one", "two", "three", "four"),
+    c("ein", "zwei", "drei")
+    )
+)
+```
+
+`length()` generaliza a `nrow()` y `ncol()` para matrices y `dim()` para arrays. `names()` generaliza a `rownames()` y `colnames()` para matrices y `dimnames()` es una lista de  vectores de caracteres.
+
+```{r}
+length(m)
+nrow(m)
+ncol(m)
+rownames(m)<- c("Python", "R")
+colnames(m)<-c("C", "C++", "JS")
+m
+length(n)
+dim(n)
+dimnames(n) <-list(c("M", "E"), c("ER", "D", "S"), c("L", "C")) 
+n
+```
+
+`c()` generaliza a `cbind()` y `rbind()` para matrices y a `abind()` (dado por el paquete `abind()` ) para arrays. Se puede transponer una matriz, usando la función `t()` , el equivalente generalizado para arrays es `aperm()`.
+
+Se puede probar si un objeto es una matriz o un  array, usando `is.matrix()` y `is.array()` o mirando a la longitud de `dim().as.matrix()`  y `as.array()` que hace  fácil  convertir un vector existente en una matriz o un array.
+
+Los vectores no son la única estructura de datos 1-dimensional, se  puedes tener matrices con una sola fila o columna o un array con una sola dimensión. Ellos se pueden imprimir de manera similar, pero se comportarán de forma diferente. Las diferencias no son demasiado importantes, pero es útil saber que existen en caso de que se tenga una  salida estraña desde una función (`tapply()` por ejemplo). Es siempre útil, usar `str()` para revelar diferencias.
+
+```{r}
+t(a_matriz)
+```
+
+
+```{r}
+str(1:5)     # vector 1d
+str(matrix(1:3, ncol=1)) # vector columna 
+str(matrix(1:3, nrow=1))  # vector fila
+str(array(1:4, 4))        # vector array
+```
+
+se puede configurar con la función `list()` estructuras de datos  algo  esotéricas como lista-matricesque  pueden ser útiles si se desea organizar objetos en una estructura grid.
+
+```{r}
+l <- list(1:5, "python", TRUE, 2.9)
+dim(l) <- c(2,2)
+l
+```
+
+La indexación funciona igual que con los vectores, excepto que ahora tenemos que especificar un índice para más de una dimensión. Como antes, utilizamos corchetes para denotar un índice y todavía tenemos cuatro opciones para especificar el índice (enteros positivos, enteros negativos, valores lógicos y nombres de los elementos). Es posible especificar los índices de diferentes dimensiones de diferentes maneras. Los índices para cada dimensión están separados por comas
+
+```{r}
+z<-matrix(c(1,2,3,4, 1, 1,0,0, 1, 0,1,0), nrow = 4, ncol =3)
+z
+z[, 2:3]  # Extrayendo columnas 
+y <-matrix(c(11, 21, 31, 12, 23, 34), nrow =3)
+y
+y[2:3,]   # Extrayendo filas
+y[2:3, 2]
+```
+
+```{r}
+a_matriz[1, c("zwei", "drei")]
+```
+
+```{r}
+a_matriz[1, ] # todos los elementos de la primera fila
+```
+
+```{r}
+a_matriz[, c("zwei", "drei")] # todos los elementos de la segunda y tercera columna
+```
+
+
+```{r}
+# Podemos asignar valores a las submatrices
+
+y1 <- matrix(c(1,2,3,4,5,6), ncol =2)
+y1
+y1[c(1,3), ] <- matrix(c(7,8,9,11), nrow =2)
+y1
+
+xv <- matrix(nrow=3,ncol=3)
+yv <- matrix(c(4,5,2,3),nrow=2)
+yv
+xv[2:3, 2:3]<- yv
+xv
+```
+
+Los subindices negativos, usados como vectores, para excluir ciertos elementos sirven para las matrices
+
+```{r}
+y
+y[-2]
+```
+
+Podemos realizar el filtrado con matrices. El criterio de filtrado se puede basar en una variable separada de  una a la que el filtrado se  se aplicado también.
+
+```{r}
+xq <- matrix(c(1,2,3,2,3,4), ncol =2)
+xq
+xq[xq[,2] >= 3,]
+```
+
+
+```{r}
+zf <- c(5,12,13)
+xq[zf %% 2 == 1,]
+```
+
+
+```{r}
+m <-matrix(c(1,2,3,4,5,6), nrow=3)
+m
+m[m[,1] > 1 & m[,2] > 5,]
+```
+
+### Combinando matrices
+
+La función `c` convierte las matrices en vectores antes de concatenarlas:
+
+```{r}
+(una_matriz <- matrix(
+  seq.int(2, 24, 2),
+  nrow = 4,
+  dimnames = list(
+    c("five", "six", "seven", "eight"),
+    c("vier", "funf", "sechs")
+    )
+  ))
+```
+
+```{r}
+c(a_matriz, una_matriz)
+```
+La combinación más natural de matrices se puede lograr usando `cbind` y `rbind`, que unen matrices entre columnas y filas:
+
+```{r}
+cbind(a_matriz, una_matriz)
+```
+
+```{r}
+rbind(a_matriz, una_matriz)
+```
+
