@@ -1,9 +1,0 @@
----
-title: "Programacion   Paralela con R"
-output: html_notebook
----
-
-## Referencias
-
-* R High Performance Programming, Aloysius Lim William Tjhi, Packt Publishing, 2015.
-* Parallel R, Data Analysis in the Distributed World, Stephen Weston Q. Ethan McCallum, O'really Media, 2011.
