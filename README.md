@@ -6,22 +6,22 @@
   	* [Introduction to the Command Line](https://launchschool.com/books/command_line).
   	* [Agile Planning](https://launchschool.com/books/agile_planning).
   	* [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
+   * [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml)
    
  
 ## Esquema del Curso
 
-1. Vectores, Matrices y Arrays.
-2. Listas, Data Frames, Factores y Tablas.
-3. Estructuras de Programación en R.
-4. Programación Orientada a Objetos.
-5. Gráficos.
+1. Vectores, matrices y arrays.
+2. Listas, data frames, factores y tablas.
+3. Estructuras de programación en R.
+4. Gráficos
+5. Programación orientada a objetos.
 6. Manipulación de  datos con R.
 7. Base de datos relacionales y no relacionales  con R.
 8. Simulación.
-9. R y otros Lenguajes.
+9. R y otros lenguajes.
 10. Programación funcional
-11. [Guia de Estilo ](https://google.github.io/styleguide/Rguide.xml)
-12. [Opcional] Programación en Paralelo con R.
+11. [Opcional] Programación en Paralelo con R.
 
 
 ## Libros de Texto
