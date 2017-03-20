@@ -8,7 +8,7 @@
   	* [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
    
  
-##Esquema del Curso
+## Esquema del Curso
 
 1. Vectores, Matrices y Arrays.
 2. Listas, Data Frames, Factores y Tablas.
@@ -31,7 +31,7 @@
 -  An Introduction to Statistical Learning: with applications in R, Gareth James, Trevor Hastie, Robert Tibshirani, Daniel Witten, Springer, 2015.
 -  Beginning Data Science with R, Manas A. Pathak, Springer, 2016.
 
-##Software
+## Software
 
 ### R y Rstudio
 
