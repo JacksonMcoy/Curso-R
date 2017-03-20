@@ -1,0 +1,244 @@
+---
+title: "R Notebook"
+output: 
+  html_notebook: 
+    highlight: kate
+    theme: cerulean
+---
+
+###  Aplicaciones y ejemplos de vectores y matrices
+
+Ejemplo de la matriz de covarianza, dado por Norman Matloff. 
+
+```{r}
+# Usando las funciones row() y col() cuyos argumentos son matrices
+
+matrizcoV <- function(rho,n) {
+    m <- matrix(nrow=n,ncol=n)
+    m <- ifelse(row(m) == col(m),1,rho) 
+    return(m)
+}
+matrizcoV(0.2,3)
+```
+
+Una práctica común en R es el de  visualizar la dimensionalidad de los datos. Los datos siguientes representan las cifras iniciales en la verificación de una oficial de reembolso de seguro, cuando un auditor financiero, le pidió investigar por fraude.
+
+```{r}
+accdato <- c(1, 132, 86.7,
+            2, 50, 50.7,
+            3, 32, 36.0,
+            4, 20, 27.9,
+            5, 19, 22.8,
+            6, 11, 19.3,
+            7, 10, 16.7,
+            8, 9, 14.7,
+            9, 5, 13.2)
+accdato
+```
+
+Acomodamos mejor el vector, como una matriz 9x3  cuyas columnas se llaman numero, actual, v_esperado
+
+```{r}
+accdato <- matrix(accdato, 9, 3, byrow = TRUE)
+colnames(accdato) <- c("numero", "actual", "v_esperado")
+accdato
+```
+
+Podemos ahora usar el test de *chi-cuadrado* para averiguar si es que ha habido un fraude, a través de la desviación significativa o no de los datos reales y de los esperados. Escribamos el test
+
+```{r}
+chi2 <-sum((accdato[,2] -accdato[,3])^2/accdato[,3])
+chi2
+```
+
+El poder de las matrices en R, ocurre cuando realizamos operaciones (multiplicación, inversión, transposición, etc) comunes de  matrices y sus respectivas restricciones 
+
+```{r}
+A <- matrix(c(6,2,3, 4,
+             0, -8,2, 1,
+             8, -3, 7, -5),3, 4, byrow = TRUE)
+B <- matrix(c(-7,12,3, 9,
+             6, 2, 0, -1,
+             11, 5, -12, 8),3, 4, byrow = TRUE)
+A+B
+A-B
+```
+
+```{r}
+A * B   # Multiplicación componente a componente
+```
+
+```{r}
+A %*% B  # Multiplicación usual de matrices
+```
+
+El cálculo de la inversa de una matriz se realiza de la siguiente manera
+
+```{r}
+A <- matrix(c(4, 10, 6, 1 , 13, 5,
+           4,5, -2, 1, 8, 4,
+             -7, 5, 2, 1, 3, -4,
+             2,3, 4 ,5 , 6, 7,
+             1,3, 5,6, 7,-3,
+             0, 9, 7, 1,3, 4), 6, 6, byrow=TRUE)
+B <- solve(A)   ## Calculamos  la inversa de A
+B
+```
+
+```{r}
+A %*% B 
+```
+
+```{r}
+B %*% A
+```
+
+Para ejemplos de orden menor, se cumple que *AB= I = BA*
+
+```{r}
+M <- matrix(c(4,0,5,
+             0,1, -6,
+             3,0,4),3,3, byrow=TRUE)
+N <- solve(M)
+N
+```
+
+```{r}
+N%*%M
+```
+
+```{r}
+M %*%N
+```
+
+Uno de los aspectos más importantes de **R** es la familia de funciones `apply()` tales como `apply()`, `tapply()` y `lapply()`. La función `apply()` instruye a R a llamar una función  sobre cada fila o columna de una matriz. Esta es la forma general de `apply()` para matrices 
+
+```
+apply(m, dimcode, f, fargs)
+```
+
+donde los  argumentos son como sigue:
+
+* ` m` es una matriz.
+*  `dimcode` es la dimensión, igual a 1, si la función aplica a filas o 2 si la función aplica a columnas.
+*  `f` es la función a ser aplicada.
+*  `fargs` es un conjunto opcional de argumentos dados a `f`.
+
+```{r}
+help(apply)
+dw<- matrix(c(1,2,3,4,5,6), nrow=3)
+dw
+apply(dw, 1, mean)
+```
+
+Un ejemplo utilizando una función escrita por el usuario
+
+```{r}
+dw
+f <-function(x)x/c(2,5)
+dw1<- apply(dw, 1, f)
+dw1
+```
+
+```{r}
+t(apply(dw,1,f))
+```
+
+Un ejemplo más avanzado desde Norman Matloff, (The Art of R Programming)
+
+```{r}
+matriz0 <-function(fila,d) {
+    maj <- sum(fila[1:d]) / d
+    return(if(maj > 0.5) 1 else 0)
+}
+ax <-matrix(c(1,1,1,0, 0,1,0,1, 1, 1, 0,1, 1,1,1,1, 0,0,0,0), nrow=4)
+ax
+apply(ax,1,matriz0,3)
+apply(ax,1,matriz0,2)
+```
+
+El uso de `apply()` no acelera el código. El beneficio de utilizar esta función es que hace el código mucho más  compacto y por tanto más fácil de leer y modificar  evitando  posibles errores en la escritura de código cuando se trabaja con bucles.
+
+Por otra parte, cuando R  desarrolla el procesamiento en paralelo, funciones como `apply()` serán muy utiles e importantes. Por ejemplo, la función `clusterApply()` en el paquete `snow`` de R da cierta capacidad de procesado en paralelo mediante la distribución de los datos de una submatriz a varios nodos de una red.
+
+La función `outer` aplica una función a dos arrays
+
+```{r}
+help(outer)
+x<- c(1,2.3,2,3,4,8,12,43)
+y<- c(2,4)
+outer(x,y,"log")
+```
+
+```{r}
+(valores <- outer(1:5, 1:5, FUN = "paste", sep = ","))
+valores[c(4, 15)]
+```
+
+####  El método del Simplex 
+ 
+Sea el problema de programación lineal, que será resuelto por el [simplex algorithm](https://jeremykun.com/2014/12/01/linear-programming-and-the-simplex-algorithm/)
+
+
+min C = 5x<sub>1</sub> + 8x<sub>2</sub>
+
+sujeto a los restricciones
+
+x<sub>1</sub> + x<sub>2</sub> >=2
+
+x<sub>1</sub> + 2x<sub>2</sub> >=3 
+
+y
+
+x<sub>1</sub>, x<sub>2</sub> >= 0
+
+Para resolver este problema usamos los paquetes  [lpSolve-lpSolveApi](http://lpsolve.r-forge.r-project.org/) de la siguiente manera 
+
+```
+install.packages("lpSolve")
+install.packages("lopSolveAPI")
+```
+
+```{r}
+library(lpSolve)
+ejemplo.pl <- lp(objective.in=c(5, 8), const.mat=matrix(c(1, 1, 1, 2),nrow=2), const.rhs=c(2, 3), const.dir=c(">=", ">="))
+ejemplo.pl
+ejemplo.pl$solution
+```
+
+La salida nos dice que el valor que minimiza el problema, está en x<sub>1</sub> = 1, x<sub>2</sub> = 1
+y el mínimo valor de la función objetivo es 13.
+
+#### Descomposición de Cholesly
+
+La factorización de Cholesly es un método de descomposición de una matriz definida positiva. Algunas [aplicaciones de la descomposicion de Cholesky](https://en.wikipedia.org/wiki/Cholesky_decomposition#Applications) incluye las soluciones de ecuaciones lineales, simulación de Montecarlo y los filtros de Kalman.
+
+La función ``chol()` lleva a cabo la descomposición de una matriz definida positiva. 
+
+
+```{r}
+A = as.matrix(data.frame(c(3,4,3),c(4,8,6),c(3,6,9)))
+colnames(A) <- NULL
+A
+```
+
+Factorizamos la matriz con la función `chol()`
+
+```{r}
+A.chol <- chol(A)
+A.chol
+```
+
+La función `chol()` devuelve una matriz triangular superior. La transposición de la matriz  produce una matriz triangular inferior 
+
+```{r}
+t(A.chol)
+```
+
+y esto coincide con el resultado de la salida de la función `chol()`.  Podemos verificar el resultado
+
+```{r}
+t(A.chol) %*% A.chol
+```
+
+Lectura : [Algorithm for Cholesky decomposition](http://www.math.sjsu.edu/~foster/m143m/cholesky.pdf).
