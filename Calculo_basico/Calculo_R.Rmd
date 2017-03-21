@@ -1,0 +1,283 @@
+---
+title: "Aspectos iniciales de R"
+output: 
+  html_notebook: 
+    highlight: tango
+    theme: united
+---
+
+[R](https://cran.r-project.org/) es una calculadora científica que tiene un conjunto bastante completo de funciones  matemáticas  como operadores aritméticos, funciones matemáticas comunes y operadores relacionales.
+
+###  Operaciones matemáticas y vectores
+
+El operador `+` realiza la adición, pero tiene un truco especial: además de agregar dos números juntos, se puede usar para añadir dos vectores. Un *vector* es un conjunto ordenado de valores. Los vectores son importantes en  estadística, ya que normalmente se desea analizar un conjunto de datos.
+
+El operador de dos puntos `:`   crea una secuencia desde un número al próximo   y la función `c` concatena valores, en este caso  crea vectores (`concatenate` es una palabra latina que significa *conectarse en una cadena*). 
+
+Los nombres de variables son sensibles a mayúsculas y minúsculas en R, por lo que necesitamos tener un poco de cuidado. La función `C` hace algo completamente diferente a `c`
+
+```{r}
+1:5 + 6:10
+```
+
+```{r}
+c(1, 3, 6, 10, 15) + c(0, 1, 3, 6, 10)
+```
+
+Si estábamos escribiendo en un lenguaje como C o Fortran, tendríamos que escribir un bucle para realizar la adición de los elementos a los  vectores. La naturaleza vectorizada de la adición en  R hace las cosas fáciles, evitando  los bucle. 
+
+La `Vectorización` tiene varios significados en R, el más común de los cuales es que un operador o una función actuará sobre cada elemento de un vector sin la necesidad de que podamos  escribir un bucle. Un segundo significado de la vectorización es cuando una función toma un vector como entrada y calcula un  resumen estadístico. 
+
+```{r}
+sum(1:5)
+```
+```{r}
+median(1:5)
+```
+
+Un tercer caso mucho menos común sobre la  vectorización es la `vectorización sobre argumentos`. Esto es cuando una función calcula un resumen estadístico  de varios de sus argumentos de entrada. La función suma hace esto, pero es muy inusual,la mediana no:
+
+```{r}
+sum(1, 2, 3, 4, 5)
+```
+
+```{r}
+median(1, 2, 3, 4, 5)
+```
+
+Todos los operadores aritméticos en R, no sólo más `(+)`, son vectorizados. Los siguientes ejemplos demuestran la resta, multiplicación, exponenciación y dos tipos de división, así como el resto después de la división:
+
+```{r}
+c(2, 3, 5, 7, 11, 13) - 2 
+-2:2 * -2:2
+identical(2 ^ 3, 2 ** 3)
+
+
+1:10 / 3
+1:10 %/% 3 
+1:10 %% 3 
+
+```
+
+R también contiene una amplia selección de funciones matemáticas. Obtenemos desde la trigonometría (`sin`, `cos`, `tan` y sus inversas `asin`, `acos` y `atan`), logaritmos y exponentes (`log` y `exp`  y sus variantes `log1p` y `expm1` que calculan `log(1 + x)` y `exp (x - 1)` con más  precisión para valores muy pequeños de `x`) y casi cualquier otra función matemática que se pueda imaginar.
+
+Los siguientes ejemplos proporcionan una pista de lo que se ofrece. Una vez más, observamos  que todas las funciones funcionan naturalmente en vectores y no en valores únicos:
+
+```{r}
+cos(c(0, pi/5, pi/3, pi))
+exp(pi * 1i) + 1 
+
+factorial(7) + factorial(1) - 71 ^ 2
+choose(5, 0:5)
+```
+
+Para comparar valores enteros por igualdad, se  utiliza  `==`.  No se utilica `=` ya que se utiliza para asignar variables. Al igual que los operadores aritméticos `==`, los otros operadores relacionales son vectorizados. 
+
+Para comprobar la desigualdad, el operador *no es igual*  es `!=`. Los operadores  mayor y menor que son como se puede esperar: `>` y `<` (o `> =` y `<=`  si se permite la igualdad). Aquí algunos ejemplos:
+
+
+```{r}
+c(3, 4 - 1, 1 + 1 + 1) == 3 
+1:3 != 3:1
+
+exp(1:5) < 100
+(1:5) ^ 2 >= 16
+```
+
+La comparación de no enteros usando `==` es problemática. Todos los números que hemos tratado hasta ahora son números de coma flotante. Esto significa que se almacenan en la forma `a*2^ b`, para dos números `a` y `b`.
+
+Puesto que esta forma entera tiene que ser almacenada en 32 bits, el número resultante es solamente una aproximación de lo que realmente se desea. Esto significa que los errores de redondeo a menudo aparecen en los cálculos y las respuestas que se esperaba pueden estar equivocadas.
+
+Considere estos dos números, que deben ser los mismos:
+
+
+```{r}
+sqrt(2) ^ 2 == 2 
+
+sqrt(2) ^ 2 - 2 
+```
+
+R proporciona la función `all.equal` para comprobar la igualdad de  números. Esto proporciona un nivel de tolerancia (por defecto, aproximadamente de `1.5e-8`), de modo que se ignoran los errores de redondeo inferiores a esa tolerancia:
+
+```{r}
+all.equal(sqrt(2) ^ 2, 2)
+```
+
+Si los valores a comparar no son los mismos, `all.equal` devuelve un informe sobre las diferencias. Si necesita un valor `TRUE` o `FALSE`, entonces necesitará ajustar la llamada a `all.equal` en una llamada a `isTRUE`:
+
+```{r}
+all.equal(sqrt(2) ^ 2, 3)
+```
+
+```{r}
+isTRUE(all.equal(sqrt(2) ^ 2, 3))
+```
+
+También podemos usar `==` para comparar cadenas. En este caso, la comparación es sensible a mayúsculas y minúsculas, por lo que las cadenas deben coincidir exactamente. También es teóricamente posible comparar cadenas utilizando los operadores mayor o menor que (`>` y `<`):
+
+```{r}
+c(
+"Can", "you", "can", "a", "can", "as",
+"a", "canner", "can", "can", "a", "can?"
+) == "can"
+```
+
+```{r}
+c("A", "B", "C", "D") < "C"
+```
+
+```{r}
+c("a", "b", "c", "d") < "C"
+```
+
+Esto en la práctica es una mala idea, desde que los resultados dependen de tu localidad.
+
+
+### Asignación de variables
+
+Todo está muy bien calculando las cosas, pero la mayoría de las veces queremos almacenar los resultados para su reutilización. Podemos asignar una variable (local) usando `<-` or `=`, aunque por razones históricas, se prefiere `<-`:
+
+```{r}
+x <- 1:5
+y = 6:10
+
+# Podemos reutilizar esos valores para otros calculos
+x + 2 * y - 3
+```
+Los nombres de variables pueden contener letras, números, puntos y subrayados, pero no pueden comenzar con un número o un punto seguido de un número (ya que se parece mucho a un número).
+
+Las palabras reservadas como `if` y `for` no están permitidas. En algunas sitios, se permiten letras no ASCII, pero para la portabilidad de código es mejor pegarse a `a` a `z` (y `A` a `Z`). La página de ayuda `?Make.names` da detalles precisos sobre lo que está y no está permitido.
+
+También podemos hacer una asignación global usando `<< -`. Por ahora la idea es tener  una variable disponible en cualquier lugar:
+
+```{r}
+x <<- exp(exp(1))
+```
+
+Hay un método más de asignación de variables, a través de la función `assign`. Es mucho menos común que los otros métodos, pero  ocasionalmente es útil tener una sintaxis de función para asignar variables. El asignación local  toma dos argumentos: el nombre de la variable a asignar y el valor que desea darle:
+
+```{r}
+assign("local_variable", 9 ^ 3 + 10 ^ 3)
+```
+
+Observa que cuando asignamos una variable, no se  ve el valor que se le ha dado. Para ver qué valor contiene una variable, simplemente escriba su nombre en el símbolo del sistema para imprimirlo.
+
+```{r}
+x
+```
+
+En algunos sistemas, por ejemplo al ejecutar R desde un terminal Linux, es posible que tenga que llamar explícitamente a la función `print()` para ver el valor.
+
+
+Si se desea asignar un valor e imprimirlo todo en una línea, se tiene dos posibilidades. En primer lugar, podemos poner  múltiples declaraciones en una línea separándolas con un punto y coma `;` y en segundo lugar, podemos incluir la asignación entre paréntesis `()`.
+
+En los siguientes ejemplos, `rnorm` genera números aleatorios de una distribución normal, y `rlnorm` los genera a partir de una distribución lognormal.
+
+```{r}
+z <- rnorm(4); z
+```
+
+```{r}
+(zz <- rlnorm(5))
+```
+
+### Números especiales
+
+
+Para ayudar con la aritmética, R admite cuatro valores numéricos especiales: `Inf`, `-Inf`, `NaN` y `NA`. 
+
+Los dos primeros son el infinito positivo y negativo, pero el segundo par necesita un poco de explicación.
+
+`NaN` es la abreviatura de *not a number*  y significa que nuestro cálculo no tiene sentido matemático o no se puede realizar correctamente. `NA` es la abreviatura de *not available* y representa un valor perdido, un problema  común en el análisis de datos.
+
+En general, si nuestro cálculo implica un valor `NA`, en los resultados aparecerá un `NA`:
+
+```{r}
+c(Inf + 1, Inf - 1, Inf - Inf)
+
+c(1 / Inf, Inf / 1, Inf / Inf)
+
+```
+
+```{r}
+c(sqrt(Inf), sin(Inf))
+```
+```{r}
+c(log(Inf), log(Inf, base = Inf))
+```
+
+```{r}
+c(NA + 1, NA * 5, NA + Inf)
+```
+
+Cuando la aritmética implica `NA` y `NaN` la respuesta es uno de esos dos valores, pero cuál de esos dos es, depende  del sistema:
+
+```{r}
+c(NA + NA, NaN + NaN, NaN + NA, NA + NaN)
+```
+
+Hay funciones disponibles para comprobar estos valores especiales. Se debe observar que `NaN` y `NA` no son ni finitos ni infinitos, y   `NA` por ejemplo es un número:
+
+```{r}
+x <- c(0, Inf, -Inf, NaN, NA)
+is.finite(x)
+```
+
+```{r}
+is.infinite(x)
+```
+
+```{r}
+is.nan(x)
+```
+
+```{r}
+is.na(x)
+```
+
+Además de los números, el cálculo científico suele implicar valores lógicos, como resultado del uso de los operadores relacionales.  Muchos lenguajes de programación utilizan lógica booleana, donde los valores  pueden ser `TRUE` o `FALSE`. En R, la situación es un poco más complicada, ya que también podemos tener valores faltantes `NA`.
+
+`TRUE` y `FALSE` son palabras reservadas en R: no se puede crear una variable con ninguno de esos nombres. Al iniciar R las variables `T` y `F` ya están definidas  tomando los valores `TRUE` y `FALSE`, respectivamente. Esto puede ahorrar un poco de escritura pero también puede causar  problemas ya que  `T` y `F` no son palabras reservadas, por lo que los usuarios pueden redefinirlas. 
+
+Hay tres operadores lógicos vectorizados en R:
+
+  * `!` es usado para `not`.
+  * `&` es usado para `and`.
+  * `|` es usado para `or`.
+  
+
+```{r}
+(x <- 1:10 >= 5)
+!x
+(y <- 1:10 %% 2 == 0)
+x & y
+x | y
+```
+
+Podemos escribir algunas tablas de verdad, con el siguiente código
+
+```{r}
+x <- c(TRUE, FALSE, NA) 
+xy <- expand.grid(x = x, y = x) # todas las combinaciones de x e y
+within(
+  xy,
+  {
+    and <- x & y
+    or <- x | y
+    not.y <- !y
+    not.x <- !x
+      }
+  )
+```
+
+Dos funciones útiles para tratar con vectores lógicos son `any` y `all` los cuales devuelven `TRUE` si el vector de entrada contiene al menos un valor `TRUE` o todos los valores son  `TRUE`, respectivamente:
+
+```{r}
+ningun_T<- c(FALSE, FALSE, FALSE)
+algun_T <- c(FALSE, TRUE, FALSE)
+todosT <- c(TRUE, TRUE, TRUE)
+any(ningun_T)
+
+all(algun_T)
+```
+
