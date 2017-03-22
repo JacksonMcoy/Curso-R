@@ -1,6 +1,6 @@
 # Curso general de R
 
-- Requisitos: Manejo de la linea de comandos. 
+- Requisitos: Manejo de la linea de comandos. Una buena opción es [webminal](http://www.webminal.org/).
 
   **Lectura y videos recomendados**
   	* [Introduction to the Command Line](https://launchschool.com/books/command_line).
