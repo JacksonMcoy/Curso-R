@@ -14,14 +14,15 @@
 1. Vectores, matrices y arrays.
 2. Listas, data frames, factores y tablas.
 3. Estructuras de programación en R.
-4. Gráficos
-5. Programación orientada a objetos.
-6. Manipulación de  datos con R.
-7. Base de datos relacionales y no relacionales  con R.
-8. Simulación.
-9. R y otros lenguajes.
-10. Programación funcional
-11. [Opcional] Programación en Paralelo con R.
+4. Funciones y entornos.
+5. Gráficos.
+6. Programación orientada a objetos.
+7. Manipulación de  datos con R.
+8. Base de datos relacionales y no relacionales  con R.
+9. Simulación.
+10. R y otros lenguajes.
+11. Programación funcional
+12. [Opcional] Programación en Paralelo con R.
 
 
 ## Libros de Texto
