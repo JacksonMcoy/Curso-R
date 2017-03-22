@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+
+\title{Ejercicios  de R}
+
+
+\author{Curso: Introducci\'on a la Estad\'istica y Probabilidades CM-274}
+\date{}
+\maketitle
+
+\vspace{0.3cm}
+
+
+\textbf{Lecturas Importantes (Sug. Hadley Wickham.)}
+\begin{enumerate}
+\item Para entender como los objetos de R, funcionan de la manera que lo hacen es \'util el libro \textit{Structure and Interpretation of Computer  Program } (SICP) de Harold Abelson y  Gerald Jay Sussman.
+
+\url{https://mitpress.mit.edu/sicp/full-text/book/book.html}.
+\item Para aprender a ser un mejor programador, el libro de Andrew Hunt y  David Thomas \textit{The Pragmatic Programmer} es demasiado \'util.
+
+\item Para entender las ventajas y desventajas de R, con respecto a otros lenguajes, es necesario leer, \textit{Concepts, Techniques and Models  of Computer Programming} de Peter van Roy y Sef Haridi.
+\end{enumerate}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.2cm}
+
+{\Large Preguntas }
+
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+\item Escribe expresiones en $\textbf{R}$ que generen vectores conteniendo las siguientes secuencias de vectores.
+\begin{itemize}
+\item Las primeras $50$ potencias de  $3$, empezando por $3^1$.
+\item $1, 2^2,3, 4^2, 5, 6^2, \dots 99, 100^2$.
+\item $1,-1, 2, -1, 3, -1, \dots, 20, -1$.
+\end{itemize}
+
+\item Sea el conjunto de datos dado por 
+
+<<boring, prompt =TRUE, comment =NA>>=
+x = c(1, 8, 2, 6, 3, 8, 5, 5, 5, 5)
+@
+
+Usa R, para calcular las siguientes funciones. Usa la notaci\'on $x_1$ para denotar el primer elemento.
+\begin{itemize}
+\item $(x_1 + x_2 + \dots + x_{10})/10$.
+\item Encontrar $\log_{10}x_i$ para cada $i$.
+\item Resolver $(x_1 -4.4)/2.875$ para  cada $i$. (Hacerlo todo de una s\'ola vez).
+\item Encontrar la diferencia, entre el mayor y menor $x$. (Eso es el rango).
+\end{itemize}
+
+\item ?`Cu\'al es  el funcionamiento de \texttt{is.vector()} y \texttt{is.numeric()} y explica que tiene de diferente con
+\texttt{is.list()} y \texttt{is.character()}?.
+
+\item ?`Por qu\'e es \texttt{1 = "1"} verdad (TRUE)?, ?` Por qu\'e \texttt{-1 < FALSE} verdad?, ?` Por qu\'e \texttt{"one" < 2} es falso (FALSE)?.
+\item Predice la salida del siguiente c'odigo
+
+<<boringq, prompt =TRUE, comment =NA, eval=FALSE>>=
+c(1, FALSE)
+c("a", 1)
+c(list(1), "a")
+c(TRUE, 1L)
+@
+
+\item Describe como insertar un valor entre dos elementos de un vector en una posici\'on dada, usando la funci\'on \textit{append}( usa la ayuda de R \textit{help()}).  Por ejemplo, muestra algunas expresiones en R, para insertar $3.4$ entre  $x[7]$ y $x[8]$ en un vector de $10$ elementos. Sin \textit{append}, ?`como se podr\'ia hacer?. ?` Qu\'e sucede en la frontera del vector. Escribe c\'odigo R en general.
+
+
+\item Supongamos que $x$ es un vector num\'erico. \textbf{Explica en detalle}, como las siguientes expresiones son evaluadas y que valores toman
+
+<<foo1, comment = NA, prompt =TRUE, eval= FALSE>>=
+sum(!is.na(x))
+c(x,x[-(1:length(x))])
+x[length(x) + 1]/length(x)
+sum(x > mean(x))
+@
+\item Escribe c\'odigo en R, que usa la funci\'on \textit{apply}, para calcular las siguientes cantidades desde una matriz almacenada en la variables $x$.
+
+\begin{itemize}
+\item El m\'aximo elemento en cada fila de $x$.
+\item La media de los elementos positivos de cada fila de $x$.
+\item El primer elemento de cada fila que es mayor que el valor precedente en la fila o \texttt{NA} si es que ese elemento no existiese.
+\end{itemize}
+
+\item 
+\begin{itemize}
+\item Describe importantes diferencias entre las estructuras fundamentales de $R$: \texttt{vectores, matrices, arrays} y \texttt{listas}. Usa ejemplos para demostrar esas diferencias.
+\item Explicar las diferencias entre las funciones $\texttt{rbind(), cbind()}$ y \texttt{merge()} para combinar dos estructuras de dos dimensiones en $R$. Usa ejemplos para demostrar esas diferencias.
+\end{itemize}
+\item 
+\begin{itemize}
+\item   La funci\'on seno hiperb\'olico es definida como
+
+\[
+\sinh x = \frac{e^x - e^{-x}}{2}
+\]
+donde $e^x$ es la funci\'on exponencial. Usando s\'olo operaciones aritm\'eticas y la funci\'on \texttt{exp}, escribe una funci\'on \texttt{vectorizada} en R, que calcule el $\sinh$.
+
+\end{itemize}
+\item  Esta pregunta es acerca  de \texttt{vectorizaci\'on (vectorization)} y \texttt{reciclado (recycling)}
+\begin{itemize}
+\item Define que significa que una funci\'on $R$ pueda ser  vectorizada o que cumple con la \texttt{vectorizaci\'on}. \mbox{Justifica} con ejemplos en  R.
+\item Define que significa que  una funci\'on obedece la regla de reciclado. Justifica con ejemplos en R.
+
+\end{itemize}
+\item Considera la funci\'on  matem\'atica $h$ definida por
+
+\[
+h(x, y) = \sqrt{x^2 + y^2}
+\]
+Escribe una funci\'on llamada \textit{hipot}, con argumentos $x$ y $y$, que implementa una versi\'on de $h$ el cu\'al es vectorizado y cumple la regla del recycling.
+\item Sin usar la funci\'on \textit{diag} de R, escribir una funci\'on que extrae los elementos de la diagonal de una matriz y retorna esos elementos como un vector. 
+
+\item ?` Qu\'e sucede con el uso de \texttt{structure()}
+
+<<fooJ, comment = NA, prompt =TRUE, eval= FALSE>>=
+structure(1:5, comment = "un atributo")
+@
+Pero cuando se imprime ese objeto, no se ve el valor de \texttt{comment}?`Por qu\'e?  ?`Hay algo especial en esto?.
+
+\item ?` Qu\'e ocurre cuando a un Factor modificas sus niveles(levels)
+<<fooB, comment = NA, prompt =TRUE, eval= FALSE>>=
+f1 <- factor(letters)
+levels(f1) <- rev(levels(f1))
+@
+
+\item ?` Qu\'e hace que este c\'odigo? 
+
+<<fooU, comment = NA, prompt =TRUE, eval= FALSE>>=
+f2 <- rev(factor(letters))
+f3 <- factor(letters, levels = rev(letters))
+@
+
+?`Qu\'e hace de diferente \texttt{f2} y \texttt{f3} difiere \texttt{f1}?.
+
+
+\item ?`Como deberias describir los tres objetos?.
+
+<<fooY, comment = NA, prompt =TRUE, eval= FALSE>>=
+x1 <- array(1:5, c(1, 1, 5))
+x2 <- array(1:5, c(1, 5, 1))
+x3 <- array(1:5, c(5, 1, 1))
+@
+
+\item  Este script, que simula la probabilidad de obtener $3$ caras en lanzamientos de monedas, est\'a divido en $3$ partes: Escribiendo el c\'odigo para la prueba, determinando el \'exito de la prueba y \mbox{implementando} la replicaci\'on. El n\'umero $1$ representa las caras y $0$ los sellos. 
+
+<<foo1G, comment = NA, prompt =TRUE, eval= FALSE>>=
+#Prueba Experimental
+prueba <- sample(0:1, 3, replace=TRUE)
+# Exito
+if (sum(prueba )==3) 1 else 0
+# Repeticion
+n <- 10000   # Numero de iteraciones
+simlista <- replicate(n, 0) ## Inicializa la lista con 0's
+for (i in 1:n)
+{
+	prueba <- sample(0:1, 3, replace=TRUE)
+	exito <- if (sum(prueba )==3) 1 else 0
+	simlista[i] <- exito
+}
+# Resultado simulado
+mean(simlista)
+@
+Modifica el c\'odigo anterior para simular la probabilidad de obtener exactamente una cara en cuatro lanzamientos de moneda.
+
+
+\end{enumerate}
+\end{document}
