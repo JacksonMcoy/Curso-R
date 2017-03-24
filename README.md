@@ -11,19 +11,20 @@
  
 ## Esquema del Curso
 
-0. [Introducción a R]()
-1. Vectores, matrices y arrays.
-2. Listas, data frames, factores y tablas.
-3. Estructuras de programación en R.
-4. Funciones y entornos.
-5. Gráficos.
-6. Programación orientada a objetos.
-7. Manipulación de  datos con R.
-8. Base de datos relacionales y no relacionales  con R.
-9. Simulación.
-10. R y otros lenguajes.
-11. Programación funcional
-12. [Opcional] Programación en Paralelo con R.
+* [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
+* Cálculo básico con R
+*  Vectores, matrices y arrays.
+*  Listas, data frames, factores y tablas.
+*  Estructuras de programación en R.
+* Funciones y entornos.
+* Gráficos.
+* Programación orientada a objetos.
+* Manipulación de  datos con R.
+* Base de datos relacionales y no relacionales  con R.
+* Simulación.
+* R y otros lenguajes.
+* Programación funcional
+* [Opcional] Programación en Paralelo con R.
 
 
 ## Libros de Texto
