@@ -11,6 +11,7 @@
  
 ## Esquema del Curso
 
+0. [Introducción a R]()
 1. Vectores, matrices y arrays.
 2. Listas, data frames, factores y tablas.
 3. Estructuras de programación en R.
