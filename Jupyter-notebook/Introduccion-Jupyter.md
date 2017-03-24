@@ -47,7 +47,7 @@ La celda recibe la etiqueta `In [2]:` con la respuesta  de ese comando impresa  
 
 ![corre-imprime](Imagenes/correr-imprimir.gif)
 
-##Kernels en Jupyter Notebook
+## Kernels en Jupyter Notebook
 
 Un *kernel*  es un programa que ejecuta e introspecta el código de un usuario. Jupyter incluye un kernel para código Python en sus dos versiones 2 y 3, además de que existen  otros kernels para otros lenguajes.
 
@@ -62,7 +62,7 @@ Puesto que cada celda está interactuando con la misma instancia de Python, si l
 
 Aunque eliminamos la celda donde asignamos `x = 7`, la asignación sigue siendo válida. De hecho, la asignación permanecerá válida hasta que explícitamente ejecutemos una celda que establece x igual a un nuevo valor, o hasta que se reinicie completamente esta instancia de Jupyter notebook .
 
-##Markdown
+## Markdown
 
 Markdown es un lenguaje de marcado ligero parecido al que se emplea en muchas wikis y basado originalmente en convenciones existentes en el marcado de los los correos electronicos. Emplea texto plano, procurando que sea legible pero consiguiendo que se convierta en XHTML correctamente formateado.
 
@@ -76,7 +76,7 @@ Markdown es también (tipo de) código, así que después de escribir algún tex
 
 ![markdown](Imagenes/rmarkdown.gif)
 
-##MathJax
+## MathJax
 
 Markdown puede hacer más que solo renderizar simple texto, puede renderizar texto y ecuciones  en Latex usando **MathJax**!
 
@@ -95,7 +95,7 @@ Tenga en cuenta que la composición matemática es manejada por MathJax y no por
 
 * [What is the relation between Latex and MathJax?](http://meta.math.stackexchange.com/questions/6177/what-is-the-relation-between-latex-and-mathjax).
 
-##Más sintaxis de Markdown
+## Más sintaxis de Markdown
 
 Hay varias referencias para aprender Markdown, una de las mejores referencias es la [John Gruber](http://daringfireball.net/projects/markdown/syntax).  Algunas características que pueden ser útiles, se listan a continuación:
 
