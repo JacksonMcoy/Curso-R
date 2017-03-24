@@ -1,5 +1,8 @@
 # Curso general de R
 
+En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRkernel), sobre [Jupyter](http://jupyter.org/) usando [Anaconda](https://www.continuum.io/anaconda-overview).
+
+
 - Requisitos: Manejo de la linea de comandos. Una buena opción es [webminal](http://www.webminal.org/).
 
   **Lectura y videos recomendados**
