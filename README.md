@@ -19,7 +19,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * [Vectores, matrices y arrays](https://github.com/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
    - [Aplicaciones](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/Aplicaciones.ipynb)
 *  Listas, data frames, cadenas, factores y tablas.
-   - [Listas-Data frames]().
+   - [Listas-Data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
    - [Cadenas, factores y tablas]()
 *  Estructuras de programación en R.
 * Funciones y entornos.
