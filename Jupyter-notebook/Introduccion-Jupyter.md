@@ -23,7 +23,7 @@ Esto mostrará un simple navegador de archivos que muestra  el contenido del dir
 
 ![nnotebook](Imagenes/nnotebook.gif)
 
-##Executando una celda de código
+## Executando una celda de código
 
 Debajo de las barras de herramientas, verás una celda de código, prefijada con `In []:`. Esta celda puede contener  segmentos de código arbitrariamente largo, pero se puede comenzar con una simple expresión. En esa celda de código escribimos
 
@@ -53,7 +53,7 @@ Un *kernel*  es un programa que ejecuta e introspecta el código de un usuario. 
 
 * [Making kernels for Jupyter](http://jupyter-client.readthedocs.io/en/latest/kernels.html)
 
-##Sobreescribiendo  variables
+## Sobreescribiendo  variables
 
 Puesto que cada celda está interactuando con la misma instancia de Python, si le damos a `x` un nuevo valor y escribimos  ` print (x) `obtendremos ese nuevo valor. Eso es bastante sencillo, pero ¿qué pasa si eliminamos la celda donde le dimos a `x` un nuevo valor?. Veamos
 
