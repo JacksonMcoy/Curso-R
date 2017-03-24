@@ -12,8 +12,9 @@
 ## Esquema del Curso
 
 * [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
-* Cálculo básico con R
+* [Cálculo básico con R](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Calculo_R.ipynb).
 *  Vectores, matrices y arrays.
+ - Aplicaciones
 *  Listas, data frames, factores y tablas.
 *  Estructuras de programación en R.
 * Funciones y entornos.
