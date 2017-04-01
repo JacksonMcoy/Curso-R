@@ -23,8 +23,8 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    - [Listas-Data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
    - [Cadenas, factores y tablas](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/Cadena-factores-tablas.ipynb).
 *  Estructuras de programación en R.
-   - [Flujo de control y bucles]
-   - [Bucles avanzados]
+   - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
+   - [Bucles avanzados]().
 * Funciones y entornos.
 * Gráficos.
 * Programación orientada a objetos.
