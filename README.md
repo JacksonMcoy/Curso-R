@@ -57,6 +57,11 @@ c-lara@Lara:~$rm *.deb
 - [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 - Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
 
+Para actualizar [R](https://www.cran.r-project.org/) se podría escribir en el terminal 
+
+```
+sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu precise/" | sudo tee -a /etc/
+```
 ### ggplot2
 
 [ggplot2](http://ggplot2.org/) es un paquete pata gráficos de R, basado en **grammar**. Este **grammar basado **
