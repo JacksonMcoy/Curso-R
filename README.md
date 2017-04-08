@@ -35,7 +35,6 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * Programación funcional
 * [Opcional] Programación en Paralelo con R.
 
-
 ## Libros de Texto
 
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
