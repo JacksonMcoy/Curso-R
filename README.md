@@ -26,7 +26,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
    - [Bucles avanzados]().
 * Funciones y entornos.
-   -[Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entorno-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
+   - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entorno-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
 * Gráficos.
 * Programación orientada a objetos.
 * Manipulación de  datos con R.
