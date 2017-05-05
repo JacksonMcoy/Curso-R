@@ -6,7 +6,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 - Requisitos: Manejo de la linea de comandos. Una buena opción es [webminal](http://www.webminal.org/).
 
   **Lectura y videos recomendados**
-   * (Technical Foundations of Informatics Michael Freeman and Joel Ross)[https://info201-s17.github.io/book/].
+   * [Technical Foundations of Informatics Michael Freeman and Joel Ross](https://info201-s17.github.io/book/).
   	* [Introduction to the Command Line](https://launchschool.com/books/command_line).
   	* [Agile Planning](https://launchschool.com/books/agile_planning).
   	* [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
