@@ -1,6 +1,6 @@
 R y Knitr
 ========================================================
-author: Gneración de reportes dinámicos en R
+author: 
 date: 
 
 
