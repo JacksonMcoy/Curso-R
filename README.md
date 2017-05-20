@@ -46,7 +46,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
     * Transformar y conquistar.
     * Greedy.
  - Técnicas de Análisis.
-    * Análisis de un algoritmo no recursivo. Ejemplo: Square Build-Up 
+    * Análisis de un algoritmo no recursivo. Ejemplo: Square Build-Up. 
     * Análisis de un algoritmo recursivo. Ejemplo: Torres de Hanoi.
     * Invariantes. Ejemplos.
  - Herramientas de álgebra lineal numérica
@@ -55,17 +55,23 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
     * Factorización LU, Cholesky y LDLT.
     * Eliminación de bloques. Complemento de Schur.
  - Descomposición QR, transformaciones de Householder y rotaciones Givens. Algoritmos.
- - El procedimiento de Gram-Schmdidt, descomposició QR, mínimos cuadrados. Algoritmos.
+ - El procedimiento de Gram-Schmdidt, descomposición QR, mínimos cuadrados. Algoritmos.
  - Métodos de Gradiente conjugado. Algoritmos y complejidad.
  - Métodos de subespacios de Krilov. Algoritmo de Arnoldi y Lanczos.
  - Descomposición por valores singulares. Algoritmos.
  - Prueba del teorema fundamental de Programación Lineal. El método del Simplex. Algoritmos.
  - Métodos de puntos interiores. Algoritmos. 
- - Regresión Jackknifed.
- - Bootstrap.
- - Problema de Waldegrave.
- - Distancia de Cook.
- - El rol de la probabilidad en la Teoria de Señales.
+ - Caminos aleatorios.
+   * Definiciones.
+   * El principio de reflección. El teorema de Ballot.
+   * Retorno al cero. 
+   * Lema de Nelson. 
+ - Métodos de Montecarlo.
+    * Definiciones.
+    * Método tradicional de integración de MonteCarlo.
+    * Caso particular: Simulación de Variables aleatorias.
+    * El método Bootstrap.
+    * El método  Jackknife.
 
 ## Libros de Texto
 
