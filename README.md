@@ -54,13 +54,24 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
     * Resolución de ecuacions lineales con matrices factorizadas.
     * Factorización LU, Cholesky y LDLT.
     * Eliminación de bloques. Complemento de Schur.
+    * Algoritmos.
  - Descomposición QR, transformaciones de Householder y rotaciones Givens. Algoritmos.
  - El procedimiento de Gram-Schmdidt, descomposición QR, mínimos cuadrados. Algoritmos.
  - Métodos de Gradiente conjugado. Algoritmos y complejidad.
  - Métodos de subespacios de Krilov. Algoritmo de Arnoldi y Lanczos.
  - Descomposición por valores singulares. Algoritmos.
+ - Algoritmos de Grafos
+   * Algoritmos del camino más corto: Dijstra, Floyd-Warshall.
+   * Problema del árbol generador mínimo.
+   * Algoritmo BFS y DFS. 
+   * Algoritmo de Boruvka -Solling.
  - Prueba del teorema fundamental de Programación Lineal. El método del Simplex. Algoritmos.
  - Métodos de puntos interiores. Algoritmos. 
+ - Cadenas de Markov y Martingalas.
+    * Matrices de transición. Cadenas de Markov y grafos.
+    * Cadenas de Markov irreducibles. Distribuciones invariantes.
+    * Martingalas. Teorema de convergencia de Martingalas.
+    * Tiempos de parada.
  - Caminos aleatorios.
    * Definiciones.
    * El principio de reflección. El teorema de Ballot.
