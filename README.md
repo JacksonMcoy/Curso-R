@@ -37,6 +37,27 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * Programación funcional
 * [Opcional] Programación en Paralelo con R.
 
+## Acerca de temas de presentación y complementarios
+
+ - Estrategias generales para el diseño de Algoritmos
+  * Búsqueda exhaustiva.
+  * Vuelta atrás.
+  * Disminuir y conquistar.
+  * Transformar y conquistar.
+  * Greedy.
+ - Descomposición QR, transformaciones de Householder y rotaciones Givens. Algoritmos.
+ - El procedimiento de Gram-Schmdidt, descomposició QR, mínimos cuadrados. Algoritmos.
+ - Métodos de Gradiente conjugado. Algoritmos y complejidad.
+ - Métodos de subespacios de Krilov. Algoritmo de Arnoldi y Lanczos.
+ - Descomposición por valores singulares. Algoritmos.
+ - Prueba del teorema fundamental de Programación Lineal. El método del Simplex. Algoritmos.
+ - Métodos de puntos interiores. Algoritmos. 
+ - Regresión Jackknifed.
+ - Bootstrap.
+ - Problema de Waldegrave.
+ - Distancia de Cook.
+ - El rol de la probabilidad en la Teoria de Señales.
+
 ## Libros de Texto
 
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
