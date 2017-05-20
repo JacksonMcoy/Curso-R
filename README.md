@@ -40,11 +40,11 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 ## Acerca de temas de presentación y complementarios
 
  - Estrategias generales para el diseño de Algoritmos
-  * Búsqueda exhaustiva.
-  * Vuelta atrás.
-  * Disminuir y conquistar.
-  * Transformar y conquistar.
-  * Greedy.
+    * Búsqueda exhaustiva.
+    * Vuelta atrás.
+    * Disminuir y conquistar.
+    * Transformar y conquistar.
+    * Greedy.
  - Descomposición QR, transformaciones de Householder y rotaciones Givens. Algoritmos.
  - El procedimiento de Gram-Schmdidt, descomposició QR, mínimos cuadrados. Algoritmos.
  - Métodos de Gradiente conjugado. Algoritmos y complejidad.
