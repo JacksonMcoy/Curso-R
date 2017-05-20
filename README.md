@@ -65,6 +65,13 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    * Problema del árbol generador mínimo.
    * Algoritmo BFS y DFS. 
    * Algoritmo de Boruvka -Solling.
+ - Flujo de redes 
+   * Redes de transporte y cortes.
+   * Teorema del máximo flujo y el mínimo corte.
+   * Capacidad residual y red residual.
+   * Algoritmo de Ford-Fulkerson. Modificación del algoritmo de Ford-Fulkerson por Edmonds-Karp.
+   * Tiempo de complejidad del Algoritmo de Ford-Fulkerson.
+   * Algoritmo de Edmonds-Karp.
  - Prueba del teorema fundamental de Programación Lineal. El método del Simplex. Algoritmos.
  - Métodos de puntos interiores. Algoritmos. 
  - Cadenas de Markov y Martingalas.
@@ -83,7 +90,10 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
     * Caso particular: Simulación de Variables aleatorias.
     * El método Bootstrap.
     * El método  Jackknife.
-
+  - Ingeniería de factores
+    * Métodos de Filtrado
+    * Métodos de envoltura
+    * Métodos embebidos. Ejemplos.
 ## Libros de Texto
 
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
