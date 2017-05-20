@@ -45,6 +45,15 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
     * Disminuir y conquistar.
     * Transformar y conquistar.
     * Greedy.
+ - Técnicas de Análisis.
+    * Análisis de un algoritmo no recursivo. Ejemplo: Square Build-Up 
+    * Análisis de un algoritmo recursivo. Ejemplo: Torres de Hanoi.
+    * Invariantes. Ejemplos.
+ - Herramientas de álgebra lineal numérica
+    * Estructura matricial y complejidad algoritmica.
+    * Resolución de ecuacions lineales con matrices factorizadas.
+    * Factorización LU, Cholesky y LDLT.
+    * Eliminación de bloques. Complemento de Schur.
  - Descomposición QR, transformaciones de Householder y rotaciones Givens. Algoritmos.
  - El procedimiento de Gram-Schmdidt, descomposició QR, mínimos cuadrados. Algoritmos.
  - Métodos de Gradiente conjugado. Algoritmos y complejidad.
