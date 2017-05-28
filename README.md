@@ -29,6 +29,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * Entornos y funciones.
    - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
 * Gráficos.
+  - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
 * Programación orientada a objetos.
 * Manipulación de  datos con R.
 * Base de datos relacionales y no relacionales  con R.
