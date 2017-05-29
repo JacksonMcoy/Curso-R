@@ -16,13 +16,20 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 ## Esquema del Curso
 
 * [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
+  - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
+  - [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
+  - [Guia de estilo de R de Google](http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml).
+  - [Usando Stackoverflow y R](http://stackoverflow.com/questions/tagged/r).
+  - [Por que deberias aprender R, para ciencia de datos](http://dataconomy.com/why-you-should-learn-r-first-for-data-science/).
 * [Cálculo básico con R](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Calculo_R.ipynb).
   - [Inspección de variables y el espacio de trabajo de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Inspeccion-variables_workspace.ipynb).
 * [Vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
+   - [Vectorización en R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
    - [Aplicaciones](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/Aplicaciones.ipynb)
 *  Listas, data frames, cadenas, factores y tablas.
    - [Listas-Data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
    - [Cadenas, factores y tablas](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/Cadena-factores-tablas.ipynb).
+   - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
 *  Estructuras de programación en R.
    - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
    - [Bucles avanzados]().
@@ -30,13 +37,20 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
 * Gráficos.
   - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
+  - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
 * Programación orientada a objetos.
+  - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
 * Manipulación de  datos con R.
+  - [dplyr](http://www.michaellevy.name/blog/dplyr-data-manipulation-in-r-made-easy).
+  - [Usando dplyr en la manipulación de datos](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial).
+  - [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/).
 * Base de datos relacionales y no relacionales  con R.
 * Simulación.
 * R y otros lenguajes.
+  - [R y C++](http://www.lindonslog.com/programming/r/rcpp/).
 * Programación funcional
 * [Opcional] Programación en Paralelo con R.
+  - [Speed Up Your Code: Parallel Processing with multidplyr](http://www.mattdancho.com/code-tools/2016/12/18/multidplyr.html).
 
 
 ## Libros de Texto
@@ -49,43 +63,32 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 ## Lista de artículos importantes
 
 - [What Types of Questions Can Data Science Answer](http://www.kdnuggets.com/2015/09/questions-data-science-can-answer.html).
-- [Introducción a ggplot()](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
 - [Data Maning vs Statistics ](http://www.kdnuggets.com/2016/09/data-science-basics-data-mining-statistics.html).
 - [Data Science for Internet of things](http://www.kdnuggets.com/2016/09/data-science-iot-10-differences.html).
 - [¿Qué es Hadoop?](https://www.analyticsvidhya.com/blog/2014/05/hadoop-simplified/).
 - [Procesamiento de imágenes, machine learning en R](http://blog.kaggle.com/2015/12/04/image-processing-machine-learning-in-r-denoising-dirty-documents-tutorial-series/).
 - [h2o para modelos con grandes conjuntos datos](http://www.analyticsvidhya.com/blog/2016/05/h2o-data-table-build-models-large-data-sets/).
 - [Una comparación interesante: Estadística y Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/).
-- [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
-- [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
-- [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/)
-- [Guia de estilo de R de Google](http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml).
 - [Herramientas de depuración en R](http://www.noamross.net/blog/2013/4/18/r-debug-tools.html).
 - [Notas de Sql, Python, S, etc](https://www.stat.berkeley.edu/~spector/).
 - [Magnifico editor de Expresiones Regulares](http://www.regexpal.com).
 - [Sql VS Nosql, lo que necesitas saber](http://dataconomy.com/sql-vs-nosql-need-know/).
-- [Vectorización en R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
-- [dplyr](http://www.michaellevy.name/blog/dplyr-data-manipulation-in-r-made-easy).
 - [El paquete Knitr](http://kbroman.org/knitr_knutshell/).
 - [Velocidad en R](http://www.noamross.net/blog/2013/4/25/faster-talk.html).
 - [Manual de Expresiones regulares](http://regexone.com/).
 - [10 videos sobre BigData](http://dataconomy.com/10-best-big-data-videos-on-youtube/).
-- [Usando Stackoverflow y R](http://stackoverflow.com/questions/tagged/r).
 - [Depuración con RStudio](https://support.rstudio.com/hc/en-us/articles/205612627-Debugging-with-RStudio).Un video sobre la  [Depuración en R con Rstudio](https://vimeo.com/99375765). 
 - [No necesitas enterder punteros para programar en R](http://www.win-vector.com/blog/2014/04/you-dont-need-to-understand-pointers-to-program-using-r/)
 - [R-fiddle: un entorno para escribir, correr código R, en el navegador](http://www.r-fiddle.org/#/).
 - [Manual interactivo de SQL](http://sqlbolt.com/).
-- [Usando dplyr en la manipulación de datos](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial)
 - [Puede reemplazar Python a R, en el desarrollo de modelos predictivos](http://www.experfy.com/blog/can-python-replace-r-developing-predictive-models/).
 - [Expresiones regulares con Perl](http://perldoc.perl.org/perlre.html#Regular-Expressions)
-- [Por que deberias aprender R, para ciencia de datos](http://dataconomy.com/why-you-should-learn-r-first-for-data-science/).
 - [Haciendo ciencia de datos en 5 minutos](http://datasciencetoolbox.org/).
 - [Libro que enseña 7 bases de datos open source](https://pragprog.com/book/rwdata/seven-databases-in-seven-weeks).
 - [Machine Learning en R](http://blog.datacamp.com/machine-learning-in-r/).
 - [Data Mining, Analytics, BigData y Ciencia de Datos](http://www.kdnuggets.com/).
 - [Manual de MapReduce](https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html).
 - [Notas de SQL, desde Postgresql](http://www.postgresql.org/docs/8.4/static/tutorial-select.html).
-- [R y C++](http://www.lindonslog.com/programming/r/rcpp/).
 - [Introducción al Lenguaje Perl](https://www.biostat.wisc.edu/~kbroman/perlintro/).
 - [Terminos para bases de datos ](http://www.kdnuggets.com/2016/07/database-key-terms-explained.html).
 - [Introducción a Paralelo MCMC para inferencia, usando C,MPI, GSL y SPRNG](https://darrenjw.wordpress.com/2010/12/14/getting-started-with-parallel-mcmc/).
@@ -94,7 +97,6 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 - [Un tutorial acerca de make](http://kbroman.org/minimal_make/).
 - [El paquete htmlwidgets](https://www.rstudio.com/resources/webinars/creating-javascript-data-visualizations-in-r/)
 - [Escribiendo paquetes de R, desde 0](http://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/).
-- [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/).
 - [R y MongoDb](https://gist.github.com/Btibert3/7751989).
 - [R, BigData, NoSql](http://cdn.oreillystatic.com/en/assets/1/event/102/Big%20Data%20Analyses%20with%20R%20Presentation.pdf).
 - [Una guia completa  para la exploración de datos ](http://www.analyticsvidhya.com/blog/2016/01/guide-data-exploration/).
@@ -102,9 +104,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 - [Series de tiempo en R](https://cran.r-project.org/web/views/TimeSeries.html).
 - [RMarkdown con RStudio](http://rmarkdown.rstudio.com/).
 - [Tutorial completo acerca de ciencia de datos en R ](http://www.analyticsvidhya.com/blog/2016/02/complete-tutorial-learn-data-science-scratch/).
-- [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
 - [data table and data frame for large data etc](http://www.analyticsvidhya.com/blog/2016/05/data-table-data-frame-work-large-data-sets/).
-- [Speed Up Your Code: Parallel Processing with multidplyr](http://www.mattdancho.com/code-tools/2016/12/18/multidplyr.html).
 - [Data Science Basics: Power Laws and Distributions](http://www.kdnuggets.com/2016/12/data-science-basics-power-laws-distributions.html).
 
 
