@@ -33,7 +33,6 @@ options(formatR.arrow=TRUE,width=90)
 
 \vspace{0.3cm}
 
-
 \textbf{Lecturas Importantes (Sug. Hadley Wickham.)}
 \begin{enumerate}
 \item Para entender como los objetos de R, funcionan de la manera que lo hacen es \'util el libro \textit{Structure and Interpretation of Computer  Program } (SICP) de Harold Abelson y  Gerald Jay Sussman.
