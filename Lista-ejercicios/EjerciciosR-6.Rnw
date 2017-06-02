@@ -33,7 +33,6 @@ options(formatR.arrow=TRUE,width=90)
 
 \vspace{0.3cm}
 
-
 \textbf{Lecturas Importantes }
 \begin{enumerate}
 \item Una gu\'ia de aceleraci\'on  del c\'odigo de R.
