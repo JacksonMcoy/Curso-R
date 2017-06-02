@@ -55,7 +55,6 @@ options(formatR.arrow=TRUE,width=90)
 
 {\Large Preguntas }
 
-
 \vspace{0.3cm}
 \begin{enumerate}
 \item Escribe los programas correspondientes a los siguientes problemas 
