@@ -412,7 +412,7 @@ title(expression(f(y)==frac(1,B(a,b))*y^{a-1}*(1-y)^{b-1}))
 \item Usa la funci\'on \texttt{text}, para etiquetar cada una de las curvas betas con sus correspondientes valores de los param\'etros $a$ y $b$.
 \item Redibuja el gr\'afico usando diferentes colores o tipos de l\'ineas para las tres curvas de densidad.
 \end{enumerate}
-\item Explica el siguiente c\'odigo y el Teorema del L\'imite Centrak. La respuesta debe ser correctamente escrita y ordenada
+\item Explica el siguiente c\'odigo y el Teorema del L\'imite Central. La respuesta debe ser correctamente escrita y ordenada
 
 <<foq21, prompt =TRUE, comment =NA, eval=FALSE>>=
 iter = 2000
