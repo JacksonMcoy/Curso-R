@@ -10,7 +10,8 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
   	* [Introduction to the Command Line](https://launchschool.com/books/command_line).
   	* [Agile Planning](https://launchschool.com/books/agile_planning).
   	* [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
-   * [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml)
+   * [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml).
+   
    
  
 ## Esquema del Curso
