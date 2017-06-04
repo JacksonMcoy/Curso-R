@@ -181,14 +181,18 @@ La instalación de PostgreSQL en Linux, se da en la siguiente [página](https://
 - [Started with Postgresql and R](https://datashenanigan.wordpress.com/2015/05/18/getting-started-with-postgresql-in-r/).
 - [Mastering SQL for data science ](http://www.kdnuggets.com/2016/06/seven-steps-mastering-sql-data-science.html).
 
-### Rdoxygen 
+### Roxygen 
 
 [Roxygen](http://roxygen.org/) es un sistema para escribir documentación de  paquetes y si estás familiarizado con Javadoc, reconocerás su sintaxis de manera casi natural. Pero Roxygen, hace algunas cosas más, como la de incluir  el manejo de espacio de nombres de importación y exportación. Para usar este paquete , primero debemos  instalarlo, así que debes ejecutar lo siguiente:
 
 ```
 install.packages("roxygen2")
 ```
+### Pruebas unitarias
 
+  - [ testthat](https://github.com/hadley/testthat).
+  - Consistencia.
+  
 ### Otros Libros de R y más
 
 1 .`ggplot2 Essentials`, Donato Teutonico, Packt open source, 2015.
