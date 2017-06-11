@@ -108,8 +108,9 @@ ggplot(mpg, aes(displ, 1 / hwy)) +
   geom_lm(y ~ poly(x, 2), size = 1, colour = "red")
 ```
 
-Mayor información en la [documentación de ggplot2](http://docs.ggplot2.org/current/)
+Mayor información en la [documentación de ggplot2](http://docs.ggplot2.org/current/). 
 
+El paquete gglot2, tiene una lista de [extensiones](http://www.ggplot2-exts.org/gallery/), para aumentar la funcionalidad y la interacción en los gráficos.
 
 ### R Markdown 
 
