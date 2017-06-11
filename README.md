@@ -84,8 +84,7 @@ sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu precise/" | sudo tee -a 
 ```
 ### ggplot2
 
-[ggplot2](http://ggplot2.org/) es un paquete pata gráficos de R, basado en **grammar**. Este **grammar basado **
-basado en *Grammar on Graphics*, está formado  de un conjunto de componentes independientes que pueden ser usadas de muchas maneras diferentes. La forma de instalar este paquete es de la forma habitual
+[ggplot2](http://ggplot2.org/) es un paquete pata gráficos de R, basado en basado en *Grammar on Graphics* de Wilkonson y está formado  de un conjunto de componentes independientes que pueden ser usadas de muchas maneras diferentes. La forma de instalar este paquete es de la forma habitual
 
 ```r
 install.package('ggplot2')
