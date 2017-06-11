@@ -33,7 +33,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
 *  Estructuras de programación en R.
    - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
-   - [Bucles avanzados]().
+   - [Manipulando objetos básicos]().
 * Entornos y funciones.
    - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
 * Gráficos.
