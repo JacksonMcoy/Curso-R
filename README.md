@@ -16,6 +16,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
  
 ## Esquema del Curso
 
+* [Usando la linea de comandos](http://generalassembly.github.io/prework/command-line/#/).
 * [Introducción a Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD).
 * [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
   - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
