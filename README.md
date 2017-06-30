@@ -51,7 +51,8 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * Simulación.
 * R y otros lenguajes.
   - [R y C++](http://www.lindonslog.com/programming/r/rcpp/).
-* Programación funcional
+* Programación funcional.
+* Depuración y pruebas unitarias.
 * [Opcional] Programación en Paralelo con R.
   - [Speed Up Your Code: Parallel Processing with multidplyr](http://www.mattdancho.com/code-tools/2016/12/18/multidplyr.html).
 
