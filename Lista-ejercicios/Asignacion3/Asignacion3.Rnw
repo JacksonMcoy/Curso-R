@@ -164,7 +164,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
 \item ?`Qu\'e hace \texttt{show.legend = FALSE}?. ?`Qu\'e sucede si lo retiras?. ?` Qu\'e hace el argumento \texttt{se} a \texttt{geom\_smooth()}?.
 
 \item ?`Cu\'al es el geometr\'ia predeterminada asociada con \texttt{stat\_summary()}?.
-\item ?`Qu\'e hace \texttt{geom\_col()}?. ?` C\'omo es de diferente de \texttt{geom\_bar}?.
+\item ?`Qu\'e hace \texttt{geom\_col()}?. ?` C\'omo es de diferente de \texttt{geom\_bar()}?.
 \item ?`Qu\'e variables calcula \texttt{stat\_smooth()}?. ?` Qu\'e par\'ametros controlan su comportamiento?.
 
 \item ?` Los siguientes gr\'aficos son diferentes?. Explica tus respuesta.
