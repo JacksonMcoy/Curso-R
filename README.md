@@ -58,7 +58,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 
 ## Asignaciones
 
-* [Asignacion4](https://github.com/C-Lara/Curso-R/blob/master/Ejercicios-Soluciones/EjerciciosR-13.pdf)| [Asignacion 4(Solucion)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
+* [Asignacion4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)| [Asignacion 4(Solucion)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
 ## Libros de Texto
 
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
