@@ -118,7 +118,7 @@ Decide cu\'al de las siguientes afirmaciones son verdaderas y cu\'ales son falsa
 
 \begin{itemize}
 \item La longitud de \texttt{f2 } es $8$.
-\item Llamando a \texttt{which(x=is.na(x=f2))}, no resulta\'a en $4$ y $8$.
+\item Llamando a \texttt{which(x=is.na(x=f2))}, no resultar\'a en $4$ y $8$.
 \item Verificando \texttt{is.null(x=f2)}, proporciona la localizaci\'on de dos valores NULL, presentes.
 \end{itemize}
 \end{enumerate}
