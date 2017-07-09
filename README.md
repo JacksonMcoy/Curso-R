@@ -57,7 +57,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
   - [Speed Up Your Code: Parallel Processing with multidplyr](http://www.mattdancho.com/code-tools/2016/12/18/multidplyr.html).
 
 ## Asignaciones
-
+* [Asignacion3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion3/Asignacion3.pdf)|[Asignacion 3(Solucion](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Asignacion3/Laboratorio3-Solucion.ipynb).
 * [Asignacion4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)| [Asignacion 4(Solucion)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
 ## Libros de Texto
 
