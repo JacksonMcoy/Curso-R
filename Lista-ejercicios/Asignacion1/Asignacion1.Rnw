@@ -93,7 +93,7 @@ Ejercicios de Laboratorio de R\par
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=.55]{ima.png}
+\includegraphics[scale=.55]{imagen.png}
 \end{figure}
 
 \item Pedro y Pablo juegan un juego que implica lanzamientos repetidos de una moneda. En un lanzamiento dado, si se observan caras, Pedro gana $\$1$ ; de lo contrario, Pedro le da $\$1$ a Pablo.  Si Pedro  comienza con cero dolares y se han realizado $50$ lanzamientos. 
@@ -203,14 +203,6 @@ Escribe c\'odigo R, que verifica las $10$ primeras ecuaciones, imprimiendo los r
 \item Un palillo  se rompe al azar en 3 piezas. Escribe c\'odigo  en  R que calcule y devuelva la probabilidad de que las piezas puedan formar un tri\'angulo.
 \item Escribe una funci\'on que toma como  un \'unico argumento una matriz y que devuelve una matriz, que es la misma que el argumento, pero cada n\'umero impar es duplicado.
 \end{enumerate}
-
-
-\item Supongamos que tenemos un conjunto de valores  num\'ericos $x$ de un vector $X$ y un conjunto diferente de valores  num\'ericos $y$ en un vector $Y$.
-
-\begin{itemize}
-\item Escribe un programa en R, de c\'omo calcular la distancia m\'inima entre un valor  $x$ y un valor $y$: $\min_{i,j}\vert x_i -y_j\vert $.
-\item Determina  el par de  \'indices $(i, j)$ para los que la distancia m\'inima definida anteriormente se alcanza.
-\end{itemize}
 
 \item 
 
