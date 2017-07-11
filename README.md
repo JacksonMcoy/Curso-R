@@ -57,7 +57,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
   - [Speed Up Your Code: Parallel Processing with multidplyr](http://www.mattdancho.com/code-tools/2016/12/18/multidplyr.html).
 
 ## Asignaciones
-* [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
+* [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)|[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
 * [Asignación2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion2.pdf)|[Asignación 2(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio2-Solucion.ipynb).
 * [Asignación3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion3/Asignacion3.pdf)|[Asignación 3(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Asignacion3/Laboratorio3-Solucion.ipynb).
 * [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)| [Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
