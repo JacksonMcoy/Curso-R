@@ -29,7 +29,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * [Vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
    - [Vectorización en R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
    - [Aplicaciones](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/Aplicaciones.ipynb)
-*  Listas, data frames, cadenas, factores y tablas.
+*  [Listas, data frames, cadenas, factores y tablas](http://adv-r.had.co.nz/Data-structures.html).
    - [Listas-Data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
    - [Cadenas, factores y tablas](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/Cadena-factores-tablas.ipynb).
    - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
