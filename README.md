@@ -46,6 +46,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
 * Entornos y funciones.
    - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
+   - [Introducción a funciones de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones1.ipynb).
 * Programación funcional.
 * Programación orientada a objetos.
 * Depuración y pruebas unitarias.
