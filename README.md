@@ -46,7 +46,9 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
 * Entornos y funciones.
    - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
+* Programación funcional.
 * Programación orientada a objetos.
+* Depuración y pruebas unitarias.
 * Gráficos.
   - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
   - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
@@ -58,8 +60,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * Simulación.
 * R y otros lenguajes.
   - [R y C++](http://www.lindonslog.com/programming/r/rcpp/).
-* Programación funcional.
-* Depuración y pruebas unitarias.
+
 * [Opcional] Programación en Paralelo con R.
   - [Speed Up Your Code: Parallel Processing with multidplyr](http://www.mattdancho.com/code-tools/2016/12/18/multidplyr.html).
 
