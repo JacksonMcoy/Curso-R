@@ -37,9 +37,9 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * Listas, data frames, cadena, factores y tablas
    - [Notas de data frames, cadenas, factores y tablas](http://adv-r.had.co.nz/Data-structures.html).
    - [Cuaderno sobre listas y data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
-   - [Cuadeno sobre cadenas, factores y tablas](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/Cadena-factores-tablas.ipynb).
+   - [Cuaderno sobre cadenas, factores y tablas](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/Cadena-factores-tablas.ipynb).
    - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
-*  Estructuras de programación en R.
+*  Estructuras de programación .
    - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
    - [Estructuras avanzadas(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Bucles_avanzados1/Estructuras_avanzadas1.ipynb).
    - [Estructuras avanzadas(2)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Estructuras_avanzadas2.ipynb).
@@ -54,7 +54,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
   - [dplyr](http://www.michaellevy.name/blog/dplyr-data-manipulation-in-r-made-easy).
   - [Usando dplyr en la manipulación de datos](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial).
   - [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/).
-* Base de datos relacionales y no relacionales  con R.
+* Base de datos relacionales y no relacionales con R.
 * Simulación.
 * R y otros lenguajes.
   - [R y C++](http://www.lindonslog.com/programming/r/rcpp/).
