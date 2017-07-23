@@ -36,7 +36,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 *  Estructuras de programación en R.
    - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
    - [Estructuras avanzadas(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Bucles_avanzados1/Estructuras_avanzadas1.ipynb).
-   - [Estructuras avanzadas(2)]().
+   - [Estructuras avanzadas(2)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Estructuras_avanzadas2.ipynb).
    - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
 * Entornos y funciones.
    - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
