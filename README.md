@@ -47,6 +47,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * Entornos y funciones.
    - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
    - [Funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones1.ipynb).
+   - [Más sobre funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones2.ipynb).
 * Programación funcional.
 * Programación orientada a objetos.
 * Depuración y pruebas unitarias.
