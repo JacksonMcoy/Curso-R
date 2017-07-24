@@ -50,23 +50,6 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    - [Más sobre funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones2.ipynb).
    - [Más sobre entornos y funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones3.ipynb).
    - [Functions R: Hadley Wickham](http://adv-r.had.co.nz/Functions.html).
-* Programación funcional.
-* Programación orientada a objetos.
-* Depuración y pruebas unitarias.
-* Gráficos.
-  - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
-  - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
-* Manipulación de  datos con R.
-  - [dplyr](http://www.michaellevy.name/blog/dplyr-data-manipulation-in-r-made-easy).
-  - [Usando dplyr en la manipulación de datos](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial).
-  - [Data wrangling with R and RStudio](https://www.rstudio.com/resources/webinars/data-wrangling-with-r-and-rstudio/).
-* Base de datos relacionales y no relacionales con R.
-* Simulación.
-* R y otros lenguajes.
-  - [R y C++](http://www.lindonslog.com/programming/r/rcpp/).
-
-* [Opcional] Programación en Paralelo con R.
-  - [Speed Up Your Code: Parallel Processing with multidplyr](http://www.mattdancho.com/code-tools/2016/12/18/multidplyr.html).
 
 ## Asignaciones
 * [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)|[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
