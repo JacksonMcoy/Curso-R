@@ -45,7 +45,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    - [Estructuras avanzadas(2)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Estructuras_avanzadas2.ipynb).
    - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
 * Entornos y funciones.
-   - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos-funciones%281%29/Entornos-funciones%281%29.ipynb).
+   - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos/Entornos.ipynb).
    - [Introducción a las funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones1.ipynb).
    - [Más sobre funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones2.ipynb).
    - [Más sobre entornos y funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones3.ipynb).
