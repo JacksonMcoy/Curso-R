@@ -41,7 +41,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
 * Trabajando con datos.
    - [Lectura y escritura de datos en distintos formatos](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos1/Datos1.ipynb).
-   - [Conjunto de datos predefinidos y visualización básica ](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos2.ipynb).
+   - [Conjunto de datos predefinidos y visualización básica ](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Datos2.ipynb).
 *  Estructuras de programación .
    - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
    - [Estructuras avanzadas(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Bucles_avanzados1/Estructuras_avanzadas1.ipynb).
