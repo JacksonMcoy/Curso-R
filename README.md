@@ -93,6 +93,13 @@ Para actualizar [R](https://www.cran.r-project.org/) se podría escribir en el t
 ```
 sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu precise/" | sudo tee -a /etc/
 ```
+
+### R Presentations
+
+[R presentations](https://support.rstudio.com/hc/en-us/sections/200130218-R-Presentations) son una característica de RStudio que permiten la creación fácil de presentaciones HTML5 utilizando una combinación de Markdown y R.
+
+El objetivo de R Presentations es crear diapositivas  que hagan uso de código R y de  ecuaciones de LaTeX tan sencillas como sea posible. Son especialmente útiles para el uso en el aula o en la enseñanza, ya que se puede presentar mostrar  código durante la presentación.
+
 ### ggplot2
 
 [ggplot2](http://ggplot2.org/) es un paquete pata gráficos de R, basado en basado en *Grammar on Graphics* de Wilkonson y está formado  de un conjunto de componentes independientes que pueden ser usadas de muchas maneras diferentes. La forma de instalar este paquete es de la forma habitual
