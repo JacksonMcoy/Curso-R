@@ -59,6 +59,10 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
  * Gráficos.
    - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
    - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
+   
+## Clases
+
+* [Clase3 : Lenguaje de programación R](https://rpubs.com/C-LaraAvila/296208).
 
 ## Asignaciones
 * [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)|[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
