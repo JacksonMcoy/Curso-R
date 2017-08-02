@@ -62,7 +62,8 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    
 ## Clases
 
-* [Clase3 : Lenguaje de programación R](https://rpubs.com/C-LaraAvila/296208).
+* [Clase3: Lenguaje de programación R](https://rpubs.com/C-LaraAvila/296208).
+* [Clase4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296246).
 
 ## Asignaciones
 * [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)|[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
