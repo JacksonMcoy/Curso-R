@@ -1,6 +1,9 @@
 # Curso general de R
 
-En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRkernel), sobre [Jupyter](http://jupyter.org/) usando [Anaconda](https://www.continuum.io/anaconda-overview).
+## Descripción del curso
+Este curso es un complemento del curso **Introducción a las estadística y probabilidad CM274**, sobre el aprendizaje del lenguaje R. En estas notas  usaremos un [kernel nativo de R](https://github.com/IRkernel/IRkernel), sobre [Jupyter](http://jupyter.org/) usando [Anaconda](https://www.continuum.io/anaconda-overview), además de otras herramientas mencionadas abajo.
+
+R como lenguaje de programación y multiparadigma, plantea un modo distinto de escribir código, precisa de ciertos requisitos, que se enumeran a continuación.
 
 
 - Requisitos: Manejo de la linea de comandos. Una buena opción es [webminal](http://www.webminal.org/).
