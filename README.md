@@ -83,6 +83,65 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 
 ## Software
 
+### Anaconda 
+
+[Anaconda](https://www.continuum.io/downloads) es una distribución completa  libre de [Python](https://www.python.org/) incluye [paquetes de Python ](http://docs.continuum.io/anaconda/pkg-docs).
+
+Anaconda incluye los instaladores de Python 2.7 y 3.5.  La instalación en **Linux**, se encuentra en la página de Anaconda y es 
+más o menos así
+
+1 . Descargar el instalador de Anaconda para Linux.
+
+2 . Después de descargar el instalar, en el terminal, ejecuta para 3.5
+
+```bash
+c-lara@Lara:~$ bash Anaconda3-2.4.1-Linux-x86_64.sh
+
+```
+
+Es recomendable leer, alguna de las característica de Anaconda en el siguiente material [conda 30-minutes test drive](http://conda.pydata.org/docs/test-drive.html).
+
+3 . La instalación de paquetes como [seaborn](http://stanford.edu/~mwaskom/software/seaborn/) o [bokeh](http://bokeh.pydata.org/en/latest/) se pueden realizar a través de Anaconda, de la siguiente manera:
+
+
+
+``` bash
+c-lara@Lara:~$ conda install bokeh
+```
+Alternativamente podemos desde PyPI usando **pip**:
+
+```bash
+c-lara@Lara:~$ pip install bokeh
+``` 
+
+El proyecto [Anaconda](https://www.continuum.io/downloads) ha creado [R Essentials](http://anaconda.org/r/r-essentials), que incluye el IRKernel y alrededor de 80 paquetes para análisis de datos, incluyendo `dplyr`, `shiny`, `ggplot2`,`caret`, etc. Para instalar **R Essentials** en un entorno de trabajo, hacemos
+
+```bash
+c-lara@Lara:~$ conda install -c r r-essentials
+``` 
+
+### Proyecto Jupyter y el Jupyter Nbviewer
+
+El [Proyecto Jupyter](http://jupyter.org/)  es una aplicación web que te permite crear y compartir documentos que contienen código de diversos lenguajes de programación, ecuaciones,  visualizaciones y texto en diversos formatos. El uso de Jupyter incluye la ciencia de datos, simulación numérica, la modelización en estadística, Machine Learning, etc.
+
+
+[Jupyter nbviewer](https://nbviewer.jupyter.org/)  es un servicio web gratuito que te permite compartir las versiones de archivos realizados por Jupyter, permitiendo el renderizado de diversos fórmatos incluyendo, código latex.
+
+- [Jupyter Documentation](https://jupyter.readthedocs.io/en/latest/).
+
+[Unofficial Jupyter Notebook Extensions](http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/) contiene una colección de extensiones no oficiales de la comunidad que añaden funcionalidad a Jupyter notebook. Estas extensiones están escritas principalmente en Javascript y se cargarán localmente en su navegador.
+
+```bash
+c-lara@Lara:~$ pip install jupyter_contrib_nbextensions
+``` 
+
+O utilizando conda
+
+```bash
+c-lara@Lara:~$ conda install -c conda-forge jupyter_contrib_nbextensions
+``` 
+
+
 ### Kernel de bash en Jupyter 
 - En estas notas se usado el kernel de Bash de Jupyter:
   
