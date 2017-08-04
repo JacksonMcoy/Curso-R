@@ -257,7 +257,6 @@ library("knitr")
 Knitr es libre, además de poseer muchos [ejemplos](https://github.com/yihui/knitr-examples) y [demostraciones](http://yihui.name/knitr/demos/).
 
 
-
 ### SQL y PostgreSQL
 
 El SQL es el lenguaje estándar ANSI/ISO de definición, manipulación y control de bases de datos relacionales.
