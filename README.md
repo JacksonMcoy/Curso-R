@@ -1,5 +1,3 @@
-# Curso general de R
-
 ## Descripción del curso
 
 Este curso es un complemento del curso **Introducción a las estadística y probabilidad CM274**, sobre el aprendizaje del lenguaje R. En estas notas  usaremos un [kernel nativo de R](https://github.com/IRkernel/IRkernel), sobre [Jupyter](http://jupyter.org/) usando [Anaconda](https://www.continuum.io/anaconda-overview), además de otras herramientas mencionadas abajo.
@@ -11,9 +9,9 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
 
 - **Lectura y videos recomendados**
    * [Technical Foundations of Informatics Michael Freeman and Joel Ross](https://info201-s17.github.io/book/).
-  	* [Introduction to the Command Line](https://launchschool.com/books/command_line).
-  	* [Agile Planning](https://launchschool.com/books/agile_planning).
-  	* [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
+   * [Introduction to the Command Line](https://launchschool.com/books/command_line).
+   * [Agile Planning](https://launchschool.com/books/agile_planning).
+   * [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
    * [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml).
    
  
@@ -76,7 +74,8 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
 * [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)|[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
 * [Asignación2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion2.pdf)|[Asignación 2(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio2-Solucion.ipynb).
 * [Asignación3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion3/Asignacion3.pdf)|[Asignación 3(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Asignacion3/Laboratorio3-Solucion.ipynb).
-* [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)| [Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
+* [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)|[Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
+
 ## Libros de Texto
 
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
@@ -212,7 +211,7 @@ El paquete gglot2, tiene una lista de [extensiones](http://www.ggplot2-exts.org/
 
 [R Markdown](http://rmarkdown.rstudio.com/index.html) es un framework para ciencia de datos de manera que puede crear reportes dinámicos con R, además de ejecutar y guardar código. Por ejemplo sea un tabla en markdown con R.
 
-```{r , results='asis', echo=FALSE}
+```r
 cat("x | y", "--- | ---", sep="\n")
 cat(apply(df, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
 ```
@@ -221,10 +220,11 @@ R Markdown soporta formatos de salida estáticos y dinámicos que incluye  hTML,
 
 Más información:
 
-* [Lecciones de R Markdown ](http://rmarkdown.rstudio.com/lesson-1.html).
+* [Lecciones de R Markdown](http://rmarkdown.rstudio.com/lesson-1.html).
 
 
 ### R Notebooks
+
 Un R Notebooks es un documento R Markdown, que permite mostrar independientemente e interactivamente , código R y sintaxis de  otros lenguajes. Es una manera fácil de generar reportes, análisis estadísticos, visualización de datos.
 
 Más información en  la página [http://rmarkdown.rstudio.com/r_notebooks.html](http://rmarkdown.rstudio.com/r_notebooks.html).
