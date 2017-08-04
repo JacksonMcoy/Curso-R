@@ -145,8 +145,8 @@ conda install -c conda-forge jupyter_contrib_nbextensions
 ``` 
 
 
-### Kernel de bash en Jupyter 
-- En estas notas se usado el kernel de Bash de Jupyter:
+#### Kernel de bash en Jupyter 
+- Las notas sobre comandos Linux (clase1)  se usado el kernel de Bash de Jupyter:
   
     ```
     pip install bash_kernel
