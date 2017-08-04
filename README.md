@@ -17,6 +17,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 ## Esquema del Curso
 
 * Manejo de línea de comandos.
+  - [Cuaderno de notas CLI para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/CLI/ComandosLinux.ipynb).
   - [Usando la linea de comandos](http://generalassembly.github.io/prework/command-line/#/).
 * Uso de Git y Github.
   - [Introducción a Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD).
@@ -62,6 +63,7 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
    
 ## Clases
 
+* [Clase1: CLI para R](http://rpubs.com/C-LaraAvila/296559).
 * [Clase3: Lenguaje de programación R](https://rpubs.com/C-LaraAvila/296208).
 * [Clase4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296246).
 * [Clase5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296274).
