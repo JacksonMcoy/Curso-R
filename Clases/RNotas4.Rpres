@@ -1,3 +1,14 @@
+<style>
+.reveal h1, .reveal h2, .reveal h3 {
+  word-wrap: normal;
+  color: #FF4000;
+  -moz-hyphens: none;
+  .small-code pre code {
+  font-size: 1em;
+}
+</style>
+
+
 Curso de R
 ========================================================
 author: Aspectos básicos de R
