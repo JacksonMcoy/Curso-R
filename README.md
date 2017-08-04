@@ -19,12 +19,6 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 * Manejo de línea de comandos.
   - [Cuaderno de notas CLI para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/CLI/ComandosLinux.ipynb).
   - [Usando la linea de comandos](http://generalassembly.github.io/prework/command-line/#/).
-  - En estas notas se usado el kernel de Bash de Jupyter:
-  
-    ```
-    pip install bash_kernel
-    python -m bash_kernel.install
-    ```
 * Uso de Git y Github.
   - [Introducción a Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD).
 * El lenguage de programación R.
@@ -88,6 +82,14 @@ En este curso usaremos un [kernel nativo de R](https://github.com/IRkernel/IRker
 
 
 ## Software
+
+### Kernel de bash en Jupyter 
+- En estas notas se usado el kernel de Bash de Jupyter:
+  
+    ```
+    pip install bash_kernel
+    python -m bash_kernel.install
+    ```
 
 ### R y Rstudio
 
