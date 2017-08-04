@@ -308,7 +308,6 @@ install.packages("roxygen2")
 
 11 . Learning Spark: Lightning-Fast Big Data Analysis, Holden Karau, Andy Konwinski, Patrick Wendell, Matei Zaharia,  O'Reilly Media; 1 edition (28 January 2015)
 
-
 ### Notas online
 
 1 .[El pequeño Libro de Inferencia Estadística](https://leanpub.com/LittleInferenceBook/read).
