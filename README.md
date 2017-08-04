@@ -23,6 +23,7 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
   - [Cuaderno de notas CLI para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/CLI/ComandosLinux.ipynb).
   - [Usando la linea de comandos](http://generalassembly.github.io/prework/command-line/#/).
 * Uso de Git y Github.
+  - [Cracking the Code to GitHub's Growth ](https://growthhackers.com/growth-studies/github).
   - [Introducción a Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD).
 * El lenguage de programación R.
   - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
