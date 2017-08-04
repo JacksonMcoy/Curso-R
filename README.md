@@ -95,7 +95,7 @@ más o menos así,
   * Después de descargar el instalar, en el terminal, ejecuta para 3.5.
 
 ```bash
-c-lara@Lara:~$ bash Anaconda3-2.4.1-Linux-x86_64.sh
+bash Anaconda3-2.4.1-Linux-x86_64.sh
 
 ```
 
@@ -106,18 +106,18 @@ Es recomendable leer, alguna de las característica de Anaconda en el siguiente 
 
 
 ``` bash
-c-lara@Lara:~$ conda install bokeh
+ conda install bokeh
 ```
 Alternativamente podemos desde PyPI usando **pip**:
 
 ```bash
-c-lara@Lara:~$ pip install bokeh
+pip install bokeh
 ``` 
 
 El proyecto [Anaconda](https://www.continuum.io/downloads) ha creado [R Essentials](http://anaconda.org/r/r-essentials), que incluye el IRKernel y alrededor de 80 paquetes para análisis de datos, incluyendo `dplyr`, `shiny`, `ggplot2`,`caret`, etc. Para instalar **R Essentials** en un entorno de trabajo, hacemos
 
 ```bash
-c-lara@Lara:~$ conda install -c r r-essentials
+ conda install -c r r-essentials
 ``` 
 
 ### Proyecto Jupyter y el Jupyter Nbviewer
@@ -132,13 +132,13 @@ El [Proyecto Jupyter](http://jupyter.org/)  es una aplicación web que te permit
 [Unofficial Jupyter Notebook Extensions](http://jupyter-contrib-nbextensions.readthedocs.io/en/latest/) contiene una colección de extensiones no oficiales de la comunidad que añaden funcionalidad a Jupyter notebook. Estas extensiones están escritas principalmente en Javascript y se cargarán localmente en su navegador.
 
 ```bash
-c-lara@Lara:~$ pip install jupyter_contrib_nbextensions
+ pip install jupyter_contrib_nbextensions
 ``` 
 
 O utilizando conda
 
 ```bash
-c-lara@Lara:~$ conda install -c conda-forge jupyter_contrib_nbextensions
+conda install -c conda-forge jupyter_contrib_nbextensions
 ``` 
 
 
@@ -156,9 +156,9 @@ c-lara@Lara:~$ conda install -c conda-forge jupyter_contrib_nbextensions
 
 
 ```bash
-c-lara@Lara:~$ wget https://download1.rstudio.org/rstudio-0.99.893-amd64.deb
-c-lara@Lara:~$sudo dpkg -i *.deb
-c-lara@Lara:~$rm *.deb
+wget https://download1.rstudio.org/rstudio-0.99.893-amd64.deb
+sudo dpkg -i *.deb
+rm *.deb
 ``` 
 - [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 - Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
