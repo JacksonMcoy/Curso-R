@@ -1,0 +1,8 @@
+title: Curso-r
+description: Notas del Curso de R, para el curso Introducción a la Estadística y Probabilidad CM-274
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
