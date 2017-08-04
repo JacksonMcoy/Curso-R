@@ -311,27 +311,27 @@ install.packages("roxygen2")
 
 ### Notas online
 
-1 .El pequeño Libro de Inferencia Estadística. https://leanpub.com/LittleInferenceBook/read.
+1 .[El pequeño Libro de Inferencia Estadística](https://leanpub.com/LittleInferenceBook/read).
 
-2 .Fuentes para aprender R UCLA http://www.ats.ucla.edu/stat/r/.
+2 .[Fuentes para aprender R UCLA](http://www.ats.ucla.edu/stat/r/).
 
-3 .Curso de Programación en R e Inferencia Estadística, https://www.coursera.org/jhu.
+3 .[Curso de Programación en R e Inferencia Estadística](https://www.coursera.org/jhu).
 
-4 .Documentación de R, ordenada por Temas, http://www.rdocumentation.org/.
+4 .[Documentación de R, ordenado por temas](http://www.rdocumentation.org/).
 
-5 .El mundo de R, en este blog: http://www.r-bloggers.com/.
+5 .[El mundo de R, en este blog](http://www.r-bloggers.com/).
 
-6 .Advanced R: http://adv-r.had.co.nz/
+6 .[Advanced R Hadley Wickham](http://adv-r.had.co.nz/).
 
-7 .Step by Step Guide to Learn Data Science on R: http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/.
+7 .[Step by Step Guide to Learn Data Science on R](http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/).
 
-8 .Intermediate R: https://www.datacamp.com/courses/intermediate-r.
+8 .[Intermediate R](https://www.datacamp.com/courses/intermediate-r).
 
-9 .R for Data Science: http://r4ds.had.co.nz/.
+9 .[R for Data Science](http://r4ds.had.co.nz/).
 
-10 .RPubs: https://rpubs.com/, documentos de R, en Rmarkdown.
+10 .[RPubs](https://rpubs.com/), documentos de R en Rmarkdown.
 
-11 .Efficient R programming: https://csgillespie.github.io/efficientR.
+11 .[Efficient R programming](https://csgillespie.github.io/efficientR).
 
 12 . Algunos canales de YouTube para aprender Estadistica:
   * [Brandon Foltz](https://www.youtube.com/user/BCFoltz). 
