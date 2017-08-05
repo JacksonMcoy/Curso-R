@@ -1,6 +1,3 @@
-
-# Curso general de R
-
 ## Descripción del curso
 
 Este curso es un complemento del curso **Introducción a las estadística y probabilidad CM274**, sobre el aprendizaje del lenguaje R. En estas notas  usaremos un [kernel nativo de R](https://github.com/IRkernel/IRkernel), sobre [Jupyter](http://jupyter.org/) usando [Anaconda](https://www.continuum.io/anaconda-overview), además de otras herramientas mencionadas abajo.
