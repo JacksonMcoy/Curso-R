@@ -237,17 +237,13 @@ Más información:
 * [Lecciones de R Markdown ](http://rmarkdown.rstudio.com/lesson-1.html).
 
 
-### R Notebooks
-
-* [Lecciones de R Markdown](http://rmarkdown.rstudio.com/lesson-1.html).
-
 
 ### R Notebooks
 
 
 Un R Notebooks es un documento R Markdown, que permite mostrar independientemente e interactivamente , código R y sintaxis de  otros lenguajes. Es una manera fácil de generar reportes, análisis estadísticos, visualización de datos.
 
-Más información en  la página [http://rmarkdown.rstudio.com/r_notebooks.html](http://rmarkdown.rstudio.com/r_notebooks.html).
+Más información en  la página de  [R Notebooks](http://rmarkdown.rstudio.com/r_notebooks.html).
 
 
 ### Shiny 
@@ -324,32 +320,7 @@ install.packages("roxygen2")
 
 10 . Getting Started with SQL, A hands-on approach for beginners, Thomas Nield, 2016.
 
-11 . Learning Spark: Lightning-Fast Big Data Analysis, Holden Karau, Andy Konwinski, Patrick Wendell, Matei Zaharia,  O'Reilly Media; 1 edition (28 January 2015)
-
-
-### Notas online
-
-1 .El pequeño Libro de Inferencia Estadística. https://leanpub.com/LittleInferenceBook/read.
-
-2 .Fuentes para aprender R UCLA http://www.ats.ucla.edu/stat/r/.
-
-3 .Curso de Programación en R e Inferencia Estadística, https://www.coursera.org/jhu.
-
-4 .Documentación de R, ordenada por Temas, http://www.rdocumentation.org/.
-
-5 .El mundo de R, en este blog: http://www.r-bloggers.com/.
-
-6 .Advanced R: http://adv-r.had.co.nz/
-
-7 .Step by Step Guide to Learn Data Science on R: http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/.
-
-8 .Intermediate R: https://www.datacamp.com/courses/intermediate-r.
-
-9 .R for Data Science: http://r4ds.had.co.nz/.
-
-10 .RPubs: https://rpubs.com/, documentos de R, en Rmarkdown.
-
-11 .Efficient R programming: https://csgillespie.github.io/efficientR.
+11 . Learning Spark: Lightning-Fast Big Data Analysis, Holden Karau, Andy Konwinski, Patrick Wendell, Matei Zaharia,  O'Reilly Media; 1 edition (28 January 2015).
 
 ### Notas online
 
