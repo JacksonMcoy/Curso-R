@@ -68,6 +68,7 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
 ## Clases
 
 * [Clase1: CLI para R](http://rpubs.com/C-LaraAvila/296559).
+* [Clase2: Git y Github](http://rpubs.com/C-LaraAvila/296902)
 * [Clase3: Lenguaje de programación R](https://rpubs.com/C-LaraAvila/296208).
 * [Clase4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296246).
 * [Clase5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296274).
