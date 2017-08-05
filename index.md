@@ -13,15 +13,15 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
 - **Lectura y videos recomendados**
    * [Technical Foundations of Informatics Michael Freeman and Joel Ross](https://info201-s17.github.io/book/).
 
-  	* [Introduction to the Command Line](https://launchschool.com/books/command_line).
-  	* [Agile Planning](https://launchschool.com/books/agile_planning).
-  	* [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
+  * [Introduction to the Command Line](https://launchschool.com/books/command_line).
+  * [Agile Planning](https://launchschool.com/books/agile_planning).
+  * [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 
-   * [Introduction to the Command Line](https://launchschool.com/books/command_line).
-   * [Agile Planning](https://launchschool.com/books/agile_planning).
-   * [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
+  * [Introduction to the Command Line](https://launchschool.com/books/command_line).
+  * [Agile Planning](https://launchschool.com/books/agile_planning).
+  * [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 
-   * [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml).
+  * [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml).
    
  
 ## Temario
@@ -44,8 +44,8 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
   - [Inspección de variables y el espacio de trabajo de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Inspeccion-variables_workspace.ipynb).
 * Vectores, matrices y arrays.
   - [Cuaderno sobre vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
-   - [Vectorización en R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
-   - [Aplicaciones](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/Aplicaciones.ipynb).
+  - [Vectorización en R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
+  - [Aplicaciones](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/Aplicaciones.ipynb).
 * Listas, data frames, cadena, factores y tablas
    - [Notas de data frames, cadenas, factores y tablas](http://adv-r.had.co.nz/Data-structures.html).
    - [Cuaderno sobre listas y data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
@@ -68,16 +68,17 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
    - [Más sobre funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones2.ipynb).
    - [Más sobre entornos y funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones3.ipynb).
    - [Functions R: Hadley Wickham](http://adv-r.had.co.nz/Functions.html).
- * Gráficos.
+* Gráficos.
    - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
    - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
-   
+
 ## Clases
 
-* [Clase1: CLI para R](http://rpubs.com/C-LaraAvila/296559).
-* [Clase3: Lenguaje de programación R](https://rpubs.com/C-LaraAvila/296208).
-* [Clase4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296246).
-* [Clase5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296274).
+* [Clase1: CLI para R](http://rpubs.com/C-LaraAvila/296904).
+* [Clase2: Git y Github](http://rpubs.com/C-LaraAvila/296902).
+* [Clase3: Lenguaje de programación R](http://rpubs.com/C-LaraAvila/296905).
+* [Clase4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296906).
+* [Clase5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296907).
 
 ## Asignaciones
 * [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)|[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
@@ -149,18 +150,17 @@ El [Proyecto Jupyter](http://jupyter.org/)  es una aplicación web que te permit
 
 ```bash
  pip install jupyter_contrib_nbextensions
-``` 
+```
 
 O utilizando conda
 
 ```bash
 conda install -c conda-forge jupyter_contrib_nbextensions
-``` 
-
+```
 
 #### Kernel de bash en Jupyter 
 - Las notas sobre comandos Linux (clase1)  se usado el kernel de Bash de Jupyter:
-  
+
     ```
     pip install bash_kernel
     python -m bash_kernel.install
@@ -179,7 +179,7 @@ rm *.deb
 - [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
 - Using R and Rstudio for Data Management, Statistical and Graphics, Nicholas J. Horton and Ken Kleinman, CRC Press, 2015.
 
-Para actualizar [R](https://www.cran.r-project.org/) se podría escribir en el terminal 
+Para actualizar [R](https://www.cran.r-project.org/) se podría escribir en el terminal
 
 ```
 sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu precise/" | sudo tee -a /etc/
@@ -224,11 +224,7 @@ El paquete gglot2, tiene una lista de [extensiones](http://www.ggplot2-exts.org/
 
 [R Markdown](http://rmarkdown.rstudio.com/index.html) es un framework para ciencia de datos de manera que puede crear reportes dinámicos con R, además de ejecutar y guardar código. Por ejemplo sea un tabla en markdown con R.
 
-
-```{r , results='asis', echo=FALSE}
-
 ```r
->>>>>>> c034a3f2e523c12ef3ebaa402242225cb0cbac77
 cat("x | y", "--- | ---", sep="\n")
 cat(apply(df, 1, function(X) paste(X, collapse=" | ")), sep = "\n")
 ```
@@ -258,7 +254,6 @@ Más información en  la página [http://rmarkdown.rstudio.com/r_notebooks.html]
 
 [Shiny](http://shiny.rstudio.com/)  es una herramienta para crear fácilmente aplicaciones web interactivas **(apps)** que permiten a los usuarios interactuar con sus datos sin tener que manipular el código, usando un paradigma conocido como [programación reactiva](https://en.wikipedia.org/wiki/Reactive_programming)  que enfatiza  valores que cambian en el tiempo
  y expresiones que registran esos cambios.  Para sacar el máximo partido de Shiny, se debe  entender el modelo de [programación reactiva](http://shiny.rstudio.com/articles/reactivity-overview.html) que se utiliza. 
- 
 
 Más información en el [tutorial de Shiny](http://shiny.rstudio.com/tutorial/)
 
@@ -305,7 +300,7 @@ install.packages("roxygen2")
 
   - [ testthat](https://github.com/hadley/testthat).
   - Consistencia.
-  
+
 ### Otros Libros de R y más
 
 1 .`ggplot2 Essentials`, Donato Teutonico, Packt open source, 2015.
