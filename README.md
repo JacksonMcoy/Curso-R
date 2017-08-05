@@ -67,11 +67,11 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
    
 ## Clases
 
-* [Clase1: CLI para R](http://rpubs.com/C-LaraAvila/296559).
+* [Clase1: CLI para R](http://rpubs.com/C-LaraAvila/296904).
 * [Clase2: Git y Github](http://rpubs.com/C-LaraAvila/296902)
-* [Clase3: Lenguaje de programación R](https://rpubs.com/C-LaraAvila/296208).
-* [Clase4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296246).
-* [Clase5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296274).
+* [Clase3: Lenguaje de programación R](http://rpubs.com/C-LaraAvila/296905).
+* [Clase4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296906).
+* [Clase5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296907).
 
 ## Asignaciones
 * [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)|[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
