@@ -1,0 +1,294 @@
+<style>
+.reveal h1, .reveal h2, .reveal h3 {
+  word-wrap: normal;
+  color: #FF4000;
+  -moz-hyphens: none;
+  .small-code pre code {
+  font-size: 1em;
+}
+</style>
+
+
+Curso de R
+========================================================
+author: Línea de comandos en Linux
+
+ Shell y bash
+========================================================
+El Shell es un programa que toma comandos desde el teclado
+y los pasa al Sistema Operativo para realizar alguna operación.
+
+Casi todos las distribuciones Linux,proporcionan un shell, desde el
+proyecto GNU, llamado [`bash`](https://www.gnu.org/software/bash/), que 
+reemplaza al original shell de Unix, llamado **sh**.
+
+Más información en:
+
+* [How to Use
+Command Line](http://generalassembly.github.io/prework/command-line/)
+
+Emuladores de terminal
+========================================================
+Cuando estamos usando una interfaz de usuario gráfica, necesitamos otro programa 
+llamado `emulador de terminal (terminal emulador)` o simplemente  **terminal** para interactuar con el shell.
+
+Por ejemplo para interfaces como KDE Gnome
+
+- KDE  			**konsole**.
+- GNOME 		**gnome-terminal.**
+
+ Primeros pasos
+========================================================
+<small> Normalmente podemos lanzar el terminal escribiendo `alt + F2`  </small>
+
+``` bash
+[nombre-usuario@linux~]$
+```
+
+<small>Esto puede variar de la distribución y usualmente incluye
+`nombre-usuario@nombre-maquina`, seguido por el actual directorio de trabajo y un signo de dolar. </small>
+
+<small>Algunas veces en lugar del signo dolar, aparece el signo `#`, esto significa que el terminal tiene `previlegios de super usuario`. Eso significa que tu estas logeado como el `usuario root` o has seleccionado un terminal con permisos de `superusuario`.</small>
+
+
+Comandos linux
+========================================================
+
+La forma general de los comandos Linux 
+
+```
+<comando><opciones><argumentos>
+```
+* `<comando>` es la acción que queremos que la computadora tome.
+* `<opciones>` o *flag* modifica el compartamiento del comando.
+* `<argumentos>` son las cosas que queremos sobre que el comando actúe.
+
+
+Consejos
+========================================================
+
+* Si hay espacios en los nombres de archivo o directorio, utilice el símbolo  **""** para anotar los caracteres de espacio, o simplemente coloque la ruta completa del archivo entre comillas.
+* Después de escribir las primeras letras de un nombre de archivo o directorio, puede pulsar **Tab** para completar automáticamente el nombre. 
+* Utilice las teclas de flecha arriba y abajo para navegar por los comandos previamente escritos.
+
+Ruta de archivos
+========================================================
+
+* <small> Una **ruta de archivo relativa** especifica la ruta de acceso a un archivo, teniendo en cuenta su directorio de trabajo actual. Por ejemplo, si le  dieras a alguien instrucciones *relativas* a su casa, le daría direcciones desde su ubicación actual (la ruta relativa es desde donde están ellos hasta donde estás tu).</small>
+* <small> Una **ruta de archivo absoluta** especifica la ruta completa a un archivo, haciendo caso omiso del directorio de trabajo actual. Por ejemplo, si diera a alguien direcciones **absolutas** a su casa, empezaría diciéndoles que estuvieran en la tierra, luego vaya a su continente, luego vaya a su país, luego vaya a su región, etc.</small>
+
+Comandos básicos
+========================================================
+
+* **pwd**
+    <small> prints working directory (muestra el directorio actual de trabajo).</small>
+  
+* **ls** 
+ <small> lista todos los archivos y directorios del actual directorio de trabajo.</small>
+  * <small> `ls -a`, lista todos los archivos, incluyendo los archivos ocultos.</small>
+  * <small> `ls -l`, lista todos los archivos en un formato con información extra (permisos, tamaño, fecha de modificación, etc.)</small>
+  * <small> `ls *`,lista los contenidos de los subdirectorios  (un nivel de profundidad) en tu directorio de trabajo.</small>
+  * <small> `ls <ruta>`,  lista los archivos en un directorio específico  (sin cambiar tu directorio de trabajo)</small>
+
+* **clear**
+    <small> Borra toda la salida de la consola.</small>
+
+Comandos básicos(1)
+========================================================
+* **cd**
+  * <small> `cd <ruta>` cambia el directorio a la ruta que se especifique, que puede ser una ruta relativa o una ruta absoluta.</small>
+  * <small> `cd..` mueve hacia un directorio padre.</small> 
+  * <small> `cd`</small>  se mueve a tu directorio *home*.
+  
+* **mv**
+
+  * <small> `mv <nombrearchivo> <nueva ruta>` mueve un archivo desde la localización local a moves a  `<nueva ruta>`.</small>
+  * <small>`mv <nombrearchivo> <nueva ruta >` cambia el nombre de un archivo sin cambiar su ubicación.</small>
+
+Comandos básicos(2)
+========================================================
+* **mkdir**
+  * <small> `mkdir <nombredirectorio>` crea un directorio llamado `<nombredirectorio>`.</small>
+
+* **rm -i**
+
+  * <small> `rm <nombrearchivo>` remueve (elimina) un archivo permanentemente.</small>
+  * <small> `rm -i <nombrearchivo>` remueve archivos en modo interactivo. </small>
+  * <small> `rm -ir <nombredirectorio>` elimina un directorio y elimina recursivamente todo su contenido.</small>
+
+Comandos básicos(3)
+========================================================
+
+* **cp**
+
+  * <small> `cp  <nombrearchivo><nueva ruta>` remueve (elimina) un archivo permanentemente.</small>
+  * <small> `cp <nombrearchivo><nuevoarchivo` remueve archivos en modo interactivo. </small>
+  
+* **touch**
+
+  * <small> `touch <nombrearchivo>` crea un archivo vacío llamado `<nombrearchivo`.</small>
+  * <small> Esto es útil para crear archivos vacíos que se editarán posteriormente.. </small>
+  * <small> Puede crear varios archivos vacíos con un solo comando: `touch <nombrearchivo1> <nombrearchivo2>`...</small>
+
+Comandos intermedios
+========================================================
+
+* **head** 
+
+  * <small> `head <nombrearchivo>`, imprime el encabezado (las primeras 10 lineas) de un  archivo.</small>
+  * <small> `head -n20 <nombrearchivo`, imprime las primeras 20 lineas de un archivo.</small>
+  * <small> Esto es útil para previsualizar el contenido de un archivo  sin abrirlo.</small>
+* **tail**
+
+  * <small> `tail  <nombrearchivo>` imprime las últimas 10 líneas de un archivo .</small>
+  
+
+Comandos intermedios(1)
+========================================================
+
+* **cat** 
+
+  * <small> `cat <nombrearchivo>`, imprime  un  archivo.</small>
+* **less**
+
+  * <small> `less <nombrearchivo>` permite desplazarse por el archivo .</small>
+  * <small>  Pulse la barra de espacio para ir hacia abajo de una página, use las teclas de flecha para desplazarse hacia arriba y hacia abajo y pulse *q* para salir.</small>
+  
+* **|**
+
+  * <small> `<comando1>|<comando2>` canaliza los resultados de `<comando 1>` en `<comando 2>` y a continuación, los resultados del  `<comando 2>` se imprimen en la consola.</small>
+  
+
+Comandos intermedios(2)
+========================================================
+
+* **wc**
+
+  * <small> `wc <nombrearchivo>` devuelve el conteo de  líneas, palabras y caracteres en un archivo .</small>
+  * <small>  `wc -l <nombrearchivo`, solo cuenta líneas. </small>
+  * <small> `wc -w <nombrearchivo` solo cuenta las palabras. </small>
+  * <small> `wc -c <nombrearchivo>` solo cuenta caracteres. </small>
+  * <small> Una "palabra" se define como cualquier conjunto de caracteres delimitados por un espacio. </small>
+
+* **>**
+
+  * <small> `<comando> > <nombrearchivo>` toma la salida de <comando> y la guarda en `<nombrearchivo>`. Esto sobrescribirá el archivo si ya existe. </small>
+
+
+Comandos intermedios(3)
+========================================================
+
+* **grep**
+
+  * <small> `grep <patron><nombrearchivo>` busca en un archivo un patrón de expresión regular e imprime las líneas coincidentes que debe estar entre comillas para permitir varias palabras. El patrón es sensible a mayúsculas y minúsculas por defecto, pero puede usar la opción **-i** para ignorar el caso.</small>
+  * <small> `grep -r <patron> <ruta>` hace una búsqueda recursiva de la ruta (verifica los subdirectorios) para encontrar  coincidencias dentro de los archivos</small>
+  
+  * <small> `grep <patron>` realiza una búsqueda global (de todo el equipo) por coincidencias. Pulsa `ctrl + c` si se desea cancelar la búsqueda. </small>
+  
+  * <small> Pueden usarse patrones mucho más complejos de adaptación de cadenas.</small>
+
+
+Comandos intermedios(4)
+========================================================
+
+* **find**
+
+  * <small> `find <ruta>  -name <nombre>` buscará recursivamente la ruta de acceso especificada (y sus subdirectorios) y encontrará archivos y directorios con un `<nombre>`. Usa `.` para especificar el directorio de trabajo. </small>
+  * <small>Para `<nombre>`, puede buscar una coincidencia exacta o utilizar caracteres comodín para buscar una coincidencia parcial, usando `*` y `?`.
+  </small>
+
+* **>>**
+
+   * <small> `<comando> >> <nombrearchivo>` toma la salida de  `<comando>`  y lo agrega a  `<nombrearchivo>`. Esto creará un archivo si aún no existe.</small>
+  
+
+
+
+Directorios Importantes
+========================================================
+El diseño del sistema de archivos en los sistemas Linux es muy similar al de  otros sistemas Unix. El diseño es en realidad especificado en un estándar llamado  **Linux Filesystem Hierarchy Standard** y mucho de los más interesantes archivos están  en archivo de texto.
+
+Veamos una lista de los directorios más importantes del sistema de archivos de Linux:
+
+- `/`: Directorio raiz. Donde todo empieza.
+- `/bin`:  Contiene programas (binarios) que deben estar presente en el sistema para que arranque y corra.
+
+
+Directorios Importantes(1)
+========================================================
+
+- <small>`/boot`: Contiene el Kernel de Linux, disco de imagen RAM inicial y el gestor de arranque. Un archivo importante 	es `/boot/vmlinuz` que es el Kernel Linux. </small>
+- <small>`/dev`: Este es un directorio especial que contiene nodos de dispositivos. Aquí es donde el kernel mantiene una lista de todos los dispositivos que entiende.</small>
+- <small>`/etc`: Es un directorio contiene todos los archivos de configuración de todo el sistema. También contiene una colección de scripts del shell que  inician cada uno de los servicios del sistema en el arranque. </small>
+  - <small> `/etc/crontab`: Un archivo que define cuando un proceso automático deberá ejecutarse.</small>
+  - <small>`/etc/fstab`:  Es una tabla de dispositivos de almacenamiento y sus puntos de montajes asociados.</small>
+  - <small> `/etc/passwd`: Contiene una lista  de las cuentas de usuario </small>.
+  
+Directorios Importantes(2)
+========================================================
+
+- <small> `/home`: Directorio del usuario.</small>
+- <small>`/lib`: Contiene librerias compartidas usadas por los programas centrales del sistema. Son similares a las DLL en windows.</small>
+- <small> `/lost + found`: Cada partición formateada o dispositivo usando el sistema de archivos  **ext3** tiene este directorio. Es usado en el caso de una recuperación parcial de un evento de sistemas dañados.</small>
+- <small>`/media`: Es el directorio, que contiene los puntos de montaje de dispositivos removibles como los USB, CD-ROMs, etc, que son montados automáticamante en la insercción.</small>
+- <small> `/mnt`: Contiene los puntos de montaje de dispositivos removibles que han sidos montados manualmente.</small>
+- <small> `/opt`: Es un directorio usado para instalar *opcional* software.</small>
+
+Directorios Importantes(3)
+========================================================
+
+- <small> `/proc`: Es un sistema de archivo virtual mantenido por el Kernel. Los "archivos" que contiene son rendijas en el propio Kernel. Los archivos se pueden leer y le dará una idea de cómo el Kernel ve su computadora. </small>
+- <small> `/root`: Este es el directorio de la cuenta del usuario `root`.</small>
+- <small> `/sbin`: Contiene *sistemas binarios*, que son programas que llevan tareas vitales que son reservadas al usuario root.</small>
+- <small> `/tmp`: El directorio `/tmp` está destinado para el almacenamiento de archivos temporales, creados por diversos programas. Algunas configuraciones causan que este directorio deba ser vaciado cada vez que se reinicia el sistema.</small>
+- <small> `/usr`: El árbol de directorios `/usr` probablemente es el más grande en un sistema Linux. Contiene todos los archivos de los programas y de soporte utilizados por los usuarios regulares.</small>
+
+Directorios Importantes(4)
+========================================================
+-  <small> Algunos subdirectorios importantes de `usr`: </small>
+
+  - <small> `/usr/bin`: Contiene ejecutables instalados en tu distribución.</small>
+  - <small>`/usr/lib`: Librerias compartidas por los programas en `/usr/bin`.</small>
+  - <small> `/usr/local`: Es el directorio donde se encuentran los programas que no son incluidos con la distribución, pero que están destinados para el uso de todo el sistema. Programas compilados desde el código fuente normalmente se instalan en `/usr/local/bin`. </small>
+  - <small> `/usr/sbin`: Contiene muchos programas de administración del sistema.</small>
+  
+Directorios Importantes(5)
+========================================================
+-  <small> Algunos subdirectorios importantes de `usr`: </small>
+  - <small> `/usr/share`: Es un directorio que contiene toda los datos, usados por los programas en `/usr/bin`. Esto incluye cosas como archivos de configuración, íconos, archivos de sonido, fondos de pantalla, etc.</small>
+  - <small> `/usr/share/doc`: Documentación de programas del sistema.</small>
+  
+- <small> `/var`: El árbol de directorios `/var` es donde se almacenan los datos que  probablemente  cambien. Varias bases de datos,  correo de usuario, etc., se encuentran aquí. </small>
+
+  - <small> `/var/log`: Contiene los archivos de registro, registros de diversas actividades del sistema. Estos son muy importantes y deben ser vigilados de vez en cuando. El archivo más útil es `/var/log/messages`. </small>
+  
+  
+Comodines
+========================================================
+
+<small>Desde que el shell utiliza nombres de archivo demasiadas veces, proporciona caracteres especiales para ayudar a especificar rápidamente grupos de nombres de archivos. Estos caracteres especiales son llamados [comodines](http://www.linfo.org/wildcard.html).</small>
+
+<small>Los comodines nos permiten seleccionar los nombres de archivo basado en patrones de caracteres. Los principales  comodines se muestran a continuación: </small>
+
+ - <small> El comodín `*` enlaza uno o más caracteres.</small>
+ - <small> El comodin `?` enlaza un único caracter. </small>
+ - <small> `[caracteres]` enlaza algún caracter que es miembro de *caracteres*. </small>
+ 
+ Comodines(1)
+========================================================
+- <small> [[:clase:]] enlaza algún caracter que es miembro de una determinada clase. Las clases comunmente usadas son: </small>
+
+ 	
+ - <small> `[:alnum:]`       enlaza algún caracter alfa numérico. </small>
+ - <small> `[:alpha:]`       enlaza algún caracter alfabético. </small>
+ - <small> `[:digit:]`        enlaza algún numeral. </small>
+ - <small> `[:lower:]`        enlaza alguna letra minúscula. </small>
+ - <small>  `[:upper:]`     enlaza alguna letra mayúscula. </small>
+
+
+Lecturas
+========================================================
+
+* [Cuaderno de notas de comandos Linux para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/CLI/ComandosLinux.ipynb).
+* [Unix as IDE: Introduction](https://sanctum.geek.nz/arabesque/series/unix-as-ide/).
+* [Unix Power Tool](https://docstore.mik.ua/orelly/unix/upt/).
