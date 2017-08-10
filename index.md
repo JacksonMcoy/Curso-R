@@ -84,9 +84,6 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
 
 * [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)| [Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
 
-* [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)|[Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
-
-
 ## Libros de Texto
 
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
