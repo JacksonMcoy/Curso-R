@@ -159,6 +159,30 @@ conda install -c conda-forge jupyter_contrib_nbextensions
     pip install bash_kernel
     python -m bash_kernel.install
     ```
+### Git y Github
+
+[Git](https://git-scm.com/) es un sistema de control de versiones de gran potencia y versatilidad en el manejo de un gran número de archivos de  código fuente a a través del desarrollo no lineal, es decir vía la gestión rápida de ramas y mezclado de diferentes versiones.
+
+Para poder revisar y aprender los comandos necesarios de Git, puedes darle una ojeada al excelente [tutorial de CodeSchool](https://try.github.io/levels/1/challenges/1) o a la [guía](http://rogerdudler.github.io/git-guide/index.es.html) de Roger Dudle para aprender  Git.
+
+[Github](https://github.com/) es una plataforma de desarrollo colaborativo de software utilizado para alojar proyectos (muchos proyectos importantes como paquetes de R, Django, el Kernel de Linux, se encuentran alojados ahí) utilizando Git y el framework Ruby on Rails.
+
+Podemos instalar Git en Ubuntu utilizando el administrador de paquetes `Apt`:
+
+```bash
+c-lara@Lara:~$sudo apt-get update
+c-lara@Lara:~$sudo apt-get install git
+```
+
+Referencias y Lecturas
+
+- [Usando el GIT](http://www.cs.swarthmore.edu/~newhall/unixhelp/git.php).
+- [Practical Git Introduction](http://marc.helbling.fr/2014/09/practical-git-introduction).
+- [Visual Git Guide](http://marklodato.github.io/visual-git-guide/index-es.html).
+
+Un video sobre que es Github:
+
+<iframe width="560" height="420" src="http://www.youtube.com/embed/w3jLJU7DT5E"> </iframe> 
 
 ### R y Rstudio
 
@@ -348,8 +372,3 @@ install.packages("roxygen2")
   * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
   * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
   * [Texas University Videos : Statistical Inference](https://stat.utexas.edu/videos/r/statistical-inference/)
-
-
-
-
-
