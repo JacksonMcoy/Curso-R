@@ -230,7 +230,9 @@ Más información:
 
 * [Lecciones de R Markdown ](http://rmarkdown.rstudio.com/lesson-1.html).
 
+Un video tutorial sobre Rmarkdown:
 
+<iframe width="560" height="420" src="http://www.youtube.com/embed/cWJzjHh_3kk"> </iframe> 
 
 ### R Notebooks
 
