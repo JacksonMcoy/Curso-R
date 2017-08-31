@@ -31,6 +31,14 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
    
 ## Acerca de la evaluación
 
+La evaluación de este curso, consta de 4 laboratorios calificados. Los participantes del curso deberan subir sus soluciones a sus respectivos repositorios creados en las primeras clases. No se permitirá envios fuera de horario al examen, salvo para completar la tarea si es que el participante desea. 
+
+A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obligatorios, pero puntuan en su calificación final. Todos los trabajos se presentaran en su respectivo repositorio en Github. Es decir el participante debe completar lo siguiente:
+
+* Repositorio en Github.
+* Las prácticas calificadas (4).
+* Las tareas y asignaciones dejadas a lo largo del curso.
+
 ## Clases
 
 * [Clase1: CLI para R](http://rpubs.com/C-LaraAvila/296904).
