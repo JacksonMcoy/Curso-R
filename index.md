@@ -7,69 +7,36 @@ Este curso es un complemento del curso **Introducción a las estadística y prob
 R como lenguaje de programación y multiparadigma, plantea un modo distinto de escribir código, por lo que  precisa de ciertos requisitos, que se enumeran a continuación.
 
 
-- Requisitos: Manejo de la linea de comandos. Una buena opción es [webminal](http://www.webminal.org/).
-
 - **Lectura y videos recomendados**
-   * [Technical Foundations of Informatics Michael Freeman and Joel Ross](https://info201-s17.github.io/book/).
-
+  * [Technical Foundations of Informatics Michael Freeman and Joel Ross](https://info201-s17.github.io/book/).
+  * [Agile Planning](https://launchschool.com/books/agile_planning).
   * [Introduction to the Command Line](https://launchschool.com/books/command_line).
   * [Agile Planning](https://launchschool.com/books/agile_planning).
-  * [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
-
-  * [Introduction to the Command Line](https://launchschool.com/books/command_line).
-  * [Agile Planning](https://launchschool.com/books/agile_planning).
-  * [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/).
-
-  * [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml).
+  
    
  
 ## Temario
 
 * Manejo de línea de comandos.
-  - [Cuaderno de notas CLI para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/CLI/ComandosLinux.ipynb).
-  - [Usando la linea de comandos](http://generalassembly.github.io/prework/command-line/#/).
+  
 * Uso de Git y Github.
-  - [Cracking the Code to GitHub's Growth ](https://growthhackers.com/growth-studies/github).
-  - [Introducción a Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD).
+  
 * El lenguage de programación R.
-  - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
-  - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
-  - [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
-  - [Guia de estilo de R de Google](http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml).
-  - [Usando Stackoverflow y R](http://stackoverflow.com/questions/tagged/r).
-  - [Por que deberias aprender R, para ciencia de datos](http://dataconomy.com/why-you-should-learn-r-first-for-data-science/).
+  
 * R básico.
-  - [Cálculo básico con R](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Calculo_R.ipynb).
-  - [Inspección de variables y el espacio de trabajo de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Inspeccion-variables_workspace.ipynb).
+  
 * Vectores, matrices y arrays.
-  - [Cuaderno sobre vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
-  - [Vectorización en R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
-  - [Aplicaciones](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/Aplicaciones.ipynb).
+  
 * Listas, data frames, cadena, factores y tablas
-   - [Notas de data frames, cadenas, factores y tablas](http://adv-r.had.co.nz/Data-structures.html).
-   - [Cuaderno sobre listas y data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
-   - [Cuaderno sobre cadenas, factores y tablas](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/Cadena-factores-tablas.ipynb).
-   - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
+   
 * Trabajando con datos.
-   - [Lectura y escritura de datos en distintos formatos](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos1/Datos1.ipynb).
-   - [Conjunto de datos predefinidos y visualización básica ](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Datos2.ipynb).
-   - [Análisis de datos-regresión lineal](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos3/Datos3.ipynb).
-   - [Data Maning vs Statistics ](http://www.kdnuggets.com/2016/09/data-science-basics-data-mining-statistics.html).
-   - [Statistics vs Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/)
+  
 *  Estructuras de programación .
-   - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
-   - [Estructuras avanzadas(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Bucles_avanzados1/Estructuras_avanzadas1.ipynb).
-   - [Estructuras avanzadas(2)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Estructuras_avanzadas2.ipynb).
-   - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
+   
 * Entornos y funciones.
-   - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos/Entornos.ipynb).
-   - [Funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones1.ipynb).
-   - [Más sobre funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones2.ipynb).
-   - [Más sobre entornos y funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones3.ipynb).
-   - [Functions R: Hadley Wickham](http://adv-r.had.co.nz/Functions.html).
+   
 * Gráficos.
-   - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
-   - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
+   
 
 ## Clases
 
