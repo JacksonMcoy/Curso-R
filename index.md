@@ -2,9 +2,9 @@
 
 ## Descripción del curso
 
-Este curso es un complemento del curso **Introducción a las estadística y probabilidad CM274**, sobre el aprendizaje del lenguaje R. En estas notas  usaremos un [kernel nativo de R](https://github.com/IRkernel/IRkernel), sobre [Jupyter](http://jupyter.org/) usando [Anaconda](https://www.continuum.io/anaconda-overview), además de otras herramientas mencionadas abajo.
+Este curso es un complemento del curso [**Introducción a las estadística y probabilidad CM274**](http://c-lara.github.io/Curso-Probabilidad/), sobre el aprendizaje del lenguaje R. En estas notas  usaremos un [kernel nativo de R](https://github.com/IRkernel/IRkernel), sobre [Jupyter](http://jupyter.org/) usando [Anaconda](https://www.continuum.io/anaconda-overview), además de otras herramientas mencionadas abajo.
 
-R como lenguaje de programación y multiparadigma, plantea un modo distinto de escribir código, por lo que  precisa de ciertos requisitos, que se enumeran a continuación.
+R como lenguaje de programación y multiparadigma, plantea un modo distinto de escribir código, por lo que  precisa de ciertos requisitos, que se enumeran a continuación:
 
 
 - **Lectura y videos recomendados**
@@ -18,25 +18,18 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
 ## Temario
 
 * Manejo de línea de comandos.
-  
 * Uso de Git y Github.
-  
 * El lenguage de programación R.
-  
 * R básico.
-  
 * Vectores, matrices y arrays.
-  
 * Listas, data frames, cadena, factores y tablas
-   
 * Trabajando con datos.
-  
-*  Estructuras de programación .
-   
+*  Estructuras de programación .   
 * Entornos y funciones.
-   
 * Gráficos.
+* Aplicaciones a la probabilidad e inferencia estadística y Bayesiana. 
    
+## Acerca de la evaluación
 
 ## Clases
 
@@ -45,6 +38,63 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
 * [Clase3: Lenguaje de programación R](http://rpubs.com/C-LaraAvila/296905).
 * [Clase4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296906).
 * [Clase5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296907).
+
+### Cuadernos y anotaciones
+
+* Manejo de línea de comandos.
+  - [Cuaderno de notas CLI para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/CLI/ComandosLinux.ipynb).
+  - [Usando la linea de comandos](http://generalassembly.github.io/prework/command-line/#/).
+  - [webminal](http://www.webminal.org/).
+  - [Introduction to the Command Line](https://launchschool.com/books/command_line).
+* Uso de Git y Github.
+  - [Cracking the Code to GitHub's Growth ](https://growthhackers.com/growth-studies/github).
+  - [Introducción a Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD).
+* El lenguage de programación R.
+  - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
+  - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
+  - [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
+  - [Guia de estilo de R de Google](http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml).
+  - [Usando Stackoverflow y R](http://stackoverflow.com/questions/tagged/r).
+  - [Por que deberias aprender R, para ciencia de datos](http://dataconomy.com/why-you-should-learn-r-first-for-data-science/).
+* R básico.
+  - [Cálculo básico con R](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Calculo_R.ipynb).
+  - [Inspección de variables y el espacio de trabajo de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Inspeccion-variables_workspace.ipynb).
+
+* Vectores, matrices y arrays.
+  - [Cuaderno sobre vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
+  - [Vectorización en R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
+  - [Aplicaciones](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/Aplicaciones.ipynb).
+
+* Listas, data frames, cadena, factores y tablas
+   - [Cuaderno sobre listas y data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
+   - [Cuaderno sobre cadenas, factores y tablas](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/Cadena-factores-tablas.ipynb).
+   - [Notas de data frames, cadenas, factores y tablas](http://adv-r.had.co.nz/Data-structures.html).
+   
+   - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
+* Trabajando con datos.
+   - [Lectura y escritura de datos en distintos formatos](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos1/Datos1.ipynb).
+   - [Conjunto de datos predefinidos y visualización básica ](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Datos2.ipynb).
+   - [Análisis de datos-regresión lineal](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos3/Datos3.ipynb).
+   - [Data Maning vs Statistics ](http://www.kdnuggets.com/2016/09/data-science-basics-data-mining-statistics.html).
+   - [Statistics vs Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/)
+*  Estructuras de programación.
+   - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
+   - [Estructuras avanzadas(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Bucles_avanzados1/Estructuras_avanzadas1.ipynb).
+   - [Estructuras avanzadas(2)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Estructuras_avanzadas2.ipynb).
+   - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
+
+* Entornos y funciones.
+  - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos/Entornos.ipynb).
+  - [Funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones1.ipynb).
+  - [Más sobre funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones2.ipynb).
+  - [Más sobre entornos y funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones3.ipynb).
+  - [Functions R: Hadley Wickham](http://adv-r.had.co.nz/Functions.html).
+* Gráficos.
+  - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
+  - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
+* Aplicaciones a la probabilidad e inferencia estadística y Bayesiana. 
+
+
 
 ## Asignaciones
 * [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)|[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
