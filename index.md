@@ -51,12 +51,17 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 * Manejo de línea de comandos y Markdown.
   - [Cuaderno de notas CLI para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/CLI/ComandosLinux.ipynb).
-  - [Usando la linea de comandos](http://generalassembly.github.io/prework/command-line/#/).
-  - [webminal](http://www.webminal.org/).
   - [Introduction to the Command Line](https://launchschool.com/books/command_line).
+  - [Notas de Joe Dicastro de Markdown](http://joedicastro.com/pages/markdown.html).
+  
+* Tarea 1 :
+    * Completa  el tutorial [How to Use Command Line](http://generalassembly.github.io/prework/command-line/#/). usando el Terminal (Linux/ Mac) o Git Bash (Windows).
+    * Lee y completa el tutorial online [Markdown Tutorial](https://www.markdowntutorial.com/).
+    * Mira los videos de 1 -8 [Introduction to Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD) o la primeras secciones 1.1 a 1.5 del libro [Pro Git](https://git-scm.com/book/es/v1).
 * Uso de Git y Github.
+  - [Una referencia visual de Git](http://marklodato.github.io/visual-git-guide/index-es.html).
   - [Cracking the Code to GitHub's Growth ](https://growthhackers.com/growth-studies/github).
-  - [Introducción a Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD).
+  
 * El lenguage de programación R.
   - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
   - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
