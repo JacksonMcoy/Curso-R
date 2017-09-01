@@ -17,7 +17,7 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
  
 ## Temario
 
-* Manejo de línea de comandos.
+* Manejo de línea de comandos y Markdown.
 * Uso de Git y Github.
 * El lenguage de programación R.
 * R básico.
@@ -49,7 +49,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 ### Cuadernos y anotaciones
 
-* Manejo de línea de comandos.
+* Manejo de línea de comandos y Markdown.
   - [Cuaderno de notas CLI para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/CLI/ComandosLinux.ipynb).
   - [Usando la linea de comandos](http://generalassembly.github.io/prework/command-line/#/).
   - [webminal](http://www.webminal.org/).
