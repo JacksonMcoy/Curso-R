@@ -59,8 +59,12 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
     * Lee y completa el tutorial online [Markdown Tutorial](https://www.markdowntutorial.com/).
     * Mira los videos de 1 -8 [Introduction to Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD) o la primeras secciones 1.1 a 1.5 del libro [Pro Git](https://git-scm.com/book/es/v1).
 * Uso de Git y Github.
+  - [Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/es/). Recomendado.
   - [Una referencia visual de Git](http://marklodato.github.io/visual-git-guide/index-es.html).
   - [Cracking the Code to GitHub's Growth ](https://growthhackers.com/growth-studies/github).
+  
+* Tarea 2:
+    * Leer las notas de [R language for programmers](https://www.johndcook.com/blog/r_language_for_programmers) de John D. Cook.
   
 * El lenguage de programación R.
   - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
@@ -69,6 +73,9 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Guia de estilo de R de Google](http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml).
   - [Usando Stackoverflow y R](http://stackoverflow.com/questions/tagged/r).
   - [Por que deberias aprender R, para ciencia de datos](http://dataconomy.com/why-you-should-learn-r-first-for-data-science/).
+  
+* Tarea 3:
+  * 
 * R básico.
   - [Cálculo básico con R](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Calculo_R.ipynb).
   - [Inspección de variables y el espacio de trabajo de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Inspeccion-variables_workspace.ipynb).
