@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Laboratorio de R\par
+Lista de ejercicios 1 \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+
+\item Usa R, para calcular las respuesta num\'ericas de lo siguiente:
+
+\begin{itemize}
+\item $1 + 2(3 + 4)$
+\item $4^3 + 3^{2 +1}$
+\item $\sqrt{(4 + 3)(2 +1)}$
+\item $\biggl( \frac{1 +2}{3 + 4}\biggr)^2$
+\end{itemize}
+\item La funci\'on \texttt{sd} calcula la desviaci\'on est\'andar. Calcula la desviaci\'on est\'andar desde el $0$ al $100$.
+
+\item Ver la demostraci\'on de s\'imbolos matem\'aticos, usando \texttt{demo(plotmath)}.
+
+\item Sea el conjunto de datos dado por 
+
+<<boring, prompt =TRUE, comment =NA>>=
+x = c(1, 8, 2, 6, 3, 8, 5, 5, 5, 5)
+@
+
+Usa R, para calcular las siguientes funciones. Usa la notaci\'on $x_1$ para denotar el primer elemento.
+\begin{itemize}
+\item $(x_1 + x_2 + \dots + x_{10})/10$.
+\item Encontrar $\log_{10}x_i$ para cada $i$.
+\item Resolver $(x_1 -4.4)/2.875$ para  cada $i$. (Hacerlo todo de una s\'ola vez).
+\item Encontrar la diferencia, entre el mayor y menor $x$. (Eso es el rango).
+\end{itemize}
+
+\item Escribe expresiones en $\textbf{R}$ que generen vectores conteniendo las siguientes secuencias de vectores.
+\begin{itemize}
+\item Las primeras $50$ potencias de  $3$, empezando por $3^1$.
+\item $1, 2^2,3, 4^2, 5, 6^2, \dots 99, 100^2$.
+\item $1,-1, 2, -1, 3, -1, \dots, 20, -1$.
+\end{itemize}
+
+\item Los siguientes son una muestra de observaciones sobre la radiaci\'on solar entrante en un invernadero:
+
+11.1 \ 10.6\  6.3\  8.8\  10.7\  11.2\  8.9\  12.2
+
+\begin{enumerate}
+\item Asigna los datos a un objeto \texttt{solar.radiacion}.
+\item Encontrar la media, mediana y la varianza de las observaciones obtenidas sobre la radiaci\'on solar.
+\item Agregar 10 a cada observaci\'on de \texttt{solar.radiacion} y asigna el resultado a \texttt{sr10}. Encontrar la media, la mediana y la varianza de \texttt{sr10}. Cu\'al de las estad\'istica cambia y por cuanto?.
+\item Multiplica cada observaci\'on por -2 y asigna el valor a \texttt{srm2}. Encontrar la media, la mediana y la varianza de \texttt{srm2}. Como   las estad\'isticas cambian?.
+\end{enumerate}
+\item El conjunto de datos \texttt{rivers} se carga cuando R empieza. Mira los datos escribiendo su nombre y luego la tecla de retorno. ?`Cu\'al es el \'ultimo valor listado?.
+\item El conjunto de datos \texttt{Orange} se almacena como un data frame con tres variables. ?`Cu\'ales son esas tres variables?.
+
+\item Calcula la edad media de los \'arboles en el conjunto de datos\texttt{Orange} usando \texttt{mean}.
+
+\item Calcula la circunferencia m\'as grande de los \'arboles en el conjunto de datos  \texttt{Orange}.
+
+\item 
+
+\begin{enumerate}
+\item ?` De qu\'e lenguaje es R una versi\'on de c\'odigo abierto?. Explica algunas caracter\'isticas.
+\item Nombre al menos dos paradigmas de programaci\'on en los que se puede escribir el c\'odigo R.
+\item ?` Cu\'al es el comando para crear un vector de los n\'umeros del $8$ al $27$?.
+\item ?` Cu\'al es el nombre de la funci\'on utilizada para buscar ayuda en R?.
+\item ?` Cu\'al es el nombre de la funci\'on utilizada para buscar ayuda relacionada con R en internet?.
+\end{enumerate}
+
+\item Encuentra la clase, el tipo, el modo y el modo de almacenamiento de los siguientes valores: \texttt{Inf}, \texttt{NA}, \texttt{NaN}, \texttt{" "}.
+
+\item Genera aleatoriamente $1.000$ mascotas , de las opciones \texttt{perro}, \texttt{gato}, \texttt{pollo} y \texttt{pez dorado}, con la misma probabilidad de que cada uno sea elegido. Muestra los primeros valores de la variable resultante y cuente el n\'umero de cada tipo de mascota.
+
+\item Describe al menos dos maneras de asignar una variable.
+\item
+
+\begin{enumerate}
+\item Calcula la tangente inversa del rec\'iproco de todos los enteros del $1$ al $1.000$.
+\item Asigna los n\'umeros del $1$ al $1.000$ a una variable $x$. Calcula la tangente inversa del rec\'iproco de $x$, como en la parte (a) y asignarla a una variable $y$. Ahora invierta las operaciones calculando el rec\'iproco de la tangente de $y$ y asignando este valor a una variable $z$.
+\end{enumerate}
+\end{enumerate}
+\end{document} 
+
