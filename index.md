@@ -93,7 +93,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   
   * Lee el artículo [Combinations and permutations in R](https://davetang.org/muse/2013/09/09/combinations-and-permutations-in-r/)  de Dave Tang.
   * Revisa las notas sobre las funciones de R, del paquete **stats**  sobre distribuciones de probabilidad [aquí](http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Distributions.html).
-  * Completa la [tarea 2] de la clase de R correspondiente. 
+  * Completa la [tarea 2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR2.pdf) de la clase de R correspondiente. 
 
 * Vectores, matrices y arrays.
   - [Cuaderno sobre vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
