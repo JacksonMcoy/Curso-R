@@ -75,12 +75,13 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
   
 * Tarea 3:
-  * Resuelve la [tarea1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR1.pdf) de la clase de R correspondiente.
   * Revisa y presenta un reporte en markdown de   los siguientes artículos y  videos:
     
     - [Applications Of R Programming In R-eal World ](https://elearningindustry.com/applications-r-programming-r-eal-world).
     - [The Data Scientist - 60 Second Data Science](https://www.youtube.com/watch?v=i2jwZcWicSY).
     - [Impatient R](http://www.burns-stat.com/documents/tutorials/impatient-r/#intro).
+  * Lee la  [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml) que muestra algunas recomendaciones importantes de como escribir código en R. 
+   * Resuelve la [tarea1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR1.pdf) de la clase de R correspondiente.
  
    
 * R básico.
@@ -89,8 +90,10 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
  
 * Tarea 4:
   * Revisa el video webinar  [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/). Recomendado.
-  * Lee la  [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml) que muestra algunas recomendaciones importantes de como escribir código en R. 
-  * Lee el artículo [velocidad en R](http://www.noamross.net/blog/2013/4/25/faster-talk.html) de Noam Ross.
+  
+  * Lee el artículo [Combinations and permutations in R](https://davetang.org/muse/2013/09/09/combinations-and-permutations-in-r/)  de Dave Tang.
+  * Revisa las notas sobre las funciones de R, del paquete **stats**  sobre distribuciones de probabilidad [aquí](http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Distributions.html).
+  * Completa la [tarea 2] de la clase de R correspondiente. 
 
 * Vectores, matrices y arrays.
   - [Cuaderno sobre vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
@@ -231,6 +234,7 @@ Referencias y Lecturas
 - [Practical Git Introduction](http://marc.helbling.fr/2014/09/practical-git-introduction).
 - [Visual Git Guide](http://marklodato.github.io/visual-git-guide/index-es.html).
 
+Existe un versión de git para Windows, que se puede descargar [aquí](https://git-scm.com/download/win), así como también  una lista de GUI, que podemos usar en Windows: [Lista de GUI para git](https://git-scm.com/downloads/guis).
 
 ### R y Rstudio
 
