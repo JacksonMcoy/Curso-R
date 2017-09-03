@@ -67,18 +67,30 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
     * Leer las notas de [R language for programmers](https://www.johndcook.com/blog/r_language_for_programmers) de John D. Cook.
   
 * El lenguage de programación R.
-  - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
+  
   - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
   - [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
-  - [Guia de estilo de R de Google](http://google-styleguide.googlecode.com/svn/trunk/Rguide.xml).
   - [Usando Stackoverflow y R](http://stackoverflow.com/questions/tagged/r).
   - [Por que deberias aprender R, para ciencia de datos](http://dataconomy.com/why-you-should-learn-r-first-for-data-science/).
+  - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
   
 * Tarea 3:
-  * 
+  * Resuelve la [tarea1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR1.pdf) de la clase de R correspondiente.
+  * Revisa y presenta un reporte en markdown de   los siguientes artículos y  videos:
+    
+    - [Applications Of R Programming In R-eal World ](https://elearningindustry.com/applications-r-programming-r-eal-world).
+    - [The Data Scientist - 60 Second Data Science](https://www.youtube.com/watch?v=i2jwZcWicSY).
+    - [Impatient R](http://www.burns-stat.com/documents/tutorials/impatient-r/#intro).
+ 
+   
 * R básico.
   - [Cálculo básico con R](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Calculo_R.ipynb).
   - [Inspección de variables y el espacio de trabajo de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Inspeccion-variables_workspace.ipynb).
+ 
+* Tarea 4:
+  * Revisa el video webinar  [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/). Recomendado.
+  * Lee la  [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml) que muestra algunas recomendaciones importantes de como escribir código en R. 
+  * Lee el artículo [velocidad en R](http://www.noamross.net/blog/2013/4/25/faster-talk.html) de Noam Ross.
 
 * Vectores, matrices y arrays.
   - [Cuaderno sobre vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
@@ -219,9 +231,6 @@ Referencias y Lecturas
 - [Practical Git Introduction](http://marc.helbling.fr/2014/09/practical-git-introduction).
 - [Visual Git Guide](http://marklodato.github.io/visual-git-guide/index-es.html).
 
-Un video sobre que es Github:
-
-<iframe width="560" height="420" src="http://www.youtube.com/embed/w3jLJU7DT5E"> </iframe> 
 
 ### R y Rstudio
 
@@ -293,9 +302,7 @@ Más información:
 
 * [Lecciones de R Markdown ](http://rmarkdown.rstudio.com/lesson-1.html).
 
-Un video tutorial sobre Rmarkdown:
 
-<iframe width="560" height="420" src="http://www.youtube.com/embed/cWJzjHh_3kk"> </iframe> 
 
 ### R Notebooks
 
