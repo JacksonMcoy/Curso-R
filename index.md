@@ -76,7 +76,6 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   
 * Tarea 3:
   * Revisa y presenta un reporte en markdown de   los siguientes artículos y  videos:
-    
     - [Applications Of R Programming In R-eal World ](https://elearningindustry.com/applications-r-programming-r-eal-world).
     - [The Data Scientist - 60 Second Data Science](https://www.youtube.com/watch?v=i2jwZcWicSY).
     - [Impatient R](http://www.burns-stat.com/documents/tutorials/impatient-r/#intro).
@@ -90,7 +89,6 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
  
 * Tarea 4:
   * Revisa el video webinar  [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/). Recomendado.
-  
   * Lee el artículo [Combinations and permutations in R](https://davetang.org/muse/2013/09/09/combinations-and-permutations-in-r/)  de Dave Tang.
   * Revisa las notas sobre las funciones de R, del paquete **stats**  sobre distribuciones de probabilidad [aquí](http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Distributions.html).
   * Completa la [tarea 2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR2.pdf) de la clase de R correspondiente. 
