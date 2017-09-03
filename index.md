@@ -64,6 +64,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Cracking the Code to GitHub's Growth ](https://growthhackers.com/growth-studies/github).
   
 * Tarea 2:
+    * Completa la [tareaO](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR0/Tarea0A.ipynb) de la clase de R correspondiente. 
     * Leer las notas de [R language for programmers](https://www.johndcook.com/blog/r_language_for_programmers) de John D. Cook.
   
 * El lenguage de programación R.
@@ -75,7 +76,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
   
 * Tarea 3:
-  * Revisa y presenta un reporte en markdown de   los siguientes artículos y  videos:
+  * Revisa y presenta un reporte en markdown de  los siguientes artículos y  videos:
     - [Applications Of R Programming In R-eal World ](https://elearningindustry.com/applications-r-programming-r-eal-world).
     - [The Data Scientist - 60 Second Data Science](https://www.youtube.com/watch?v=i2jwZcWicSY).
     - [Impatient R](http://www.burns-stat.com/documents/tutorials/impatient-r/#intro).
