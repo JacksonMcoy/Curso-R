@@ -42,7 +42,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 ### Fechas de evaluación
 
 * Primera práctica calificada: 29 de setiembre.
-* Segunda pŕactica calificada: 20 de octubre.
+* Segunda práctica calificada: 20 de octubre.
 * Tercera práctica calificada: 17 de noviembre.
 * Cuarta  práctica calificada: 1 de diciembre.
 
