@@ -39,6 +39,13 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * Las prácticas calificadas (4).
 * Las tareas y asignaciones dejadas a lo largo del curso.
 
+### Fechas de evaluación
+
+* Primera práctica calificada: 29 de setiembre.
+* Segunda pŕactica calificada: 20 de octubre.
+* Tercera práctica calificada: 17 de noviembre.
+* Cuarta  práctica calificada: 1 de diciembre.
+
 ## Clases
 
 * [Clase1: CLI para R](http://rpubs.com/C-LaraAvila/296904).
@@ -131,11 +138,11 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 
 ## Asignaciones
-* [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)|[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
-* [Asignación2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion2.pdf)|[Asignación 2(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio2-Solucion.ipynb).
-* [Asignación3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion3/Asignacion3.pdf)|[Asignación 3(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Asignacion3/Laboratorio3-Solucion.ipynb).
+* [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)--->[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
+* [Asignación2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion2.pdf)--->[Asignación 2(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio2-Solucion.ipynb).
+* [Asignación3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion3/Asignacion3.pdf)-->[Asignación 3(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Asignacion3/Laboratorio3-Solucion.ipynb).
 
-* [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)| [Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
+* [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)-->[Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
 
 ## Libros de Texto
 
