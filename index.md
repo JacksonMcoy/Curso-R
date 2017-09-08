@@ -66,6 +66,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
     * Lee y completa el tutorial online [Markdown Tutorial](https://www.markdowntutorial.com/).
     * Mira los videos de 1 -8 [Introduction to Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD) o la primeras secciones 1.1 a 1.5 del libro [Pro Git](https://git-scm.com/book/es/v1).
 * Uso de Git y Github.
+  - [Cuaderno de GIT para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/GIT/Git.ipynb).
   - [Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/es/). Recomendado.
   - [Una referencia visual de Git](http://marklodato.github.io/visual-git-guide/index-es.html).
   - [Cracking the Code to GitHub's Growth ](https://growthhackers.com/growth-studies/github).
@@ -76,11 +77,12 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   
 * El lenguage de programación R.
   
+  - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
   - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
   - [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
   - [Usando Stackoverflow y R](http://stackoverflow.com/questions/tagged/r).
   - [Por que deberias aprender R, para ciencia de datos](http://dataconomy.com/why-you-should-learn-r-first-for-data-science/).
-  - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
+  
   
 * Tarea 3:
   * Revisa y presenta un reporte en markdown de  los siguientes artículos y  videos:
