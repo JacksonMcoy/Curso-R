@@ -1,0 +1,63 @@
+---
+title: "Laboratorio 1"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## CLI para R
+
+### Ejercicios de clase
+
+1 . Revisa el archivo **chipotle.tsv** dentro del repositorio del curso, en la carpeta donde se aloja esta tarea. Piensa un minuto en cómo se estructuran los datos. ¿Qué crees que significa cada columna? ¿Qué crees que significa cada fila?. Responde las siguientes preguntas.
+
+
+* ¿Cuántas órdenes aparecen en el archivo?
+
+
+* ¿Cuántas líneas hay en este archivo?
+
+
+* ¿Qué burrito es más popular, el de carne o pollo?
+
+
+* ¿Los burritos de pollo tienen más frecuentemente frijoles negros o frijoles pintos?
+
+
+* Haga una lista de todos los archivos CSV o TSV en el repositorio del curso (usando un solo comando). Piense en cómo los caracteres comodín pueden ayudarte con esta tarea. Cuente el número aproximado de apariciones de la palabra "dictionary" (independientemente del caso) en todos los archivos del repositorio del curso.
+
+2 .Ejecuta el siguiente script y explica que es lo que hace.
+
+```bash
+#!/bin/sh
+for f in $*
+do
+  if [ -f  $f -a  ! -x  $f ]
+  then
+    case $f in
+    core)
+      echo "$f: archivo de memoria"
+      ;;
+    *.c)
+     echo "$f: un programa en C"
+      ;;
+    *.cpp|*.cc|*.cxx)
+      echo "$f: un programa en C+"
+      ;;
+    *.txt)
+      echo "$f: un archivo de texto"
+      ;;
+    *.pl)
+      echo "$f: un script de Perl"
+      ;;
+    *.html|*.htm)
+      echo "$f: un documento web"
+      ;;
+    *)
+      echo "$f: aparece ser  "`file -b $f`
+      ;;
+    esac
+  fi
+done
+```
