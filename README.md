@@ -28,8 +28,13 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
 * Entornos y funciones.
 * Gráficos.
 * Aplicaciones a la probabilidad e inferencia estadística y Bayesiana. 
+
+### Horarios de clase
+
+* Viernes de 12 - 14 pm Sala 2.
+* Viernes de 14 - 16 pm Sala 1.
    
-## Acerca de la evaluación
+###  Acerca de la evaluación
 
 La evaluación de este curso, consta de 4 laboratorios calificados. Los participantes del curso deberan subir sus soluciones a sus respectivos repositorios creados en las primeras clases. No se permitirá envios fuera de horario al examen, salvo para completar la tarea si es que el participante desea. 
 
@@ -46,13 +51,19 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * Tercera práctica calificada: 17 de noviembre.
 * Cuarta  práctica calificada: 1 de diciembre
 
-## Clases
+### Clases de laboratorio
 
-* [Clase1: CLI para R](http://rpubs.com/C-LaraAvila/296904).
-* [Clase2: Git y Github](http://rpubs.com/C-LaraAvila/296902).
-* [Clase3: Lenguaje de programación R](http://rpubs.com/C-LaraAvila/296905).
-* [Clase4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296906).
-* [Clase5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296907).
+* [Laboratorio 1](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio1.pdf).
+* [Laboratorio 2](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio2.pdf).
+
+
+###  Diapositivas
+
+* [Diapositiva1: CLI para R](http://rpubs.com/C-LaraAvila/296904).
+* [Diapositiva2: Git y Github](http://rpubs.com/C-LaraAvila/296902).
+* [Diapositiva3: Lenguaje de programación R](http://rpubs.com/C-LaraAvila/296905).
+* [Diapositiva4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296906).
+* [Diapositiva5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296907).
 
 ### Cuadernos y anotaciones
 
@@ -137,7 +148,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 
 
-## Asignaciones
+###  Asignaciones
 * [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)--->[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
 * [Asignación2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion2.pdf)--->[Asignación 2(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio2-Solucion.ipynb).
 * [Asignación3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion3/Asignacion3.pdf)-->[Asignación 3(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Asignacion3/Laboratorio3-Solucion.ipynb).
