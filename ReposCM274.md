@@ -19,6 +19,7 @@
 * Yasmyn Gomez : https://github.com/Yasmyn-Gomez 
 * Daniel Hidalgo: https://github.com/DanielHCh/
 * Claudia Huacac: https://github.com/ClaudiaEsteffani/
+* Patrich Inocente : https://github.com/PatrichsInocenteCM274/
 * Gustavo Lozano Acuña: https://github.com/glozanoa 
 * Renee Jair Lopez Punin: https://github.com/jairpunin
 * Betty Mendoza Chuquiruna: https://github.com/bettymendoza
