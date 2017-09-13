@@ -152,10 +152,10 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
      * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Probabilidad/Probabilidad.R).
   - [Combinatoria]()
      * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Combinatoria/Combinatoria.R).
-  - [Distibuciones de probabilidad()
+  - [Distibuciones de probabilidad]()
      * [Codigo R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_discretas.R).
      * [Código R-1](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_continuas.R).
-  - [Importantes resultados ]()
+  - [Teoremas importantes]()
      * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Importantes-teoremas/TLC.R)
 
 
