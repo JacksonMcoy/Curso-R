@@ -1,0 +1,76 @@
+---
+title: "Laboratorio 3"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Git, Github y R
+
+### Ejercicios de clase
+
+1 . El siguiente ejercicio es de mantenimiento de tu repositorio del curso.
+
+ * Revisa si es que tienes carpetas dentro de tu repositorio. Si es que deseas eliminar esa o esas carpetas  puedes hacerlo con la siguientes órdenes de `git`
+ 
+```  
+        git rm -rf Nombre_carpeta
+        
+        git commit -m "Eliminando archivos y carpetas"
+        
+        git push origin master
+```
+* En tu computadora, local crea `3` carpetas llamadas Clase1, Clase2, Clase3 y dentro de cada una de ellas dos subcarpetas llamadas Tareas1, Anotaciones1, Tareas2, Anotaciones2, Tareas3, Anotaciones3.
+
+* En las carpetas Tareas1, Tareas2,... serán las carpetas donde guardes tus tareas que se encuentran en [http://c-lara.github.io/Curso-R/](http://c-lara.github.io/Curso-R/). 
+
+* La carpeta anotaciones serán de uso personal, donde el estudiante puede colocar algunas notas de los Laboratorios.
+
+2 . Agrega los archivos: `CLI.md`, `Git-Github.md` y `R.md`  a las carpetas Anotaciones1, Anotaciones2, Anotaciones3, respectivamente.
+
+3 . Partiendo de que se manejan los comandos iniciales de `git` de la clase pasada como :
+
+   - `git init `
+   - `git clone <url>`
+   - `git remote -v`
+   - `git status`
+
+Sube cada uno de esos archivos al servidor de Github, junto con las carpetas mencionadas.  Por ejemplo:
+
+```
+
+    (Asignaciones1)>git add CLI.md
+                    git commit -m "Agregando unas notas sobre CLI"
+                    git push origin master
+```
+
+4 . Revisa tu cuenta de Github, y debes tener las carpetas Asignaciones1, Asignaciones2, Asignaciones3. 
+
+5 . El siguiente programa usa el Método de Bisección para hallar la raíz de la ecuación: $$e^{x}-1 = 0 $$ Tomando como límites los valores de -10 y 10. Dado que el método halla una aproximación, debemos determinar una tolerancia de error definida por nosotros. En este caso tomaremos $10^{-8}$. Este código usa las funciones `all.equal` y `isTRUE`. Escribe el  código en `R`  
+
+
+```r
+f <- function(x){ # Creamos una función f que tome como argumento x
+    return(exp(x)-1) # Devolvemos e^x - 1
+}
+
+limite_inferior <- -10 # Limite inferior para el Método
+limite_superior <- 10 # Limite superior para el Método
+
+# Mientras haya una diferencia mayor o igual a 10^-8, iteramos
+while(limite_superior-limite_inferior>=1e-8){ 
+    punto_medio <- (limite_inferior+limite_superior)/2 # Tomamos el punto medio
+    if (f(punto_medio) < 0){ # Si es negativo, la raiz está en [punto_medio,limite_superior]
+        limite_inferior <- punto_medio
+    }
+    else{ # Si no, la raiz está en [limite_inferior,punto_medio]
+        limite_superior <- punto_medio
+    }
+}
+# Imprimimos al estilo del lenguaje C el valor aproximado de la raíz
+sprintf("La raiz aproximada es %.8f\n",limite_superior) 
+```
+
+6 . Agrega este archivo llamado `Ejemplo1.R` en la carpeta `Anotaciones3` y sube el archivo a Github.
