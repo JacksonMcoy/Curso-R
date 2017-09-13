@@ -148,18 +148,22 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
   - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
 * Aplicaciones a la probabilidad e inferencia estadística y Bayesiana. 
-  - [Probabilidad básica]
-  - [Combinatoria]()-[Ejemplo de código](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Combinatoria/Combinatoria.R).
-  - [Distibuciones discretas]
-  - [Distribuciones continuas]
-  - [Teorema del Limite Central]
+  - [Probabilidad básica]()
+     * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Probabilidad/Probabilidad.R).
+  - [Combinatoria]()
+     * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Combinatoria/Combinatoria.R).
+  - [Distibuciones de probabilidad()
+     * [Codigo R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_discretas.R).
+     * [Código R-1](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_continuas.R).
+  - [Importantes resultados ]()
+     * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Importantes-teoremas/TLC.R)
 
 
 
 ###  Asignaciones
 * [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)--->[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
 * [Asignación2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion2.pdf)--->[Asignación 2(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio2-Solucion.ipynb).
-* [Asignación3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion3/Asignacion3.pdf)-->[Asignación 3(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Asignacion3/Laboratorio3-Solucion.ipynb).
+* [Asignación3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion3/Asignacion3.pdf)--->[Asignación 3(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Asignacion3/Laboratorio3-Solucion.ipynb).
 
 * [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)-->[Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
 
