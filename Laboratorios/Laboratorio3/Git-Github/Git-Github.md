@@ -6,7 +6,7 @@ Fuente: [Javier Rodríguez](https://www.javierrguez.com/tutorial-basico-git-gith
 
 Primero hay que diferenciar qué es Git y GitHub y su forma de funcionamiento.
 
-Git es un sistema distribuido al contrario que [SVN](https://es.wikipedia.org/wiki/Subversion_(software). Eso quiere decir que SVN está pensado para trabajar en equipo sobre un repositorio, pero Git está pensado para que cada persona tenga su propio repositorio local y suban los cambios a un repositorio remoto de forma que todo el trabajo sea colaborativo y no sea necesario obligar a trabajar directamente sobre el repositorio remoto. El repositorio local de git se llama Git y el repositorio remoto se llama GitHub.
+Git es un sistema distribuido al contrario que [SVN](https://es.wikipedia.org/wiki/Subversion_(software)). Eso quiere decir que SVN está pensado para trabajar en equipo sobre un repositorio, pero Git está pensado para que cada persona tenga su propio repositorio local y suban los cambios a un repositorio remoto de forma que todo el trabajo sea colaborativo y no sea necesario obligar a trabajar directamente sobre el repositorio remoto. El repositorio local de git se llama Git y el repositorio remoto se llama GitHub.
 
 Aparte de GitHub hay más repositorios remotos que implementan Git, como puede ser BitBucket. Cada uno ofrece diferentes características: repositorios públicos gratuitos, los privados son de pago, tienen un límite de colaboradores, etc. Habría que analizar cada uno y ver cuál nos interesaría.
 
@@ -42,22 +42,22 @@ Una instalado todo el software en nuestro equipo y creada nuestra cuenta de GitH
 ### Trabajar en local para subirlo más adelante en GitHub
 
 * Crear el proyecto en local:
-	- Creamos una carpeta para el proyecto con los archivos que queremos versionar
-    - Dentro de la carpeta ejecutamos los comandos:
+	- Creamos una carpeta para el proyecto con los archivos que queremos versionar.
+   	- Dentro de la carpeta ejecutamos los comandos:
            -  git init
            -  git add .
            -  git commit
 * Creamos el proyecto en GitHub:
    	- Curso-R
 * Vinculamos el repositorio local con el repositorio remoto:
-	- git remote add remoto https://github.com/[MI-USUARIO]/[MI-PROYECTO].git
-    - git remote -v
+	-  git remote add remoto https://github.com/[Mi-usuario]/[Mi-proyecto].git
+        -  git remote -v
 * Empujamos los cambios locales al remoto:
-    -  `git push master`
+    	-  git push master
 
 ### Traernos un repositorio remoto a local
 
-*Identificamos la url del proyecto remoto
+* Identificamos la url del proyecto remoto
 * Nos vamos a local y hacemos un clone:
 
    - git clone <url-github>
