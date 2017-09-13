@@ -159,7 +159,8 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * Aplicaciones a la probabilidad e inferencia estadística y Bayesiana. 
   - [Machine Learning con R](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/ML/Machine_Learning.html).
   - [RNA](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Aplicaciones/RNA/Cuaderno/RNA.ipynb)
-      1 .[Artículo sobre redes neuronales](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/RNA/RNA1.pdf).
+  
+       1. [Artículo sobre redes neuronales](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/RNA/RNA1.pdf).
   - [Grafos aleatorios de Erdos-Renyi](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Grafo-Aleatorio/GrafoErdos-Renyi.html).
 
 ###  Asignaciones
