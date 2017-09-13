@@ -158,6 +158,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Teoremas importantes]()
      * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Importantes-teoremas/TLC.R).
   - [Machine Learning con R](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/ML/Machine_Learning.html).
+  - [Grafos aleatorios de Erdos-Renyi](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Grafo-Aleatorio/GrafoErdos-Renyi.html).
 
 
 
