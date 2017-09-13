@@ -148,6 +148,11 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
   - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
 * Aplicaciones a la probabilidad e inferencia estadística y Bayesiana. 
+  - [Probabilidad básica]
+  - [Combinatoria]|[Cuaderno]()|[Código](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Combinatoria/Combinatoria.R).
+  - [Distibuciones discretas]
+  - [Distribuciones continuas]
+  - [Teorema del Limite Central]
 
 
 
