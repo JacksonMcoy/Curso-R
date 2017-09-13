@@ -51,7 +51,7 @@ Una instalado todo el software en nuestro equipo y creada nuestra cuenta de GitH
    	- Curso-R
 * Vinculamos el repositorio local con el repositorio remoto:
 	-  git remote add remoto https://github.com/[Mi-usuario]/[Mi-proyecto].git
-        -  git remote -v
+	-  git remote -v
 * Empujamos los cambios locales al remoto:
     	-  git push master
 
