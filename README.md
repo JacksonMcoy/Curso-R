@@ -160,6 +160,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   
       1. [Artículo sobre redes neuronales](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/RNA/RNA1.pdf).
   - [Grafos aleatorios de Erdos-Renyi](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Grafo-Aleatorio/GrafoErdos-Renyi.html).
+  - [Una breve introducción a la inteligencia artificial](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/IA/IA.html).
 
 
 
