@@ -1,0 +1,210 @@
+---
+title: 'Métodos de subespacios de Krylov '
+author: "Carlos Espinoza Vicuña"
+output:
+  html_document: default
+  pdf_document:
+    highlight: pygments
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## 1. Subespacio de Krylov 
+
+Los subespacios de Krylov, juegan un papel importante en los métodos iterativos computacionales para el cálculo de soluciones de sistemas de la forma: $Ax = \lambda x$ donde: $A\epsilon C^{nxn}$,$x\epsilon C^n$ asociada a matrices de grandes dimensiones, que trae un costo computacional bajo a comparación de los métodos convencionales.
+
+Este Subespacio Vectorial es generado por vectores de la forma $Av^k$:
+
+\begin{center}
+\hspace{3cm}$K_{m}(A,v)=<v,Av,A^{2}v,...,A^{m-1}v>$\hspace{4cm} (1.1)
+\end{center}
+donde: 
+
+- $A\epsilon C^{nxn}$ 
+- $v\epsilon C^{nx1}$
+- $m\leq n$
+\vspace{0.2cm}
+
+ Sin embargo,dicha subespacio generado (1.1), no es muy atractiva desde un punto de vista numérico, donde se observa que los vectores  $A^{j}v$ se acercan más en dirección del vector propio dominante de A a medida que $j$ crece,por lo que la base se dice que esta mal condicionada. Con el fin de identificar mejores soluciones es necesario tener una base adecuada para este subespacio.
+
+### 1.1 Método de Arnoldi
+Es un método iterativo, basado en la proyección sobre subespacios de Krylov para reducir un problema de dimensión $n$ × $n$ a otro equivalente de dimensión $k$ × $k$ con $k \leq n$. Este método, construye una base ortogonal para el subespacio krylov a través de la proceso de ortogonalización de Gram-Schimdt, cumpliendo la siguiente relación:
+
+\begin{center}
+\hspace{5cm}$AQ_{m}=Q_{m+1}H_{m}$ \hspace{5cm}(1.1.1)
+\end{center}
+
+donde $Q_{m+1}$= $[Q_{m}|q_{m+1}]$
+
+La matriz $Q_{m+1}$ es ortogonal y sus columnas representan una base para $K_{m}(A,v)$.Además, la matriz H es una matriz denominada Hessenberg superior con los elementos de la primera subdiagonal positivos.Además, esta matriz Hessenberg $H_{n}$ especificamente satisface:
+
+\begin{center}
+\hspace{5cm}$H_{n}=Q_{n}^{*}AQ_{n}$\hspace{6cm}(1.1.2) 
+\end{center}
+
+La idea es reducir completamente $A$ a la matriz Hessenberg, calculando iteradamente los primeros pasos de esta reducción, partiendo de la condición de que la primera columna de $Q$ es un un vector fijo $q_{1}$ con $||q_{1}=1||$, de esto se obtendrá lo siguiente:
+\begin{center}
+\hspace{5cm}$Q_{n}=[q_{1}|q_{2}|.....|q_{n}]$ \hspace{5cm}(1.1.3)
+\end{center}
+
+Dada la ecuación (1.1.2), esta se puede expresesar como:$Aq_{n}=h_{1n}q_{1}+...+h_{nn}q_{n}+h_{n+1}q_{n+1}$. Además, orotgonalizando por Gram-Schimdt en cada iteración implementeda en cada iteración hasta los n+1 términos de las siguientes recurrencia:
+\vspace{3cm}
+
+Escogemos a un $q_{1}$ arbitrario de el espacio de krylov (1.1),
+\begin{center}
+
+\hspace{-0.5cm}1.\hspace{0.3cm}$q_{1}=\frac{v}{||v||}$
+
+\hspace{0.8cm}2.\hspace{0.3cm}$Para$ $i<-$  $1,2,$....
+    
+\hspace{0cm}3.\hspace{0.9cm}$b$ <- $Aq_{i} $
+
+\hspace{2.1cm}4.\hspace{1cm}  $Para$ $j<-1$ $hasta$ $n$
+  
+\hspace{0.7cm}5.\hspace{1.5cm}$h_{ji}$ <- $q^{*}_{j}b$
+  
+\hspace{1.3cm}6.\hspace{1.5cm}$b$ <- $b-h_{ji}q_{j}$
+
+\hspace{0.3cm}7.\hspace{1.1cm}$fin$ $Para$
+ 
+\hspace{0.5cm}8.\hspace{0.8cm}$h_{i+1,i}$ <- $||b||$
+
+\hspace{1.5cm}9.\hspace{0.8cm}$si$ $h_{i+1,i}$ <- $0$, $salir$
+
+\hspace{0.3cm}10.\hspace{0.8cm}$q_{i+1}=\frac{b}{h_{i+1,i}}$
+
+\hspace{3.8cm}11.\hspace{0.3cm}$fin$ $Para$\hspace{3.5cm}(1.1.4)
+\end{center}
+
+De aqui, los vectores ${q_{i}}$ contituyen también una base para el subespacio de Krylov:
+\begin{center}
+$K_{m}(A,v)=<v,Av,A^{2}v,...,A^{m-1}v>$ = $ <q_{1},q_{2},.....,q_{n}>$
+\end{center}
+
+Ahora,podemos considerar el problema de computar el algoritmo de PageRank de google. La matriz involucrada es grande y no puede ser factorizada, por lo que deben aplicarse técnicas basadas en productos vectoriales con matriz, proponiendo asi una variante del método de Arnoldi, dado que veremos que el costo computacional de este procedimiento es muy refinado. 
+
+|   line     |  operation       |  times applied    |  cost(flops)   |
+|     --     |     --           |     --            |     --         |
+|     3      |mat-vec products  |        $k$        |$\simeq 2nkl$   |
+|     5      |inner products    |     $k(k+1)/2$    |$\simeq nk(k+1)$|
+|    6      |saypy:$x+\alpha y$|     $k(k+1)/2$    |$\simeq nk(k+1)$| 
+|   8      |2-norm computation|        $k$        |$\simeq  2nk$   |
+|  10     |vector scaling    |        $k$        |$\simeq nk$     |
+
+La primera columna se refiere a la números de las líneas del pseudocódigo mostrado:
+
+$k$: es el número de pasos en el algoritmo.
+
+$l$:Es el número medio de nonzeros por fila en la matriz.
+
+### 1.2 Método de Lanczos
+
+El método de Lanczos subyace a un reajuste del método de Arnoldi.Si la matriz A es simétrica muchos de los productos del proceso(1.1.4) no hacen falta ser calculados por lo que el costo operativo se reduce y obtenemos el llamado Proceso de Lanczos. En este caso obtenemos que $H_{m}$ es tridiagonal simétrica.
+
+Dado $Q$ ortogonal, es posible transformar la matriz $A$ a una matriz triagonal $T$,similar a las ecuaciones (1.1.1) y (1.1.2):
+\begin{center}
+\hspace{3.8cm}$Q^{T}AQ=T$ o $AQ=QT$ \hspace{5cm}(1.2.1)
+\end{center}
+\vspace{2cm}
+definiendo a $T$ como:
+
+\begin{center}
+$T_{k+1,k}$=
+$\left( \begin{array}{lllllll}
+\alpha_{1} & \beta_{1} &0&0&0&...&0\\
+\beta_{1}   & \alpha_{2}&\beta_{2}&0&0&...&0\\
+0&\beta_{2}   & \alpha_{3}&\beta_{3}&0&...&0\\
+:&0&...&...&...&...&0\\
+:&0&...&...&...&...&\beta_{k-1}\\
+0&...&...&...&0&\beta_{k-1}&\alpha_{k}\\
+0&...&...&...&...&...&\beta_{k}
+\end{array}
+\right)$
+\end{center}
+
+Luego, en cada $k$ paso del método tenemos: $AQ_{k}=Q_{k+1}T_{k+1,k}$
+
+donde: 
+
+- $T_{k+1,k} \epsilon C^{k+1,k}$
+
+- $A\epsilon C^{N,N}$
+
+- $Q_{k}\epsilon C^{N,k}$
+
+- $Q_{k+1}\epsilon C^{N,k+1}$
+
+Cabe resaltar que: $AQ_{k}=Q_{k+1}T_{k+1,k}=\beta_{k}q_{k}+e^{T}_{k}$
+
+Siguiendo la expresion (1.2.1):$AQ=QT$
+\begin{center}
+$A[q_{1},q_{2},...,q_{k}]=[q_{1},q_{2},...,q_{k}]T_{k} $
+\end{center}
+luego $A$ multiplicado con la primera columna de $Q$ se puede expresar como:
+\begin{center}
+$Aq_{1}= \alpha_{1}q_{1}+\beta_{1}q_{2}$
+\end{center}
+en general:
+\begin{center}
+$Aq_{i}= \beta_{i-1}q_{i-1}+\alpha_{i}q_{i}+\beta_{i}q_{i+1}$ para $i=1,2,,..$
+\end{center}
+multiplicando por la izquierda por $q^{T}_{i}$:
+\begin{center}
+$q^{T}_{i}Aq_{i}= q^{T}_{i}\beta_{i-1}q_{i-1}+q^{T}_{i}\alpha_{i}q_{i}+q^{T}_{i}\beta_{i}q_{i+1}$\\ 
+\hspace{0.9cm}$= \beta_{i-1}q^{T}_{i}q_{i-1}+\alpha_{i}q^{T}_{i}q_{i}+\beta_{i}q^{T}_{i}q_{i+1}$\\
+\hspace{-2.9cm}$=\alpha_{i}q^{T}_{i}q_{i}$\\
+\end{center}
+Ahora en la recurrencia obtenemos:
+\begin{center}
+$r_{i}\equiv \beta_{i}q_{i+1}=Aq_{i}-\alpha_{i}q_{i}-\beta_{i-1}q_{i-1}$
+\end{center}
+Para $\beta_{i} \not= 0$ entonces  $\beta_{i}=||r_{i}||_{2}$
+
+El vector ortogonal seria:
+\begin{center}
+$q_{i+1}=\frac{r_{i}}{\beta_{i}}$
+\end{center}
+\vspace{8cm}
+Siguiendo entonces el siguiente algoritmo:
+\begin{center}
+
+\hspace{-2.8cm}1.\hspace{0.2cm} $r=q_{0}$ y $\beta_{0}=||q_{0}||_{2}$  
+
+\hspace{-3.2cm}2.\hspace{0.2cm}$Para$ $j<-$  $1,2,$....
+    
+\hspace{-4cm}3.\hspace{0.8cm}$q$ <- $\frac{r}{\beta_{j-1}}$
+
+\hspace{-4.3cm}4.\hspace{0.7cm}  $r=Aq_{j}$
+  
+\hspace{-3cm}5.\hspace{0.8cm}$r=r-q_{j-1}\beta_{j-1}$
+  
+\hspace{-4.2cm}6.\hspace{0.8cm}$\alpha_{j}=q_{j}^{T}r$
+
+\hspace{-3.8cm}7.\hspace{0.7cm}$r=r-q_{j}\alpha_{j}$
+
+\hspace{-4.2cm}8.\hspace{0.7cm}$\beta_{j}=||r||_{2}$
+ 
+\hspace{-2.8cm}9.\hspace{1cm}$si$ $\beta_{0}$ == $0$, $salir$
+
+\hspace{-3.5cm}10.\hspace{0.7cm}$q_{j+1}=q_{j+1}/\beta_{j}$
+
+\hspace{-5cm}11.\hspace{0.2cm}$Fin$ $Para$
+\end{center}
+
+El problema en este método, es el error de cálculo producido, que conduce a una una perdida de ortogonalidad en vectores con coma flotante.Esto es,que a medida que un valor propio converge, los vectores de la base $q_{i}$ captan perturbaciones sesgadas, que los desvían hacia los vectores propios correspondientes y se pierde la ortogonalidad,Para contrarrestar esto, se re-orthonormaliza totalmente la secuencia mediante el uso de Gram-Schmidt o incluso QR.
+
+
+##Referencias
+
+* [Conceptos básicos]Krylov Subspace Methods on Supercomputers.Youcef Saad.December, 1988.Research Institute for Advanced Computer Science NASA Ames Research**<http://epubs.siam.org/doi/abs/10.1137/0910073>** otra opción **Center<https://scholar.google.com/scholar?q=Krylov+subspace+methods+on+supercomputers&hl=es&as_sdt=0&as_vis=1&oi=scholart&sa=X&ved=0ahUKEwiMmrb1kejUAhXQdSYKHVvVDmYQgQMIIzAA>**
+* IMPLICITLY RESTARTED FOR LARGE SCALE ARNOLDI/LANCZOS METHODS EIGENVALUE CALCULATIONS Danny Department C. Sorensen 1
+of Computational and Applied Rice University Mathematics Houston, TX 77251 sorensen@rice.edu
+
+* Sorensen D. C., Implicitly Restarted Arnoldi/Lanczos Methods for Large Scale
+Eigenvalue Calculations. In D. E. Keyes, A. Sameh and V. Venkatakrishnan editors,
+Parallel Numerical Algorithms: Proceedings of an ICASE/LaRC Workshop, May 23-
+25, 1994, Hampton, VA. Kluwer,1995.
+* Cálculo de la exponencial de una matriz en SLEPc,Máster en Computación Paralela y Distribuida. Autor:Javier Nadal Durá **<http://docplayer.es/42325914-Calculo-de-la-exponencial-de-una-matriz-en-slepc.html>**
+* Puntos 2 y 3 del Índice General.Estrategias para la resolución de grandes sistemas de ecuaciones lineales. Métodos
+de Cuasi-Mínimo Residuo Modificados.
