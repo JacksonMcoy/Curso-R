@@ -3,6 +3,7 @@
 
 * Cristian Aguirre Janampa : https://github.com/Cristian-Aguirre
 * Victor Alegre: https://github.com/victor-alegre
+* Rommel Bazalar collantes: https://github.com/RommelBazalarCollantes
 * Cynthia Calixtro: https://github.com/CynthiaCalixtro
 * César Charalla Mesahuanca: https://github.com/cesarcharalla
 * Carlos Renato Chauca Prinque: https://github.com/Carlos-Chauca/
@@ -19,11 +20,14 @@
 * Yasmyn Gomez : https://github.com/Yasmyn-Gomez 
 * Daniel Hidalgo: https://github.com/DanielHCh/
 * Claudia Huacac: https://github.com/ClaudiaEsteffani/
+* Alex Huamani Inga: https://github.com/Alex-Huamani-Inga/Curso-R
 * Patrich Inocente : https://github.com/PatrichsInocenteCM274/
+* Erick Lazon Vera: https://github.com/ericklazon/CursoR
 * Gustavo Lozano Acuña: https://github.com/glozanoa 
 * Renee Jair Lopez Punin: https://github.com/jairpunin
 * Betty Mendoza Chuquiruna: https://github.com/bettymendoza
 * Kevin Molina: https://github.com/kevinMolina
+* Franco Najarro Mallqui: https://github.com/FrancoNajarroMallqui
 * Marcia Nesiosup: https://github.com/marcianesiosup
 * Miguel Oviedo: https://github.com/MiguelOviedo
 * Jorge Palacios Asenjo: https://github.com/jpalacios98
