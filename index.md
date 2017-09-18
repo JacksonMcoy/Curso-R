@@ -158,6 +158,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
 * Aplicaciones a la probabilidad e inferencia estadística y Bayesiana. 
   - [Machine Learning con R](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/ML/Machine_Learning.html).
+  - [Método de subespacios de Krylov](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Krilov-subespacio/Krylov-subespacio.html).
   - [RNA](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Aplicaciones/RNA/Cuaderno/RNA.ipynb)
   
        1. [Artículo sobre redes neuronales](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/RNA/RNA1.pdf).
