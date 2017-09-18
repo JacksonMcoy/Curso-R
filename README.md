@@ -1,20 +1,16 @@
 # Curso de R
 
-## Descripción del curso
+## Sitio web del curso 
+
+* http://c-lara.github.io/Curso-R/ 
+
+## Introducción
 
 Este curso es un complemento del curso [**Introducción a las estadística y probabilidad CM274**](http://c-lara.github.io/Curso-Probabilidad/), sobre el aprendizaje del lenguaje R. En estas notas  usaremos un [kernel nativo de R](https://github.com/IRkernel/IRkernel), sobre [Jupyter](http://jupyter.org/) usando [Anaconda](https://www.continuum.io/anaconda-overview), además de otras herramientas mencionadas abajo.
 
 R como lenguaje de programación y multiparadigma, plantea un modo distinto de escribir código, por lo que  precisa de ciertos requisitos, que se enumeran a continuación:
 
 
-- **Lectura y videos recomendados**
-  * [Technical Foundations of Informatics Michael Freeman and Joel Ross](https://info201-s17.github.io/book/).
-  * [Agile Planning](https://launchschool.com/books/agile_planning).
-  * [Introduction to the Command Line](https://launchschool.com/books/command_line).
-  * [Agile Planning](https://launchschool.com/books/agile_planning).
-  
-   
- 
 ## Temario
 
 * Manejo de línea de comandos y Markdown.
@@ -51,135 +47,12 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * Tercera práctica calificada: 17 de noviembre.
 * Cuarta  práctica calificada: 1 de diciembre
 
-### Clases de laboratorio
-
-* [Laboratorio 1](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio1.pdf).
-* [Laboratorio 2](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio2.pdf).
-* [Laboratorio 3](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio3/Laboratorio3.pdf)
-
-
-###  Diapositivas
-
-* [Diapositiva1: CLI para R](http://rpubs.com/C-LaraAvila/296904).
-* [Diapositiva2: Git y Github](http://rpubs.com/C-LaraAvila/296902).
-* [Diapositiva3: Lenguaje de programación R](http://rpubs.com/C-LaraAvila/296905).
-* [Diapositiva4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296906).
-* [Diapositiva5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296907).
-
-### Cuadernos y anotaciones
-
-* Manejo de línea de comandos y Markdown.
-  - [Cuaderno de notas CLI para R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/CLI/ComandosLinux.ipynb).
-  - [Introduction to the Command Line](https://launchschool.com/books/command_line).
-  - [Notas de Joe Dicastro de Markdown](http://joedicastro.com/pages/markdown.html).
-  
-* Tarea 1 :
-    * Completa  el tutorial [How to Use Command Line](http://generalassembly.github.io/prework/command-line/#/). usando el Terminal (Linux/ Mac) o Git Bash (Windows).
-    * Lee y completa el tutorial online [Markdown Tutorial](https://www.markdowntutorial.com/).
-    * Mira los videos de 1 -8 [Introduction to Git y Github](https://www.youtube.com/playlist?list=PL5-da3qGB5IBLMp7LtN8Nc3Efd4hJq0kD) o la primeras secciones 1.1 a 1.5 del libro [Pro Git](https://git-scm.com/book/es/v1).
-* Uso de Git y Github.
-  - [Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/es/). Recomendado.
-  - [Una referencia visual de Git](http://marklodato.github.io/visual-git-guide/index-es.html).
-  - [Cracking the Code to GitHub's Growth ](https://growthhackers.com/growth-studies/github).
-  
-* Tarea 2:
-    * Completa la [tarea0](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR0/Tarea0A.ipynb) de la clase de R correspondiente. 
-    * Leer las notas de [R language for programmers](https://www.johndcook.com/blog/r_language_for_programmers) de John D. Cook.
-  
-* El lenguage de programación R.
-  
-  - [Cómo configurar R en Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-r-on-ubuntu-14-04).
-  - [¿Por qué R es dificil de aprender?](http://r4stats.com/articles/why-r-is-hard-to-learn/).
-  - [Usando Stackoverflow y R](http://stackoverflow.com/questions/tagged/r).
-  - [Por que deberias aprender R, para ciencia de datos](http://dataconomy.com/why-you-should-learn-r-first-for-data-science/).
-  - [Introducción a R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Intro_R/Intro_R.ipynb).
-  
-* Tarea 3:
-  * Revisa y presenta un reporte en markdown de  los siguientes artículos y  videos:
-    - [Applications Of R Programming In R-eal World ](https://elearningindustry.com/applications-r-programming-r-eal-world).
-    - [The Data Scientist - 60 Second Data Science](https://www.youtube.com/watch?v=i2jwZcWicSY).
-    - [Impatient R](http://www.burns-stat.com/documents/tutorials/impatient-r/#intro).
-  * Lee la  [Guia de estilo de R ](https://google.github.io/styleguide/Rguide.xml) que muestra algunas recomendaciones importantes de como escribir código en R. 
-   * Resuelve la [tarea1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR1.pdf) de la clase de R correspondiente.
- 
-   
-* R básico.
-  - [Cálculo básico con R](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Calculo_R.ipynb).
-  - [Inspección de variables y el espacio de trabajo de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Inspeccion-variables_workspace.ipynb).
-  - [Probabilidad básica]()
-     * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Probabilidad/Probabilidad.R).
-  - [Combinatoria]()
-     * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Combinatoria/Combinatoria.R).
- 
-* Tarea 4:
-  * Revisa el video webinar  [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/). Recomendado.
-  * Lee el artículo [Combinations and permutations in R](https://davetang.org/muse/2013/09/09/combinations-and-permutations-in-r/)  de Dave Tang.
-  * Revisa las notas sobre las funciones de R, del paquete **stats**  sobre distribuciones de probabilidad [aquí](http://stat.ethz.ch/R-manual/R-patched/library/stats/html/Distributions.html).
-  * Completa la [tarea 2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR2.pdf) de la clase de R correspondiente. 
-
-* Vectores, matrices y arrays.
-  - [Cuaderno sobre vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
-  - [Vectorización en R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
-  - [Aplicaciones](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/Aplicaciones.ipynb).
-
-* Listas, data frames, cadena, factores y tablas
-   - [Cuaderno sobre listas y data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
-   - [Cuaderno sobre cadenas, factores y tablas](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/Cadena-factores-tablas.ipynb).
-   - [Notas de data frames, cadenas, factores y tablas](http://adv-r.had.co.nz/Data-structures.html).
-   
-   - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
-* Trabajando con datos.
-   - [Lectura y escritura de datos en distintos formatos](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos1/Datos1.ipynb).
-   - [Conjunto de datos predefinidos y visualización básica ](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Datos2.ipynb).
-   - [Análisis de datos-regresión lineal](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos3/Datos3.ipynb).
-   - [Data Maning vs Statistics ](http://www.kdnuggets.com/2016/09/data-science-basics-data-mining-statistics.html).
-   - [Statistics vs Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/)
-*  Estructuras de programación.
-   - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
-   - [Estructuras avanzadas(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Bucles_avanzados1/Estructuras_avanzadas1.ipynb).
-   - [Estructuras avanzadas(2)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Estructuras_avanzadas2.ipynb).
-   - [Distribuciones de probabilidad]()
-     * [Codigo R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_discretas.R).
-     * [Código R-1](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_continuas.R).
-   - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
-
-* Entornos y funciones.
-  - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos/Entornos.ipynb).
-  - [Funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones1.ipynb).
-  - [Más sobre funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones2.ipynb).
-  - [Más sobre entornos y funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones3.ipynb).
-  - [Functions R: Hadley Wickham](http://adv-r.had.co.nz/Functions.html).
-  - [Teoremas importantes]()
-     * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Importantes-teoremas/TLC.R).
-* Gráficos.
-  - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
-  - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
-* Aplicaciones a la probabilidad e inferencia estadística y Bayesiana. 
-  - [Machine Learning con R](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/ML/Machine_Learning.html).
-  - [Método de subespacios de Krylov](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Krilov-subespacio/Krylov-subespacio.html).
-  - [RNA](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Aplicaciones/RNA/Cuaderno/RNA.ipynb)
-  
-      1. [Artículo sobre redes neuronales](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/RNA/RNA1.pdf).
-  - [Grafos aleatorios de Erdos-Renyi](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Grafo-Aleatorio/GrafoErdos-Renyi.html).
-  - [Una breve introducción a la inteligencia artificial](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/IA/IA.html).
-  - [Análisis de regresión y la distancia de Cook](http://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Regresion/AnalisisRegresion_Cooksdistancia.html).
-
-
-
-###  Asignaciones
-* [Asignación1](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion1/Asignacion1.pdf)--->[Asignación 1(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio1-Solucion.ipynb).
-* [Asignación2](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion2.pdf)--->[Asignación 2(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio2-Solucion.ipynb).
-* [Asignación3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion3/Asignacion3.pdf)-->[Asignación 3(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Asignacion3/Laboratorio3-Solucion.ipynb).
-
-* [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)-->[Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
 
 ## Libros de Texto
 
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
 -  **Using R for Introductory Statistics**, John Verzani, June 26, 2014 by Chapman and Hall/CRC.
 -  An Introduction to Statistical Learning: with applications in R, Gareth James, Trevor Hastie, Robert Tibshirani, Daniel Witten, Springer, 2015.
--  Beginning Data Science with R, Manas A. Pathak, Springer, 2016.
-
 
 ## Software
 
@@ -402,58 +275,4 @@ install.packages("roxygen2")
   - [ testthat](https://github.com/hadley/testthat).
   - Consistencia.
 
-### Otros Libros de R y más
 
-1 .`ggplot2 Essentials`, Donato Teutonico, Packt open source, 2015.
-
-2 .R for Data science, Dan Toomey, Packt open source, 2014.
-
-3 .The Art of Programming: A Tour Of Statistical Software Design Norman Matloff, no starch press,
-2011.
-
-4 .R by Example Jim Albert, Maria Rizzo, Springer, 2012.
-
-5 .Using R for Numerical Analysis in Science and Engineering, Victor A. Bloomfield, CRC Press, 2014.
-
-6 .Statistical Computing in C++ and R, Randall L. Eubank and Ana Kupresanin, CRC Press, 2011.
-
-7 .R for Programmers: Mastering the Tools,  Dan Zhang, CRC Press, 2016.
-
-8 .[Opcional] Introducción a la Computación, J. Glenn Brookshear, Pearson, 2012.
-
-9 .`ggplot2:` Elegant Graphics for Data Analysis, Hadley Wickham, Springer, 2009.
-
-10 . Getting Started with SQL, A hands-on approach for beginners, Thomas Nield, 2016.
-
-11 . Learning Spark: Lightning-Fast Big Data Analysis, Holden Karau, Andy Konwinski, Patrick Wendell, Matei Zaharia,  O'Reilly Media; 1 edition (28 January 2015).
-
-### Notas online
-
-1 .[El pequeño Libro de Inferencia Estadística](https://leanpub.com/LittleInferenceBook/read).
-
-2 .[Fuentes para aprender R UCLA](http://www.ats.ucla.edu/stat/r/).
-
-3 .[Curso de Programación en R e Inferencia Estadística](https://www.coursera.org/jhu).
-
-4 .[Documentación de R, ordenado por temas](http://www.rdocumentation.org/).
-
-5 .[El mundo de R, en este blog](http://www.r-bloggers.com/).
-
-6 .[Advanced R Hadley Wickham](http://adv-r.had.co.nz/).
-
-7 .[Step by Step Guide to Learn Data Science on R](http://www.analyticsvidhya.com/learning-paths-data-science-business-analytics-business-intelligence-big-data/learning-path-r-data-science/).
-
-8 .[Intermediate R](https://www.datacamp.com/courses/intermediate-r).
-
-9 .[R for Data Science](http://r4ds.had.co.nz/).
-
-10 .[RPubs](https://rpubs.com/), documentos de R en Rmarkdown.
-
-11 .[Efficient R programming](https://csgillespie.github.io/efficientR).
-
-12 . Algunos canales de YouTube para aprender Estadistica:
-  * [Brandon Foltz](https://www.youtube.com/user/BCFoltz). 
-  * [jbstatistics](https://www.youtube.com/user/jbstatistics).
-  * [Analytics University](https://www.youtube.com/channel/UC2XO4HDxzfMOZIV1l795g1Q).
-  * [NPTEL HRD](https://www.youtube.com/user/nptelhrd).
-  * [Texas University Videos : Statistical Inference](https://stat.utexas.edu/videos/r/statistical-inference/)
