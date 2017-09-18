@@ -109,10 +109,9 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * R básico.
   - [Cálculo básico con R](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Calculo_R.ipynb).
   - [Inspección de variables y el espacio de trabajo de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Calculo_basico/Inspeccion-variables_workspace.ipynb).
-  - [Probabilidad básica]()
-     * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Probabilidad/Probabilidad.R).
-  - [Combinatoria]()
-     * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Combinatoria/Combinatoria.R).
+  - Aplicaciones
+     * [Código R sobre probabilidad básica](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Probabilidad/Probabilidad.R).
+     * [Código R de conteo](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Combinatoria/Combinatoria.R).
 * Tarea 4:
   * Revisa el video webinar  [Programming Part 1 (Writing code in RStudio)](https://www.rstudio.com/resources/webinars/rstudio-essentials-webinar-series-part-1/). Recomendado.
   * Lee el artículo [Combinations and permutations in R](https://davetang.org/muse/2013/09/09/combinations-and-permutations-in-r/)  de Dave Tang.
@@ -140,9 +139,9 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
    - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
    - [Estructuras avanzadas(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Bucles_avanzados1/Estructuras_avanzadas1.ipynb).
    - [Estructuras avanzadas(2)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Estructuras_avanzadas2.ipynb).
-   - [Distribuciones de probabilidad]()
-     * [Codigo R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_discretas.R).
-     * [Código R-1](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_continuas.R).
+   - Aplicaciones
+     * [Codigo R de distribuciones discretas](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_discretas.R).
+     * [Código R de distribuciones continuas](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_continuas.R).
    - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
 
 * Entornos y funciones.
@@ -151,8 +150,8 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Más sobre funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones2.ipynb).
   - [Más sobre entornos y funciones en R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Funciones3.ipynb).
   - [Functions R: Hadley Wickham](http://adv-r.had.co.nz/Functions.html).
-  - [Teoremas importantes]()
-     * [Código R](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Importantes-teoremas/TLC.R).
+  - Aplicaciones
+     * [Código R del teorama de límite central](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Importantes-teoremas/TLC.R).
 * Gráficos.
   - [Nota de gráficos(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Graficos/Graficos_R1.ipynb).
   - [Introducción a ggplot2](http://www.noamross.net/blog/2012/10/5/ggplot-introduction.html).
