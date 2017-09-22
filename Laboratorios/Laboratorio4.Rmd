@@ -1,0 +1,376 @@
+---
+title: "Laboratorio 4"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R básico: Aplicación de R a las probabilidades elementales
+
+* Operaciones básicas
+* Funciones de `R` para probabilidades básicas. Muestreo aleatorio.
+* Flujo de control y bucles.
+
+### Mostramos los eventos de un espacio muestral
+
+El paquete `sets` realiza operaciones básicas de conjuntos y ciertas generalizaciones
+
+```{r, eval=FALSE, comment=NA}
+install.packages("sets"")
+```
+```{r, comment=NA}
+library(sets)
+Omega = set("C", "S")
+# Muestra un conjunto de todos los posibles eventos de un experimento de 
+# un espacio muestral Omega
+2^Omega
+```
+
+```{r, comment=NA}
+Omega = set("a", "b", "c")
+2^Omega
+```
+
+### Función de probabilidad 
+
+```{r, comment=NA}
+# Espacio muestral
+Omega = c(1, 2, 3, 4)
+# probabilidad de 4  eventos elementales
+p = c(1/2, 1/4, 1/8, 1/8)
+# ellos suman 
+sum(p)
+```
+
+
+### Generamos todas las posibles 3-tuplas de $S_1 = \{1, 2 \}$ , $S_2 = \{1, 2, 3\}$ y $S_3 = \{1, 2\}$
+
+```{r, comment=NA}
+help("expand.grid")
+expand.grid(S1 = 1:2, S2 = 1:3, S3 = 1:2)
+```
+
+### Contando el número de combinaciones
+
+ Para calcular el número  de combinaciones  de `n` ítems tomando `k` ítems a la vez, usamos la función `choose(n,k)`. El número dado es $n!/(n -k)!k!$.
+ 
+ 
+```{r,comment=NA}
+help("choose")
+choose(5, 3)
+```
+
+```{r, comment=NA}
+choose(50, 13)
+```
+
+```{r, comment=NA}
+choose(50, 30)
+```
+
+### Generando combinaciones
+
+Generalizamos todas las combinaciones  de `n` ítems tomando `k` ítems  a la vez, usando la función `combn(items, k)`.
+
+```{r, comment=NA}
+help("combn")
+combn(1:5, 3)
+```
+
+```{r, comment=NA}
+combn(c("T1","T2","T3","T4","T5"), 3)
+```
+
+### Generando números aleatorios
+
+Si tu quieres generar números aleatorios, usa `r?` donde ? es una de las distribuciones  listada en la tabla de arriba.
+
+```{r, comment=NA}
+help("runif")
+runif(10)
+```
+
+```{r, comment=NA}
+runif(10, min = -2, max = 2)
+```
+
+```{r, comment=NA}
+help("rnorm")
+rnorm(10)
+```
+
+```{r, comment=NA}
+rnorm(10, mean=100, sd=15)
+```
+
+```{r, comment=NA}
+help("rbinom")
+rbinom(10, size=10, prob=0.5)
+```
+
+```{r, comment=NA}
+help("rpois")
+rpois(10, lambda=10)
+```
+```{r, comment=NA}
+help("rexp")
+rexp(9, rate =0.1)
+```
+
+```{r, comment=NA}
+help("rgamma")
+rgamma(9, shape=2, rate=0.1)
+```
+
+```{r, comment=NA}
+rnorm(3, mean = c(-10, 0, 10), sd = 1)
+```
+
+### Generando una muestra aleatoria 
+
+Si se desea una muestra aleatoria, podemos utilizar la función `sample(vec, n)`
+
+```{r, comment=NA}
+help("sample")
+sample(airquality$Wind, 10)
+```
+
+La función `sample` normalmente reliza muestras sin reemplazo, lo que significa que no seleccionará el mismo elemento dos veces. Algunos procedimientos estadísticos (especialmente el bootstrap) requieren muestreo con reemplazo, lo que significa que un elemento puede aparecer varias veces en la muestra. Especificando  `replace = TRUE` en  `sample` con reemplazo.
+
+Es fácil implementar un bootstrap simple mediante el muestreo con reemplazo. Este fragmento de código muestra repetidamente un conjunto de datos xy calcula la mediana de la  muestra:
+
+```{r, eval=FALSE}
+medianas <- numeric(1000)
+for (i in 1:1000) {
+medianas[i] <- median(sample(x, replace=TRUE))
+}
+```
+
+A partir de las estimaciones de bootstrap, podemos estimar el intervalo de confianza para la mediana:
+
+```{r,eval=FALSE}
+ci <- quantile(medians, c(0.025, 0.975))
+cat("El intervalo de confianza 95% es (", ci, ")\n")
+```
+
+
+### Generación de números aleatorios reproducibles
+
+Si se desea generar una secuencia de números aleatorios, pero desea reproducir la misma secuencia cada vez que se ejecuta el programa.
+
+Antes de ejecutar su código R, llame a la función `set.seed` para inicializar el generador de números aleatorios a un estado conocido:
+
+```{r, eval=FALSE}
+set.seed(1978)
+```
+
+### Generando secuencias aleatorias
+
+Puedes generar secuencias aleatorias, tales como la simulación del lanzamiento de una moneda o otro ensayo de Bernoulli.
+
+
+Usamos `sample(set, n, replace=TRUE)`
+
+```{r, comment=NA}
+sample(c("H","T"), 10, replace=TRUE)
+```
+
+```{r, comment=NA}
+ sample(c(FALSE,TRUE), 20, replace=TRUE)
+```
+
+```{r, comment=NA}
+sample(c(FALSE,TRUE), 20, replace=TRUE, prob=c(0.2,0.8))
+
+```
+
+### Permutar  aleatoriamente un vector
+
+Si se desea generar una permutación aleatoria de un vector. Si `v` es un  vector, entonces la `sample(v)` devuelve una permutación aleatoria. La función  `sample(v)` es equivalente a `sample(v, size = length (v), replace = FALSE)`
+
+```{r, comment=NA}
+sample(1:12)
+```
+
+```{r}
+sample(letters[1:10])
+```
+
+
+## Estructuras básicas de programación
+
+
+### Flujo de control
+
+#### If-else
+
+```{r, eval =FALSE}
+if(FALSE)
+{
+    message("Esto no se ejecuta....")
+} else
+{
+    message("esto deberia ejecutarse.")
+}
+
+
+```
+#### ifelse
+
+
+```{r, eval=FALSE}
+(r <- round(rnorm(2), 1))
+
+(x <- r[1] / r[2])
+
+if(is.nan(x))
+{
+    message("x es un NA")
+} else if(is.infinite(x))
+{
+    message("x es infinito")
+} else if(x > 0)
+{
+    message("x es positivo")
+} else if(x < 0)
+{
+    message("x es negativo")
+} else
+{
+    message("x es cerp")
+}
+```
+
+
+### Bucles
+
+#### while
+
+```{r, eval=FALSE}
+accion <- sample(
+    c(
+        "Aprender R",
+        "Estudiar CM-274",
+        "Leer el manga de One Piece",
+        "Salir con Jessica"
+    ),
+    1
+)
+
+while(accion != "Salir con Jessica"){
+    
+    message("Hoy es un buen dia")
+     accion <- sample(
+        c(
+            "Aprender R",
+            "Estudiar CM-274",
+            "Leer el manga de One Piece",
+            "Salir con Jessica"
+        ),
+        1
+    )
+    message("accion = ", accion)
+}
+```
+
+
+Un ejemplo numérico del uso de while con los caminos aleatorios unidimensionales [https://es.wikipedia.org/wiki/Camino_aleatorio](https://es.wikipedia.org/wiki/Camino_aleatorio).
+
+
+
+```{r, eval=FALSE}
+# Un camino aleatorio con While
+
+x=0
+n=0
+set.seed(333)
+while (x <= 10) {
+  n=n+1
+  x=x+rnorm(1,mean=.5,sd=1)
+  }
+
+print(paste ("n = ", n, ", x = ",round(x,2) ))
+```
+
+## Ejercicios
+
+1 . Usa R, para calcular las respuesta numéricas de lo siguiente:
+
+
+ * $1 + 2(3 + 4)$
+ * $4^3 + 3^{2 +1}$
+ * $\sqrt{(4 + 3)(2 +1)}$
+ * $\biggl( \frac{1 +2}{3 + 4}\biggr)^2$
+
+2 . La función `sd` calcula la desviación estándar. Calcula la desviación estándar desde el $0$ al $100$.
+
+3 . Vea la demostración de símbolos matemáticos, usando `demo(plotmath)`.
+
+4 .  Genera aleatoriamente $1.000$ mascotas , de las opciones `perro`, `gato`, `pollo` y `pez dorado`, con la misma probabilidad de que cada uno sea elegido. Muestra los primeros valores de la variable resultante y cuente el número de cada tipo de mascota.
+
+
+5 . La *Conjetura de Collatz* señala que para todo número natural $n$, si se realiza la siguiente recursión:
+$$ f(n) = \left\{ \begin{array}{cc} 3n+1 &n = 2k+1 \\ \frac{n}{2} &n=2k \end{array} \right. $$
+Siempre se llegará a 1 luego de cierta cantidad de iteraciones. Para hallar la cantidad de pasos de un número se usa la siguiente iteración:
+
+```{r, eval=FALSE}
+n <- 100
+pasos <- 1
+while(n!=1){
+    if(n %% 2 == 0){
+        n <- n/2
+    } else {
+        n <- 3*n + 1
+    }
+    pasos <- pasos + 1
+}
+print(pasos)
+```
+
+Diseña un programa que halle la secuencia de menor longitud de entre los números en el rango $[100,200]$ y además determine cuál es esa secuencia.
+
+6 . Jessica estaba estudiando teoría de números y aprendió el algoritmo de Euclides, pero en la clase estaba tan concentrada  que no llegó a apuntar correctamente el algoritmo dado por su profesor. A pesar de todo, ella recuerda exactamente todas las líneas, pero no el orden correcto. Dadas las siguientes líneas de código, reconstruya el algoritmo de Euclides iterativo y use $a = 10^5+3$ y $b=10^8+9$:
+
+```{r, eval=FALSE}
+a <- 1001
+b <- 7
+while(b!=0){
+    b <- carry
+    a <- b
+    carry <- a %% b
+}
+print(a)
+```
+
+7 . Usando la función `sample` obtenga un muestreo de 10 números en el rango $[1,1000]$ (con reemplazo) y determine la relación entre la cantidad de primos encontrados y el tamaño de la muestra. Según la teoría de primos, una cota superior para la cantidad de primos menores o iguales a $n$ es $\frac{n}{ln(n)}$, analice cuán preciso es esto con este caso y un muestreo de 20 números en el rango de $[1,2000]$
+
+8 . Supongamos que $x$ es un vector numérico. Explica en detalle, como las siguientes expresiones son evaluadas y que valores toman
+
+```{r,eval=FALSE}
+sum(!is.na(x))
+c(x,x[-(1:length(x))])
+x[length(x) + 1]/length(x)
+sum(x > mean(x))
+```
+
+9 .Usando la función `cumprod` o otra relacionada, calcula
+
+$$
+1 + \frac{2}{3}+ \biggl(\frac{2}{3}\frac{4}{5}  \biggr) +  \biggl(\frac{2}{3}\frac{4}{5}\frac{6}{7} \biggr) + \cdots + \biggl(\frac{2}{3}\frac{4}{5}\cdots \frac{38}{39} \biggr).
+$$
+
+10 .  Sea $X$ el número de `unos` obtenidos en 12 lanzamientos  de un dado. Entonces $X$ tiene una  distribución Binomial $(n=12, p=1/3)$ . Calcule una tabla de probabilidades binomiales para $x=0, 1, \dots ,12$ por dos métodos:
+
+  * Usando la fórmula para la densidad: $P(X = K)=\binom{n}{k}p^{k}(1 -p)^{n -k}$ y aritm\'etica en R. Usa `0:12` para la secuencia de $x$ valores y la función `choose` para calcular los coeficientes binomiales $\binom{n}{k}$. 
+  *  Usando la función `dbinom` de R y comparar tus resultados con ambos métodos.
+  
+11 . Sea $X$ el número de `unos` obtenidos en 12 lanzamientos  de un dado. Entonces $X$ tiene una  distribución Binomial $(n=12, p=1/3)$. Calcula el CDF para $x=0, 1, \dots ,12$ por dos métodos:
+
+
+ * Usando la función `cumsum` y el resultado del ejercicio anterior.
+ * Con el uso de la función `pbinom`. ?` Qué es $P(X >7)$?.
+
+
+ 
