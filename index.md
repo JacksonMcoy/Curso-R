@@ -58,6 +58,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * [Laboratorio 1](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio1.pdf).
 * [Laboratorio 2](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio2.pdf).
 * [Laboratorio 3](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio3/Laboratorio3.pdf).
+* [Laboratorio 4](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio4.pdf).
 
 ### Diapositivas
 
