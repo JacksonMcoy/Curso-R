@@ -276,7 +276,7 @@ while(accion != "Salir con Jessica"){
 ```
 
 
-Un ejemplo numérico del uso de while con los caminos aleatorios unidimensionales [https://es.wikipedia.org/wiki/Camino_aleatorio](https://es.wikipedia.org/wiki/Camino_aleatorio).
+Un ejemplo numérico del uso de while con los caminos aleatorios unidimensionales **[https://es.wikipedia.org/wiki/Camino_aleatorio](https://es.wikipedia.org/wiki/Camino_aleatorio)**.
 
 
 
@@ -293,6 +293,28 @@ while (x <= 10) {
 
 print(paste ("n = ", n, ", x = ",round(x,2) ))
 ```
+
+
+#### For
+
+El bucle `for` acepta una variable de iteración y un vector. La sintaxis para el bucle `for` es
+
+```
+  for (nombre in valores ) expresion
+```
+
+El bucle `for`, iteraciona a través de los componentes nombre de valores uno a la vez. En el ejemplo anterior `nombre` toma el valor de cada elemento sucesivo de `valores`, hasta que se complete sus componentes.
+
+
+```{r,comment=NA}
+lenguajes <- c("Python", "JS", "C", "C++", "R", "Bash")
+for(l in lenguajes){
+  print(l)
+}
+```
+
+
+
 
 ## Ejercicios
 
