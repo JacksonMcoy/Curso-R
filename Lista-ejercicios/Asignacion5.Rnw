@@ -1,0 +1,160 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{teo}{{Teorema}}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Ejercicios de Laboratorio de R\par
+\end{minipage}
+
+\vspace{0.5cm}
+
+\textbf{Lecturas Importantes }
+\begin{enumerate}
+\item Un art\'iculo de KDnuggets acerca de los principales algoritmos usados en ciencia de datos.
+
+\url{http://www.kdnuggets.com/2016/09/poll-algorithms-used-data-scientists.html}.
+\end{enumerate}
+
+
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+{\Large Preguntas }
+
+\begin{enumerate}
+
+\item Escribe en un archivo con la extensi\'on \texttt{sh}, las respuesta a las siguientes preguntas:
+
+\begin{enumerate}
+\item Cree un archivo \texttt{examen} que contenga al menos 5 nombres y la  edad correspondientes de esos nombres. Utiliza los  dos puntos \texttt{:} como delimitador entre campos.
+
+Por ejemplo el archivo debe tener la forma :
+
+\begin{verbatim}
+Erika Rios Mendoza: 20
+Jessica Martinez Figueroa: 32
+Claudio Lara Avila: 25
+\end{verbatim}
+\item Ordena  el archivo y almacena la salida en otro archivo  llamado \texttt{temp}.
+\item Escribe un comando para mostrar el n\'umero total de palabras en los archivos  \texttt{temp} y  \texttt{examen}.
+\item Escribe un comando para localizar todos los archivos \texttt{.txt} y \texttt{.sh} del sistema.
+\end{enumerate}
+
+\item Usando la funci\'on \texttt{cumprod} , escribe en  una s\'ola linea de c\'odigo de R, lo siguiente
+
+$$
+1 + \frac{2}{3}+ \biggl(\frac{2}{3}\frac{4}{5}  \biggr) +  \biggl(\frac{2}{3}\frac{4}{5}\frac{6}{7} \biggr) + \cdots + \biggl(\frac{2}{3}\frac{4}{5}\cdots \frac{38}{39} \biggr).
+$$
+\item Seis ni\~nos est\'an haciendo cola. ?`Cu\'al es la probabilidad de que est\'en en orden alfab\'etico por nombre? Suponga que ning\'un ni\~no tiene el mismo nombre.
+
+?`Recuerdas a los ni\~nos de la \'ultima pregunta?. Hay tres muchachos y tres muchachas. ?`Qu\'e tan probable es que todas las chicas vengan primero?. Utiliza las funciones hechas en clase. No utilizar la funci\'on \texttt{factorial}.
+
+\item Un famoso juego del lanzamiento de monedas tiene las siguientes reglas: El jugador lanza una moneda repetidamente hasta que aparece un sello  o la lanza un m\'aximo de $1000$ veces si no aparece sello. La apuesta inicial comienza en $2$ soles y se duplica cada vez que  aparecen caras. 
+
+La primera vez que aparece sello, el juego termina y el jugador gana si est\'a  participando. Por lo tanto, el jugador gana 2 soles si sello aparece en el primer lanzamiento, 4 soles si cara  aparece en el primer lanzamiento y sellos en el segundo, 8 soles si  caras aparecen en los dos primeros lanzamientos y sellos en el tercero, y as\'i sucesivamente.
+
+Matem\'aticamente, el jugador gana $2^k$ soles, donde $k$ es igual al n\'umero de lanzamientos hasta el primer sello. ?`Cu\'al es la probabilidad de tener beneficios si cuesta 15 soles participar?
+
+\item Observa la siguiente funci\'on \texttt{tst()} que calcula una cadena de calificaci\'on para un n\'umero \'unico \texttt{x}.
+
+<<foo1, comment = NA, prompt =TRUE, eval= FALSE>>=
+tst4 <- function(x) {
+  if (x < -2) "muy negativo"
+  else if (x < 1) "cercano a cero"
+  else if (x < 3) "in [1, 3)"
+  else "large"
+}
+@
+
+
+\begin{enumerate}
+\item Corre la funci\'on para $x = 0, x = \text{Inf}$ y $x = 2$.
+\item Escribe una nueva funci\'on  \texttt{Tst4()} dando la misma salida que \texttt{tst4()}, pero define la funci\'on usando el comando \texttt{ifelse()}. De esta manera, la funci\'on no s\'olo funcionar\'a para n\'umeros individuales sino tambi\'en para un vector \texttt{x}. Prueba tu funci\'on \texttt{Tst4()} en el vector de entrada  \texttt{c(-Inf, -3: 5)}.
+\end{enumerate}
+\end{enumerate}
+
+
+\textbf{Notas importantes }
+\begin{itemize}
+\item Todos los ejercicicios resueltos ser\'an subidos a los repositorios de github creado por el estudiante. La forma en la que el estudiante debe presentar este laboratorio es:
+
+\begin{itemize}
+\item Debes crear una carpeta local llamada \texttt{Practica1}.
+\item Dentro de la carpeta \texttt{Practica1}, se deben crear las carpetas \texttt{Ejercicio1, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5} donde se deben alojar  las soluciones con la extensi\'on  \texttt{sh} para el ejercicio 1 y  \texttt{.R} del lenguaje R para los otros. Cualquier otra extensi\'on, incluyendo letras min\'usculas,  ser\'a motivo de una rebaja de puntos en el ejercicio.
+\end{itemize}
+\item Los archivos de respuesta deben llevar un comentario inicial con tu nombre y c\'odigo. Por ejemplo.
+
+<<foo2, comment = NA, prompt =TRUE, eval= FALSE>>=
+# Nombre : Cesar Lara Avila 20122345J
+# Respuesta1: El codigo  muestra el uso del SVD en el calculo 
+#de la inversa de matrices
+
+
+library(MASS)
+
+a <- matrix(c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1), 9, 4)
+
+a.svd <- svd(a)
+a.svd$d
+@
+\item En esta pr\'actica no se permite utilizar sitios de internet.
+\end{itemize}
+\end{document}
