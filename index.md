@@ -11,8 +11,6 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
   * [Technical Foundations of Informatics Michael Freeman and Joel Ross](https://info201-s17.github.io/book/).
   * [Agile Planning](https://launchschool.com/books/agile_planning).
   * [Introduction to the Command Line](https://launchschool.com/books/command_line).
-  * [Agile Planning](https://launchschool.com/books/agile_planning).
-  
    
  
 ## Temario
