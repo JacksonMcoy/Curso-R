@@ -122,6 +122,11 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   - [Cuaderno sobre vectores, matrices y arrays](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/vectores-matrices-arrays.ipynb).
   - [Vectorización en R](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html).
   - [Aplicaciones](http://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/vectores-matrices-arrays/Aplicaciones.ipynb).
+  
+* Tarea 5:
+
+ * Lee la siguientes notas [Linear algebra learning recommendations](https://info.cognitomentoring.org/wiki/Linear_algebra_learning_recommendations).
+ 
 
 * Listas, data frames, cadena, factores y tablas
    - [Cuaderno sobre listas y data frames](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Lista-dataframes-factores-tablas/listas-dataframes.ipynb).
