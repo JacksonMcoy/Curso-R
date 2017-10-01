@@ -1,0 +1,675 @@
+<style>
+.reveal h1, .reveal h2, .reveal h3 {
+  word-wrap: normal;
+  color: #FF4000;
+  -moz-hyphens: none;
+}
+.small-code pre code {
+  font-size: 1em;
+}
+</style>
+
+
+Curso de R
+========================================================
+author: Vectores, matrices y arrays
+
+
+
+Estructuras de datos básicas de R
+========================================================
+
+* Existen ciertas estructuras 1d y 2d dimensionales , para almacenar distintos objetos de R
+
+<img src="objetos.png" alt="Drawing" style="width: 600px;"/>
+
+
+Vectores 
+========================================================
+
+Un vector numérico es una lista de números. La función *c()* se utiliza para coleccionar cosas en un vector.  Podemos asignar esto a un objeto con nombre:
+
+```{r, eval=FALSE}
+x <- c(0, 7, 8)
+x
+```
+
+
+* El operador **:** es usado para crear secuencias de valores crecientes (decrecientes).
+
+```{r}
+numb5a20 <- 5:20
+numb5a20
+```
+
+Concatenación de vectores
+========================================================
+
+
+Los vectores pueden ser **concatenados** con la función *c*.
+
+```{r, eval=FALSE}
+c(numb5a20, x)
+```
+
+* Un ejemplo de la función *c()*
+
+```{r}
+algunos.numeros <- c(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 59, 67, 71, 73, 79, 83, 89, 97, 103, 107, 109, 113, 119)
+```
+
+Podemos agregar *numb5a20* al final de *algunos.numeros* y entonces agregar la secuencia decreciente desde 4 al 1:
+
+Un ejemplo
+========================================================
+
+
+```{r, eval=TRUE}
+a.concatenacion <- c(algunos.numeros, numb5a20, 4:1)
+a.concatenacion
+```
+
+* Los números en los corchetes dan el índice de los elementos a la derecha. 
+
+Extrayendo elementos de un vector
+========================================================
+
+* Una forma  de mostrar el elemento 22 de *a.concatenacion* es utilizar corchetes para extraer un sólo elemento:
+
+```{r}
+a.concatenacion[22]
+```
+
+
+* Podemos extraer más de un elemento a la vez. 
+
+```{r}
+algunos.numeros[c(3, 6, 7)]
+```
+
+Usando el operador : e índices negativos
+========================================================
+
+* Para obtener el tercero al séptimo elemento de *numb5a20*, escribe
+
+```{r}
+numb5a20[3:7]
+```
+
+* Los índices negativos se pueden utilizar para evitar ciertos elementos. Por ejemplo, podemos seleccionar todo excepto el segundo elemento de *x* como sigue
+
+```{r, eval=FALSE}
+x[-2]
+```
+
+Extracción de elementos de un vector avanzada
+========================================================
+
+* Utilizar un índice cero no devuelve nada. Esto no es algo que normalmente se escribe, pero puede ser útil en expresiones más complicadas.
+
+```{r}
+numb5a20[c(0, 3:7)]
+```
+
+* No se puede mezclar índices positivos y negativos. Para ver qué pasa, consideramos
+
+```{r, eval=FALSE}
+x <- c(0,  7, 8)
+x[c(-2, 3)]
+```
+
+Aritmética de vectores
+========================================================
+
+Las operaciones básicas de la arítmética   se pueden hacer con vectores de R
+
+```{r}
+x<- c(0,7,8)
+x - 4
+x*3
+```
+
+***
+
+Además
+
+
+```{r}
+x^3
+```
+
+Las operaciones son elemento a elemento.
+
+Arítmética entre dos vectores
+========================================================
+
+Las operaciones binarias trabajan elemento a elemento también cuando son aplicadas  a un par de vectores. 
+
+Por ejemplo, podemos calcular $y_i^{x_i}$, para $i = 1, 2, 3$, como sigue:
+
+```{r}
+x<- c(0,4,6)
+y <- -x - 3
+y
+```
+
+***
+
+además 
+
+```{r}
+y^x
+```
+
+Reciclado
+========================================================
+
+Cuando los vectores tienen diferentes longitudes, la longitud  más corta se extiende por **reciclado**: los valores se repiten, comenzando desde el principio. 
+
+Por ejemplo, para ver el patrón de restos de los números del *1* al *10* módulo *2* y *3*, sólo necesitamos dar el vector *2: 3* una vez:
+
+```{r}
+c(1, 1, 2, 2, 3, 3, 4, 4, 5, 5,6, 6, 7, 7, 8, 8, 9, 9, 10, 10) %% 2:3
+```
+
+Cuando el reciclado muestra advertencias
+========================================================
+R dará una advertencia si la longitud del vector más grande no es un múltiplo de la longitud del vector más pequeño.
+
+Por ejemplo, si queríamos los restos modulo *2*, *3* y *4*, esta es la manera incorrecta de hacerlo:
+
+```{r, warning=TRUE}
+c(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10) %% 2:4
+```
+
+Patrones simples de vectores
+========================================================
+
+La construcción de patrón de vectores se pueden hacer usando las funciones **seq()**, así como la función **rep()**. 
+
+Por ejemplo, la secuencia de números impares menores o iguales a 21, pueden ser obtenido usando
+
+```{r, eval=FALSE}
+help(seq)
+seq(1, 21, by =2)
+```
+
+Debes notar que aquí usamos **by =2**.
+
+La función **seq()** tiene varios paramétros opcionales, incluyendo *by*. Si *by* no es especificado, el valor por defecto de 1 puede ser usado.
+
+Patrones repetidos
+========================================================
+
+Si queremos encontrar patrones repetidos, podemos utilizar **rep()**. 
+
+```{r}
+rep(3, 12)
+```
+
+Esta función puede tener más opciones.   Por ejemplo que resulta de escribir? 
+
+```{r, eval=FALSE}
+rep(seq(2,20, by = 2), 2)
+```
+
+Más ejemplos
+========================================================
+
+Las funciones anteriores se pueden combinar 
+```{r}
+rep(c(1, 4), c(3, 2))
+```
+
+```{r}
+rep(c(1, 4), each=3)
+```
+
+***
+
+```{r}
+rep(seq(2, 20, 2), rep(2, 10))
+```
+
+
+Revisar la ayuda de la función puede ser útil.
+
+
+Valores pérdidos:  NA
+========================================================
+
+El símbolo de valores pérdidos es **NA**. Valores pérdidos a menudo surgen en problemas reales, pero también pueden surgir debido a la forma en que se realizan los cálculos.
+
+```{r}
+algunos.pares <- NULL # creamos un vector sin elementos 
+
+algunos.pares[seq(2, 20, 2)] <- seq(2, 20, 2)
+algunos.pares
+```
+
+Otros valores especiales
+========================================================
+
+Lo que sucedió aquí es que asignamos valores a los elementos *2, 4,. . . , 20* pero nunca se asignó nada a los elementos *1, 3,. . . , 19*, por lo que R usa **NA** para indicar que el valor es desconocido.
+
+
+Si tenemos el vector *x <- c(0,7, 8)*. Consideramos
+
+```{r}
+x <- c(0, 7, 8)
+x/x
+```
+
+El símbolo **NaN** indica un valor que es *no un número*, que surge como resultado de intentar calcular el indeterminado $0/0$. Este símbolo se utiliza a veces cuando un cálculo no tiene sentido.
+
+
+Sobre los índices vectoriales
+========================================================
+
+En otros casos, se pueden mostrar valores especiales o puede recibir un mensaje de error o de advertencia:
+
+```{r}
+1/x
+```
+
+Los índices vectoriales sean enteros. Cuando se usan valores fraccionarios, se truncarán hacia 0. Así, 0.4 se convierte en 0, por ejemplo
+
+```{r}
+x[0.4] # vector de longitud de cero
+```
+
+
+Matrices y arrays
+========================================================
+Para ordenar los valores en una matriz, usamos la función **matrix()**:
+
+```{r}
+m <- matrix(1:6, nrow=2, ncol=3)
+m
+```
+
+
+
+Indexado de matrices 
+========================================================
+
+Entonces podemos acceder a los elementos usando dos índices. Por ejemplo, el valor en la primera fila, la segunda columna es
+
+```{r, eval=FALSE}
+m[1, 2]
+```
+
+R también permite que una matriz sea indexada como un vector, usando sólo un valor:
+
+```{r, eval=FALSE}
+m[4]
+```
+
+Aquí los elementos se seleccionan en el orden en que se almacenan internamente: en la primera columna, luego en la segunda y así sucesivamente.
+
+
+Formas de almacenamiento de los elementos
+========================================================
+
+Esto se conoce como orden de almacenamiento de **columna principal**. Algunos lenguajes  usan el  orden de almacenamiento de la  **fila principal**, donde los valores se almacenan en orden de izquierda a derecha en la primera fila, luego de izquierda a derecha sobre la segunda, y así sucesivamente.
+
+Las filas o columnas enteras de matrices se pueden seleccionar dejando en blanco el índice correspondiente:
+
+```{r, eval=FALSE}
+m[1,]
+m[,1]
+```
+
+Ejemplos
+========================================================
+Podemos controlar como R completa los datos usando el argumento **byrow**,
+
+```{r}
+matrix(data=c(1,2,3,4,5,6),nrow=2,ncol=3,
+       byrow=FALSE)
+```
+
+Podemos repetir la misma línea de código colocando **byrow=TRUE** .
+
+Continuación...
+========================================================
+```{r}
+matrix(data=c(1,2,3,4,5,6),nrow=2,ncol=3,
+       byrow=TRUE)
+```
+
+Enlazando filas 
+========================================================
+
+Si tiene varios vectores de igual longitud, podemos construir  una matriz enlazando estos vectores utilizando las funciones, **rbind** y **cbind**. 
+
+Puedes tratar cada vector como una fila (mediante el comando **rbind**) 
+
+```{r}
+rbind(1:3,4:6)
+```
+
+ Enlazando columnas
+========================================================
+
+Podemos tratar cada vector como una columna (utilizando el comando **cbind**).
+
+La misma matriz del ejemplo se puede escribir
+
+```{r}
+cbind(c(1,4),c(2,5),c(3,6))
+```
+
+Dimensiones de una matriz
+========================================================
+Otra función útil, **dim**, proporciona las dimensiones de una matriz almacenada en su espacio de trabajo.
+
+```{r}
+mymat <- rbind(c(1,3,4),5:3,c(100,20,90),11:13)
+dim(mymat)
+nrow(mymat)
+```
+
+Otras funciones 
+========================================================
+Utilizamos las funciones : **nrow** (que proporciona el número de filas) y **ncol** (que proporciona el número de columnas ). 
+
+En el último comando mostrado, usamos **dim** y el  conocimiento de como extraer un elemento de un vector para extraer el mismo resultado que **ncol**  daría.
+
+
+```{r}
+ncol(mymat)
+dim(mymat)[2]
+```
+
+
+Extrayendo filas
+========================================================
+
+Sea la siguiente matriz
+
+```{r}
+A <- matrix(c(0.3,4.5,55.3,91,0.1,105.5,-4.2,8.2,27.9)
+            ,nrow=3,ncol=3)
+A[2:3, ]
+```
+
+
+Este comando retorna la segunda y tercera filas de **A**.
+
+Extrayendo columnas 
+========================================================
+
+El siguiente comando retorna la tercera y primera columna de **A**
+
+```{r}
+A[,c(3,1)]
+```
+
+Para casos un poco más complejos,  el siguiente comando accede a la tercera y primera filas de A, en ese orden, y de esas filas devuelve los elementos de columna segundo y tercero.
+
+```{r, eval=FALSE}
+A[c(3,1),2:3]
+```
+
+Extrayendo elementos de la  diagonal
+========================================================
+También puede identificar los valores a lo largo de la diagonal de una matriz cuadrada (es decir, una matriz con un número igual de filas y columnas) usando el comando **diag**.
+
+```{r}
+diag(x=A)
+```
+
+Omitir elementos de una matriz
+========================================================
+
+Para eliminar u omitir elementos de una matriz, se vuelven  a usar corchetes, pero esta vez con índices negativos. En el siguiente código eliminamos la primera fila de **A** y recuperamos la tercera y segunda columna en ese orden.
+
+```{r}
+A[-1,3:2]
+```
+
+
+Ejemplos
+========================================================
+
+El siguiente ejemplo produce **A** sin la primera fila y segunda columna:
+
+```{r, eval=FALSE}
+A[-1,-2]
+```
+
+Este ejemplo elimina la primera fila y luego elimina la segunda y tercera columnas del resultado:
+
+```{r, eval=FALSE}
+A[-1,-c(2,3)]
+```
+
+
+Sobreescribiendo elementos de una matriz
+========================================================
+Para sobrescribir elementos particulares, o filas o columnas enteras, debes identificar los elementos que se van a reemplazar y luego asignar los nuevos valores.
+
+Los nuevos elementos pueden ser un solo valor, un vector de la misma longitud que el número de elementos a sustituir, o un vector cuya longitud divida uniformemente el número de elementos a reemplazar.
+
+Creamos una copia
+
+```{r}
+B <- A
+```
+
+Ejemplos
+========================================================
+Lo siguiente sobrescribe la segunda fila de **B** con la secuencia 1, 2 y 3:
+
+```{r}
+B[2,] <- 1:3
+B
+```
+
+Lo siguiente sobrescribe los elementos de la segunda columna de la primera y tercera filas con 900:
+
+```{r, eval=FALSE}
+B[c(1,3),2] <- 900
+```
+
+Utilizando el reciclado
+========================================================
+
+Para probar el reciclaje de vectores de R, vamos a sobrescribir los elementos de la primera y tercera columna de las filas 1 y 3 (un total de cuatro elementos) con los dos valores -7 y 7.
+
+```{r}
+B[c(1,3),c(1,3)] <- c(-7,7)
+B
+```
+
+Operaciones con matrices
+========================================================
+
+* Transpuesta de una matriz
+* Matriz identidad
+* Multiplicación de un escalar por una matriz
+* Suma y resta de matrices
+* Multiplicación matricial
+* Inversión de una matriz
+
+Transpuesta de una matriz
+========================================================
+
+En R, la transpuesta de una matriz es encontrada usanda la función **t**.
+
+```{r}
+A <- rbind(c(2,5,2),c(6,1,4))
+t(A)
+```
+Si tu realizas *la traspuesta de la traspuesta* recuperamos la matriz original.
+
+```{r, eval=FALSE}
+t(t(A))
+```
+
+Matriz identidad
+=========================================================
+
+Puedes crear una matriz identidad usando lo función **matrix**, pero hay una forma utilizando la función **diag**
+
+```{r}
+A <- diag(x =3)
+A
+```
+
+Multiplicación de un escalar por una matriz
+=========================================================
+R realizará esta multiplicación componente a componente. La multiplicación escalar de una matriz se realiza utilizando el operador aritmético  *.
+
+```{r}
+A <- rbind(c(2,5,7),c(6,3,4))
+a<- 3
+a*A
+```
+
+
+Suma y resta de matrices
+=========================================================
+Puede sumar o restar dos matrices de igual tamaño con los símbolos estándar + y -.
+
+```{r}
+A <- cbind(c(2,5,7),c(6,1,4))
+B <- cbind(c(-2,3,9),c(8.1,8.2,-9.8))
+A + B
+```
+
+
+Multiplicación de matrices
+=========================================================
+
+A diferencia de la suma, resta y la multiplicación escalar, la multiplicación matricial no es un simple cálculo componente a componente, y no se puede utilizar el operador  *. 
+
+En su lugar, debe utilizar el operador de producto de matriz de R, escrito con símbolos de porcentaje como %*%.
+
+```{r}
+A <- rbind(c(2,5,2),c(6,1,4))
+B <- cbind(c(3,-1,1),c(-3,1,5))
+A%*% B  # Las matrices son compatibles
+```
+
+
+Inversión de una matriz
+=========================================================
+
+Hay varios enfoques diferentes para obtener  la inversión de una matriz, y estos cálculos pueden llegar a ser computacionalmente costosos a medida que aumenta el tamaño de una matriz
+
+Por ahora, se usará función **solve** como una opción para invertir una matriz.
+
+```{r}
+A <- matrix(data=c(3,4,1,2),nrow=2,ncol=2)
+solve(A)
+```
+
+Arrays
+=========================================================
+Así como una matriz (un **rectángulo** de elementos) es el resultado de incrementar la dimensión de un vector (una **línea** de elementos), la dimensión de una matriz puede aumentarse para obtener estructuras de datos más complejas. 
+
+En R, los vectores y las matrices pueden ser considerados casos especiales del
+un arreglo más general llamado **array**, que es cómo se refiere  a este tipo de estructuras cuando tienen más de dos dimensiones. 
+
+Para crear estas estructuras usamos la función **array** y el argumento **dim**
+
+```{r}
+AR <- array(data=1:24,dim=c(3,4,2))
+```
+
+Descripción gráfica de un array
+=========================================================
+
+Un diagrama conceptual  de un array 3 x 4 x 2. 
+
+En este ejemplo, observamos el orden de las dimensiones suministradas a **dim: c(filas, columnas, capas)**
+
+<img src="objetos1.png" alt="Drawing" style="width: 600px;"/>
+
+
+Un ejemplo
+=========================================================
+Una matriz de cuatro dimensiones es el siguiente paso hacia arriba y se puede pensar en  bloques de matrices tridimensionales.
+
+Supongamos que tenemos una matriz de cuatro dimensiones compuesta de tres copias de AR. Esta nueva matriz se puede almacenar en R como sigue (una vez más, la matriz se copleta en columnas):
+
+```{r, eval=FALSE}
+BR <- array(data=rep(1:24,times=3),dim=c(3,4,2,3))
+BR
+```
+
+Continuación...
+=========================================================
+Con BR ahora tiene tres copias de AR. Cada una de estas copias se divide en sus dos capas para que R pueda imprimir el objeto en la pantalla.
+
+Como antes, las filas están indexadas por el primer dígito, las columnas por el segundo dígito y las capas por el tercer dígito. El nuevo cuarto dígito indexa los bloques.
+
+Subconjuntos, extracciones y reemplazos 
+=========================================================
+Aunque los objetos de alta dimensión pueden ser difíciles de conceptualizar, R los indexa consistentemente. Esto hace que extraer elementos de estas estructuras sea sencillo. 
+
+Supongamos que se desea la segunda fila de la segunda capa de la matriz AR. Puedes introducir estas ubicaciones dimensionales exactas de AR en corchetes.
+
+```{r}
+AR[2,,2]
+```
+
+
+Ejemplos
+=========================================================
+Si se desea conseguir elementos específicos de este vector, digamos el tercero y el primero, en ese orden, podemos hacer lo siguiente:
+
+```{r}
+AR[2,c(3,1),2]
+```
+
+Una extracción que da lugar a múltiples vectores se presenta  como columnas en la matriz resultante . Por ejemplo, para extraer las primeras filas de ambas capas de AR, se hace lo siguiente
+
+```{r, eval=FALSE}
+AR[1,,]
+```
+
+
+Ejemplos 1
+=========================================================
+
+El siguiente muestra un  único elemento de la segunda fila y la primera columna de la matriz en la primera capa de la matriz tridimensional situado en el tercer bloque.
+
+```{r, eval=FALSE}
+BR[2,1,1,3]
+```
+
+El código siguiente  devuelve todos los valores en la primera fila del primer bloque.
+
+Desde que  los índices de columna y capa están en blanco en este subconjunto *[1, , , 1]*, el comando ha devuelto valores para las cuatro columnas y ambas capas en ese bloque de BR.
+
+```{r, eval=FALSE}
+BR[1,,,1]
+```
+
+Ejemplos 2
+=========================================================
+
+La siguiente línea devuelve todos los valores de la segunda capa de la matriz BR, compuesta de tres matrices
+
+```{r, eval=FALSE}
+BR[,,2,]
+```
+
+En términos generales, si tiene una extracción que da como resultado  matrices $d$ dimensionales, el resultado será una matriz de la siguiente dimensión  $d + 1$. 
+
+En el último ejemplo, extraemos múltiples matrices (bidimensionales) y el resultado fue devuelto como una matriz tridimensional.
+
+
+Sobre eliminación y sobreescritura de elementos
+=========================================================
+La supresión y sobrescritura de elementos en arrays de alta dimensión sigue las mismas reglas que para vectores y matrices.
+
+Especifica las posiciones de la dimensión de la misma manera, utilizando índices negativos (para borrar) o utilizando el operador de asignación para sobrescribir.
+
+Lecturas
+=========================================================
+
+* The Book of R A First Course in Programming and Statistics. Tilman M. Davies 2016.
