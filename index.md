@@ -65,6 +65,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * [Diapositiva3: Lenguaje de programación R](http://rpubs.com/C-LaraAvila/296905).
 * [Diapositiva4: Aspectos básicos de R](http://rpubs.com/C-LaraAvila/296906).
 * [Diapositiva5: Inspeccion de variables y espacios de trabajo en R](http://rpubs.com/C-LaraAvila/296907).
+* [Diapositiva6: Vectores, matrices y arrays en R](http://rpubs.com/C-LaraAvila/314023).
 
 ### Cuadernos y anotaciones
 
