@@ -125,7 +125,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
   
 * Tarea 5:
 
- * Lee la siguientes notas [Linear algebra learning recommendations](https://info.cognitomentoring.org/wiki/Linear_algebra_learning_recommendations).
+   * Lee la siguientes notas [Linear algebra learning recommendations](https://info.cognitomentoring.org/wiki/Linear_algebra_learning_recommendations).
  
 
 * Listas, data frames, cadena, factores y tablas
