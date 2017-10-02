@@ -1,0 +1,223 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Laboratorio de R\par
+Lista de ejercicios 3 \par
+\end{minipage}
+\vspace{0.5cm}
+
+%\maketitle
+\textbf{\Large{Ejercicios}}
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+
+\item Definimos:
+
+<<foo1, comment = NA, prompt =TRUE, eval= FALSE>>=
+x <- c(5, 2, 1, 4); y <- rep(1, 5)
+@
+Predice las soluciones antes de escribir los comandos
+
+\begin{enumerate}
+\item 
+<<foo2, comment = NA, prompt =TRUE, eval= FALSE>>=
+sum(x)
+range(x)
+sum(y)
+length(y)
+sum(y)
+@
+
+\item 
+<<foo3, comment = NA, prompt =TRUE, eval= FALSE>>=
+c(x, y, 13)
+@
+\item 
+<<foo4, comment = NA, prompt =TRUE, eval= FALSE>>=
+x[4] * y[2]
+x[2:4] + x[1:3]
+@
+\item
+<<foo5, comment = NA, prompt =TRUE, eval= FALSE>>=
+x <= 2
+x[x <= 2]
+x[(x != 5) & (x > 3)]
+@
+\item
+<<foo6, comment = NA, prompt =TRUE, eval= FALSE>>=
+rep(1:4,2)
+rep(1:4,each = 2)
+rep(1:4,c(2, 1, 2, 1))
+rep(1:4,each = 2, len = 10)
+@
+\item
+<<foo7, comment = NA, prompt =TRUE, eval= FALSE>>=
+2:3^2
+seq(2, -3) * c(-1, 1)
+@
+
+\end{enumerate}
+\item 
+\begin{itemize}
+\item Describe importantes diferencias entre las estructuras fundamentales de $R$: \texttt{vectores, matrices, arrays} y \texttt{listas}. Usa ejemplos para demostrar esas diferencias.
+
+\item Explicar las diferencias entre las funciones $\texttt{rbind(), cbind()}$ y \texttt{merge()} para combinar dos estructuras de dos dimensiones en $R$. Usa ejemplos para demostrar esas diferencias.
+\end{itemize}
+
+\item
+
+\begin{enumerate}
+\item Construye  y almacena una matriz $4 \times 2$ que se completa  por  fila con los valores $4.3, 3.1, 8.2, 8.2, 3.2, 0.9, 1.6$ y $6.5$, en ese orden.
+\item Confirma que las dimensiones de la matriz de (a) son $3 \times  2$ si se elimina una fila.
+\item Sobrescribe la segunda columna de la matriz de (a) con esa misma columna ordenada de menor a mayor.
+\item ?`Qu\'e devuelve R si se elimina la cuarta fila y la primera columna de (c)?. Utiliza \texttt{matrix} para asegurar que el resultado sea una matriz de una sola columna, en lugar de un vector.
+
+\item Guarde los cuatro elementos inferiores de (c) como una nueva matriz $2\times 2$.
+\item Sobrescribe en este orden los elementos de (c) en las posiciones $(4, 2), (1, 2), (4, 1)$ y $(1, 1)$ con $\frac{1}{2}$ de los dos valores de la diagonal de (e).
+\end{enumerate}
+\item  Calcula lo siguiente:
+
+\[
+\dfrac{2}{7}\begin{bmatrix}
+        1 & 2  \\[0.3em]
+        2 &  4 \\[0.3em]
+        7 & 6 
+     \end{bmatrix} - \begin{bmatrix}
+        10 & 20  \\[0.3em]
+        30 &  40 \\[0.3em]
+        50 & 60 
+     \end{bmatrix}
+     \]
+     
+\item Almacena estas dos matrices:
+
+\[
+A = \begin{bmatrix}
+1 \\[0.3em]
+2 \\[0.3em]
+7 
+\end{bmatrix}\qquad B = \begin{bmatrix}
+3 \\[0.3em]
+4 \\[0.3em]
+8 
+\end{bmatrix}
+\]
+
+?` Cu\'al de las siguientes multiplicaciones son posibles?. Para los que son, calcula el resultado
+
+\begin{itemize}
+\item $A \cdot B$
+\item $A^T \cdot B$
+\item $B^T \cdot (A \cdot A^T)$
+\item $[(B\cdot B^T) + (A \cdot A^T)- 100I_3 ]^{-1}$
+\end{itemize}
+\item La funci\'on \texttt{diag} tiene varios usos, uno de los cuales es tomar un vector como  entrada y crea una matriz cuadrada con ese vector en la diagonal. Crea una matriz  $21 \times 21$ con la secuencia de $10$ a $0$ y a $11$ (es decir, $11, 10, \dots, 1, 0, 1, \dots, 11$).
+\item Para
+
+\[
+A = \begin{bmatrix}
+        2 & 0 & 0  & 0    \\[0.3em]
+        0 & 3 & 0 & 0     \\[0.3em]
+        0 & 0 & 5 & 0      \\[0.3em]
+        0 & 0 & 0 & -1           
+     \end{bmatrix}
+     \]
+Comprueba   que $A^{-1}\cdot A -I_4$ proporciona una matriz $4 \times 4$ de ceros.
+\item Usa las funciones \texttt{matrix()}, \texttt{seq()} y \texttt{rep()} para construir la matrices de Henkel $5 \times 5$.
+
+\[
+M = \begin{bmatrix}
+        1 & 2 & 3  & 4 & 5         \\[0.3em]
+        2 & 3 & 4 & 5 & 6           \\[0.3em]
+        3 & 4 & 4 & 6 & 7           \\[0.3em]
+       4 & 5 & 6 & 7 & 8           \\[0.3em]
+        5 & 6 & 7 & 8 & 9           
+     \end{bmatrix}
+     \]
+Convierte el c\'odigo en una funci\'on  que puede ser usado para construir matrices de dimensi\'on $n \times n$. Usa esa funci\'on para mostrar las salida de Matrices de Henkel de orden $10 \times 10$ y $12 \times 12$.
+
+\item La matriz de Hilbert $n \times n$ tiene a los elementos $(i,j)$ dados por $1/(i + j-1)$.
+\begin{itemize}
+\item Escribe una funci\'on que muestra una matriz de Hilbert $n \times n$ como salida para entero positivo $n$.
+\item ?` Son todas las matrices de Hilbert invertibles?.
+\item Usa \texttt{solve()} y \texttt{qr.solve()} para calcular la inversa de las matrices Hilbert, por ejemplo, cuando $n = 10$.
+\end{itemize}
+
+\item 
+
+\begin{itemize}
+\item Genere una matriz tridimensional con dimensiones $4 \times 3 \times 2$ que contengan los n\'umeros del $1$ al $24$.
+\item Extraiga la \'ultima porci\'on \texttt{(a[,, 2])} del array y gu\'ardela como una matriz $M$.
+\item Genera una nueva matriz de dimensiones $4 \times 3 \times 3$ que es id\'entica a la matriz anterior, pero a\~nade la matriz $M$ como la tercera entrada en la tercera dimensi\'on.
+\end{itemize}
+
+\item Crea una matriz aleatoria entera $6 \times 10$ escogidos entre $1,2,\dots, 10$, ejecutando las siguientes l\'ines de c\'odigo
+
+<<foo8, comment = NA, prompt =TRUE, eval= FALSE>>=
+set.seed(75)
+aMat <- matrix( sample(10, size=60, replace=T), nr=6)
+@
+
+\begin{enumerate}
+\item Encuentra el n\'umero de entradas en cada fila que son mayores que $4$.
+
+\item ?`Qu\'e filas contienen exactamente dos ocurrencias del n\'umero siete?
+
+\item Encuentra aquellos pares de columnas cuyo total (sobre ambas columnas) es mayor que 75. La respuesta deber\'ia ser una matriz con dos columnas; as\'i, por ejemplo, la fila $(1, 2)$ en la matriz de salida significa que la suma de las columnas $1$ y $2$ en la matriz original es mayor que 75. Se permite repetir una columna; por ejemplo, la matriz de salida final podr\'ia contener las filas $(1, 2), (2, 1)$ y $(2, 2)$.
+
+?`Qu\'e sucede si no se permiten repeticiones? Entonces, s\'olo se permitir\'ia $(1, 2)$ de $(1, 2), (2, 1)$ y $(2, 2)$?.
+\end{enumerate}
+\end{enumerate}
+\end{document} 
+
