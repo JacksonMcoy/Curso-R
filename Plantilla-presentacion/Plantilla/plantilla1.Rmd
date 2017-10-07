@@ -1,0 +1,87 @@
+---
+title: 'Nombre de tu asignación '
+author: "Tu nombre"
+output:
+  html_document:
+    highlight: pygments
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Título General
+
+El título general es el nombre del tema principal de tu asignación. En esta parte, debes agregar toda la información, que soporte todo tu trabajo. Puedes agregar [enlaces](http://rmarkdown.rstudio.com/lesson-1.html) e inclusive código que puedes ejecutar o no. Por ejemplo, si queremos no evaluar el siguiente código, debemos modificar   la entrada de código, usando `eval =FALSE`:
+
+```{r ejemplo1, comment = NA, prompt =TRUE, eval= FALSE}
+N <- 100000
+n <- 100
+p <- .5
+x <- rbinom(N,n,p)
+hist(x, 
+     xlim = c(min(x), max(x)), 
+     probability = TRUE, 
+     nclass = max(x) - min(x) + 1, 
+     col = 'lightblue',
+     main = 'Distribucion binomial , n=100, p=.5')
+lines(density(x,bw=1), col = 'red', lwd = 3)
+```
+
+De lo contrario, si ponemos `eval =TRUE`, tendriamos el resultado pedido:
+
+```{r ejemplo2, comment = NA, prompt =TRUE, eval= TRUE}
+N <- 100000
+n <- 100
+p <- .5
+x <- rbinom(N,n,p)
+hist(x, 
+     xlim = c(min(x), max(x)), 
+     probability = TRUE, 
+     ylab = 'Densidad',
+     nclass = max(x) - min(x) + 1, 
+     col = 'lightblue',
+     main = 'Distribucion binomial , n=100, p=.5')
+lines(density(x,bw=1), col = 'red', lwd = 3)
+```
+
+## Subtítulos o subtemas 
+
+Puedes continuar desarrollando tus subtemas de la misma forma. Las ecuaciones de latex, también se pueden colocar, de la siguiente manera, como en la desigualdad de McDiarmind:
+
+Sea $X_1, X_2, \dots X_n$ variables aleatorias independientes. Suponganse que:
+
+\[
+\sup_{x_1,\dots, x_n, x^{'}_{i}}\Bigl\vert g(x_1,\dots, x_{i - 1}, x_i, x_{i + 1}, \dots, x_n ) - g(x_1,\dots, x_{i - 1}, x^{'}_i, x_{i + 1}, \dots, x_n )\Bigr\vert \leq c_i
+\]
+
+\vspace{0.2cm}
+
+para $i = 1,\dots, n$. Entonces:
+
+\vspace{0.2cm}
+
+\[
+\mathbb{P}\Bigl(g(X_1,\dots, X_n) -\mathbb{E}(g(X_1,\dots, X_n))\geq \epsilon \Bigr) \leq \exp\Bigl\{-\frac{2\epsilon^2 }{\sum_{i = 1}^{n}c^{2}_i}    \Bigr\}.
+\]
+
+
+Aquí se puede agregar código, también:
+
+```{r ejemplo3, comment = NA, prompt =TRUE, eval= TRUE}
+n <- 200
+x <- rnorm(n)
+y <- 1 - 2 * x + rnorm(n)
+r1 <- lm(y~x)
+r2 <- summary(r1)
+r2
+```
+
+
+## Referencias
+
+Es importante colocar, referencias y enlaces que has usado en tu asignación, como se muestra a continuación:
+
+* [Presentation Zen-How to Design & Deliver Presentations Like a Pro](http://www.garrreynolds.com/Presentation/pdf/presentation_tips.pdf).
+* [Points of view: Storytelling](http://www.nature.com/nmeth/journal/v10/n8/full/nmeth.2571.html).
