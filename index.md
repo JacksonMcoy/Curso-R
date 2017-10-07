@@ -127,7 +127,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
    * Lee la siguientes notas [Linear algebra learning recommendations](https://info.cognitomentoring.org/wiki/Linear_algebra_learning_recommendations).
    * Lee y ejecuta el código del artículo [Strategies to Speedup R Code](https://datascienceplus.com/strategies-to-speedup-r-code/).
-   * Presentar un reporte de los ítems de  [Optimising code](http://adv-r.had.co.nz/Profiling.html), de acuerdo al formato siguiente de la  [plantilla de presentaciones ](https://github.com/C-Lara/Curso-R/blob/master/Plantilla-presentacion/Plantilla/plantilla1.Rmd) escrita en [Rmarkdown](http://rmarkdown.rstudio.com/index.html) cuya salida se muestra [aquí](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Plantilla-presentacion/Plantilla/plantilla1.html).
+   * Presentar un reporte de los ítems de  [Optimising code](http://adv-r.had.co.nz/Profiling.html), de acuerdo al formato siguiente de la  [plantilla de presentaciones ](https://github.com/C-Lara/Curso-R/blob/master/Plantilla-presentacion/Plantilla/plantilla1.Rmd) cuya salida se muestra [aquí](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Plantilla-presentacion/Plantilla/plantilla1.html).
    * Completa la [tarea3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR3.pdf) de la clase de R correspondiente. 
  
 
