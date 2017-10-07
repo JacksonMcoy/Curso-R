@@ -126,6 +126,8 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * Tarea 5:
 
    * Lee la siguientes notas [Linear algebra learning recommendations](https://info.cognitomentoring.org/wiki/Linear_algebra_learning_recommendations).
+   * Lee y ejecuta el código del artículo [Strategies to Speedup R Code](https://datascienceplus.com/strategies-to-speedup-r-code/).
+   * Presentar un reporte de los ítems de  [Optimising code](http://adv-r.had.co.nz/Profiling.html),
    * Completa la [tarea3](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/TareaR3.pdf) de la clase de R correspondiente. 
  
 
