@@ -47,8 +47,8 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 ### Fechas de evaluación
 
 * Primera práctica calificada: 29 de setiembre.
-* Segunda práctica calificada: 20 de octubre.
-* Tercera práctica calificada: 17 de noviembre.
+* Segunda práctica calificada: 10 de noviembre.
+* Tercera práctica calificada: 24 de noviembre.
 * Cuarta  práctica calificada: 1 de diciembre.
 
 ### Clases de laboratorio
@@ -57,6 +57,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * [Laboratorio 2](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio2.pdf).
 * [Laboratorio 3](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio3/Laboratorio3.pdf).
 * [Laboratorio 4](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio4.pdf).
+* [Laboratorio 5](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio5.pdf)
 
 ### Diapositivas
 
@@ -137,6 +138,12 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
    - [Notas de data frames, cadenas, factores y tablas](http://adv-r.had.co.nz/Data-structures.html).
    
    - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
+   
+* Tarea 6
+
+   * Lee y presenta un reporte de [Evaluating the Design of the R Language.](http://r.cs.purdue.edu/pub/ecoop12.pdf) para obtener más información sobre las características de rendimiento del lenguaje R y cómo afectan el código real, de Floreal Morandat, Brandon Hill, Leo Osvald y Jan Vitek que utiliza una metodología poderosa que combina un intérprete de R modificado y un amplio conjunto de códigos encontrados en la naturaleza.
+   
+
 * Trabajando con datos.
    - [Lectura y escritura de datos en distintos formatos](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos1/Datos1.ipynb).
    - [Conjunto de datos predefinidos y visualización básica ](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Datos2.ipynb).
