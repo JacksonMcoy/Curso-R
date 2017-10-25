@@ -141,7 +141,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
    
 * Tarea 6
 
-   * Lee y presenta un reporte de [Evaluating the Design of the R Language.](http://r.cs.purdue.edu/pub/ecoop12.pdf) para obtener más información sobre las características de rendimiento del lenguaje R y cómo afectan el código real, de Floreal Morandat, Brandon Hill, Leo Osvald y Jan Vitek que utiliza una metodología poderosa que combina un intérprete de R modificado y un amplio conjunto de códigos encontrados en la naturaleza.
+   * Lee y presenta un reporte de [Evaluating the Design of the R Language.](http://r.cs.purdue.edu/pub/ecoop12.pdf) para obtener más información sobre las características de rendimiento del lenguaje R y cómo afectan el código real, de Floreal Morandat, Brandon Hill, Leo Osvald y Jan Vitek.
    
 
 * Trabajando con datos.
