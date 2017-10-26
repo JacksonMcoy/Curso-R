@@ -53,11 +53,11 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 ### Clases de laboratorio
 
-* [Laboratorio 1(pdf)](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio1.pdf)--[Laboratorio 1(html)](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio1.html).
-* [Laboratorio 2](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio2.pdf).
-* [Laboratorio 3](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio3/Laboratorio3.pdf).
-* [Laboratorio 4](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio4.pdf).
-* [Laboratorio 5](https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio5.pdf)
+* [Laboratorio 1](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio1.html).
+* [Laboratorio 2](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio2.html).
+* [Laboratorio 3](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio/Laboratorio3.html).
+* [Laboratorio 4](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio4.html).
+* [Laboratorio 5](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio5.html).
 
 ### Diapositivas
 
