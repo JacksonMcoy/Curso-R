@@ -139,7 +139,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
    
    - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
    
-* Tarea 6
+* Tarea 6:
 
    * Lee y presenta un reporte de [Evaluating the Design of the R Language.](http://r.cs.purdue.edu/pub/ecoop12.pdf) para obtener más información sobre las características de rendimiento del lenguaje R y cómo afectan el código real, de Floreal Morandat, Brandon Hill, Leo Osvald y Jan Vitek.
    
@@ -149,7 +149,12 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
    - [Conjunto de datos predefinidos y visualización básica ](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Datos2.ipynb).
    - [Análisis de datos-regresión lineal](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/DatosR/Trabajando_datos3/Datos3.ipynb).
    - [Data Maning vs Statistics ](http://www.kdnuggets.com/2016/09/data-science-basics-data-mining-statistics.html).
-   - [Statistics vs Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/)
+   - [Statistics vs Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/).
+   
+*  Tarea 7:
+
+    * Lee y resuelve los ejercicios de las notas de Hadley Wickham sobre  [Estructura de datos de R](http://adv-r.had.co.nz/Data-structures.html).
+  
 *  Estructuras de programación.
    - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
    - [Estructuras avanzadas(1)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Bucles_avanzados1/Estructuras_avanzadas1.ipynb).
