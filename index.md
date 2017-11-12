@@ -163,6 +163,10 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
      * [Codigo R de distribuciones discretas](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_discretas.R).
      * [Código R de distribuciones continuas](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_continuas.R).
    - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
+   
+*  Tarea 8:
+
+    * Lee y resuelve los ejercicios del artículo de  datacamp sobre funciones `*apply` en   [R Apply Family ](https://www.datacamp.com/community/tutorials/r-tutorial-apply-family).
 
 * Entornos y funciones.
   - [Introduccion a los entornos de R](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Entornos-funciones/Entornos/Entornos.ipynb).
