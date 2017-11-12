@@ -1,0 +1,170 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{teo}{{Teorema}}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Ejercicios de Laboratorio de R\par
+\end{minipage}
+
+\vspace{0.5cm}
+
+\textbf{Lecturas Importantes }
+\begin{enumerate}
+\item  \url{ http://thecodelesscode.com/contents}, un compendio de f\'abulas ilustradas que hablan del trabajo y arte de programar. La mayor parte de historias se encuentra tanto en ingl\'es como en espa\~nol, franc\'es, italiano y alem\'an.
+\item \textit{97 cosas que todo programador deber\'ia saber}, una colecci\'on de casi  un centenar de art\i'culos especializados repletos de consejos y datos intersantes \url{http://programmer.97things.oreilly.com/wiki/index.php/Contributions_Appearing_in_the_Book}. Es demasiado \'util.
+\end{enumerate}
+
+
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+{\Large Preguntas }
+
+\begin{enumerate}
+
+\item Experimenta con diferentes formas de definir una funci\'on que calcula la siguiente suma doble para cualquier valor de $n$.
+
+\[
+f(n) = \sum_{i = 1}^{n}\sum_{s =1}^{r}\frac{s^2}{10 +4r^3}
+\]
+
+Para cada funci\'on que cree, determina la rapidez con la que se ejecuta utilizando la funci\'on \texttt{system.time}.
+
+\begin{enumerate}
+\item Primero usa un bucle dentro de un bucle.
+\item Escribe una funci\'on \texttt{funB} que usa las funciones \texttt{row} y \texttt{col} para construir una matriz con entradas adecuadas para que la suma de la matriz de la respuesta requerida.
+\item Escribe una funci\'on \texttt{funC} que usa la funci\'on \texttt{outer} para construir una matriz con entradas adecuadas de modo que la suma de la matriz proporcione la respuesta requerida.
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Resuelve el siguiente problema : Dado una matriz n\'umerica $X$, determina el \'indice de la primera fila de n\'umeros positivos que no contiene $NA$. 
+\item  Esta pregunta es acerca  de \texttt{vectorizaci\'on (vectorization)} y \texttt{reciclado (recycling)}
+\begin{itemize}
+\item Define que significa que una funci\'on $R$ pueda  ser vectorizada o que cumple la \texttt{vectorization}. \mbox{Justifica} con ejemplos en  R.
+\item Define que significa que una funci\'on obedezca la regla de reciclaje. Justifica con ejemplos en R.
+\end{itemize}
+\end{enumerate}
+
+\item  Escribe una funci\'on en R  llamada \texttt{nth} que, dado un vector $x$ de valores l\'ogicos y un entero positivo $n$, devuelva el \'indice del n-\'esimo valor verdadero  en $x$. Si hay menos de $n$ valores verdaderos en $x$, la funci\'on debe devolver NA. La funci\'on deber\'ia funcionar de la siguiente manera:
+
+<<f1, prompt =TRUE, comment =NA, eval=FALSE>>=
+x<-c(1,2,4,2,1,3)
+nth(x >2, 2)
+6
+nth(x > 4,2)
+NA
+@
+
+\item Escribe dos funciones \texttt{primero} y \texttt{ultimo}, que extrae un n\'umero espec\'ifico de elementos desde el inicio y el final de un vector (en el orden que aparecen en el vector). Las funciones deben ser llamadas como siguen
+
+\begin{verbatim}
+primero(x , k)
+ultimo(x, k)
+\end{verbatim}
+
+donde $x$ es el  vector de  valores que son extraidos  y $k$ especifica el n\'umero de elementos a extraer. Si el argumento $k$ es omitido en una de las llamadas, debe tomar por valor por defecto $1$.
+
+\begin{enumerate}
+\item Asumiendo que $k \leq \texttt{length(x)}$, escribimos versiones (lo m\'as simples) de las funciones dadas anteriormente.
+\item Modifica las funciones (a) de manera que  si $k > \texttt{length(x)}$ entonces estas funciones deberian retornar los valores en $x$.
+\item Modifica las funciones (a) de manera que si $k > \texttt{length(x)}$ las funciones retornan los $k$ valores, si no hay valores existentes estos deben ser \texttt{NA}.
+\end{enumerate}
+\item Crea una matriz de $6 \times 10$ de enteros aleatorios escogidos desde  $1, 2, \dots, 10$ ejecutando las siguientes dos l\'ineas de c\'odigo:
+
+<<foo1, prompt =TRUE, comment =NA, eval=FALSE>>=
+set.seed(75)
+aMat <- matrix( sample(10, size=60, replace=T), nr=6)
+@
+
+\begin{enumerate}
+\item Encuentra el n\'umero de entradas en cada fila que son mayores que $4$.
+\item ?`Qu\'e filas contienen exactamente dos ocurrencias  del n\'umero siete?.
+\item Encuentra los pares de columnas cuyo total (en ambas columnas) es mayor que $75$. La respuesta debe ser una matriz con dos columnas; as\'i por ejemplo, la fila $(1, 2)$ en la matriz de salida significa que la suma de las columnas $1$ y $2$ en la matriz original es mayor que $75$. Se permite repetir una columna; as\'i, por ejemplo, la matriz final de salida podr\'ia contener las filas $(1, 2), (2, 1)$ y $(2, 2)$.
+?`Qu\'e pasa si las repeticiones no est\'an permitidas?.
+\end{enumerate}
+
+\end{enumerate}
+\textbf{Notas importantes }
+\begin{itemize}
+\item Todos los ejercicicios resueltos ser\'an subidos a los repositorios de github creado por el estudiante. La forma en la que el estudiante debe presentar este laboratorio es:
+
+\begin{itemize}
+\item Debes crear una carpeta local llamada \texttt{Practica2}.
+\item Dentro de la carpeta \texttt{Practica1}, se deben crear las carpetas \texttt{Ejercicio1, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5} donde se deben alojar  las soluciones con la extensi\'on  \texttt{Rmd} para los comentarios que son parte de las preguntas y  \texttt{.R} del lenguaje R para los otros. Cualquier otra extensi\'on, incluyendo letras min\'usculas,  ser\'a motivo de una rebaja de puntos en el ejercicio.
+\end{itemize}
+\item Los archivos de respuesta deben llevar un comentario inicial con tu nombre y c\'odigo. Por ejemplo.
+
+<<foo2, comment = NA, prompt =TRUE, eval= FALSE>>=
+# Nombre : Cesar Lara Avila 20122345J
+# Respuesta1: El codigo  muestra el uso del SVD en el calculo 
+#de la inversa de matrices
+
+
+library(MASS)
+
+a <- matrix(c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1), 9, 4)
+
+a.svd <- svd(a)
+a.svd$d
+@
+\item En esta pr\'actica no se permite utilizar sitios de internet.
+\end{itemize}
+\end{document}
