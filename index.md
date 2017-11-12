@@ -187,9 +187,13 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 * [Asignación4](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion4.pdf)-->[Asignación 4(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio4-Solucion.ipynb).
 
-* [Asignacion5](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion5.pdf)-->[Asignación 5(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio5-Solucion.ipynb)
+* [Asignación5](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion5.pdf)-->[Asignación 5(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio5-Solucion.ipynb).
 
-* [Asignacion6](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion6.pdf)
+* [Asignación6](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion6.pdf).
+
+* [Asignación7](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion7.pdf).
+
+* [Asignación8](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion8.pdf).
 
 ## Libros de Texto
 
