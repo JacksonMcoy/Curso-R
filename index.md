@@ -200,9 +200,9 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 * [Asignación6](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion6.pdf).
 
-* [Asignación7](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion7.pdf).
+* [Asignación7](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion7.pdf)-->[Asignación 7(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio7-Solucion.ipynb).
 
-* [Asignación8](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion8.pdf).
+* [Asignación8](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion8.pdf)-->[Asignación 8(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio8-Solucion.ipynb).
 
 ## Libros de Texto
 
