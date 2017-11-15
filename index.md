@@ -198,7 +198,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 * [Asignación5](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion5.pdf)-->[Asignación 5(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio5-Solucion.ipynb).
 
-* [Asignación6](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion6.pdf).
+* [Asignación6](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion6.pdf)-->[Asignación 6(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio6-Solucion.ipynb).
 
 * [Asignación7](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion7.pdf)-->[Asignación 7(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio7-Solucion.ipynb).
 
