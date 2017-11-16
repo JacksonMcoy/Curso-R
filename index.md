@@ -58,6 +58,7 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 * [Laboratorio 3](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio3/Laboratorio3.html).
 * [Laboratorio 4](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio4.html).
 * [Laboratorio 5](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio5.html).
+* [Laboratario 6](https://htmlpreview.github.io/?https://github.com/C-Lara/Curso-R/blob/master/Laboratorios/Laboratorio6.html).
 
 ### Diapositivas
 
@@ -138,10 +139,14 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
    - [Notas de data frames, cadenas, factores y tablas](http://adv-r.had.co.nz/Data-structures.html).
    
    - [Missing Values, Data Science and R](https://www.rstudio.com/rviews/2016/11/30/missing-values-data-science-and-r/).
+   - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
+   
    
 * Tarea 6:
 
+    * Lee y resuelve los ejercicios de las notas de Hadley Wickham sobre  [Data structures](http://adv-r.had.co.nz/Data-structures.html) y [subsetting](http://adv-r.had.co.nz/Subsetting.html) en R.
    * Lee y presenta un reporte de [Evaluating the Design of the R Language.](http://r.cs.purdue.edu/pub/ecoop12.pdf) para obtener más información sobre las características de rendimiento del lenguaje R y cómo afectan el código real, de Floreal Morandat, Brandon Hill, Leo Osvald y Jan Vitek.
+   * Lee el artículo de Tal Galili [A speed test comparison of plyr, data.table, and dplyr](https://www.r-statistics.com/2013/09/a-speed-test-comparison-of-plyr-data-table-and-dplyr/) acerca de paquetes como plyr y dplyr.
    
 
 * Trabajando con datos.
@@ -152,8 +157,8 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
    - [Statistics vs Machine Learning](http://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/).
    
 *  Tarea 7:
+   * Leer los comentarios acerca de la pregunta [What is a data scientist?](https://www.quora.com/What-is-a-data-scientist-3?redirected_qid=796075) en quora.
 
-    * Lee y resuelve los ejercicios de las notas de Hadley Wickham sobre  [Estructura de datos de R](http://adv-r.had.co.nz/Data-structures.html).
   
 *  Estructuras de programación.
    - [Flujo de control y bucles](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Estructuras-programacion/Flujo_control-bucles.ipynb).
@@ -162,7 +167,6 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
    - Aplicaciones
      * [Codigo R de distribuciones discretas](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_discretas.R).
      * [Código R de distribuciones continuas](https://github.com/C-Lara/Curso-R/blob/master/Aplicaciones/Distribuciones/Distribuciones_continuas.R).
-   - [Paquete pryr()](http://www.noamross.net/blog/2013/1/17/steve-culman-on-plyr.html).
    
 *  Tarea 8:
 
