@@ -158,6 +158,8 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
    
 *  Tarea 7:
    * Leer los comentarios acerca de la pregunta [What is a data scientist?](https://www.quora.com/What-is-a-data-scientist-3?redirected_qid=796075) en quora.
+   
+   * Leer el pequeño tutorial de  [Data.Table](https://www.dezyre.com/data-science-in-r-programming-tutorial/r-data-table-tutorial) como una extensión del objeto data frame de R.
 
   
 *  Estructuras de programación.
