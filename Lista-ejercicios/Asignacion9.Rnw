@@ -1,0 +1,208 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{teo}{{Teorema}}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Ejercicios de Laboratorio de R\par
+\end{minipage}
+
+\vspace{0.5cm}
+
+\textbf{Lecturas Importantes }
+\begin{enumerate}
+\item  Art\'iculo de Ari Lamstein  \url{http://www.kdnuggets.com/2016/11/data-science-101-good-at-r.html} de como empezar a programar en R para ciencia de datos.
+\item Art\'iculo sobre el ciclo de desarrollo de ciencia de datos  de Vincent Granville.
+
+\url{http://www.datasciencecentral.com/profiles/blogs/life-cycle-of-data-science-projects}.
+\end{enumerate}
+
+
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+{\Large Preguntas }
+
+\begin{enumerate}
+
+\item Dada una lista cuyos miembros son vectores de cadena de caracteres de diferentes longitudes, utilice una funci\'on  con \texttt{lapply} para pegar un signo de exclamaci\'on al final de cada elemento de cada miembro, con una cadena vac\'ia como car\'acter de separaci\'on (tenga en cuenta que el comportamiento predeterminado de \texttt{paste} cuando se aplica a los vectores de caracteres). Ejecuta tus  l\'ineas de c\'odigo en la lista dada por:
+<<foo3, prompt=TRUE, comment=NA, eval=FALSE>>=
+f3 <- list("a",c("b","c","d","e"),"f",c("g","h","i"))
+@
+\item 
+\begin{enumerate}
+\item Fijar cada uno de los siguientes error y corregirlos
+<<fow12, prompt =TRUE, comment =NA, eval=FALSE>>=
+mtcars[-1:4, ]
+mtcars[mtcars$cyl<= 5]
+mtcars[mtcars$cyl== 4 | 6, ]
+@
+\item Por qu\'e \texttt{x <- 1:5; x[NA]} produce 5 valores NA?.
+\item  Por qu\'e \texttt{mtcars[1:20]} retorna un error. C\'omo difiere del similar \texttt{mtcars[1:20,]?}.
+\item Qu\'e hace \texttt{df [is.na (df)] <- 0}?. Como funciona?.
+\end{enumerate}
+\item Escribe una funci\'on llamada \texttt{geolista} que puede buscar a trav\'es de una  lista especificada y calcula las medias geom\'etricas de cada miembro seg\'un las siguientes pautas:
+
+\begin{itemize}
+\item La funci\'on debe definir y utilizar una funci\'on de ayuda interna que devuelve la media geom\'etrica de un argumento vectorial.
+\item Suponga que la lista s\'olo puede tener vectores num\'ericos o matrices num\'ericas como sus miembros. La funci\'on debe contener un bucle apropiado para inspeccionar a cada miembro de la lista  a la vez.
+\item Si el miembro de la lista es un vector, calcula la media geom\'etrica de ese vector, sobrescribiendo el miembro con el resultado, que debe ser un solo n\'umero.
+\item Si el miembro de la lista es una matriz, utilice un bucle impl\'icito para calcular la media geom\'etrica de cada fila de la matriz, sobrescribiendo el miembro con los resultados.
+\item La lista final debe ser devuelta al usuario.
+\end{itemize}
+
+Ahora, como una prueba r\'apida, compruebe que tu funci\'on coincida con las siguientes dos llamadas:
+
+\begin{verbatim}
+f4 <- list(1:3,matrix(c(3.3,3.2,2.8,2.1,4.6,4.5,3.1,9.4),4,2),
+            matrix(c(3.3,3.2,2.8,2.1,4.6,4.5,3.1,9.4),2,4))
+geolista(f4)
+[[1]]
+[1] 1.817121
+[[2]]
+[1] 3.896152 3.794733 2.946184 4.442972
+[[3]]
+[1] 3.388035 4.106080
+\end{verbatim}
+
+\begin{verbatim}
+f5 <- list(1:9,matrix(1:9,1,9),matrix(1:9,9,1),matrix(1:9,3,3))
+geolista(f5)
+[[1]]
+[1] 4.147166
+[[2]]
+[1] 4.147166[[3]]
+[1] 1 2 3 4 5 6 7 8 9
+[[4]]
+[1] 3.036589 4.308869 5.451362
+\end{verbatim}
+\item
+
+\begin{enumerate}
+\item  ?` Qu\'e produce los siguientes c\'odigos y las propiedades que muestran
+
+<<fo12, prompt =TRUE, comment =NA, eval=FALSE>>=
+f1 <- function(x = {y <- 1; 2}, y = 0) {
+  x + y
+}
+f1()
+@
+\item ?` Por qu\'e las siguientes dos invocaciones de \texttt{lapply } son equivalentes?
+
+<<fo13, prompt =TRUE, comment =NA, eval=FALSE>>=
+trims <- c(0, 0.1, 0.2, 0.5)
+x <- rcauchy(100)
+
+lapply(trims, function(trim) mean(x, trim = trim))
+lapply(trims, mean, x = x)
+@
+\item  Considera el siguiente problema : Dada una matriz n\'umerica $X$, determina el \'indice de la primera fila de n\'umeros positivos que no contiene $NA$. Resuelve el problema usando \texttt{for} y la funci\'on \texttt{apply()}.
+\item ?`C\'omo se determina el entorno desde el que se llama una funci\'on?.
+\end{enumerate}
+\item Dado un vector $(x_1, x_2, \dots x_n$),  la autocorrelaci\'on muestral es definida como
+
+\[
+r_k = \frac{\displaystyle\sum_{i = k +1}^{n}(x_i - \overline{x})(x_{i -k} - \overline{x})}{\displaystyle\sum_{i=1}^{n}(x_i - \overline{x})^2}
+\]
+\begin{enumerate}
+\item Escribe una funci\'on \texttt{tmpFn(xVec)} que toma un s\'olo argumento \texttt{xVec} que es un vector y retorna una lista de dos valores $r1$ y $r_2$. En particular encuentra los valores de $r_1$ y $r_2$ para el vector 
+
+$(2,  5, 8, \dots, 53,56)$.
+\item Generaliza la funci\'on de manera que toma dos argumentos: el vector \texttt{xVec} y el entero $k$ que est\'a entre $1$ y $n -1$ donde $n$ es la longitud de \texttt{xVec}. La funci\'on debe retornar un vector de los valores $(r_0 = 1, r_1, \dots, r_n)$.
+\end{enumerate}
+\item El conjunto de datos \textit{iris} contiene las medidas de la longitud y el ancho (en cm) de p\'etalos y s\'epalos de tres especies: \texttt{1: Setosa, 2: versicolor y 3: Virginica}. 
+\begin{itemize}
+\item Considera el objeto \textit{iris}. ?` Como est\'a estructurado?. ?` Cuantas observaciones(lineas) contiene?. ?` Cuantas variables (columnas) contiene?.
+\item Para tener una visi\'on general del conjunto de valores, utiliza la funci\'on  \texttt{summary()} del conjunto de dato. ?`Qu\'e informaci\'on sobre el conjunto de datos proporciona?.
+\item Para la variable \texttt{Sepal.Length} verifica los resultados dados, usando las funciones \texttt{min(), max(), mean(), median(), quantile()}. Si es necesario usa la ayuda de  \texttt{?quantile}.
+\end{itemize}
+\end{enumerate}
+
+\newpage
+
+
+\textbf{Notas importantes }
+\begin{itemize}
+\item Todos los ejercicicios resueltos ser\'an subidos a los repositorios de github creado por el estudiante. La forma en la que el estudiante debe presentar este laboratorio es:
+
+\begin{itemize}
+\item Debes crear una carpeta local llamada \texttt{Practica3}.
+\item Dentro de la carpeta \texttt{Practica1}, se deben crear las carpetas \texttt{Ejercicio1, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5} donde se deben alojar  las soluciones con la extensi\'on  \texttt{Rmd} para los comentarios que son parte de las preguntas y  \texttt{.R} del lenguaje R para los otros. Cualquier otra extensi\'on, incluyendo letras min\'usculas,  ser\'a motivo de una rebaja de puntos en el ejercicio.
+\end{itemize}
+\item Los archivos de respuesta deben llevar un comentario inicial con tu nombre y c\'odigo. Por ejemplo.
+
+<<foo2, comment = NA, prompt =TRUE, eval= FALSE>>=
+# Nombre : Cesar Lara Avila 20122345J
+# Respuesta1: El codigo  muestra el uso del SVD en el calculo 
+#de la inversa de matrices
+
+
+library(MASS)
+
+a <- matrix(c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1), 9, 4)
+
+a.svd <- svd(a)
+a.svd$d
+@
+\item En esta pr\'actica no se permite utilizar sitios de internet.
+\end{itemize}
+
+
+\end{document}
