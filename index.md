@@ -210,6 +210,8 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 * [Asignación8](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion8.pdf)-->[Asignación 8(Solución)](https://nbviewer.jupyter.org/github/C-Lara/Curso-R/blob/master/Asignaciones/Laboratorio8-Solucion.ipynb).
 
+* [Asignación10](https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion10/Asignacion10.pdf)-->[Asignación 10(Solución]().
+
 ## Libros de Texto
 
 - Hands on Programming with R, Garret Grolemund, O'really Media, 2014
