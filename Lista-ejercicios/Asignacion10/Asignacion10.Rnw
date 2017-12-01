@@ -1,0 +1,383 @@
+\documentclass{article}
+\usepackage[sc]{mathpazo}
+\usepackage[T1]{fontenc}
+\usepackage{bigints}
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath} 
+\usepackage{mathtools}
+%\usepackage[spanish]{babel}
+\usepackage{latexsym}
+\geometry{verbose,tmargin=1.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\usepackage{url}
+\usepackage{graphicx}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\bb}[1]{\textbf{#1}}
+\DeclareMathOperator{\rank}{\textbf{rango}}
+\DeclareMathOperator{\proy}{\textbf{proy}}
+\DeclareMathOperator{\nulll}{\textbf{nul}}
+\DeclareMathOperator{\diag}{\textbf{diag}}
+\DeclareMathOperator{\col}{\textbf{col}}
+\DeclareMathOperator{\fila}{\textbf{fila}}
+\DeclareMathOperator{\dimm}{dim}
+\DeclareMathOperator{\Traz}{Tr}
+%\theoremstyle{definition}
+\everymath{\displaystyle}
+\newtheorem{ejemplo}{{Ejemplo }}[section]
+\newtheorem{teo}{{Teorema}}[section]
+\newtheorem{defi}{{Definici\'on}}[section]
+\newtheorem{pros}{{Proposici\'on}}[section]
+\newtheorem{cor}{{Corolario}}[section]
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\hypersetup{
+ pdfstartview={XYZ null null 1}}
+\begin{document}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+library(ggplot2)
+library(grid)
+#library(animation)
+# set global chunk options
+opts_chunk$set(fig.path='figure/minimal-', fig.align='center', fig.show='hold')
+options(formatR.arrow=TRUE,width=90)
+@
+
+%\title{\underline{\textbf{Notas de mat\'ematica}}}
+%\date{}
+%\maketitle
+\hspace*{0.5\linewidth}
+\begin{minipage}{0.6\linewidth}
+Curso: Introducci\'on a la Probabilidad y Estad\'istica CM -274\par
+Ejercicios de Laboratorio de R\par
+\end{minipage}
+
+\vspace{0.5cm}
+
+\textbf{Lecturas Importantes }
+\begin{enumerate}
+\item Una de las mejores referencias del lenguaje R, es el libro de Hadley Wickham \texttt{Advanced in R} : 
+
+\url{http://adv-r.had.co.nz/} que abarca temas muy especializados como metaprogramaci\'on o rendimiento de c\'odigo.
+\item Una gu\'ia de aceleraci\'on  del c\'odigo de R, escrito por Noam Ross, de optimizaci\'on de c\'odigo: 
+
+\url{http://www.noamross.net/blog/2013/4/25/faster-talk.html}.
+
+\item Herramientas y t\'ecnicas  de depuraci\'on con funciones en R de Michael Hannon:
+
+\url{http://www.noamross.net/blog/2013/4/18/r-debug-tools.html}.
+\end{enumerate}
+
+
+%{\normalsize Los c\'odigos, se presentaran impresos,  o como un archivo con extensi\'on $.R$, mostrando ejemplos de su ejecuci\'on.}
+\setlength{\unitlength}{1in}
+
+\begin{picture}(6,.1) 
+\put(0,0) {\line(1,0){6.25}}         
+\end{picture}
+
+\vspace{0.5cm}
+
+\textbf{Notas importantes }
+\begin{itemize}
+\item Todos los ejercicicios resueltos ser\'an subidos a los repositorios de github creado por el estudiante. No se evaluar\'a a un estudiante que no tenga creada un cuenta en github. La forma en la que el estudiante debe presentar este laboratorio es:
+
+\begin{itemize}
+\item Debes crear una carpeta local llamada \texttt{Practica4}.
+\item Dentro de la carpeta \texttt{Practica1}, se deben crear las carpetas \texttt{Ejercicio1, Ejercicio2, Ejercicio3, Ejercicio4, Ejercicio5, \dots } donde se deben alojar  las soluciones con la extensi\'on  \texttt{Rmd} para las preguntas que pidan una soluci\'on sin c\'odigo  y  \texttt{.R} del lenguaje R para las que usen c\'odigo fuente. Cualquier otra extensi\'on, incluyendo letras min\'usculas,  ser\'a considerada  0  puntos en el ejercicio.
+\end{itemize}
+\item Los archivos de respuesta deben llevar un comentario inicial con tu nombre y c\'odigo. Por ejemplo.
+
+<<foo3, comment = NA, prompt =TRUE, eval= FALSE>>=
+# Nombre : Cesar Lara Avila 20122345J
+# Respuesta1: El codigo  muestra el uso del SVD en el calculo 
+# de la inversa de matrices
+
+
+library(MASS)
+
+a <- matrix(c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
+    0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1), 9, 4)
+
+a.svd <- svd(a)
+a.svd$d
+@
+\item Todo acto de copia de c\'odigo o de respuestas, ser\'a motivo de calificaci\'on 0. Este trabajo es individual. 
+\item La fecha de presentaci\'on de este laboratorio calificado es hasta las 16:00 PM del dia 10 de diciembre.
+\item Toda situaci\'on o presentaci\'on distinta a lo que se pide condiciona tu calificaci\'on. 
+\item Puedes descargar este archivo en:
+
+\url{https://github.com/C-Lara/Curso-R/blob/master/Lista-ejercicios/Asignacion10/Asignacion10.pdf}.
+\end{itemize}
+
+\newpage
+
+{\Large Preguntas }
+
+\begin{enumerate}
+
+
+\item Considera el siguiente modelo gen\'etico simple. Una poblaci\'on consta de un n\'umero igual de dos sexos: masculino y femenino. En cada generaci\'on, los hombres y las mujeres se emparejan al azar y cada pareja produce exactamente dos hijos, uno de sexo masculino  y otro de sexo femenino. Estamos interesados en la distribuci\'on de la altura de una generaci\'on a otra. Supongamos que la altura de ambos ni\~nos es solo el promedio de la altura de sus padres; ?`C\'omo cambiar\'a la distribuci\'on de la altura entre generaciones?.
+
+Representa las alturas de la generaci\'on actual como un data frame  con dos variables, \texttt{m} y \texttt{f}, para los dos sexos. El comando \texttt{rnorm} (100, 160, 20) generar\'a un vector de longitud $100$ , de acuerdo con la distribuci\'on normal con  media $160$ y la desviaci\'on est\'andar $20$. Usamos esta funci\'on  para generar aleatoriamente la poblaci\'on en la generaci\'on 1:
+
+<<foo1, prompt=TRUE, comment=NA, eval=FALSE>>=
+popular <- data.frame(m = rnorm(100, 160, 20), f = rnorm(100, 160, 20))
+@
+
+El comando \texttt{sample(x, size = length(x))} devolver\'a una muestra aleatoria de tama\~no \texttt{size} tomada del vector \texttt{x}(sin reemplazo). (Tambi\'en muestrear\'a con reemplazo, si  argumento opcional \texttt{replace} se establece  en TRUE).
+
+
+La siguiente funci\'on toma el data frame  \texttt{popular} y permuta aleatoriamente el orden de los hombres. Los hombres y las mujeres se emparejan seg\'un las filas y las alturas para la pr\'oxima generaci\'on se calculan tomando la media de cada fila. La funci\'on devuelve un data frame con la misma estructura, dando las alturas de la pr\'oxima generaci\'on.
+
+
+<<foo2, prompt=TRUE, comment=NA, eval=FALSE>>=
+prox.gen <- function(popular) {
+  popular$m <- sample(popular$m)
+  popular$m <- apply(popular, 1, mean)
+  popular$f <- popular$m
+  return(popular)
+}
+@
+
+Usa la funci\'on \texttt{prox.gen} para generar nueve generaciones, luego usa la funci\'on \texttt{histogram} para dibujar la distribuci\'on de las alturas masculinas en cada generaci\'on. El fen\'omeno que resulta  se llama regresi\'on a la media.
+
+\item Watson le dio una cadena $S$ a Sherlock. Tiene $N$ caracteres de longitud y consiste de unos  y ceros. Ahora le pregunta: Dado un entero $K$, tomar\'e dos \'indices $i$ y $j$ al azar entre $1$ y $N$. ?` Cu\'al es la probabilidad de que $S_{i}$ y $S_{j}$ sean $1$ y que $\vert i-j\vert \leq K$?. D\'e la respuesta como una fracci\'on irreducible con formato $a/b$.
+
+Se dar\'a una entrada \texttt{Entrada\_problema\_1.txt} para ejecutar su programa, la cual tendr\'a el siguiente formato:
+
+\begin{itemize}
+\item  Primera linea: $T$, el n\'umero de casos que se evaluar\'an,
+\item  $2T$ lineas: Casos de prueba,
+\item Cada caso de prueba tendr\'a dos l\'ineas, en la primera se dar\'an $N$ y $K$, mientras que en la segunda se dar\'a la cadena $S$.
+\end{itemize}
+
+Restricciones:
+
+\begin{itemize}
+\item  $1 \leq T \leq 10^{5}$
+\item $1 \leq N \leq 10^{5}$
+\item $1 \leq K \leq N $
+\item $1 \leq \text{Suma de los N de todos los casos} \leq 10^{5}$
+\end{itemize}
+
+\textbf{Ejemplo de entrada:}
+
+2
+
+4 3
+
+1011
+
+4 1
+
+1011
+
+\textbf{Ejemplo de salida:}
+
+9/16
+
+5/16
+
+\item Para $X \sim \texttt{Poisson}(\lambda)$, sea $F(x) = \mathbb{P}(X \leq x)$ y $p(x) = \mathbb{P}(X = x)$. Muestra que la funci\'on de probabilidad  satisface,
+
+\[
+p(x +1) = \frac{\lambda}{x +1}p(x).
+\]
+
+Usando este resultado escribe una funci\'on para calcular $p(0), p(1), \dots, p(x)$ y $F(x) = p(0) + p(1) + \cdots p(x)$.
+
+Si $X$ es una variable aleatoria y $F(x)$ es una funci\'on que retorna el CDF $F$ de $X$, entonces tu puedes simular $X$ usando el siguiente programa:
+
+<<foo4, prompt=TRUE, comment=NA, eval=FALSE>>=
+F.rand <- function () {
+  u <- runif(1)
+  x <- 0
+  while (F(x) < u) {
+    x <- x + 1
+    }
+  return(x)
+}
+@
+
+En el caso de la distribuci\'on de Poisson, este programa se puede hacer m\'as eficiente calculando $F$ solo una vez, en lugar de volver a calcularlo cada vez que llame a la funci\'on $F(x)$. Al usar dos nuevas variables, \texttt{p.x} y \texttt{F.x} para $p(x)$ y $F(x)$ respectivamente, modifica este programa para que en lugar de usar la funci\'on  $F(x)$ actualiza  \texttt{p.x} y \texttt{F.x} dentro del ciclo \texttt{while}. Tu programa debe tener la forma
+
+<<foo5, prompt=TRUE, comment=NA, eval=FALSE>>=
+F.rand <- function(lambda) {
+  u <- runif(1)
+  x <- 0
+  # p.x <-?
+  # F.x <- ?
+  while (F.x < u) {
+    x <- x + 1
+    # p.x <-? 
+    # F.x <-? 
+    }
+  return(x)
+}
+@
+
+Debe asegurarse de que al inicio del ciclo \texttt{while} siempre tenga \texttt{p.x} igual a $p(x)$ y \texttt{F.x} igual a $F(x)$.
+
+\item Claudio tiene una tarea de matem\'atica en la escuela en la que debe evaluar muchas expresiones. El no quiere gastar mucho tiempo. Hay $M$ expresiones en total. Mirando las respuestas de Mandy, Claudio not\'o que las respuestas a todas las preguntas forman una secuencia no decreciente.
+
+Entonces, decidi\'o que todas sus respuestas estar\'an entre $1$ y $N$. Llena su hoja de respuestas con una secuencia aleatoria no decreciente de tama\~no $M$ donde cada elemento est\'a entre $1$ y $N$.
+
+Aqu\'i es donde empiezan los problemas para Claudio. El no quiere elegir valores muy grandes para $N$, porque entonces tendr\'a muchas opciones de donde escoger. Tambi\'en, si elige un valor muy peque\~no de $N$, entonces muchas respuestas se pueden repetir y por ello el profesor sospechar\'a que se ha copiado. 
+
+Sea $x = \max\limits_{1\leq i \leq N}{f(i)}$, donde $f(i)$ es la frecuencia del n\'umero $i$ en la secuencia que eligi\'o, Claudio quiere hallar el valor esperado de $x$. Ay\'udalo a resolver el problema.
+
+Se dar\'a una entrada \texttt{Entrada\_problema\_2.txt} para ejecutar tu programa, la cual tendr\'a el siguiente formato:
+
+\begin{itemize}
+\item  Primera linea: $T$, el n\'umero de casos que se evaluar\'an,
+\item  $T$ lineas: Casos de prueba,
+\item Cada caso de prueba tendr\'a dos enteros, $M$ y $N$.
+\end{itemize}
+
+Restricciones:
+
+\begin{itemize}
+\item $1 \leq T \leq 15$
+\item  $1 \leq M \leq 250$
+\item  $1 \leq N \leq 10^{9}$
+\end{itemize}
+
+\textbf{Ejemplo de entrada:}
+
+4
+
+1 5
+
+3 3
+
+2 9
+
+9 6
+
+\textbf{Ejemplo de Salida:}
+
+1.0000000000
+
+2.2000000000
+
+1.2000000000
+
+4.3146853147
+
+\textbf{Importante:} Imprime la salida de tal forma de que la respuesta dada respecto a la correcta tenga un error de m\'aximo $10^{-3}$, de lo contrario se considerar\'a incorrecta.
+
+\item Desarrolla los siguientes problemas
+
+\begin{enumerate}
+\item El c\'odigo produce un \texttt{gr\'afico de dispersi\'on}
+
+
+<<fo2, prompt =TRUE, comment =NA, eval=FALSE>>=
+plot.new()
+plot.window(range(pressure$temperature),
+            range(pressure$pressure))
+box()
+axis(1)
+axis(2)
+points(pressure$temperature, pressure$pressure)
+mtext("temperatura", side=1, line=3)
+mtext("presion", side=2, line=3)
+mtext("Presion de vapor \ncomo una funcion de la Temperatura ",
+      side=3, line=1, font=2)
+@
+\begin{itemize}
+\item Describe completamente lo que cada llamada a la funci\'on en el c\'odigo anterior hace,eso  incluye una explicaci\'on del significado de cada argumento en las llamadas a funciones. Tu respuesta debe incluir una explicaci\'on de las diferentes regiones y sistemas de  coordenadas creado por este c\'odigo.
+\item Describe c\'omo podr\'ia producir el mismo gr\'afico usando \texttt{viewports, layouts, units} en el sistema gr\'afico \textbf{grid}. Esta descripci\'on debe incluir una menci\'on de las funciones de \texttt{grid} que se requieren y lo que estas funciones hacen.
+\end{itemize}
+\item Usa la funci\'on \texttt{curve} para mostrar el gr\'afico de la funci\'on densidad \textbf{gamma} con par\'ametros $1$ de forma y $1$ de proporci\'on. Usa ahora la funci\'on \texttt{curve} con el atributo \texttt{add = TRUE} para mostrar el gr\'afico de la densidad de la distribuci\'on Gamma, con param\'etros de forma $k$ y de proporci\'on $1$ para $2, 3$, todos en la misma ventana. 
+
+\item Los datos de \texttt{iris} corresponden a las medidas en cent\'imetros de las variables \texttt{length, width  } de los s\'epalos  y \texttt{length , width } de los p\'etalos respectivamente de $50$ flores  cada una de tres especies de iris. Hay cuatro variables num\'ericas correspondientes al s\'epalo y  p\'etalo y un factor \texttt{Species}. Muestra  una tabla de medias para \texttt{Species} (donde las medias se deben calcularse por separado para cada una de las tres \texttt{Species}).
+\end{enumerate}
+ 
+\item Un dia, Alei, Chaous y Woreviam estaban viendo el siguiente problema: Tenemos $N$ grupos de personas, los cuales tienen $H_{i}$ hombres y $M_{i}$ mujeres cada uno y se desea organizar un baile. Lastimosamente, estos grupos se han desarrollado de tal forma que los hombres y mujeres de un mismo grupo se odian mutuamente. Por otra parte, estos $N$ grupos est\'an ordenados por m\'erito y todas las mujeres solamente bailar\'an con hombres cuyo m\'erito sea mayor estrictamente que el de ellas. Queremos saber cu\'antas parejas de baile se pueden formar entre todos los grupos m\'odulo $10^{9}+7$.
+
+Precisamente Chaous el dia anterior estaba practicando Fuerza Bruta, por lo que propone usar un doble \texttt{for} para hallar la suma de los valores, pero Woreviam le hace notar que si $N$ es muy grande eso no servir\'ia, por lo que se\~nala que usando un preprocesamiento (1 \texttt{for}) y luego una iteraci\'on para hallar la respuesta (otro \texttt{for}) ser\'a  lo suficientemente r\'apido. Sin embargo, Alei odia el usar muchos \texttt{for} en todo el programa, siempre desea que este sea compacto, por lo que dice \texttt{Hay una soluci\'on que solamente necesita 1 \texttt{for} y dos variables} (adem\'as del $N$ y el arreglo de pares) para hallar la respuesta.
+
+Dise\~ne y explique la soluci\'on que propone Alei, haga el c\'odigo para hallar la respuesta y pru\'ebelo con la entrada \texttt{Entrada\_problema\_3.txt}, la cual tendr\'a el siguiente formato:
+
+\begin{itemize}
+\item Primera linea: $N$, el n\'umero de grupos en orden de m\'erito,
+\item $N$ lineas: Casos de prueba,
+\item Cada caso de prueba tendr\'a dos enteros, $H_{i}$ y $M_{i}$.
+\end{itemize}
+
+Restricciones:
+
+\begin{itemize}
+
+\item $10^{3} \leq N \leq 10^{6}$,
+\item $1 \leq H_{i}, M_{i} \leq 10^{4}$,
+
+\end{itemize}
+
+Ejemplo de Entrada:
+
+4
+
+1 2
+
+2 3
+
+3 4
+
+4 5
+
+Ejemplo de Salida:
+
+55
+
+\textbf{Importante:} Recuerde dar la respuesta en m\'odulo $10^{9}+7$.
+
+\item En estad\'istica mucho uso es hecho de $\Phi^{-1}$  y es com\'un en los libros de texto proporcionar tablas de  $\Phi^{-1}$, llamados puntos porcentuales o cuantiles. Un importante uso de los cuantiles es en el c\'alculo de los intervalos de confianza.  Por ejemplo si $Z \sim N(0,1)$, entonces $\mathbb{P}(Z > 1.6449) = 0.05$ y $\mathbb{P}(Z > 1.9600) = 0.025$. Esto es $\Phi^{-1}(0.95) = 1.6449$ y $\Phi^{-1}(0.975) = 1.9600$. As\'i $1.6449$ es el $95$ punto porcentual o el $0.95$ cuantil de $N(0,1)$. Sea $Z_{\alpha} = \Phi^{-1}(\alpha)$ entonces $Z_{\alpha}$ es la \'unica ra\'iz  de la funci\'on $\Phi(z) - \alpha$. Por lo que si podemos calcular $\Phi$, entonces podemos encontrar $Z_{\alpha}$ usando un algoritmo de b\'usqueda de raices.
+
+Implementa un algoritmo para encontrar los cuantiles $Z_{\alpha}$. ?` Existe algun funci\'on construida en R, que pueda hacer el mismo trabajo?. Si la respuesta es afirmativa compare los resultados.
+
+\item En Macondo existen solo 4 denominaciones para moneda: $1$, $2$, $5$ y $10$. Dada una cantidad limitada de estas monedas. ?` De cu\'antas formas puede usarlas para formar la cantidad $N$?.
+
+Se dar\'a una entrada \texttt{Entrada\_problema\_4.txt} para ejecutar su programa, la cual tendr\'a el siguiente formato:
+
+\begin{itemize}
+\item  Primera linea: $T$, el n\'umero de casos que se evaluar\'an,
+\item $2T$ lineas: Casos de prueba,
+\item Cada caso de prueba tendr\'a dos l\'ineas, en la primera se dar\'a en valor $N$ mientras que en la segunda se dar\'an $A$, $B$, $C$ y $D$ que son la cantidad de monedas de 1, 2, 5 y 10 respectivamente.
+\end{itemize}
+
+Restricciones:
+
+\begin{itemize}
+\item $1 \leq T \leq 150$,
+\item $1 \leq A \leq 10000$,
+\item $1 \leq B,C,D \leq 1000$.
+\end{itemize}
+
+Ejemplo de entrada:
+
+2
+
+15
+
+2 3 1 1
+
+12
+
+2 2 1 1
+
+Ejemplo de salida:
+
+2
+
+2
+\end{enumerate}
+
+\end{document}
