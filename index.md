@@ -25,7 +25,10 @@ R como lenguaje de programación y multiparadigma, plantea un modo distinto de e
 *  Estructuras de programación .   
 * Entornos y funciones.
 * Gráficos.
-* Aplicaciones a la probabilidad e inferencia estadística y Bayesiana. 
+* Distribuciones de muestreo. Intervalos de confianza.
+* Prueba de hipótesis. Análisis de Varianza.
+* Regresión.
+* Selección y diagnóstico de modelos lineales.
 
 ### Horarios de clase
 
