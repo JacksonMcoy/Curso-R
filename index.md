@@ -219,10 +219,10 @@ A lo largo del curso se dejarán tareas domiciliarias, estos trabajos no son obl
 
 ## Libros de Texto
 
-- Hands on Programming with R, Garret Grolemund, O'really Media, 2014
--  **Using R for Introductory Statistics**, John Verzani, June 26, 2014 by Chapman and Hall/CRC.
+- The book of R A First Course In Programming And Statistics Tilman M. Davies, no starch press 2016.
+-  Using R for Introductory Statistics, John Verzani, June 26, 2014 by Chapman and Hall/CRC.
 -  An Introduction to Statistical Learning: with applications in R, Gareth James, Trevor Hastie, Robert Tibshirani, Daniel Witten, Springer, 2015.
--  Beginning Data Science with R, Manas A. Pathak, Springer, 2016.
+- The Essentials of Data Science Knowledge Discovery Using R, Graham J. Williams, Taylor & Francis Group, LLC 2017.
 
 
 ## Software
